@@ -1,0 +1,377 @@
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real estate</title>
+
+ 
+  <!--<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />-->
+
+
+<!--bootsrap link-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+ 
+  
+  
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
+    <!--animation link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+
+  
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,300;0,400;0,500;0,600;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200;300;400&family=Poppins:ital,wght@0,200;0,500;1,200;1,600&display=swap" rel="stylesheet">
+<!--font awesome-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+ 
+ <!--font awesome-->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+
+
+
+
+<header>
+    <nav>
+        <div class="container">
+            <a href="" class="logo">
+                <img src="{% static 'images/logo/logo.png' %}" alt="">
+            </a>
+                    <ul class="menulist">
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">our team</a></li>
+                        <li><a href="#">property search</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">propery management</a></li>
+
+                        <li><a href="#">marketing</a></li>
+                        <li><a href="#">testimonials</a></li>
+                        <li><a href="#">contact us</a></li>
+                    </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+
+<body>
+    <header id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col span_3">
+                    <a id="logo" href="https://clarsonrealestate.com" data-supplied-ml-starting-dark="false" data-supplied-ml-starting="false" data-supplied-ml="false">
+                        <img class="stnd default-logo dark-version" alt="C. Larson Real Estate" src="https://i1.wp.com/clarsonrealestate.com/tent/uploads/2020/08/Header-150x75-2.png?fit=585%2C301&amp;ssl=1" srcset="https://i1.wp.com/clarsonrealestate.com/wp-content/uploads/2020/08/Header-150x75-2.png?fit=585%2C301&amp;ssl=1 1x, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2020/08/Header-Logo-300x150-1.png?fit=1175%2C604&amp;ssl=1 2x"> 
+                    </a>
+                    
+                                </div><!--/span_3-->
+                
+                <div class="col span_9 col_last" style="padding-left: 127.266px;">
+                                        <a class="mobile-search" href="#searchbox"><span class="nectar-icon icon-salient-search" aria-hidden="true"></span></a>
+                                            <div class="slide-out-widget-area-toggle mobile-icon slide-out-from-right" data-custom-color="false" data-icon-animation="simple-transform">
+                            <div> <a href="#sidewidgetarea" aria-label="Navigation Menu" aria-expanded="false" class="closed">
+                                <span aria-hidden="true"> <i class="lines-button x2"> <i class="lines"></i> </i> <i class="lines-button x2 hover-effect"> <i class="lines"></i> </i></span>
+                            </a></div> 
+                        </div>
+                                    
+                                        
+                        <nav style="visibility: visible;">
+                            
+                            <ul class="sf-menu sf-js-enabled sf-arrows">	
+                                <li id="menu-item-180" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item menu-item-180"><a href="https://clarsonrealestate.com/" aria-current="page">Home</a></li>
+    <li id="menu-item-179" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-179"><a href="https://clarsonrealestate.com/about-us/">Our Team</a></li>
+    <li id="menu-item-169" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-169"><a href="https://clarsonrealestate.idxbroker.com/idx/search/advanced">Property Search</a></li>
+    <li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178 menu-item-with-margin" style="margin-right: 142px;"><a href="https://clarsonrealestate.com/residential-real-estate/">Our Services</a></li>
+    <li id="menu-item-4871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4871"><a href="https://clarsonrealestate.com/property-management/">Property Management</a></li>
+    <li id="menu-item-4785" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4785"><a href="https://clarsonrealestate.com/marketing/">Marketing</a></li>
+    <li id="menu-item-3869" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3869"><a href="https://clarsonrealestate.com/testimonials/">Testimonials</a></li>
+    <li id="menu-item-2170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2170"><a href="https://clarsonrealestate.com/contact-us/">Contact Us</a></li>
+                            </ul>
+                            
+    
+                                                        <ul class="buttons sf-menu" data-user-set-ocm="1">
+                                    
+                                    <li id="search-btn"><div><a href="#searchbox"><span class="icon-salient-search" aria-hidden="true"></span></a></div> </li><li class="slide-out-widget-area-toggle" data-icon-animation="simple-transform" data-custom-color="false"><div> <a href="#sidewidgetarea" aria-label="Navigation Menu" aria-expanded="false" class="closed"> <span aria-hidden="true"> <i class="lines-button x2"> <i class="lines"></i> </i> <i class="lines-button x2 hover-effect"> <i class="lines"></i> </i></span> </a> </div></li>								
+                                </ul>
+                                                    
+                        </nav>
+                        
+                        <div class="logo-spacing" data-using-image="true"><img class="hidden-logo" alt="C. Larson Real Estate" src="https://i1.wp.com/clarsonrealestate.com/wp-content/uploads/2020/08/Header-150x75-2.png?fit=585%2C301&amp;ssl=1"></div>					
+                    </div><!--/span_9-->
+                    
+                                    
+                </div><!--/row-->
+                        </div><!--/container-->
+        </header>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <title>Mobile Menu</title>
+        <link rel="stylesheet" href="slicknav.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+
+ <style>
+body{
+      /*background: url(bg.jpg);*/
+     font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 400; 
+     line-height: 1.5em;
+     background: whitesmoke;
+  }
+ .inner_main_menu {
+    margin: 0 auto;
+     width: 1170px;
+     
+         }    
+.inner_main_menu ul{
+     margin: 0;
+       padding: 80px 0 0; 
+       list-style: none;
+       text-align: right;
+    }    
+.inner_main_menu ul li{
+    float: none;
+     display: inline-block;
+     position: relative}    
+.inner_main_menu ul li:nth-child(1){
+    float: left;
+}    
+.inner_main_menu ul li:nth-child(2){
+    float: left;
+}    
+.inner_main_menu ul li:nth-child(3){
+    float: left;
+}    
+.inner_main_menu ul li a{
+    /*color: #262626; */
+    font-size: 20px;
+     text-transform: uppercase;
+     text-decoration: none; 
+     display: block;
+     padding: 10px 20px;
+     color: #999;
+    }    
+.inner_main_menu ul li a:hover{
+    color: #6FDA44
+}  
+
+
+
+.inner_main_menu ul li ul{
+    position: absolute; 
+    top: 40px;
+     left: -9999999px; 
+     width: 200px;
+     background: #262626;
+      padding: 0;
+    }  
+.inner_main_menu ul li:hover ul{
+    left: 0px;
+}   
+.inner_main_menu ul li ul li{
+    float: left;
+    width: 100%;
+    text-align: left;
+}  
+.inner_main_menu ul li ul li a{
+    color: #fff;
+    text-transform: capitalize;
+     font-size: 15px;}  
+.inner_main_menu ul li ul li a:hover{
+    background: #ddd; 
+    color: #262626;}  
+.inner_main_menu ul li ul li ul{
+    top: 0; 
+    left: -999999px;
+}  
+.inner_main_menu ul li:hover ul li ul{
+    top: 0;
+     left: -999999px;}  
+.inner_main_menu ul li ul li:hover ul{
+    top: 0;
+     left: 200px;}  
+.inner_main_menu ul li:hover a{
+    color: #6FDA44}  
+.inner_main_menu ul li:hover ul li a{
+    color: #ffffff}  
+    
+.inner_main_menu ul li ul li a:hover{
+    color: #262626}  
+.inner_main_menu ul li ul li:hover a{
+    background: #ddd;
+     color: #262626;}  
+.inner_main_menu ul li ul li:hover ul li a{
+    background: #262626; 
+    color: #fff;}  
+.inner_main_menu ul li ul li ul li a:hover{
+    background: #ddd; 
+    color: #262626;}  
+
+
+.slicknav_menu {
+                    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                    font-size: 16px;
+                    padding: 5px;
+                    display: none;    
+                    position: fixed;
+                    right: 0;
+                    width: 100%;
+                    z-index: 99999;
+                    }
+ul.slicknav_nav {
+                    background: #262626 none repeat scroll 0 0;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 80%;
+                    }
+.slicknav_btn {
+                        top: 35px;
+                    }
+#main_menu{
+                        width: 100%; 
+                        position: relative;
+}
+.logo_area{
+                        width: 130px;
+                        height: 150px; 
+                        position: absolute; 
+                        left: 47%;
+                        top: 0; 
+                        content: "";
+                        margin-left:-150px;
+                            text-align: center;
+}
+.logo_area img{
+    width: 100%;
+    height: 75%;
+   
+   
+
+}
+
+ @media only screen and (min-width: 200px) and (max-width: 767px) { 
+          .slicknav_menu{
+              display: block;
+                }
+        .inner_main_menu{
+            display: none;
+        }
+        .logo_area {
+            height: auto;
+            left: 0;
+            margin-left: 0;
+            position: relative;
+            top: 0;
+            width: 130px;
+        }
+        .logo_area img{
+            height: auto;
+            width: 100%;
+        }
+
+
+
+
+
+
+
+
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main_menu">
+            <div class="logo_area">
+                <a href=""><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+            </div>
+            <div class="inner_main_menu">
+                <ul id="menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">our  team</a></li>
+                    <li><a href="">property <search</a>
+                        <ul>
+                            <li><a href="">Dropdown Menu</a></li>
+                            <li><a href="">Dropdown Menu</a>
+                                <ul>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Dropdown Menu</a></li>
+                            <li><a href="">Dropdown Menu</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">property  management</a></li>
+                    <li><a href="">marketing</a>
+                        <ul>
+                            <li><a href="">Dropdown Menu</a></li>
+                            <li><a href="">Dropdown Menu</a>
+                                <ul>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                    <li><a href="">Dropdown Sub Menu</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Dropdown Menu</a></li>
+                            <li><a href="">Dropdown Menu</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">testimonials</a></li>
+                    <li><a href="">contact  us</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="jquery.slicknav.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#menu').slicknav();
+        });
+    </script>
+    </body>
+</html>

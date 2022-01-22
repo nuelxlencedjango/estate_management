@@ -1,0 +1,483 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <title>Real estate</title>
+        <link rel="stylesheet" href="slicknav.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+
+
+
+<!--bootsrap link-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+ 
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
+    <!--animation link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+ <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Display', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
+
+
+/*text-transform: capitalize;*/
+  transition: all .2s linear;
+}     
+body{
+      /*background: url(bg.jpg);*/
+     font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 400; 
+     line-height: 1.5em;
+     background: whitesmoke;
+  }
+ .inner_main_menu {
+    margin: 0 auto;
+     width: 1170px;
+     
+         }    
+.inner_main_menu ul{
+     margin: 0;
+       padding: 70px 0 0; 
+       list-style: none;
+       text-align: right;
+    }    
+.inner_main_menu ul li{
+    float: none;
+     display: inline-block;
+     position: relative}    
+.inner_main_menu ul li:nth-child(1){
+    float: left;
+}    
+.inner_main_menu ul li:nth-child(2){
+    float: left;
+}    
+.inner_main_menu ul li:nth-child(3){
+    float: left;
+}    
+.inner_main_menu ul li a{
+    /*color: #262626; */
+    font-size: 20px;
+     text-transform: capitalize;
+     text-decoration: none; 
+     display: block;
+     padding: 10px 20px;
+     color: #999;
+     display: inline-block;
+    }    
+.inner_main_menu ul li a:hover{
+    color: #262626;
+   
+
+    /*border-radius: 1rem red;
+    border-left: 1px solid #7755A2;*/
+    
+    border-bottom: 2px solid #5B9D4F;
+    
+   
+   
+}  
+
+
+
+/*.inner_main_menu ul li:hover a{
+    color: #6FDA44}*/
+
+
+
+
+
+
+
+
+/*.inner_main_menu ul li ul{
+    position: absolute; 
+    top: 40px;
+     left: -9999999px; 
+     width: 200px;
+     background: #262626;
+      padding: 0;
+    }  
+.inner_main_menu ul li:hover ul{
+    left: 0px;
+}   
+
+
+.inner_main_menu ul li ul li{
+    float: left;
+    width: 100%;
+    text-align: left;
+}  
+.inner_main_menu ul li ul li a{
+    color: #fff;
+    text-transform: capitalize;
+     font-size: 15px;}  
+.inner_main_menu ul li ul li a:hover{
+    background: #ddd; 
+    color: #262626;}  
+.inner_main_menu ul li ul li ul{
+    top: 0; 
+    left: -999999px;
+} 
+
+.inner_main_menu ul li:hover ul li ul{
+    top: 0;
+     left: -999999px;}  
+
+
+.inner_main_menu ul li ul li:hover ul{
+    top: 0;
+     left: 200px;} 
+
+  
+
+.inner_main_menu ul li:hover ul li a{
+    color: #ffffff}  
+    
+.inner_main_menu ul li ul li a:hover{
+    color: #262626}  
+.inner_main_menu ul li ul li:hover a{
+    background: #ddd;
+     color: #262626;}  
+.inner_main_menu ul li ul li:hover ul li a{
+    background: #262626; 
+    color: #fff;}  
+.inner_main_menu ul li ul li ul li a:hover{
+    background: #ddd; 
+    color: #262626;}  */
+
+
+.slicknav_menu {
+                    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                    font-size: 16px;
+                    padding: 5px;
+                    display: none;    
+                    position: fixed;
+                    right: 0;
+                    width: 100%;
+                    z-index: 99999;
+                    }
+ul.slicknav_nav {
+                    background: #262626 none repeat scroll 0 0;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 80%;
+                    }
+.slicknav_btn {
+                        top: 35px;
+                    }
+#main_menu{
+                        width: 100%; 
+                        position: relative;
+                        /*position: fixed;*/
+}
+.logo_area{
+                        width: 130px;
+                        height: 140px; 
+                        position: absolute; 
+                        left: 40%;
+                        top: 0; 
+                        content: "";
+                        margin-left:-110px;
+                            text-align: center;
+}
+.logo_area img{
+    width: 100%;
+    height: 75%;
+   
+   
+
+}
+.want_to_buy{
+    margin-top: 30px;
+    background-image: url();
+
+      /*background-color: crimson;*/
+  font-family: "Roboto", sans-serif;
+  background-image: url('/static/images/background/background_paid.jpeg');
+  background-repeat: no-repeat;
+
+  /*background-image: linear-gradient(white, blue);*/
+  background-color: #cccccc; /* Used if the image is unavailable */
+  /*height: 500px; You must set a specified height */
+  background-position: center; 
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+ 
+
+  height: 500px;
+}
+
+
+.buy h3{
+    margin-top: 10px;
+    color: #000000;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 500;
+    
+}
+.buy h1{
+    font-weight: 700;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bolder;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.want_to_buy .container .row .text .local{
+  
+    margin-top: 10px;
+    
+    height: 360px;
+}
+
+.local img{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+   
+}
+.text-head h1 span{
+    font-size: 45px;
+    font-weight: bolder;
+
+}
+.col-md-6 p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 18px;
+    text-align: left;
+    
+    font-family: sans-serif;
+}
+p{
+    padding-bottom: 1.5em;
+    text-align: left;
+;
+}
+.wrap-inner img{
+    border-radius: 50%;
+    padding: 30px;
+    align-items: center;
+}
+
+
+.display{
+    margin-top: 150px;
+}
+
+
+
+
+
+ @media only screen and (min-width: 200px) and (max-width: 767px) { 
+          .slicknav_menu{
+              display: block;
+                }
+        .inner_main_menu{
+            display: none;
+        }
+        .logo_area {
+            height: auto;
+            left: 0;
+            margin-left: 0;
+            position: relative;
+            top: 0;
+            width: 130px;
+        }
+        .logo_area img{
+            height: auto;
+            width: 100%;
+        }
+
+
+
+
+
+
+
+
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main_menu">
+            <div class="logo_area">
+                <a href=""><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+            </div>
+            <div class="inner_main_menu">
+                <ul id="menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">our  team</a></li>
+                    <li><a href="">property <search</a></li>
+                       
+                    <li><a href="">property  management</a></li>
+                    <li><a href="">marketing</a></li>
+
+                    <li><a href="">testimonials</a></li>
+                    <li><a href="">contact  us</a></li>
+                    
+            </div>
+        </div>
+        
+        
+
+       <section class="want_to_buy">
+           <div class="container">
+            <div class="row justify-content-center">
+             
+                    <div class="col">
+                        <div class="text">
+                   
+                            <div class="buy animate__animated animate__backInLeft animation-delay-2s" style="animation-delay: 2s;">
+                                <h3>looking to buy or sell a home?</h3>
+
+                                <h1><strong>Let our local experts work for you.</strong></h1>
+                                <h3>the permain basin is our office</h3>
+    
+                            </div>
+                            <div class="local animate__animated animate__backInLeft animation-delay-s" style="animation-delay: 1s;">
+                                <img src="{% static 'images/background/estate_bg.jpeg' %}" alt="">
+                            </div>
+    
+                        </div>
+                    </div>
+                
+            </div>
+
+           </div>
+       </section>
+
+
+      
+
+
+   
+   
+   
+<section class="display">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-head">
+
+                <h1 style="text-align: center;"><span style="color: #000000;">WELCOME TO</span></h1>
+                <h1 style="text-align: center;"><span style="color: #000000;">Wilmot I</span></h1>
+                <h1 style="text-align: center;"><span style="color: #000000;">REAL ESTATE</span></h1>
+                </div>
+      
+<!--<p>&nbsp;</p>-->
+<p style="text-align: center;">Our elite real estate professionals work throughout Howard, Midland, Martin, Scurry &amp; Mitchell counties.</p>
+<p style="text-align: center;">When you’re ready to buy or sell your home, farm, ranch, land or commercial property, let our team help. We are a locally owned and operated company, and we’re ready to help make the buying and selling process much easier. We are the best in the area due to our extensive knowledge, experience and dedication to our clients.</p>
+<h2 style="text-align: center;"><span style="color: #000000;">The Wilmot Innovation  real estate professionals of the Permian Basin</span></h2>
+<p style="text-align: center;">Our real estate professionals handle the transactions of many property types such as residential homes, ranches and farms, land and commercial real estate. We do it all. Choosing an expert real estate team, like C. Larson Real Estate, is the obvious choice to make your buying or selling process seamless. Securing Christie and her team of negotiators will protect you from mistakes and pay dividends in peace of mind and cash.</p>
+<p style="text-align: center;">Our realty team will bring you listings that best fit your needs and requirements. We will never waste your time with properties for sale that are below your expectations. We specialize in residential and commercial properties in Big Spring, Midland, Odessa, Stanton, Snyder, Colorado City and many surrounding communities.</p>
+<p style="text-align: center;">We are in the business of making our clients’ dreams a reality, and our dedication to that is relentless. Having the right agent at your side makes a huge difference, but choosing one of our extremely knowledgeable agents makes ALL the difference. &nbsp;Call us today and let us get started!</p>
+
+            </div>
+
+    <div class="col-md-6">
+               
+
+        <!--<div class="video-wrap">
+            <div class="video">
+                <div class="video__thumbn">
+                    <video width="500" height="300" controls>
+                        <source src="https://clarsonrealestate.com/wp-content/uploads/2021/08/30secAdwerx2.mov" type=video/mp4></video>
+                
+                </div>
+            </div>
+
+        </div>-->
+
+        <div class="video-wrap">
+            <div class="video">
+                <div class="video__thumbn">
+                    <video width="500" height="300" controls>
+                        <source src="{% static 'video/video1.mp4' %}" type=video/mp4></video>
+                
+                </div>
+            </div>
+
+        </div>
+
+        <div class="wrap-inner">
+            <img class="img-with-animation skip-lazy animated-in" data-delay="0" height="450" width="450" data-animation="fade-in" src="{% static 'images/pic/woman5.jpg' %}" alt="">
+          </div>
+	<!--<div class="wpb_wrapper"><div class="wpb_video_wrapper"><video width="1280" height="720" preload="auto" loop="" controls="" controlslist="nodownload" poster="https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/07/Screen-Shot-2021-07-22-at-4.21.15-PM.png?fit=1535%2C862&amp;ssl=1" style="visibility: visible;"><source src="https://clarsonrealestate.com/wp-content/uploads/2021/08/30secAdwerx2.mov" type="video/mp4"></video></div></div></div><div class="img-with-aniamtion-wrap center" data-max-width="75%" data-max-width-mobile="default" data-border-radius="none" data-shadow="none" data-animation="fade-in">
+      <div class="inner">
+        <div class="hover-wrap" data-hover-animation="none" style="opacity: 1;"> 
+          <div class="hover-wrap-inner">
+            <img class="img-with-animation skip-lazy animated-in" data-delay="0" height="500" width="500" data-animation="fade-in" src="https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?fit=500%2C500&amp;ssl=1" alt="" srcset="https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?w=500&amp;ssl=1 500w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=140%2C140&amp;ssl=1 140w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=350%2C350&amp;ssl=1 350w" sizes="(min-width: 1450px) 75vw, (min-width: 1000px) 85vw, 100vw">
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="wpb_text_column wpb_content_element ">
+	<div class="wpb_wrapper">
+		<h3 style="text-align: center;"><i>Backed by an extremely knowledgable, local broker with over 22 years experience in the industry, Christie Larson.</i></h3>
+	</div>
+</div>-->
+
+
+
+
+			</div> 
+		</div>
+	</div> 
+</section>
+   
+   
+  
+        
+
+    
+   <!--<section>
+    <h2>video tag</h2>
+    <video width="500" height="300" controls>
+        <source src="https://clarsonrealestate.com/wp-content/uploads/2021/08/30secAdwerx2.mov" type=video/mp4></video>
+</section>-->
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="jquery.slicknav.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+   
+    <script src="https://use.fontawesome.com/e503c766fc.js"></script>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#menu').slicknav();
+        });
+    </script>
+    </body>
+</html>
