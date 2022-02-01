@@ -41,7 +41,7 @@
   transition: all .2s linear;
 }     
 body{
-      /*background: url(bg.jpg);*/
+      
      font-family: 'Oswald', sans-serif;
       font-size: 15px;
       font-weight: 400; 
@@ -94,8 +94,6 @@ body{
    
    
 }  
-
-
 
 /*.inner_main_menu ul li:hover a{
     color: #6FDA44}*/
@@ -208,7 +206,7 @@ ul.slicknav_nav {
 }
 .want_to_buy{
     margin-top: 30px;
-    background-image: url();
+  
 
       /*background-color: crimson;*/
   font-family: "Roboto", sans-serif;
@@ -291,6 +289,145 @@ p{
 }
 
 
+.property-search{
+    margin-top: 30px;
+   
+  font-family: "Roboto", sans-serif;
+  background-image: url('/static/images/background/background_paid.jpeg');
+  background-repeat: no-repeat;
+
+
+  background-color: #cccccc;
+ 
+  background-position: center; 
+ 
+  background-size: cover;
+ 
+  height: 500px;
+}
+.flex{
+        display:flex;
+        justify-content: center;
+    }
+
+ .form-container{
+     justify-content: center;
+      padding: 30px;
+ } 
+ .form-container h2{
+     font-size: 50px;
+    
+     font-weight: 900;
+     line-height: 35.1px;
+     font-family: 'Noto Sans Display';
+     color: #0a0a0a;
+     
+ }  
+ input[type=text],
+ input[type=number],
+ input[type=email],
+ input[type=password],
+ input[type=tel],
+ input[type=url], 
+ input[type=search],
+ input[type=date],
+ textarea {
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 24px;
+    color: #555;
+   
+    border: none;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    background-color: rgba(0,0,0,0.04);
+    /*background-color: #f1f1f1;*/
+}
+
+ #make_checkbox_select{
+     margin-top: 30px;
+ }
+.form-container form .flex .orm-content .btn {
+    width: 100%;
+    background-color: saddlebrown;
+}
+.form-container button :hover{
+    background-color: #fcb900 !important;
+}
+
+
+.featured{
+    background-image: url('/static/images/background/black_background.jpeg');
+     background-position: left top;
+      background-repeat: no-repeat;
+       background-color: #ffffff; 
+
+
+       font-family: "Roboto", sans-serif;
+  
+      background-repeat: no-repeat;
+    background-position: center; 
+ 
+    background-size: cover;
+ 
+   height: 500px;   
+}
+
+
+.featured .row {
+    display: flex;
+  
+    height: 500px;
+
+}
+.featured .row .col-md-3{
+    width: 270px;
+    height: 100%;
+}
+.featured .row .col-md-3 .card{
+    height: 60%;
+    width: 100%;
+    background-color: #0a0a0a;
+    border: 1px solid rgba(0, 0, 0, .7);
+
+}
+.featured .row .col-md-3 .card .card-img{
+    width: 100%;
+    height: 100%;;
+}
+.featured .row .col-md-3 .card .card-img img{
+    width: 100%;
+    height: 180px;
+}
+.featured .container h2{
+    padding-top: 30px;
+    color: #7fbebb;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+.featured .container .row .card-body{
+    text-align: center;
+}
+.featured .container .row .card-body p{
+    font-size: 12px;
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+
+}
+.featured .container .row .card-body span{
+    font-size: 16px;
+    color: #fff;
+    font-family: sans-serif;
+    padding-bottom: 40px;
+
+}
+
+
 
 
 
@@ -334,7 +471,7 @@ p{
                 <ul id="menu">
                     <li><a href="">Home</a></li>
                     <li><a href="">our  team</a></li>
-                    <li><a href="">property <search</a></li>
+                    <li> <a href="">property s</a> </li>
                        
                     <li><a href="">property  management</a></li>
                     <li><a href="">marketing</a></li>
@@ -444,15 +581,148 @@ p{
 	</div>
 </div>-->
 
-
-
-
 			</div> 
 		</div>
 	</div> 
 </section>
    
    
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=" property-search" style="align-items: center; text-align: center;">
+    <div class="form-container" >
+        <h2>Search for any property below:</h2>
+     <form id="make_checkbox_select">
+         <h4>property type</h4>
+         <select name="make" style="width: 600px; height: 50px; border: white;">
+             <option data-count="2" value="Alfa Romeo">All</option>
+             <option data-count="23" value="Audi">Residential</option>
+             <option data-count="433" value="BMW">Commercial</option>
+             <option data-count="45" value="Chrysler">Land</option>
+             <option data-count="476" value="Citroen">Multi-Family</option>
+             <option data-count="78" value="Dodge">Rental</option>
+           
+         </select>
+         
+         <div class="flex">
+         <div class="form-content" style=" align-items: center; text-align: center;">
+            <div class="row g-3 align-items-center" style="text-align: left; align-items: right;">
+                 <div class="col-auto">
+                   <label for="text" class="col-form-label">Min Price</label>
+                   <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline">
+                 
+                 </div>
+                 <div class="col-auto">
+                     <label for="text" class="col-form-label">Max Price</label>
+                     <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline">
+                   
+                   </div>
+               </div>
+ 
+ 
+               <div class="row g-4 align-items-center" style="text-align: left; align-items: right;">
+                 <div class="col-auto">
+                   <label for="text" class="col-form-label">Min Bedrooms</label>
+                   <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline">
+                 
+                 </div>
+                 <div class="col-auto">
+                     <label for="text" class="col-form-label">Min Baths</label>
+                     <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline">
+                   
+                   </div>
+               </div>
+             
+            </div>
+            
+            
+        </div>
+        <button class="btn btn-outline-success" id="btn" type="submit" style="width: 600px; height: 50px; border: white;  background-color: #7fbebb; color: #fff; margin-top: 30px; ">Search</button>
+       </form>
+     
+    </div>
+               
+         </div>
+
+
+
+
+<section class="featured">
+    <div class="container">
+        <h2 class="listing">FEATURED LISTINGS</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{% static 'images/background/house1.jpg' %}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <p>5701 E Midway Rd <br> Big Spring, Texas 79720</p>
+                        <span>$399,000</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{% static 'images/background/house5.jpg' %}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <p> 2806 Lawrence <br> Big Spring, Texas 79720 </p>
+                        <span> $224,000</span>
+                      
+                   
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{% static 'images/background/house10.jpg' %}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <p> 1203 Pennsylvania Ave <br>  Big Spring, Texas 79720</p>
+                        <span>  $120,000</span>
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{% static 'images/background/house12.jpg' %}" alt="">
+                    </div>
+                    <div class="card-body">
+                    
+                        <p>1507 Eubanks Rd<br> Big Spring, Texas 79720</p>
+                        <span>$154,000</span>
+                     
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</section>
+
   
         
 
