@@ -48,6 +48,12 @@ body{
      line-height: 1.5em;
      background: whitesmoke;
   }
+  #main_menu{
+    width: 100%; 
+    position: relative;
+    /*position: fixed;*/             
+                    
+}
  .inner_main_menu {
     margin: 0 auto;
      width: 1170px;
@@ -81,6 +87,15 @@ body{
      padding: 10px 20px;
      color: #999;
      display: inline-block;
+
+
+
+     float: left;
+      
+    
+    
+      
+
     }    
 .inner_main_menu ul li a:hover{
     color: #262626;
@@ -182,11 +197,7 @@ ul.slicknav_nav {
 .slicknav_btn {
                         top: 35px;
                     }
-#main_menu{
-                        width: 100%; 
-                        position: relative;
-                        /*position: fixed;*/
-}
+
 .logo_area{
                         width: 130px;
                         height: 140px; 
@@ -535,6 +546,15 @@ p{
 
 
 
+#main_menu.sticky{
+    padding: 5px 100px;
+    background-color: #5B9D4F;
+}
+
+
+
+
+
  @media only screen and (min-width: 200px) and (max-width: 767px) { 
           .slicknav_menu{
               display: block;
@@ -569,19 +589,19 @@ p{
     <body>
         <div id="main_menu">
             <div class="logo_area">
-                <a href=""><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+                <a href="{% url 'project:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
             </div>
             <div class="inner_main_menu">
                 <ul id="menu">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">our  team</a></li>
-                    <li> <a href="">property s</a> </li>
+                    <li><a href="{% url 'project:home' %}">Home</a></li>
+                    <li><a href="{% url 'project:our_team' %}">our  team</a></li>
+                    <li> <a href="{% url 'project:property' %}">property s</a> </li>
                        
-                    <li><a href="">property  management</a></li>
-                    <li><a href="">marketing</a></li>
+                    <li><a href="{% url 'project:management' %}">property  management</a></li>
+                    <li><a href="{% url 'project:marketing' %}">marketing</a></li>
 
-                    <li><a href="">testimonials</a></li>
-                    <li><a href="">contact  us</a></li>
+                    <li><a href="{% url 'project:testimonial' %}">testimonials</a></li>
+                    <li><a href="{% url 'project:contactus' %}">contact  us</a></li>
                     
             </div>
         </div>
@@ -829,6 +849,19 @@ p{
     </div>   
 </section>
 
+
+
+ 
+    
+
+
+
+
+
+
+
+
+
   {% include 'footer.html' %}
         
 
@@ -854,6 +887,11 @@ p{
         $(document).ready(function(){
             $('#menu').slicknav();
         });
+
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("#main_menu");
+            header.classList.toggle("sticky",window.scrollY > 0);
+        })
     </script>
     </body>
 </html>
