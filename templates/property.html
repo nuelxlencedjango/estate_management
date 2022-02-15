@@ -1,1 +1,35 @@
-<h3>property page here</h3>
+<form action="" method="POST">
+    {% csrf_token %}
+    min salary: <input type="text" name="min-price">
+    max salary: <input type="text" name="max-price">
+
+    bedroom: <input type="text" name="bedroom">
+    bathroom: <input type="text" name="bathroom">
+   <input type="submit" value="submit">
+</form>
+
+
+<table border="1">
+    <tr>
+        <th>property id</th>
+        <th> type</th>
+        <th>price</th>
+        <th>bedroom</th>
+        <th>bathroom</th>
+    </tr>
+
+    {% for result in resultobj %}
+    <tr>
+        <td>{{result.id}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.price}}</td>
+        <td>{{result.bedroom}}</td>
+        <th>{{result.bathroom}}</th>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<p>10 <sub>2</sub></p>
+<p>10 <sup>2</sup></p>
+<hr>

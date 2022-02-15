@@ -14,7 +14,19 @@ urlpatterns =[
     path('management/',views.management, name='management'),
     path('marketing/',views.marketing, name='marketing'),
     path('testimonial/',views.testimonial, name='testimonial'),
-    path('contactus/',views.contact_us, name='contactus')
+    path('contactus/',views.contact_us, name='contactus'),
+
+
+    path('search/',views.searchStudentInfo,name='search'),
+    path('employee/', views.employeeSalary, name='employee'),
+
+
+    
+    path('property_search/' ,views.availableProperty,name='property_search'),
+
+
+
+    #path('property_info/',views.,name='property_info/'),
 
     
 ]

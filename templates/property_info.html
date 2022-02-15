@@ -1,0 +1,57 @@
+<div class="container">
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+ <div class="">
+    <select name="property" style="width: 600px; height: 50px; border: white;">
+        <option  data-count="2" value="Alfa Romeo" style="background-color: chartreuse; color: crimson;" >All</option>
+        <option data-count="23" value="residential">Residential</option>
+        <option data-count="433" value="commercial">Commercial</option>
+        <option data-count="45" value="land">Land</option>
+        <option data-count="476" value="multi family">Multi-Family</option>
+        <option data-count="78" value="rent">Rental</option>
+      
+    </select>
+ </div>
+ <div class="choose">
+
+    min price: <input type="text" name="min-price">
+    max price: <input type="text" name="max-price">
+
+    bedroom: <input type="text" name="bedroom">
+    bathroom: <input type="text" name="bathroom">
+   <input type="submit" value="submit">
+ </div>
+</form>
+
+
+
+<table border="1">
+    <tr>
+        <th>property id</th>
+        <th> type</th>
+        <th>price</th>
+        <th>bedroom</th>
+        <th>bathroom</th>
+    </tr>
+
+    {% for result in resultobj %}
+    <tr>
+        <td>{{result.id}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.price}}</td>
+        <td>{{result.bedroom}}</td>
+        <th>{{result.bathroom}}</th>
+    </tr>
+    {% endfor %}
+
+</table>
+</div>
+
+<p>10 <sub>2</sub></p>
+<p>10 <sup>2</sup></p>
+<hr>
+
+
+
