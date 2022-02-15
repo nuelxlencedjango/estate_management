@@ -18,7 +18,11 @@ class Property(models.Model):
         return self.name 
 
     class Meta:
-        db_table='Property'      
+        db_table='Property' 
+
+    
+    class Meta:
+      verbose_name_plural='Property'         
 
 
 
