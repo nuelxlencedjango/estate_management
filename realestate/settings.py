@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 DATABASES = {
       'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  'd4b7bvamnds0ui',
-        'HOST' :'ec2-54-236-156-167.compute-1.amazonaws.com',
+        'NAME':  'dcg06re3r9jei6',
+        'HOST' :'ec2-54-81-126-150.compute-1.amazonaws.com',
         'PORT':5432,
-        'USER' :'hekelxxczxyzpv',
-        'PASSWORD' :'de3342337563b492fdab4d659fe7e45c95f7f7e407179a0a3a04d0bd2874d8f4',
+        'USER' :'pqsaajxhdarxna',
+        'PASSWORD' :'5903bf57054c84cd8f938b5613cb461aba4ed43660be01caab3161d2ce93d8c9',
 
     }
 }
