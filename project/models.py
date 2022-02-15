@@ -14,15 +14,19 @@ class Property(models.Model):
     bedroom = models.IntegerField(default=1)
     bathroom =models.IntegerField(default=1)
 
+
+
+    class Meta:
+        
+        verbose_name_plural='Property'
+
     def __str__(self):
         return self.name 
 
     class Meta:
         db_table='Property' 
 
-    
-    class Meta:
-      verbose_name_plural='Property'         
+             
 
 
 
