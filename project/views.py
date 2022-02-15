@@ -59,8 +59,9 @@ def availableProperty(request):
         maxpay =request.POST.get('max-price')
 
         #resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from Property where price between "'+name+'"  and "'+minpay+'" and "'+maxpay+'" and "'+bed+'" and "'+bath+'" ' )
-        resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from Property where price between "'+minpay+'" and "'+maxpay+'" and "'+bed+'" and "'+bath+'"+"'+name+'" ' )
-        
+        resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from accomodation where price between "'+minpay+'" and "'+maxpay+'" and "'+bed+'" and "'+bath+'"+"'+name+'" ' )
+        #resultobj =EmpModel.objects.raw('select empid,empname,email,salary from employee where salary between "'+minpay+'" and "'+maxpay+'"')
+      
         context ={
             'resultobj':resultobj
         }
