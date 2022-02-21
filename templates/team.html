@@ -1,1 +1,233 @@
-<h3>our team page here</h3>
+{% extends 'index.html' %}
+ {% load static %}
+{% block content %}
+
+
+<style>
+    .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+    .footer-section{
+        margin-top: 100px;
+    }
+
+    .expert{
+    margin-top: 30px;
+  
+
+font-family: "Roboto", sans-serif;
+background-image: url('/static/images/background/background_paid.jpeg');
+background-repeat: no-repeat;
+
+
+background-position: center; 
+
+background-size: cover;
+
+
+height: 200px;
+
+}
+.team-body-side{
+    padding-top: 40px;
+    text-align: center;
+    
+}
+.team-body-side h1 b{
+    padding-top: 100%;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin-left: 30px;
+    margin-right: 30px;
+    
+}
+.team-knowledge p{
+    color: #000;
+   font-size: 22px;
+   padding-left:  100px;
+
+
+}
+.row-cols-md-3{
+    margin-top: 50px;
+    border: none;
+}
+.card{
+    align-items: center;
+    width: 300px;
+    margin-right: 20px;
+    border: none;
+    
+}
+.card img{
+    width: 300px;
+    align-items: center;
+    transform: scale(1);
+    transition:  0.5s ease-in-out;
+  
+}
+.card-img-top:hover{
+    transform: scale(0.5);
+    
+}
+.card-title{
+    font-size: 18px;
+    line-height: 20px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    color: #0a0a0a;
+
+}
+.card-body h2{
+    font-family: Montserrat;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
+    color: #0a0a0a;
+}
+a{
+    text-decoration: none;
+}
+.card-body p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #0a0a0a;
+}
+.text{
+    margin-top: 50px;
+    background-color: #000;
+}
+.text p{
+    color: #fff;
+  
+    padding-top: 30px;
+    margin-left: 30px;
+    margin-right: 10px;
+
+    font-family: Montserrat;
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 500;
+    font-style: italic;
+
+}
+.purchasing{
+    margin-top: 30px;
+}
+.purchasing p{
+    color: #0a0a0a;
+    font-family: sans-serif;
+}
+</style>
+
+
+<div class="expert">
+
+<div class="teamp">
+    <div class="team-body-side">
+
+        <h1><b>The right team of experts by your side is everything</b>.</h1>
+    </div>
+    <div class="team-knowledge">
+        <p>+ Our team is comprised of insanely knowledgeable agents who are dedicated to your success:</p>
+    </div>
+</div>
+</div>
+
+
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <a href="">
+        <div class="col">
+          <div class="card">
+            <img src="/static/images/pic/woman2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Broker/Owner</h5>
+              <h2>Christie Larson</h2>
+              <p class="card-text">With over 22 years of experience in the industry, Christie is your local real estate expert of the Permian Basin..</p>
+            </div>
+          </div>
+        </div>
+        </a>
+        <div class="col">
+          <div class="card">
+            <img src="/static/images/pic/woman3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Real Estate Agent</h5>
+              <h2>Camille Adamson</h2>
+              <p class="card-text">Camille is very familiar with the Midland area and market, so if you are looking to buy or sell Midland real estate, you can't go wrong with her in your corner.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/static/images/pic/woman4.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Real Estate Agent</h5>
+              <h2>Earl "Hoppy" Bedell</h2>
+              <p class="card-text">With a passion for helping his clients reach their goals and his well-rounded knowledge in the industry, you can't go wrong with Hoppy at your sid</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/static/images/pic/woman5.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Real Estate Agent</h5>
+              <h2>LaDonna Burchett</h2>
+              <p class="card-text">LaDonna's number one priority is the success of her clients, and she is always ready to get to work on your behalf.</p>
+              <i class="far fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="text">
+        <p>We believe that every client at every price point deserves the same level of service and marketing. This is the team that delivers on that promise.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 ">
+            <div class="video-wrap">
+                <div class="video">
+                    <div class="video__thumbn">
+                        <video width="700" height="400" controls>
+                            <source src="{% static 'video/video3.mp4' %}" type=video/mp4></video>
+                    
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+        <div class="col-md-4 purchasing">
+            <div class="info">
+                <p>+ Our expert team is made up of elite real estate professionals who know the Permian Basin market inside and out. Broker and Owner, Christie Larson, is a life-long Permian Basin native who’s extensive experience shines within the industry. With this type of in-depth knowledge, our team of highly-trained experts can help guide you through the buying or selling process like no other team can.</p>
+              <p>+ Purchasing a home is one of the largest investments that you can make in your lifetime. We will help you find the perfect home that checks all of your boxes. If you are ready to sell your home or would like to know how much your property is worth in today’s crazy market, we are the team of experts to call for assistance. There is always an agent on standby ready to assist you. We love what we do, and we are good at it too.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from numpy import product
 
 # Register your models here.
 
@@ -17,3 +18,11 @@ admin.site.register(StudentInfo)
 admin.site.register(Department)
 admin.site.register(Property)
 admin.site.register(EmpModel)
+
+
+
+admin.site.register(Product)
+admin.site.register(ProductAttribute)
+admin.site.register(Category)
+admin.site.register(Size)
+
