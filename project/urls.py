@@ -26,7 +26,7 @@ urlpatterns =[
 
 
 
-    #path('property_info/',views.,name='property_info/'),
+    path('services/',views.services,name='services'),
 
     
 ]

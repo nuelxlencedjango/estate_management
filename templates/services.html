@@ -1,0 +1,246 @@
+{% extends 'index.html' %}
+ {% load static %}
+{% block content %}
+
+
+
+<style>
+    .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+    .services{
+        background-color: black;
+    }
+    .services h2{
+        color: #fff;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        height: 70px;
+        margin-top: 20px;
+        /*padding-top: 40px;*/
+        
+    }
+    .prop{
+        background-color: #fff;
+
+    }
+    .prop h4{
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        align-items: center;
+        margin-top: 30px;
+        width: 100%;
+    }
+    .card{
+       background-color: aqua;
+       border: none;
+       margin-top: 30px;
+    }
+    .card h2{
+        text-align: left;
+        font-size: 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+        
+
+    }
+    .card p{
+        margin: 20px 20px;
+        font-size: 22px;
+        margin-top: 30px;
+    }
+    .state-transaction{
+        margin-top: 30px;
+        text-align: center;
+      
+    }
+    .estate-transaction h3{
+        text-align: center;
+        font-size: 18px;
+        
+
+    }
+    .bottom{
+        margin-top: 60px;
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    .location{
+        margin-top: 40px;
+    }
+    .location p{
+        margin-top: 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+
+
+
+
+<div class="cont">
+    <div class="services">
+        <h2>Our Services To You</h2>
+    </div>
+    <div class="prop">
+        <h4>Residential, Commercial, Land, Farm + Ranch… we’ve got you covered.</h4>
+    </div>
+
+</div>
+
+
+
+
+
+
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="card">
+                  <h2>Residential</h2>
+                  <p>Whether you are searching for your dream home, looking to sell your current home, or both, we have all the skills and know-how necessary to bring your real estate dreams to life. We will do everything we possibly can to ensure you a smooth and stress-free transaction</p>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+                <h2>Commercial</h2>
+                <p>Got business goals? Let’s make it happen! We can help you find the perfect commercial property to suit all of your business needs. The same goes for our sellers. Our agents are experienced in commercial real estate and will get the job done when it comes to the sale of your property.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <h2>Land, Farm, Ranch + Equestrian Realty</h2>
+                <p>Our team is well prepared to handle and all land, farm and ranch transactions for both buyers and sellers. If you are looking for something specific, give us a call. We would love to give you a tour of currently listed properties and assist you further!</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <h2>New Construction</h2>
+                <p>Thinking of building your next home? We have many builders that we partner with to create fully-customized homes for our clients in their desired location and tailored to their every need. If this is something you would like to get additional info on, please give us a call. Any of our agents would be elated to schedule a consultation with you.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <h2>Property Management</h2>
+                <p>Need assistance in handling the business-related tasks for your properties? You’re in luck! We have an in-office property management specialist, Jerwyn Massey, who can handle all of that for you. She is super savvy in the laws and regulations, stays on top of the management of tenants, maintenance requests and repairs, rent payments and so much more. Click the Property Management tab for more info!</p>
+            </div>
+
+          
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <h2> BPOs + CMAs</h2>
+                <p>A BPO (broker price opinion) is a compilation of information about a property as well as the opinion of a real estate agent as to the value of said property. Many times, a BPO will include information about the home, such as the number of bedrooms and bathrooms, the square footage, the acreage and more.</p>
+
+                   <p> A CMA (comparative market analysis) is similar to a BPO in that it provides an estimated value of the property. However, a CMA is much more focused on comparable properties and estimating a value based on properties that have sold recently.</p>
+            </div>
+
+           
+        </div>
+      </div>
+  </div>
+
+
+
+  <div class="cont">
+    <div class="services">
+        <h2>Why Hire Us?</h2>
+    </div>
+</div>  
+
+
+<div class="container">
+    <div class="estate-transaction">
+        <p>Real Estate transactions are complicated. If you’re not sure of what you’re doing, you can lose money or wind up in court. Even when things are going well, making decisions with so much on the line can be stressful. This is why having one of our insanely knowledgeable agents at your side is such a smart move.</p>
+
+        <h3>Here’s how we give the best representation in West Texas:</h3>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <h2>An Expert Guide</h2>
+                <p>Understandably so, you probably don’t have a lot of experience with the ins and outs of real estate. That’s okay, that’s why we are here! The industry can be tricky to navigate, especially alone, but our incredibly knowledgeable agents have the education and experience to back up their decisions. Buying or Selling a home usually requires dozens of forms, reports, disclosures and other technical documents. We will help you prepare the best deal and avoid delays or costly mistakes.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+              <h2>Objective Info + Opinions</h2>
+              <p>Our agents can provide local information on utilities, zoning, schools, and so much more. They also have objective information about each property. We can use that data to help you determine if the property has what you need. A home is so much more than four walls and a roof. For most people, property represents the biggest purchase they’ll ever make. Having a concerned, but objective, third party helps you stay focused on the issues most important to you.</p>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+              <h2>Property Marketing Power</h2>
+              <p>Even though our property marketing and advertising is top notch, properties don’t sell due to just advertising alone. A large share of real estate sales come as the result of a agent’s contacts with previous clients, friends and family. We have deep roots here. Furthermore, when a property is marketed by us, you do not have to allow strangers into your home. We will generally prescreen and accompany qualified prospects through your property. One less hassle for you to deal with.</p>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+              <h2>Negotiation Knowledge</h2>
+              <p>If you don’t fancy yourself as a master negotiator, don’t stress. When negotiating contracts and offers it is crucial to have an agent, especially one of our caliber, at your side. Our team members are experts in the art of negotiating and can ensure that you are getting the most out of the deal. There are many factors up for discussion in a real estate transaction, and it is very possible you could be in a multiple-offer situation. Our team will look at every angle from your perspective, coordinate all negotiations and work tirelessly for you on your behalf.</p>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+              <h2>Up-To-Date Experience</h2>
+              <p>The majority of people buy or sell only a few homes in their lifetime, usually with quite a few years between each sale. Even if you’ve done it alone before, laws and regulations change constantly. Our agents handle hundreds of transactions over the course of their careers, and we are always staying informed and educated. On top of that, we are also backed by an amazing broker, Christie Larson, with over 22 years in the industry and hundreds of transactions completed by her individually. Rest assured, you’re in the best of hands with our team.</p>
+          </div>
+
+        
+      </div>
+
+      <div class="col-md-4">
+          <div class="card">
+              <h2>Ethical Treatment</h2>
+              <p>Every agent at C. Larson Real Estate are members of the National Association of Realtors. As such, we must adhere to a very strict code of ethics, and we eagerly do so. This code is based on professionalism and protection of the public. As our client, you can expect the utmost respect and honesty, and the ethical treatment in any and all transaction-related matters. Our experts take all aspects of the transaction very seriously and will, without a doubt, have your best interest in mind. This can be a breath of fresh air during a particularly stressful process.</p>
+
+                   </div>
+
+         
+      </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="estate-transaction bottom">
+
+        <p>The bottom line is that you will receive invaluable, comprehensive, high-quality service as well as peace of mind throughout the entire process.</p>
+    </div>
+</div>
+
+
+
+<div class="cont">
+    <div class="services">
+        <h2>Proudly Serving The Permian Basin</h2>
+         </div>
+</div> 
+
+<div class="container location">
+    <div class="text">
+        <p>Locations We Serve:</p>
+        <p>Ackerly • Big Spring • Coahoma • Colorado City • Forsan • Garden City • McCamey • Midland • Rankin • Sand Springs • Snyder • Stanton + many other surrounding areas.</p>
+  
+    </div>
+</div>
+{% endblock %}  
