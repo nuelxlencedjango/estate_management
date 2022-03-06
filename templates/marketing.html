@@ -1,1 +1,447 @@
-<h3>marketing page here</h3>
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<style>
+
+    .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+    .cont{
+        background-color: rgb(238,238,238);
+    }
+    .col-md-8{
+        
+  
+        display: flex;
+    }
+    .col-sm-4{
+        margin-left: 20px;
+        border: none;
+        border-style: none;
+       
+    }
+
+
+    
+.real-estate{
+    min-height: 350px;
+  background-image: url('/static/images/background/bathroomweb.jpeg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 1.0;
+  color: transparent;
+  background-size: cover;
+  border: none;
+  border-style: none;
+
+}
+.extensive{
+    min-height: 350px;
+  background-image: url('/static/images/background/house18.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 1.0;
+  color: transparent;
+  background-size: cover;
+  border: none;
+  border-style: none;
+
+}
+.creative{
+    min-height: 350px;
+  background-image: url('/static/images/background/house13.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 1.0;
+  color: transparent;
+  background-size: cover;
+  border: none;
+  border-style: none;
+
+}
+.partner{
+    min-height: 350px;
+  background-image: url('/static/images/background/house5.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 1.0;
+  color: transparent;
+  background-size: cover;
+  border: none;
+  border-style: none;
+
+}
+.vitual{
+    min-height: 350px;
+  background-image: url('/static/images/background/house19.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 1.0;
+  color: transparent;
+  background-size: cover;
+  border: none;
+  border-style: none;
+
+}
+.reputable{
+    min-height: 350px;
+  background-image: url('/static/images/background/house9.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 1.0;
+  color: transparent;
+  background-size: cover;
+  border: none;
+  border-style: none;
+
+}
+
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+  border: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-right: 5px;
+  border: none;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  align-items: center;
+}
+
+.flip-card-front {
+  /*background-color: #bbb;
+  color: black;*/
+}
+
+.flip-card-back {
+  background-color: #7bdcb5;
+  color: white;
+  transform: rotateY(180deg);
+  
+}
+.flip-card-back p{
+    margin-top: 60px;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 18px;
+}
+
+.info{
+    margin-top: 180px;
+    color: white;
+    /*opacity: 0.8;
+    background-color: black;*/
+   
+}
+.info h3{
+    font-size: 22px;
+    color: white;
+   
+   
+   
+
+}
+
+.video-wrap{
+    align-items: center;
+}
+.meet-direector .card{ 
+    height: 500px;
+  background-image: url('/static/images/background/background_paid.jpeg');
+  background-repeat: no-repeat;
+  background-position: center; 
+ 
+  color: transparent;
+  background-size: cover;
+ 
+}
+.meet-direector  .card{
+    margin-left: 60px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+}
+.meet-direector .imgBody{
+    margin-top: 30px;
+    width: 300px;
+  margin-top: 50px;
+  align-items: center;
+  margin-left: 10px;
+  
+  margin-bottom: 30px;
+
+   
+}
+.meet-direector .imgBody img{
+    width: 100%;  
+    height: 280px; 
+}
+.imgText{
+    margin-top: 20px;
+    
+}
+.imgText h3{
+    color: #333;
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: 300;
+}
+.imgText h2{
+    color: #000;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.imgText p{
+    color: #666;
+    font-size: 20px;
+    text-align: center;
+}
+.video-example{
+    margin-top: 100px;
+    align-items: center;
+   /*margin-bottom: 50px;*/
+}
+.video-example .example p{
+    text-align: center;
+    font-size: 26px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #72d8d0;
+}
+.video-example .example .col-lg-6{
+    
+    align-items: center;
+}
+    </style>
+
+
+<section>
+    <div class="cont">
+        <div class="row all" >
+
+            <div class="col-md-8">
+                <div class="col-sm-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front real-estate">
+                           <div class="info">
+                            <i class="icon-default-style iconsmind-Home-Window" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+ 
+                            <h3>Real Estate<br>
+                               
+                                <i>photography</i></h3>
+                                <p></p>
+                           </div>
+                                    </div>
+
+                          <div class="flip-card-back">
+                            <p>We take the photography of our listings very seriously and only produce high quality images. It serves as a potential buyer’s first impression of a property, and if they like what they see, they will more than likely schedule a showing.</p>
+                          </div>
+                        </div>
+                      </div>
+
+                </div>
+                <div class="col-sm-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front extensive">
+                           <div class="info">
+                            <i class="icon-default-style iconsmind-Home-Window" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                            <h3>Extensive<br>
+                               
+                                <i>Advertising</i></h3>
+                                <p></p>
+                           </div>
+                                    </div>
+
+                          <div class="flip-card-back">
+                              <p>Our means of advertising our listings are limitless. Not only do we ensure maximum exposure to make sure your property is regularly viewed, but we also take pride in the appealing, clean and professional manner our advertisements are presented.</p>
+                              </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front creative">
+                           <div class="info">
+                            <i class="icon-default-style iconsmind-Home-Window" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                            <h3>Creative<br>
+                               
+                                <i>Marketing</i></h3>
+                                <p></p>
+                           </div>
+                                    </div>
+
+                          <div class="flip-card-back">
+                              <p>We create visually appealing graphics and videos to promote our listings. We use these to highlight the selling points of those listings, which drives interest, showings and the main goal, the sale of your property. This is one of the many things that sets us apart from the rest.</p>
+                               </div>
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+          
+         
+          
+            <div class="col-md-4 meet-direector">
+                <div class="card">
+                    <div class="imgBody">
+                        <img src="/static/images/pic/woman5.jpg" alt="">
+                        <div class="imgText">
+                            <h3>Marissa Loftin</h3>
+                            <h2>Meet Our Marketing Director</h2>
+                            <p>She works behind the scenes as she conducts the marketing of properties, real estate listing photography/videography, graphic design, advertising, our social media accounts and everything in between.</p>
+                        </div>
+
+                    </div>
+                </div>
+              
+          </div>
+
+
+          <div class="col-md-8" style="margin-top: 50px;">
+            <div class="col-sm-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front partner">
+                       <div class="info">
+                        <i class="icon-default-style iconsmind-Handshake" data-color="accent-color" style="font-size: 60px!important; line-height: 60px!important;"></i>
+                        <p></p>
+                              <h3>Adwarx<br>
+                           
+                            <i>Partners</i></h3>
+                            <p></p>
+                       </div>
+                                </div>
+
+                      <div class="flip-card-back">
+                       <p>We are proud to have Adwerx, a reputable advertising entity, as a resource when it comes to the advertising of our listings. Through this partnership, we have the means to give your property exclusive exposure to mainstream media websites and streaming channels. (ex. HGTV, FOX, ESPN etc.) Yet, another thing that sets us apart.</p>  
+                    </div>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front vitual">
+                       <div class="info">
+                        <i class="icon-default-style iconsmind-Home-Window" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                        <h3>Vitual Tours<br>
+                           
+                            <i>+ Videography</i></h3>
+                            <p></p>
+                       </div>
+                                </div>
+
+                      <div class="flip-card-back">
+                      <p>Upon request, we can record and produce a dynamic and visually appealing video walk-through of your home. This serves as an extra way to draw attention to your property and increases interest and traffic. A virtual tour can also engage potential buyers who aren’t local to our area to view your property in person.</p>   
+                    </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front reputable">
+                       <div class="info">
+                        <i class="icon-default-style iconsmind-Home-Window" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                        <h3>Reputable<br>
+                           
+                            <i>Brand</i></h3>
+                            <p></p>
+                       </div>
+                                </div>
+
+                      <div class="flip-card-back">
+                       <p>The C. Larson Real Estate name is well known within our community, one we are very honored to serve. It is our goal to present a professional and genuine brand to the public, to which we can easily be identified with just a glance. That way, when people see our material, they are immediately reminded of our impeccable representation of our clients.</p>   
+                    </div>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="container video-example">
+    <div class="example">
+        <div class="row">
+            <p>Here are a few examples of how we market our listings:</p>
+            <div class="col-lg-6">
+                <div class="video-wrap">
+                    <div class="video">
+                        <div class="video__thumbn">
+                            <video width="500" height="300" controls>
+                                <source src="{% static 'video/video4.mp4' %}" type=video/mp4 style="align-items: center;"></video>
+                        
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="video-wrap">
+                    <div class="video">
+                        <div class="video__thumbn">
+                            <video width="500" height="300" controls>
+                                <source src="{% static 'video/video5.mp4' %}" type=video/mp4 style="align-items: center;"></video>
+                        
+                        </div>
+                    </div>
+            
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,1 +1,420 @@
-<h3>management page here</h3>
+
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+    .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+    .container{
+        width: 1280px;
+        
+       margin: 70px auto 0;
+       flex-direction: row;
+       flex-wrap: wrap;
+    }
+    
+    .row{
+        /*min-height: 500px;*/
+        display: flex;
+        margin-left: 10px;
+
+    }
+  
+    
+.col-md-4{
+        min-height: 800px;
+  font-family: "Roboto", sans-serif;
+  background-image: url('/static/images/background/black_background.jpeg');
+  background-repeat: no-repeat;
+
+  background-color: #cccccc; 
+ 
+  background-position: center; 
+
+  background-size: cover;
+ 
+}
+.col-md-4 .imgBody{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    width: 100%;
+}
+.imgBody img{
+    width: 100%;
+    margin-left: 10px;
+    padding-right: 20px;
+    transform: scale(1);
+    transition:  0.5s ease-in-out;
+   
+    overflow: hidden;
+}
+
+
+
+.imgBody a{
+    text-decoration: none;
+}
+.imgBody a h3{
+    font-size: 20px;
+    font-family: fantasy;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.imgBody a h2{
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 10px;
+}
+.imgBody a p{
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: #fff;
+    opacity: 0.6;
+    margin-top: 10px;
+}
+
+/*.leasing{
+background-image: url('/static/images/background/opacity1.jpeg'); 
+background-color: rgb(112, 112, 112); 
+ min-height: 300px; 
+ height: 560px;
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 0.8;
+  background-size: cover;
+}*/
+.col-lg-6 {
+  
+ 
+  margin-top: 0px;
+  border: none;
+  margin-bottom: 50px;
+ 
+  
+  }
+ 
+
+
+
+
+
+
+
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 500px;
+  perspective: 1000px;
+  border: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 330;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-right: 5px;
+  border: none;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 330px;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  align-items: center;
+}
+
+.flip-card-front {
+  /*background-color: #bbb;
+  color: black;*/
+}
+
+.flip-card-back {
+  background-color: #7bdcb5;
+  color: white;
+  transform: rotateY(180deg);
+  
+}
+.flip-card-back p{
+    margin-top: 30px;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.info{
+    margin-top: 180px;
+    color: white;
+    /*opacity: 0.8;
+    background-color: black;*/
+   
+}
+.info h3{
+    font-size: 22px;
+    color: white;
+   
+   
+   
+
+}
+
+.tenant-application{
+    min-height: 500px;
+  
+ 
+  background-image: url('/static/images/background/house12.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 0.8;
+  background-size: cover;
+
+}
+.leasing{
+    min-height: 500px;
+  
+ 
+  background-image: url('/static/images/background/house16.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 0.8;
+  background-size: cover;
+
+}
+.month{
+    min-height: 500px;
+  
+ 
+  background-image: url('/static/images/background/house10.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 0.8;
+  background-size: cover;
+}
+.market{
+    min-height: 500px;
+  
+ 
+  background-image: url('/static/images/background/house1.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 0.8;
+  background-size: cover;
+}
+section .quick{
+    background-color: #abb8c3;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 22px;
+}
+.quick p{
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    font-family: sans-serif;
+    padding-top: 40px;
+    font-size: 28px;
+}
+.video-wrap{
+    align-items: center;
+}
+.text{
+    margin-top: 10px;
+    background-color: #666;
+  
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.text h3{
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/*overflow-wrap: break-word;*/
+</style>
+
+
+
+<section>
+    <div class="text">
+        <h3>Why choose Wilmot Real Estate as your property management company?</h3>
+    </div>
+</section>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="imgBody">
+                <img src="/static/images/pic/woman5.jpg" class="card-img-top"  alt="">
+              <a href="">
+                <h3>Jerwyn Massey</h3>
+
+                <h2> Meet our Property <br> Management Specialist</h2>
+                <p>
+                    Meet our Property Management Specialist
+                    When you let Jerwyn manage your property, you can depend on her experience, expertise, professionalism and high level of customer service. She is very detail-oriented and fully prepared to handle all of the day-to-day operations that managing a property entails, which gives you additional time and freedom.</p>
+         
+              </a>   
+            </div>
+           
+        </div>
+        <div class="col-md-8 animate__animated animate__backInLeft animation-delay-0s">
+          
+             <div class="row">
+                 <div class="col-lg-6">
+                    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front tenant-application">
+                           <div class="info">
+                            <i class="icon-default-style fa fa-users" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                            <h3>Tenant<br>
+                                Application<br>
+                                <i>Process</i></h3>
+                           </div>
+                                    </div>
+
+                          <div class="flip-card-back">
+                            <p>We use the Texas Association of Realtors lease and other related forms when available. During the lease term, your property management specialist will do annual inspections of your property, keep track of lease violations, renewals, and handle maintenance issues as they arise. We collect all rent and fees and manage those funds for you.</p>
+          
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+
+
+
+                 <div class="col-lg-6">
+                
+                    
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front leasing">
+                            <div class="info">
+                                <i class="icon-default-style fa fa-folder-open" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                                <h3>leasing<br>
+                                    
+                                    <i>information</i></h3>
+                               </div>
+
+                                </div>
+                        <div class="flip-card-back">
+                        
+                          <p>We use the Texas Association of Realtors lease and other related forms when available. During the lease term, your property management specialist will do annual inspections of your property, keep track of lease violations, renewals, and handle maintenance issues as they arise. We collect all rent and fees and manage those funds for you.</p>
+                        </div>
+                      </div>
+                    </div>
+                 </div>
+
+
+                <div class="col-lg-6">
+    <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front month">
+
+        <div class="info">
+            <i class="icon-default-style fa fa-credit-card" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+            <h3>Monthly<br>
+                
+                <i>Accounting</i></h3>
+           </div>
+    </div>
+    <div class="flip-card-back">
+        <p>We provide a monthly accounting of funds relating to your property, and we will present your monthly rent minus our management fees and any other related expenses in a timely manner. Our property owners can access all related reports via their client portal at any given time. Should you need any assistance accessing these documents, Jerwyn is always on standby ready to provide anything you may need.</p>
+     </div>
+  </div>
+</div>
+</div>
+<div class="col-lg-6">
+    
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front market">
+      
+              <div class="info">
+                  <i class="icon-default-style fa fa-bar-chart" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                  <h3>Marketing<br>
+                      
+                      <i>Techniques</i></h3>
+                 </div>
+          </div>
+          <div class="flip-card-back">
+              <p>Ways we market your properties include but are not limited to: Multiple Listing Service (MLS), Property Management Software, and all of our social media platforms. Using the MLS places your property in front of other real estate agents who probably have clients looking for a rental opportunity. It also feeds to over 150 different search engines. Within the Property Management Software we use, your property will have a listing published to many additional platforms for even more prospects to see.</p>
+                   </div>
+        </div>
+      </div>
+</div>
+                </div>
+                
+             </div>
+          
+
+        </div>
+    </div>
+
+
+
+<section>
+    <div class="quick">
+        <p>Here’s a quick example of how we can market your rental properties:</p>
+    </div>
+</section> 
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col " >
+            <div class="video-wrap">
+                <div class="video">
+                    <div class="video__thumbn">
+                        <video width="500" height="300" controls>
+                            <source src="{% static 'video/video2.mp4' %}" type=video/mp4 style="align-items: center;"></video>
+                    
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
