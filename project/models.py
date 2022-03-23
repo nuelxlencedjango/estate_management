@@ -25,6 +25,14 @@ class Property(models.Model):
 
              
 
+class PropertyItems(models.Model):
+    name =models.CharField(max_length=200) 
+    
+    def __str__(self):
+        return self.name 
+
+    class Meta:
+        verbose_name_plural='PropertyItems'
 
 
 
@@ -256,6 +264,27 @@ class UserAddressBook(models.Model):
     class Meta:
         verbose_name_plural='AddressBook'
 
+
+
+
+
+
+
+class ContactUs(models.Model):
+
+   name = models.CharField(max_length=100) 
+   email = models.EmailField(unique = False) 
+   phone = models.CharField(max_length=20) 
+   selected_properties =models.CharField(max_length=100) 
+
+   message = models.TextField(max_length=200)
+
+
+   class Meta:
+      verbose_name_plural = "Contact Us"
+
+   def __str__(self):
+      return self.name  
     
 
 

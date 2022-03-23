@@ -1,6 +1,333 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    html,body {
+        display: grid;
+        place-items: center;
+        text-align: center;
+        background-color: #f2f2f2;
+    }
+    .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+    .text{
+        margin-top: 30px;
+        height: 150px;
+  background-image: url('/static/images/background/background_paid.jpeg');
+  background-repeat: no-repeat;
+  background-position: center; 
+ 
+  color: transparent;
+  background-size: cover;
+    }
+    .text h3{
+        text-align: center;
+        color: black;
+        font-size: 30px;
+        font-family: sans-serif;
+        margin-top: 50px;
+        padding-top: 50px;
+    }
+    
+   /* .owl-carousel, .owl-carousel .owl-item {
+     
+   -webkit-tap-highlight-color: transparent;
+    position: relative;
+    display: flex;
+}*/
+    /*.slide{
+        display: flex;
+    }*/
+    .owl-carousel .item .card{
+       
+        flex: 1;
+        margin: 10px 10px;
+        border: none;
+        height: 350px;
+    }
+    .owl-carousel .item .card .content{
+        padding: 10px 10px;
+
+    }
+    .owl-carousel .item .card .content .title{
+        font-size: 20px;
+        font-weight: 400;
+        text-align: left;
+        /*color: #e74c3c;*/
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .owl-carousel .item .card .content .sub-title{
+        margin-top: 3px;
+        font-size: 18px;
+        font-weight: 200;
+        text-align: left;
+        color: #666;
+        line-height: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    }
+    .owl-carousel .item .card .content blockquote{
+       
+        margin: 10px 0;
+        text-align: center;
+        margin-top: 40px;
+    }
+    .owl-carousel .item .imgpix{
+        width: 350px;
+        height: 400px;
+        margin-bottom: 40px;
+       
+    }
+    .owl-carousel .item .imgpix img{
+        width: 100%;
+        height: 100%;
+        
+    }
+    /*.carousel-inner{
+        display: flex;
+        overflow: hidden;
+        column-width: 300px;
+    }
+    .carousel-item{
+        display: flex;
+    }*/
+</style>
+
 
 <div class="container text">
     <div class="row">
-        <h3>Here’s what our awesome clients have to say</h3>
+        <h3>Here’s what our awesome clients have to say:</h3>
     </div>
 </div>
+
+<div class="container">
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+           
+            <div class="card">
+                <div class="content">
+                    <div class="title">Zillow User</div>
+                    <div class="sub-title">facebook</div>
+                    <blockquote> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!</blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            
+           
+            <div class="card">
+                <div class="content">
+                    <div class="title">Yusuf Danjuma</div>
+                    <div class="sub-title">@ysuf1004</div>
+                    <blockquote>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!</p>
+         
+                    </blockquote>
+                          </div>
+            </div>
+        </div>
+        <div class="item">
+           
+            <div class="card">
+                <div class="content">
+                    <div class="title">Senior man</div>
+                    <div class="sub-title">Professional footballer</div>
+                    <blockquote>
+                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!"
+         
+                    </blockquote>
+                          </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="card">
+                <div class="content">
+                    <div class="title">Eddie</div>
+                    <div class="sub-title">banglore university</div>
+                    <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!
+         
+                    </blockquote>
+                          </div>
+            </div></div>
+        <div class="item">
+            <div class="card">
+                <div class="content">
+                    <div class="title">Nuel Edward</div>
+                    <div class="sub-title">devloper</div>
+                    <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!
+         
+                    </blockquote>
+                          </div>
+            </div></div>
+        <div class="item">
+            <div class="card">
+                <div class="content">
+                    <div class="title">Fortune</div>
+                    <div class="sub-title">friend to yusuf</div>
+                    <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!
+         
+                    </blockquote>
+                          </div>
+            </div></div>
+        <div class="item">
+            <div class="card">
+                <div class="content">
+                    <div class="title">Kunle</div>
+                    <div class="sub-title">footballer</div>
+                    <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!
+         
+                    </blockquote>
+                          </div>
+            </div></div>
+        <div class="item">
+            <div class="card">
+                <div class="content">
+                    <div class="title">Timothy</div>
+                    <div class="sub-title">new hopkins student</div>
+                    <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!
+         
+                    </blockquote>
+                          </div>
+            </div></div>
+        <div class="item">
+            <div class="card">
+                <div class="content">
+                    <div class="title">Mary Yusuf</div>
+                    <div class="sub-title">iyawo somebody</div>
+                    <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!
+         
+                    </blockquote>
+                          </div>
+            </div></div>
+        <div class="item">
+            <div class="card">
+                <div class="content">
+                    <div class="title">Sofiat</div>
+                    <div class="sub-title">nurse2022</div>
+                    <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!
+         
+                    </blockquote>
+                          </div>
+            </div></div>
+        <div class="item">
+            <div class="card">
+                <div class="content">
+                    <div class="title">Tobi Fortune</div>
+                    <div class="sub-title">Maruthi college</div>
+                    <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!
+         
+                    </blockquote>
+                          </div>
+            </div></div>
+        <div class="item">
+            <div class="card">
+                <div class="content">
+                    <div class="title">Migty </div>
+                    <div class="sub-title">Port Harcout landlord</div>
+                    <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae distinctio repellat enim expedita non eligendi fuga architecto animi ex ipsa minima, perferendis cum minus provident laborum porro consequuntur aliquam iusto!
+         
+                    </blockquote>
+                          </div>
+            </div></div>
+    </div>
+</div>
+ <div class="container">
+    <div class="owl-carousel owl-theme">
+        <div class="item" >
+            <div class="imgpix">
+                <img src="/static/images/background/house1.jpg" alt="">
+            </div>
+        </div>
+        <div class="item" >
+            <div class="imgpix">
+                <img src="/static/images/pic/woman5.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/pic/woman3.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/pic/woman2.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/pic/woman1.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/background/house19.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/background/house8.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/background/house16.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/background/house5.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/background/house14.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/background/house13.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgpix">
+                <img src="/static/images/background/house12.jpg" alt="">
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+
+
+ 
+
+
+
+
+<script src="{% static 'js/owlcarousel.js' %}"></script>
+{% endblock %}
