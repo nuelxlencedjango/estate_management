@@ -25,6 +25,7 @@ class Property(models.Model):
     Location = models.CharField(max_length=200,blank=True,null=True) 
     describe =models.CharField(max_length=200,blank=True,null=True)
     img = CloudinaryField(blank=True,null=True)
+    #listing_id =models.CharField(max_length=20,null=True,blank=True,default='ID50044316 PBMLS-RETS')
 
     def __str__(self):
         return self.name 
