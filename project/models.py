@@ -1,7 +1,12 @@
+from pydoc import describe
 from django.db import models
 
 from django.utils.html import mark_safe
 from django.contrib.auth.models import User
+
+
+from cloudinary.models import CloudinaryField
+#from matplotlib.backend_bases import LocationEvent
 #from matplotlib.pyplot import title
 # Create your models here.
 
@@ -14,12 +19,18 @@ class Property(models.Model):
     price = models.IntegerField(default=1000)
     bedroom = models.IntegerField(default=1)
     bathroom =models.IntegerField(default=1)
+    status =models.CharField(max_length=200,blank=True,null=True) 
+    sqft =models.CharField(max_length=10,blank=True,null=True) 
+    acre =models.CharField(max_length=10,blank=True,null=True) 
+    Location = models.CharField(max_length=200,blank=True,null=True) 
+    describe =models.CharField(max_length=200,blank=True,null=True)
+    img = CloudinaryField(blank=True,null=True)
 
     def __str__(self):
         return self.name 
 
     class Meta:
-        db_table='accomodation' 
+       # db_table='properties' 
 
         verbose_name_plural='Property'
 

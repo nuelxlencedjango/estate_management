@@ -16,7 +16,7 @@ from .models import User
 
 admin.site.register(StudentInfo)
 admin.site.register(Department)
-admin.site.register(Property)
+
 admin.site.register(EmpModel)
 
 
@@ -33,4 +33,5 @@ admin.site.register(Category)
 admin.site.register(Size)
 admin.site.register(ContactUs,ContactUsAdmin)
 admin.site.register(PropertyItems)
+admin.site.register(Property)
 

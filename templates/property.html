@@ -1,3 +1,180 @@
+
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<style>
+
+  .want_to_buy{
+      display: none;
+  }
+  .display{
+      display: none;
+  }
+  .property-search{
+      display: none;
+  }
+  .featured{
+      display: none;
+  }
+  .cont{
+      background-color: rgb(238,238,238);
+  }
+  .col-md-8{
+      
+
+      display: flex;
+  }
+  
+  </style>
+
+<option value="">---------</option>
+{% for city in cities %}
+<option value="{{ city.pk }}">{{ city.name }}</option>
+{% endfor %}
+
+
+
+
+
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6" style="background-color: blue;">
+      <div class="card">
+        <h3>hi</h3>
+        <div class="input-group">
+          <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        
+        </div>
+        <div class="input-group">
+          <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        
+        </div>
+        <!--- India states -->
+<select id="country-state" name="country-state">
+  <option value="AN">Andaman and Nicobar Islands</option>
+  <option value="AP">Andhra Pradesh</option>
+  <option value="AR">Arunachal Pradesh</option>
+  <option value="AS">Assam</option>
+  <option value="BR">Bihar</option>
+  <option value="CH">Chandigarh</option>
+  <option value="CT">Chhattisgarh</option>
+  <option value="DN">Dadra and Nagar Haveli</option>
+  <option value="DD">Daman and Diu</option>
+  <option value="DL">Delhi</option>
+  <option value="GA">Goa</option>
+  <option value="GJ">Gujarat</option>
+  <option value="HR">Haryana</option>
+  <option value="HP">Himachal Pradesh</option>
+  <option value="JK">Jammu and Kashmir</option>
+  <option value="JH">Jharkhand</option>
+  <option value="KA">Karnataka</option>
+  <option value="KL">Kerala</option>
+  <option value="LA">Ladakh</option>
+  <option value="LD">Lakshadweep</option>
+  <option value="MP">Madhya Pradesh</option>
+  <option value="MH">Maharashtra</option>
+  <option value="MN">Manipur</option>
+  <option value="ML">Meghalaya</option>
+  <option value="MZ">Mizoram</option>
+  <option value="NL">Nagaland</option>
+  <option value="OR">Odisha</option>
+  <option value="PY">Puducherry</option>
+  <option value="PB">Punjab</option>
+  <option value="RJ">Rajasthan</option>
+  <option value="SK">Sikkim</option>
+  <option value="TN">Tamil Nadu</option>
+  <option value="TG">Telangana</option>
+  <option value="TR">Tripura</option>
+  <option value="UP">Uttar Pradesh</option>
+  <option value="UT">Uttarakhand</option>
+  <option value="WB">West Bengal</option>
+</select>
+      </div>
+      </div>
+      <div class="col-lg-6" style="background-color: rebeccapurple;">
+        <h1>who dey?</h1>
+        <div class="input-group">
+          <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<h1>hellooooooooooooooo</h1>
+
+<div class="container" style="background-color: goldenrod;">
+  <h1>hii</h1>
+<section style="background-color: aqua;">
+  <div class="col-ms-6">
+    <h3>hiii</h3>
+  </div>
+  <div class="col-ms-6">
+    <h1>fiiii</h1>
+  </div>
+
+</section>
+</div>
+
+<div class="">
+ 
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div> 
+</div>
+
+
+
+
+  <div class="dropdown">
+
+    <button class="dropbtn">Dropdown
+      <i class="fa fa-caret-down"></i>
+    </button>
+    
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <form action="" method="POST">
     {% csrf_token %}
     min salary: <input type="text" name="min-price">
@@ -221,3 +398,12 @@
 </div>
 </div>
 </div>
+
+
+<section>
+  <div class="container">
+    <div class="row" style="background: yellowgreen">
+    </div>
+  </div>
+</section>
+{% endblock %}

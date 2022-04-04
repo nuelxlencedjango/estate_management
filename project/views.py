@@ -50,24 +50,33 @@ def employeeSalary(request):
     
 
 def availableProperty(request):
+
     if request.method =="POST":
         name =request.POST.get('property')
 
-        bed =request.POST.get('bedroom')
-        bath=request.POST.get('bathroom')
+       # bed =request.POST.get('bedroom')
+        #bath=request.POST.get('bathroom')
 
-        minpay =request.POST.get('min-price')
-        maxpay =request.POST.get('max-price')
+        minpay =int(request.POST.get('min-price'))
+        maxpay =int(request.POST.get('max-price'))
 
         #resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from Property where price between "'+name+'"  and "'+minpay+'" and "'+maxpay+'" and "'+bed+'" and "'+bath+'" ' )
-        resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from accomodation where price between "'+minpay+'" and "'+maxpay+'" and "'+bed+'" and "'+bath+'" | "'+name+'" ' )
+        #resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from accomodation where price between "'+minpay+'" and "'+maxpay+'"  ' )
         #resultobj =EmpModel.objects.raw('select empid,empname,email,salary from employee where salary between "'+minpay+'" and "'+maxpay+'"')
-      
-        context ={
-            'resultobj':resultobj
-        }
-        return render(request,'property_info.html',context)
+        if name == 'all':
+            resultobj= Property.objects.filter(price__range=(minpay, maxpay))
+
+            context ={ 'resultobj':resultobj}
+            return render(request,'property_info.html',context)
+        
+        else:
+
+            resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)
+
+            context ={ 'resultobj':resultobj}
+            return render(request,'property_info.html',context)
     
+
     else:
         resultobj =Property.objects.all()
         context ={
