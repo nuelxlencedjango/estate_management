@@ -68,7 +68,7 @@ class EmpModel(models.Model):
         return self.empname
 
     class Meta:
-        db_table='employee'    
+        db_table='employees'    
 
 
 
