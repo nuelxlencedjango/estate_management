@@ -593,20 +593,20 @@ p{
     <body>
         <div id="main_menu">
             <div class="logo_area">
-                <a href="{% url 'project:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+                <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
             </div>
             <div class="inner_main_menu">
                 <ul id="menu">
-                    <li><a href="{% url 'project:home' %}">Home</a></li>
-                    <li><a href="{% url 'project:our_team' %}">our  team</a></li>
-                    <li> <a href="{% url 'project:property' %}">property s</a> </li>
-                    <li><a href="{% url 'project:services' %}">our services</a></li>
+                    <li><a href="{% url 'product:home' %}">Home</a></li>
+                    <li><a href="{% url 'product:our_team' %}">our  team</a></li>
+                    <li> <a href="{% url 'product:property' %}">property s</a> </li>
+                    <li><a href="{% url 'product:services' %}">our services</a></li>
                        
-                    <li><a href="{% url 'project:management' %}">property  management</a></li>
-                    <li><a href="{% url 'project:marketing' %}">marketing</a></li>
+                    <li><a href="{% url 'product:management' %}">property  management</a></li>
+                    <li><a href="{% url 'product:marketing' %}">marketing</a></li>
 
-                    <li><a href="{% url 'project:testimonial' %}">testimonials</a></li>
-                    <li><a href="{% url 'project:contactus' %}">contact  us</a></li>
+                    <li><a href="{% url 'product:testimonial' %}">testimonials</a></li>
+                    <li><a href="{% url 'product:contactus' %}">contact  us</a></li>
                     
             </div>
         </div>
@@ -742,7 +742,7 @@ p{
 <div class=" property-search" style="align-items: center; text-align: center;">
     <div class="form-container" >
         <h2>Search for any property below:</h2>
-     <form id="make_checkbox_select" method="POST" action="{% url 'project:property_search' %}">
+     <form id="make_checkbox_select" method="POST" action="{% url 'product:property_search' %}">
          {% csrf_token %}
          <h4>property type</h4>
          <select name="property" style="width: 600px; height: 50px; border: white;">
