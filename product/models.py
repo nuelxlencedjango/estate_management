@@ -15,7 +15,7 @@ from cloudinary.models import CloudinaryField
 
 
 class Property(models.Model):
-    name =models.CharField(max_length=200) 
+    name =models.CharField(max_length=200)
     price = models.IntegerField(default=1000)
     bedroom = models.IntegerField(default=1)
     bathroom =models.IntegerField(default=1)
