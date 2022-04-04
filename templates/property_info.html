@@ -87,6 +87,7 @@
     
         <h1 class="search-result">Search result</h1>
     
+       {% for result in resultobj %} 
     <div class="flex-container">
        
       <div>
@@ -95,22 +96,24 @@
             
             <a href="">
             <div class="card-image ">
-                <img src="/static/images/background/house12.jpg" alt="">
+                <img src="{{ result.img.url }}" alt="">
             </div>
             </a>
         </div>
       </div>
       <div>
           <div class="property-information">
-              <div class="property-address">
-                  <h2>5701 E Midway Rd, Big Spring, TX 79720</h2>
-              </div>
+             <a href="">
+                <div class="property-address">
+                    <h2>{{result.location }}</h2>
+                </div>
+             </a>
               <div class="property-information">
-                  <h3>Price:<span>$399,000$13Ks</span></h3>
-                  <h3>bedroom:4</h3>
-                  <h3>bathroom:4</h3>
-                  <h3>Sqrl:2573</h3>
-                  <h3>Acres:1050</h3>
+                  <h3>Price:<span>${{result.location }}</span></h3>
+                  <h3>bedroom:{{result.bedroom }}</h3>
+                  <h3>bathroom:{{result.bathroom }}</h3>
+                  <h3>Sqrl:{{result.sqrl }}</h3>
+                  <h3>Acres:{{result.acre}}</h3>
                   <h3>SubdivisionSee Legal Description Below.</h3>
                  
               </div>
@@ -121,8 +124,8 @@
             PBMLS-RETS</h3>
       </div>  
     </div>
-    <h3 class="description"> Check out this 4 bed, 3 bath ranch style SHOWPLACE! This home is a complete remodel with no inch left untouched. Situated on a corner lot with over an acre of land, large shop, workshop and 3 car.</h3>
-    
+    <h3 class="description"> {{result.description }}</h3>
+    {% endfor %}
     
     <div class="btn-group" role="group" aria-label="Basic outlined example">
         <button type="button" class="btn btn-outline-primary">Left</button>
