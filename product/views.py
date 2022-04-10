@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+from django.core.paginator import Paginator
 from .models import *
 from .filters import FilterStudentInfo
 
@@ -60,19 +61,23 @@ def availableProperty(request):
         minpay =int(request.POST.get('min-price'))
         maxpay =int(request.POST.get('max-price'))
 
+
         #resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from Property where price between "'+name+'"  and "'+minpay+'" and "'+maxpay+'" and "'+bed+'" and "'+bath+'" ' )
         #resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from accomodation where price between "'+minpay+'" and "'+maxpay+'"  ' )
         #resultobj =EmpModel.objects.raw('select empid,empname,email,salary from employee where salary between "'+minpay+'" and "'+maxpay+'"')
         if name == 'all':
-            resultobj= Property.objects.filter(price__range=(minpay, maxpay))
+            result= Property.objects.filter(price__range=(minpay, maxpay))
+            resultobj = Paginator(result, 10)
+            
 
             context ={ 'resultobj':resultobj}
             return render(request,'property_info.html',context)
         
         else:
 
-            resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)
-
+            result= Property.objects.filter(price__range=(minpay, maxpay),name=name)
+            resultobj = Paginator(result, 10)
+            
             context ={ 'resultobj':resultobj}
             return render(request,'property_info.html',context)
     
