@@ -72,7 +72,7 @@ def availableProperty(request):
         maxpay =int(request.POST.get('max-price'))
 
         user_list = Property.objects.filter(price__range=(minpay, maxpay))
-        page = request.GET.get('page', 1)
+        page = request.GET.get('page')
 
         paginator = Paginator(user_list, 10)
         try:
