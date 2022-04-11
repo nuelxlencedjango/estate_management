@@ -73,10 +73,19 @@ class AvailableProperties(ListView):
 
    
 def availableProperty(request):
-    items = Property.objects.all()
-    p = Paginator(items,7)
-    number = request.GET.get('page')
-    resultobj = p.get_page(number)
+    name =request.POST.get('property')
+    minpay =int(request.POST.get('min-price'))
+    maxpay =int(request.POST.get('max-price'))
+
+    
+    if name == 'all':
+        result= Property.objects.filter(price__range=(minpay, maxpay)).order_by('-price')
+
+
+        #items = Property.objects.all()
+        p = Paginator(result,5)
+        number = request.GET.get('page')
+        resultobj = p.get_page(number)
 
 
 
