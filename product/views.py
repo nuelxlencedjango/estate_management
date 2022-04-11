@@ -88,6 +88,9 @@ def availableProperty(request):
             number = request.GET.get('page')
             resultobj = p.get_page(number)
 
+            context ={ 'resultobj':resultobj}
+            return render(request,'property_info.html',context)
+
         except PageNotAnInteger:
 
         # if page is not an integer, deliver the first page
