@@ -6,6 +6,9 @@ from django.conf import settings
 from django.core.paginator import Paginator
 from .models import *
 from .filters import FilterStudentInfo
+from django.views.generic import (
+    ListView ,DetailView, CreateView, UpdateView ,DeleteView
+)
 
 #from filters import 
 # Create your views here.
@@ -48,9 +51,16 @@ def employeeSalary(request):
     #minpay =request.POST.get('minsalary')
     #minpay =request.POST.get('minsalary')
     #empobj =EmpModel.objects.all()
-    
+class availableProperty(ListView):
+    model = Property
+    template_name = 'property_info.html'  # Default: <app_label>/<model_name>_list.html
+    context_object_name = 'resultobj'  # Default: object_list
+    paginate_by = 10
+   # queryset = User.objects.all()  # Default: Model.objects.all()
 
-def availableProperty(request):
+
+
+def availablePropertywww(request):
 
     if request.method =="POST":
         name =request.POST.get('property')
