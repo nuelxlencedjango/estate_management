@@ -24,6 +24,7 @@ class Property(models.Model):
     acre =models.CharField(max_length=10,blank=True,null=True) 
     Location = models.CharField(max_length=200,blank=True,null=True) 
     describe =models.CharField(max_length=200,blank=True,null=True)
+    #listing_id =models.CharField(max_length=200,blank=True,null=True)
     img = CloudinaryField(blank=True,null=True)
 
     def __str__(self):
