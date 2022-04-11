@@ -103,8 +103,8 @@ def availablePropertylp(request):
        # bed =request.POST.get('bedroom')
         #bath=request.POST.get('bathroom')
 
-        minpay =int(request.POST.get('min-price'))
-        maxpay =int(request.POST.get('max-price'))
+        minpay =request.POST.get('min-price')
+        maxpay =request.POST.get('max-price')
 
 
         if name == 'all':
