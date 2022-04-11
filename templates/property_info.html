@@ -173,7 +173,7 @@
         <li><a href="?page={{ i }}">{{ i }}</a></li>
       {% endif %}
     {% endfor %}
-    {% if object_list.has_next %}
+    {% if resultobj.has_next %}
       <li><a href="?page={{ resultobj.next_page_number }}">&raquo;</a></li>
     {% else %}
       <li class="disabled"><span>&raquo;</span></li>
