@@ -167,7 +167,7 @@
       <li class="disabled"><span>&laquo;</span></li>
     {% endif %}
     {% for i in resultobj.paginator.page_range %}
-      {% if object_list.number == i %}
+      {% if resultobj.number == i %}
         <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
       {% else %}
         <li><a href="?page={{ i }}">{{ i }}</a></li>
