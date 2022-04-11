@@ -68,9 +68,11 @@ def availableProperty(request):
         if name == 'all':
             result= Property.objects.filter(price__range=(minpay, maxpay))
 
-            pages = Paginator(result, 10)
+            #pagination
             page_number = request.GET.get('page')
-            resultobj = pages.get_page(page_number)
+            paginator = Paginator(result, 10)
+            
+            resultobj = paginator.page(page_number)
 
             
 
