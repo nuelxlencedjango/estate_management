@@ -62,24 +62,26 @@ def employeeSalary(request):
 
 
 
-def index(request):
-    user_list = User.objects.all()
-    page = request.GET.get('page', 1)
+class AvailableProperties(ListView):
+    model = Property # model name
+    template_name = 'property_info.html'  # template name/path
+    context_object_name ='resultobj' # context properties
+    ordering =['-price']   # arraned according date posted
 
-    paginator = Paginator(user_list, 10)
-    try:
-        users = paginator.page(page)
-    except PageNotAnInteger:
-        users = paginator.page(1)
-    except EmptyPage:
-        users = paginator.page(paginator.num_pages)
+    #pagination
+    paginate_by =10
 
-    return render(request, 'core/user_list.html', { 'users': users })
-
-
-
-
+   
 def availableProperty(request):
+    #items = Property.objects.all()
+
+
+    #context ={ 'resultobj':resultobj}
+    return render(request,'property_info.html')
+    
+
+
+def availablePropertylp(request):
 
     if request.method =="GET":
         name =request.POST.get('property')
