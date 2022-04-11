@@ -60,6 +60,8 @@ def employeeSalary(request):
 
 
 
+
+
 def availableProperty(request):
 
     if request.method =="POST":
@@ -71,20 +73,48 @@ def availableProperty(request):
         minpay =int(request.POST.get('min-price'))
         maxpay =int(request.POST.get('max-price'))
 
-        user_list = Property.objects.filter(price__range=(minpay, maxpay))
-        page = request.GET.get('page')
 
-        paginator = Paginator(user_list, 10)
-        try:
-           resultobj = paginator.page(page)
-        except PageNotAnInteger:
-            resultobj = paginator.page(1)
-        except EmptyPage:
-            resultobj = paginator.page(paginator.num_pages)
+        #resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from Property where price between "'+name+'"  and "'+minpay+'" and "'+maxpay+'" and "'+bed+'" and "'+bath+'" ' )
+        #resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from accomodation where price between "'+minpay+'" and "'+maxpay+'"  ' )
+        #resultobj =EmpModel.objects.raw('select empid,empname,email,salary from employee where salary between "'+minpay+'" and "'+maxpay+'"')
+        if name == 'all':
+            result= Property.objects.filter(price__range=(minpay, maxpay))
 
-    #return render(request, 'core/user_list.html', { 'users': users })
-   
-    return render(request, 'property_info.html', {'resultobj':resultobj})
+            #pagination
+            page_number = request.GET.get('page',1)
+            paginator = Paginator(result, 5)
+            
+            resultobj = paginator.page(page_number)
+
+            
+
+            context ={ 'resultobj':resultobj}
+            return render(request,'property_info.html',context)
+        
+        else:
+
+            result= Property.objects.filter(price__range=(minpay, maxpay),name=name)
+            page_number = request.GET.get('page',1)
+            paginator = Paginator(result, 3)
+            
+            resultobj = paginator.page(page_number)
+
+            context ={ 'resultobj':resultobj}
+            return render(request,'property_info.html',context)
+    
+
+    else:
+        resultobj =Property.objects.all()
+        page_number = request.GET.get('page',1)
+        paginator = Paginator(result, 4)
+            
+        resultobj = paginator.page(page_number)
+        context ={
+            'resultobj':resultobj
+        }
+        return render(request, 'property_info.html',context)
+
+
 
 
 
