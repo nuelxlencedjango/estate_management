@@ -161,8 +161,8 @@
 
 {% if resultobj.has_other_pages %}
   <ul class="pagination">
-    {% if object_list.has_previous %}
-      <li><a href="?page={{ oresultobj.previous_page_number }}">&laquo;</a></li>
+    {% if resultobj.has_previous %}
+      <li><a href="?page={{ resultobj.previous_page_number }}">&laquo;</a></li>
     {% else %}
       <li class="disabled"><span>&laquo;</span></li>
     {% endif %}
