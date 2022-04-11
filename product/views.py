@@ -73,11 +73,16 @@ class AvailableProperties(ListView):
 
    
 def availableProperty(request):
-    #items = Property.objects.all()
+    items = Property.objects.all()
+    p = Paginator(items,7)
+    number = request.GET.get('page')
+    resultobj = p.get_page(number)
 
 
-    #context ={ 'resultobj':resultobj}
-    return render(request,'property_info.html')
+
+
+    context ={ 'resultobj':resultobj}
+    return render(request,'property_info.html',context)
     
 
 
