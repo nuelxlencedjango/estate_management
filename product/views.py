@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from .models import *
 from .filters import FilterStudentInfo
@@ -62,6 +63,9 @@ def employeeSalary(request):
 
 
 
+
+
+
 def availableProperty(request):
 
     if request.method =="POST":
@@ -78,7 +82,7 @@ def availableProperty(request):
             result= Property.objects.filter(price__range=(minpay, maxpay)).order_by('-price')
 
             #pagination
-            page_number = request.GET.get('page',request.number)
+            page_number = request.GET.get('page')
             paginator = Paginator(result, 10)
             
             resultobj = paginator.get_page(page_number)
@@ -91,7 +95,7 @@ def availableProperty(request):
         else:
 
             result= Property.objects.filter(price__range=(minpay, maxpay),name=name).order_by('-price')
-            page_number = request.GET.get('page',request.number)
+            page_number = request.GET.get('page')
             paginator = Paginator(result, 10)
             
             resultobj = paginator.get_page(page_number)
@@ -102,7 +106,7 @@ def availableProperty(request):
 
     else:
         resultobj =Property.objects.all().order_by('-price')
-        page_number = request.GET.get('page',request.number)
+        page_number = request.GET.get('page')
         paginator = Paginator(result, 10)
             
         resultobj = paginator.get_page(page_number)
