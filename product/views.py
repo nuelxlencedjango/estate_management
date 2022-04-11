@@ -67,7 +67,11 @@ def availableProperty(request):
         #resultobj =EmpModel.objects.raw('select empid,empname,email,salary from employee where salary between "'+minpay+'" and "'+maxpay+'"')
         if name == 'all':
             result= Property.objects.filter(price__range=(minpay, maxpay))
-            resultobj = Paginator(result, 10)
+
+            pages = Paginator(result, 10)
+            page_number = request.GET.get('page')
+            resultobj = pages.get_page(page_number)
+
             
 
             context ={ 'resultobj':resultobj}
@@ -77,7 +81,7 @@ def availableProperty(request):
 
             result= Property.objects.filter(price__range=(minpay, maxpay),name=name)
             resultobj = Paginator(result, 10)
-            
+
             context ={ 'resultobj':resultobj}
             return render(request,'property_info.html',context)
     
