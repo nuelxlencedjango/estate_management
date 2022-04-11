@@ -1,10 +1,9 @@
 from pyexpat.errors import messages
-from unittest import result
 from django.shortcuts import render
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from .models import *
 from .filters import FilterStudentInfo
 from django.views.generic import (
@@ -63,22 +62,29 @@ def employeeSalary(request):
 
 def availableProperty(request):
 
-    user_list = Property.objects.all()
-    page = request.GET.get('page', 1)
+    if request.method =="POST":
+        name =request.POST.get('property')
 
-    paginator = Paginator(user_list, 10)
-    try:
-        resultobj = paginator.page(page)
-    except PageNotAnInteger:
-        resultobj = paginator.page(1)
-    except EmptyPage:
-        resultobj = paginator.page(paginator.num_pages)
+       # bed =request.POST.get('bedroom')
+        #bath=request.POST.get('bathroom')
+
+        minpay =int(request.POST.get('min-price'))
+        maxpay =int(request.POST.get('max-price'))
+
+        user_list = Property.objects.filter(price__range=(minpay, maxpay))
+        page = request.GET.get('page', 1)
+
+        paginator = Paginator(user_list, 10)
+        try:
+           resultobj = paginator.page(page)
+        except PageNotAnInteger:
+            resultobj = paginator.page(1)
+        except EmptyPage:
+            resultobj = paginator.page(paginator.num_pages)
 
     #return render(request, 'core/user_list.html', { 'users': users })
    
     return render(request, 'property_info.html', {'resultobj':resultobj})
-
-
 
 
 
