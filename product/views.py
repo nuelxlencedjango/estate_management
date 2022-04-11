@@ -95,17 +95,17 @@ def availableProperty(request):
             result= Property.objects.filter(price__range=(minpay, maxpay)).order_by('-price')
 
             #pagination
-            page_number = request.GET.get('page',1)
+            page_number = request.GET.get('page')
             paginator = Paginator(result, 10)
 
             try:
                #users = paginator.page(page)
-               resultobj = paginator.page(page_number)
+               resultobj = paginator.get_page(page_number)
             except PageNotAnInteger:
-                resultobj = paginator.page(1)
+                resultobj = paginator.get_page(1)
             except EmptyPage:
 
-                resultobj = paginator.page(paginator.num_pages)
+                resultobj = paginator.get_page(paginator.num_pages)
             
                 #resultobj = paginator.get_page(page_number)
 
@@ -117,16 +117,16 @@ def availableProperty(request):
         else:
 
             result= Property.objects.filter(price__range=(minpay, maxpay),name=name).order_by('-price')
-            page_number = request.GET.get('page',1)
+            page_number = request.GET.get('page')
             paginator = Paginator(result, 10)
 
             try:
                 resultobj = paginator.get_page(page_number)
             except PageNotAnInteger:
-                resultobj = paginator.page(1)
+                resultobj = paginator.get_page(1)
 
             except EmptyPage:
-                resultobj = paginator.page(paginator.num_pages)
+                resultobj = paginator.get_page(paginator.num_pages)
             
            
             
@@ -137,15 +137,15 @@ def availableProperty(request):
 
     else:
         resultobj =Property.objects.all().order_by('-price')
-        page_number = request.GET.get('page',1)
+        page_number = request.GET.get('page')
         paginator = Paginator(result, 10)
         try:
             resultobj = paginator.get_page(page_number)
         except PageNotAnInteger:
 
-            resultobj = paginator.page(1)
+            resultobj = paginator.get_page(1)
         except EmptyPage:
-            resultobj = paginator.page(paginator.num_pages)  
+            resultobj = paginator.get_page(paginator.num_pages)  
 
         context ={
             'resultobj':resultobj
