@@ -118,9 +118,17 @@ def availableProperty(request):
 
             result= Property.objects.filter(price__range=(minpay, maxpay),name=name).order_by('-price')
             page_number = request.GET.get('page')
-            resultobj = paginator.get_page(page_number)
-            
             paginator = Paginator(result, 10)
+
+            try:
+                resultobj = paginator.get_page(page_number)
+            except PageNotAnInteger:
+                resultobj = paginator.page(1)
+
+            except EmptyPage:
+                resultobj = paginator.page(paginator.num_pages)
+            
+           
             
 
             context ={ 'resultobj':resultobj}
@@ -131,8 +139,14 @@ def availableProperty(request):
         resultobj =Property.objects.all().order_by('-price')
         page_number = request.GET.get('page')
         paginator = Paginator(result, 10)
-            
-        resultobj = paginator.get_page(page_number)
+        try:
+            resultobj = paginator.get_page(page_number)
+        except PageNotAnInteger:
+
+            resultobj = paginator.page(1)
+        except EmptyPage:
+            resultobj = paginator.page(paginator.num_pages)  
+
         context ={
             'resultobj':resultobj
         }
