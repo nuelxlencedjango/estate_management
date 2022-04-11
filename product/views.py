@@ -81,7 +81,7 @@ def index(request):
 
 def availableProperty(request):
 
-    if request.method =="POST":
+    if request.method =="GET":
         name =request.POST.get('property')
 
        # bed =request.POST.get('bedroom')
