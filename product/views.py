@@ -82,7 +82,7 @@ def availableProperty(request):
 
             #pagination
             page_number = request.GET.get('page',1)
-            paginator = Paginator(result, 5)
+            paginator = Paginator(result, 10)
             
             resultobj = paginator.page(page_number)
 
@@ -95,7 +95,7 @@ def availableProperty(request):
 
             result= Property.objects.filter(price__range=(minpay, maxpay),name=name)
             page_number = request.GET.get('page',1)
-            paginator = Paginator(result, 3)
+            paginator = Paginator(result, 10)
             
             resultobj = paginator.page(page_number)
 
@@ -106,7 +106,7 @@ def availableProperty(request):
     else:
         resultobj =Property.objects.all()
         page_number = request.GET.get('page',1)
-        paginator = Paginator(result, 4)
+        paginator = Paginator(result, 10)
             
         resultobj = paginator.page(page_number)
         context ={
