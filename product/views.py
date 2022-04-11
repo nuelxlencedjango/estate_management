@@ -74,11 +74,8 @@ def availableProperty(request):
         maxpay =int(request.POST.get('max-price'))
 
 
-        #resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from Property where price between "'+name+'"  and "'+minpay+'" and "'+maxpay+'" and "'+bed+'" and "'+bath+'" ' )
-        #resultobj =Property.objects.raw('select id, name,price,bedroom,bathroom from accomodation where price between "'+minpay+'" and "'+maxpay+'"  ' )
-        #resultobj =EmpModel.objects.raw('select empid,empname,email,salary from employee where salary between "'+minpay+'" and "'+maxpay+'"')
         if name == 'all':
-            result= Property.objects.filter(price__range=(minpay, maxpay))
+            result= Property.objects.filter(price__range=(minpay, maxpay)).order_by('-price')
 
             #pagination
             page_number = request.GET.get('page',1)
@@ -93,7 +90,7 @@ def availableProperty(request):
         
         else:
 
-            result= Property.objects.filter(price__range=(minpay, maxpay),name=name)
+            result= Property.objects.filter(price__range=(minpay, maxpay),name=name).order_by('-price')
             page_number = request.GET.get('page',1)
             paginator = Paginator(result, 10)
             
@@ -104,7 +101,7 @@ def availableProperty(request):
     
 
     else:
-        resultobj =Property.objects.all()
+        resultobj =Property.objects.all().order_by('-price')
         page_number = request.GET.get('page',1)
         paginator = Paginator(result, 10)
             
