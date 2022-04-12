@@ -74,10 +74,7 @@ class ItemsListView(ListView):
 
 
     # getting queryset from the db
-    def get_queryset(self):
-        price = get_object_or_404(Property , price=self.kwargs.filter(price__range=('mmin-price', 'max-price'))) # getting the username ,if not ,return 404
-        return Property.objects.filter(price = price)#.order_by('-date_posted')  # arraned according date posted
-
+   
 
 
    
