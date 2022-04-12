@@ -97,10 +97,11 @@ def availableProperty(request):
 
     
     p = Paginator(result,5)
-        #number = request.GET.get('page',1) 
-    resultobj = p.get_page(request.GET.get('page'))
+    number = request.GET.get('page') 
+    resultobj = p.get_page(number)
         
-           
+        
+  
      #   try:
             #resultobj = p.page(number)
       #      resultobj = p.get_page(request.GET.get('page'))
