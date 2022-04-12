@@ -7,6 +7,7 @@ from django.conf import settings
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from .models import *
 from .filters import FilterStudentInfo
+from django.shortcuts import render ,redirect ,get_object_or_404
 from django.views.generic import (
     ListView ,DetailView, CreateView, UpdateView ,DeleteView
 )
@@ -61,15 +62,23 @@ def employeeSalary(request):
 
 
 
-
-class AvailableProperties(ListView):
+class ItemsListView(ListView):
     model = Property # model name
     template_name = 'property_info.html'  # template name/path
     context_object_name ='resultobj' # context properties
-    ordering =['-price']   # arraned according date posted
+    #ordering =['-date_posted']   # arraned according date posted
 
     #pagination
-    paginate_by =10
+    paginate_by =5
+
+
+
+    # getting queryset from the db
+    def get_queryset(self):
+        price = get_object_or_404(Property , price=self.kwargs.filter(price__range=('mmin-price', 'max-price'))) # getting the username ,if not ,return 404
+        return Property.objects.filter(price = price)#.order_by('-date_posted')  # arraned according date posted
+
+
 
    
 def availableProperty(request):
