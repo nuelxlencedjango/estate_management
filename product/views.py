@@ -83,9 +83,9 @@ def product_list_view(request):
 def availableProperty(request):
     #if request.method =="POST":
 
-    name =request.POST.get('property')
-    minpay =request.POST.get('min-price')
-    maxpay =request.POST.get('max-price')
+    name =request.GET.get('property')
+    minpay =request.GET.get('min-price')
+    maxpay =request.GET.get('max-price')
 
     if name == 'all':
         result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
@@ -96,7 +96,7 @@ def availableProperty(request):
     
     p = Paginator(result,5)
     number = request.GET.get('page',1) 
-           
+
     try:
         resultobj = p.page(number)
 
