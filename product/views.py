@@ -81,31 +81,32 @@ def product_list_view(request):
 
 
 def availableProperty(request):
-    #if request.method =="POST":
 
-    name =request.GET.get('property')
-    minpay =request.GET.get('min-price')
-    maxpay =request.GET.get('max-price')
+    if request.method =="POST":
 
-    if name == 'all':
-        result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+        name =request.POST.get('property')
+        minpay =request.POST.get('min-price')
+        maxpay =request.POST.get('max-price')
 
-    else:
-        result= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
+        if name == 'all':
+         result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+
+        else:
+            result= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
     
-    p = Paginator(result,5)
-    number = request.GET.get('page',1) 
-
-    try:
-        resultobj = p.page(number)
+        p = Paginator(result,5)
+        number = request.GET.get('page',1) 
+           
+        try:
+            resultobj = p.page(number)
 
         
-    except PageNotAnInteger:
-                resultobj = p.page(1)
-    except EmptyPage:
+        except PageNotAnInteger:
+                    resultobj = p.page(1)
+        except EmptyPage:
 
-        resultobj = p.page(p.num_pages)   
+            resultobj = p.page(p.num_pages)   
 
     context ={
             'resultobj':resultobj
