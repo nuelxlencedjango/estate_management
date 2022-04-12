@@ -92,10 +92,12 @@ def availableProperty(request):
 
     else:
         result= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
+
+    
+    p = Paginator(result,5)
+    number = request.GET.get('page',1) 
            
     try:
-        p = Paginator(result,5)
-        number = request.GET.get('page',1)
         resultobj = p.page(number)
 
         
