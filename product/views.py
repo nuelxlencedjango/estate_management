@@ -78,13 +78,15 @@ def availableProperty(request):
         name =request.POST.get('property')
         minpay =request.POST.get('min-price')
         maxpay =request.POST.get('max-price')
+
+        result = Property.objects.filter(price__range=(minpay, maxpay))
     
 
     
     
         try:
             if name == 'all':
-                result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+                #result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
 
 
             #items = Property.objects.all()
