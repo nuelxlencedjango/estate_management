@@ -22,7 +22,7 @@ urlpatterns =[
 
 
     
-    path('property_search/' ,views.availableProperty,name='property_search'),
+   # path('property_search/' ,views.availableProperty,name='property_search'),
 
     path('property_search/' ,ItemsListView ,name="property_search"),
 
