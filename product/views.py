@@ -84,28 +84,21 @@ def availableProperty(request):
 
     
     
-        try:
-            if name == 'all':
+        
+        if name == 'all':
                 #result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
 
 
             #items = Property.objects.all()
-                p = Paginator(result,5)
-                number = request.GET.get('page',1)
-                resultobj = p.get_page(number)
+            p = Paginator(result,5)
+            number = request.GET.get('page',1)
+            resultobj = p.get_page(number)
+
+            context ={ 'resultobj':resultobj}
+            return render(request,'property_info.html',context)
 
 
-        except PageNotAnInteger:
-
-
-        # if page is not an integer, deliver the first page
-            resultobj = p.get_page(1)   
-
-        except EmptyPage:
-
-        # if the page is out of range, deliver the last page
-            resultobj = p.page(p.num_pages)  
-
+       
 
 
     context ={ 'resultobj':resultobj}
