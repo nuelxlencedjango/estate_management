@@ -81,40 +81,36 @@ def product_list_view(request):
 
 
 def availableProperty(request):
-    if request.method =="POST":
+    #if request.method =="POST":
 
-        name =request.POST.get('property')
-        minpay =request.POST.get('min-price')
-        maxpay =request.POST.get('max-price')
+    name =request.POST.get('property')
+    minpay =request.POST.get('min-price')
+    maxpay =request.POST.get('max-price')
 
-        if name == 'all':
-            result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+    if name == 'all':
+        result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
 
-        else:
-            result= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
+    else:
+        result= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
            
-        try:
-            p = Paginator(result,5)
-            number = request.GET.get('page')
-            resultobj = p.get_page(number)
+    try:
+        p = Paginator(result,5)
+        number = request.GET.get('page')
+        resultobj = p.get_page(number)
 
         
-        except PageNotAnInteger:
-                resultobj = p.get_page(1)
-        except EmptyPage:
+    except PageNotAnInteger:
+                resultobj = p.get_page()
+    except EmptyPage:
 
-            resultobj = p.get_page(p.num_pages)   
+        resultobj = p.get_page(p.num_pages)   
 
-        context ={
-            'resultobj':resultobj
-        }
-        return render(request, 'property_info.html',context)     
-
-    
     context ={
             'resultobj':resultobj
         }
-    return render(request, 'property_info.html',context)    
+    return render(request, 'property_info.html',context)     
+
+      
 
 
    
