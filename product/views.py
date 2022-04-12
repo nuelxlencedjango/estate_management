@@ -98,18 +98,19 @@ def availableProperty(request):
     
         p = Paginator(result,5)
         #number = request.GET.get('page',1) 
-        number = p.page(request.GET.get('page'))
+        number = p.get_page(request.GET.get('page'))
         number =int(number)
            
         try:
-            resultobj = p.page(number)
+            #resultobj = p.page(number)
+            resultobj = p.get_page(request.GET.get('page'))
 
         
         except PageNotAnInteger:
-                    resultobj = p.page(1)
+                    resultobj = p.get_page(1)
         except EmptyPage:
 
-            resultobj = p.page(p.num_pages)   
+            resultobj = p.get_page(p.num_pages)   
 
     context ={
             'resultobj':resultobj
