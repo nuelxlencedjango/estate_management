@@ -70,7 +70,8 @@ def product_list_view(request):
     if location_search:
         qs = qs.filter(location__contains=location_search)
     qs = qs.order_by('-pub_date')
-    paginator = Paginator(qs, 5)
+    paginator = Paginator(qs, 5
+    )
     page = p.page(request.GET.get('page'))
     context = {
        'posts': page
@@ -97,7 +98,7 @@ def availableProperty(request):
     
         p = Paginator(result,5)
         #number = request.GET.get('page',1) 
-        number = p.page(request.GET.get('page'))
+        number = int(p.page(request.GET.get('page')))
            
         try:
             resultobj = p.page(number)
