@@ -83,34 +83,34 @@ def product_list_view(request):
 
 def availableProperty(request):
 
-    if request.method =="POST":
+    #if request.method =="POST":
 
-        name =request.POST.get('property')
-        minpay =request.POST.get('min-price')
-        maxpay =request.POST.get('max-price')
+    name =request.POST.get('property')
+    minpay =request.POST.get('min-price')
+    maxpay =request.POST.get('max-price')
 
-        if name == 'all':
-         result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+    if name == 'all':
+        result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
 
-        else:
-            result= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
+    else:
+        result= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
     
-        p = Paginator(result,5)
+    p = Paginator(result,5)
         #number = request.GET.get('page',1) 
-        number = p.get_page(request.GET.get('page'))
-        number =int(number)
+    resultobj = p.get_page(request.GET.get('page'))
+        
            
-        try:
+     #   try:
             #resultobj = p.page(number)
-            resultobj = p.get_page(request.GET.get('page'))
+      #      resultobj = p.get_page(request.GET.get('page'))
 
         
-        except PageNotAnInteger:
-                    resultobj = p.get_page(1)
-        except EmptyPage:
+       # except PageNotAnInteger:
+        #            resultobj = p.get_page(1)
+       # except EmptyPage:
 
-            resultobj = p.get_page(p.num_pages)   
+      #      resultobj = p.get_page(p.num_pages)   
 
     context ={
             'resultobj':resultobj
