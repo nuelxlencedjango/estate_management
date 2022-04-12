@@ -61,41 +61,67 @@ def employeeSalary(request):
    # queryset = User.objects.all()  # Default: Model.objects.all()
 
 
+def product_list_view(request):
+    qs = product.objects.all()
+    location_search = request.GET.get('location')
+    categories = request.GET.get('categories')
+    price = request.GET.get('price')
 
-class ItemsListView(ListView):
-    model = Property # model name
-    template_name = 'property_info.html'  # template name/path
-    context_object_name ='resultobj' # context properties
-    #ordering =['-date_posted']   # arraned according date posted
+    if location_search:
+        qs = qs.filter(location__contains=location_search)
+    qs = qs.order_by('-pub_date')
+    paginator = Paginator(qs, 5)
+    page = p.page(request.GET.get('page'))
+    context = {
+       'posts': page
+      }
 
-    #pagination
-    paginate_by =5
+    return render(request, "products/product_list.html", context)
 
 
 
-    # getting queryset from the db
-    def get_queryset(self):
-        price = get_object_or_404(Property , price=self.kwargs.filter(price__range=('mmin-price', 'max-price'))) # getting the username ,if not ,return 404
-        return Property.objects.filter(price = price)#.order_by('-date_posted')  # arraned according date posted
+def availableProperty(request):
+    if request.method =="POST":
 
+        name =request.POST.get('property')
+        minpay =request.POST.get('min-price')
+        maxpay =request.POST.get('max-price')
+
+        if name == 'all':
+            result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+
+        else:
+            result= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
+           
+        try:
+            p = Paginator(result,5)
+            number = request.GET.get('page',1)
+            resultobj = p.get_page(number)
+
+        
+        except PageNotAnInteger:
+                resultobj = p.get_page(1)
+        except EmptyPage:
+
+            resultobj = p.get_page(p.num_pages)   
+
+        context ={
+            'resultobj':resultobj
+        }
+        return render(request, 'property_info.html',context)     
 
 
    
-def availableProperty(request):
+def availablePropertypp(request):
     if request.method =="GET":
 
         name =request.POST.get('property')
         minpay =request.POST.get('min-price')
         maxpay =request.POST.get('max-price')
 
-        result = Property.objects.filter(price__range=(minpay, maxpay))
-    
-
-    
-    
-        
         if name == 'all':
-                #result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+
+            result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
 
 
             #items = Property.objects.all()
