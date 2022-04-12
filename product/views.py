@@ -73,34 +73,36 @@ class AvailableProperties(ListView):
 
    
 def availableProperty(request):
-    name =request.POST.get('property')
-    minpay =request.POST.get('min-price')
-    maxpay =request.POST.get('max-price')
+    if request.method =="GET":
+
+        name =request.POST.get('property')
+        minpay =request.POST.get('min-price')
+        maxpay =request.POST.get('max-price')
     
 
     
     
-    try:
-        if name == 'all':
-            result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+        try:
+            if name == 'all':
+                result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
 
 
             #items = Property.objects.all()
-            p = Paginator(result,5)
-            number = request.GET.get('page',1)
-            resultobj = p.get_page(number)
+                p = Paginator(result,5)
+                number = request.GET.get('page',1)
+                resultobj = p.get_page(number)
 
 
-    except PageNotAnInteger:
+        except PageNotAnInteger:
 
 
         # if page is not an integer, deliver the first page
-        resultobj = p.get_page(1)   
+            resultobj = p.get_page(1)   
 
-    except EmptyPage:
+        except EmptyPage:
 
         # if the page is out of range, deliver the last page
-        resultobj = p.page(p.num_pages)  
+            resultobj = p.page(p.num_pages)  
 
 
 
