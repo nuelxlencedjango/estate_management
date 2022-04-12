@@ -110,6 +110,12 @@ def availableProperty(request):
         }
         return render(request, 'property_info.html',context)     
 
+    
+    context ={
+            'resultobj':resultobj
+        }
+    return render(request, 'property_info.html',context)    
+
 
    
 def availablePropertypp(request):
