@@ -88,6 +88,8 @@ def availableProperty(request):
     name =request.POST.get('property')
     minpay =request.POST.get('min-price')
     maxpay =request.POST.get('max-price')
+    number = request.GET.get('page')
+
 
     if name == 'all':
         result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
@@ -97,7 +99,7 @@ def availableProperty(request):
 
     
     p = Paginator(result,5)
-    number = request.GET.get('page') 
+    
     resultobj = p.get_page(number)
         
         
