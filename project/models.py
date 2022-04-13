@@ -37,6 +37,7 @@ class Property(models.Model):
 
              
 
+
 class PropertyItems(models.Model):
     name =models.CharField(max_length=200) 
     

@@ -13,7 +13,6 @@ from cloudinary.models import CloudinaryField
 
 
 
-
 class Property(models.Model):
     name =models.CharField(max_length=200)
     price = models.IntegerField(default=1000)
@@ -25,6 +24,7 @@ class Property(models.Model):
     Location = models.CharField(max_length=200,blank=True,null=True) 
     describe =models.CharField(max_length=200,blank=True,null=True)
     #listing_id =models.CharField(max_length=200,blank=True,null=True)
+    #release_date = models.DateField()
     img = CloudinaryField(blank=True,null=True)
 
     def __str__(self):
@@ -36,6 +36,9 @@ class Property(models.Model):
         verbose_name_plural='Property'
 
              
+
+
+
 
 class PropertyItems(models.Model):
     name =models.CharField(max_length=200) 
@@ -212,6 +215,9 @@ status_choice=(
         ('shipped','Shipped'),
         ('delivered','Delivered'),
     )
+
+
+
 class CartOrder(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     total_amt=models.FloatField()
@@ -221,6 +227,8 @@ class CartOrder(models.Model):
 
     class Meta:
         verbose_name_plural='Orders'
+
+
 
 # OrderItems
 class CartOrderItems(models.Model):

@@ -4,15 +4,17 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 
+from django_filters.views import FilterView
+
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from .models import *
-from .filters import FilterStudentInfo
+from .filters import *
 from django.shortcuts import render ,redirect ,get_object_or_404
 from django.views.generic import (
-    ListView ,DetailView, CreateView, UpdateView ,DeleteView
-)
+    ListView ,DetailView, CreateView, UpdateView ,DeleteView,TemplateView )
 
-#from filters import 
+
+
 # Create your views here.
 
 # views.py
@@ -83,42 +85,26 @@ def product_list_view(request):
 
 def availableProperty(request):
 
-    #if request.method =="POST":
+    if request.method =="POST":
+        name =request.POST.get('property')
+        minpay =request.POST.get('min-price')
+        maxpay =request.POST.get('max-price')
+      
 
-    name =request.POST.get('property')
-    minpay =request.POST.get('min-price')
-    maxpay =request.POST.get('max-price')
-    number = request.GET.get('page')
+        if name == 'all':
+            resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+        
 
-
-    if name == 'all':
-        result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
-
-    else:
-        result= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
+        else:
+            resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
     
-    p = Paginator(result,5)
-    
-    resultobj = p.get_page(number)
-        
-        
   
-     #   try:
-            #resultobj = p.page(number)
-      #      resultobj = p.get_page(request.GET.get('page'))
 
-        
-       # except PageNotAnInteger:
-        #            resultobj = p.get_page(1)
-       # except EmptyPage:
-
-      #      resultobj = p.get_page(p.num_pages)   
-
-    context ={
-            'resultobj':resultobj
-        }
-    return render(request, 'property_info.html',context)     
+        context ={
+                'resultobj':resultobj
+            }
+        return render(request, 'property_info.html',context)     
 
       
 
@@ -324,4 +310,7 @@ def services(request):
     return render(request,'services.html')
 
 
+
+
+#filter and pagination
 
