@@ -1,41 +1,35 @@
 
 
-
-
-
-
-
-    <div class="container py-4">
-        {% block content %}
-     
-    <!--</div>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>        
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
-    <title>Multi-Image Tutorial</title>
-
-
-
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
 
 
 
 <style>
-    * {
-  box-sizing: border-box;
-}
+ 
+    .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
+
+/*image gallery */
+
+
 
 /* Hide the images by default */
 .mySlides {
   display: none;
-  width: 100%;
-  height: 350px;
+ 
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -110,7 +104,21 @@
 .demo:hover {
   opacity: 1;
 }
-</style>
+    </style>
+
+
+
+
+
+    <div class="container py-4">
+        {% block content %}
+     
+   
+
+
+
+
+
 
 <!-- Container for the image gallery -->
 <div class="container">
@@ -123,7 +131,7 @@
     </div>
   
   
-    <!--<div class="mySlides">
+    <div class="mySlides">
       <div class="numbertext">2 / 6</div>
         <img src="/static/images/background/house13.jpg" style="width:100%">
     </div>
@@ -164,12 +172,12 @@
         <img class="demo cursor" src="{{ items.img.url }}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
       </div>
      
-      {% for photo in images %}
+      <!--{% for photo in images %}
       <div class="column">
         <img class="demo cursor" src="{{ photo.images_of_property.url }}" style="width:100%" onclick="currentSlide(photo.id)" alt="Cinque Terre">
       </div>
-      {% endfor %}
-      <!--<div class="column">
+      {% endfor %}-->
+      <div class="column">
         <img class="demo cursor" src="/static/images/pic/woman4.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
       </div>
       <div class="column">
@@ -180,7 +188,7 @@
       </div>
       <div class="column">
         <img class="demo cursor" src="/static/images/background/house1.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-      </div>-->
+      </div>
     </div>
   </div>
   
@@ -214,42 +222,6 @@
 
 
 
-
-  <!--Carousel Wrapper-->
-  <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 70px;">
-      <!--Indicators-->
-      <ol class="carousel-indicators">
-      {% for p in images %}
-        <li data-target="#carousel-example-1z" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %} active {% endif %}">wetin dey here?</li>
-      {% endfor %}
-      </ol>
-      <!--/.Indicators-->
-      <!--Slides-->
-      <div class="carousel-inner" role="listbox">
-      
-        <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-          <img class="d-block w-100" src="{{ items.img.url }}"
-            alt="First slide">
-        </div>
-      
-        <!--/First slide-->
-      <!--/.Slides-->
-      {% for photo in images %}
-      <div class="column">
-        <img class="demo cursor" src="{{ photo.images_of_property.url }}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-      </div>
-      {% endfor %}
-      <!--Controls-->
-      <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-      <!--/.Controls-->
-    </div>
   
 
 
@@ -288,4 +260,45 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
     </script>
-    {% endblock %}  
+
+
+
+
+<!--Carousel Wrapper-->
+<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 100px;">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+    {% for p in images %}
+      <li data-target="#carousel-example-1z" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %} active {% endif %}"></li>
+    {% endfor %}
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      {% for p in images %}
+      <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+        <img class="d-block w-100" src="{{p.images_of_property.url}}"
+          alt="First slide">
+      </div>
+      {% endfor %}
+      <!--/First slide-->
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+  </div>
+
+  {% endblock %}
+
+
+
+
+
+{% endblock %}  
