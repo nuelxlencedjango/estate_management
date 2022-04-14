@@ -35,7 +35,28 @@ class Property(models.Model):
 
         verbose_name_plural='Property'
 
-             
+
+
+
+
+
+
+
+class FeaturedListing(models.Model):
+    name =models.CharField(max_length=200)
+    price = models.IntegerField(default=1000)
+    street_name =models.CharField(max_length=200,blank=True,null=True) 
+    location = models.CharField(max_length=200,blank=True,null=True) 
+   
+    img = CloudinaryField(blank=True,null=True)
+
+    def __str__(self):
+        return self.name 
+
+    class Meta:
+        #db_table='accommodation' 
+
+        verbose_name_plural='FeaturedListing'
 
 
 

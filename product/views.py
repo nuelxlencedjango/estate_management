@@ -1,4 +1,5 @@
 from pyexpat.errors import messages
+from unittest import result
 from django.shortcuts import render
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -313,4 +314,19 @@ def services(request):
 
 
 #filter and pagination
+
+
+def show_available_properties(request):
+    context ={}
+    filtered_items = PropertyFilters(request.GET, queryset=Property.objects.all())
+
+    context['filtered_items']=filtered_items
+    paginated_filtered_items = Paginator(filtered_items.qs, 5)
+    page_number = request.GET.get('page')
+    resultobj = paginated_filtered_items(page_number)
+    context ={'resultobj':resultobj}
+
+    return render(request,'property.html',context)
+
+
 

@@ -159,7 +159,7 @@
 
 
 
-{% if resultobj.has_other_pages %}
+<!--{% if resultobj.has_other_pages %}
   <ul class="pagination">
     {% if resultobj.has_previous %}
       <li><a href="?page={{ resultobj.previous_page_number }}">&laquo;</a></li>
@@ -179,36 +179,41 @@
       <li class="disabled"><span>&raquo;</span></li>
     {% endif %}
   </ul>
-{% endif %}
+{% endif %}-->
 
 
 
 
+  
 
 
-{% load pagination_tags %}
 
-{% if is_paginated %}
-<nav aria-label="Page navigation example" class="d-flex justify-content-center pt-3">
+{% load paginated_tags %}
+
+
+{% if resultobj.has_other_pages %}
   <ul class="pagination">
-    {% if page_obj.has_previous and page_obj.number != 2 %}
-    <li class="page-item"><a class="page-link text-dark" href="?{% url_replace request 'page' 1 %}" tabindex="-1" aria-disabled="true">First Page</a></li>
+    {% if resultobj.has_previous %}
+      <li><a href="{% my_url 1 'page' request.GET.urlencode %}">&laquo;</a></li>
+      <!--<li><a href="{% my_url resultobj.previous_page_number 'page' request.GET.urlencode %}">&laquo;</a></li>-->
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
     {% endif %}
-    {% if page_obj.has_previous %}
-    <li class="page-item"><a class="page-link text-dark" href="?{% url_replace request 'page' page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a></li>
-    {% endif %}
-    <li class="page-item disabled"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
-    {% if page_obj.has_next %}
-    <li class="page-item"><a class="page-link text-dark" href="?{% url_replace request 'page' page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a></li>
-    {% endif %}
-    {% if page_obj.paginator.num_pages != page_obj.number and page_obj.paginator.num_pages != page_obj.next_page_number %}
-    <li class="page-item"><a class="page-link text-dark" href="?{% url_replace request 'page' page_obj.paginator.num_pages %}">Last Page</a></li>
+    {% for i in resultobj.paginator.page_range %}
+      {% if resultobj.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="{% my_url resultobj.i 'page' request.GET.urlencode %}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if resultobj.has_next %}
+      <li><a href="{% my_url resultobj.next_page_number 'page' request.GET.urlencode %}">&raquo;</a></li>
+      <!--<li><a href="{% my_url resultobj.paginator.page_number 'page' request.GET.urlencode %}">&raquo;</a></li>-->
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
     {% endif %}
   </ul>
-</nav>
-{% endif %}  
-
-
+{% endif %}
 
 {% endblock %}
 
