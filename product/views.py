@@ -321,7 +321,7 @@ def show_available_properties(request):
     filtered_items = PropertyFilters(request.GET, queryset=Property.objects.all())
 
     context['filtered_items']=filtered_items
-    paginated_filtered_items = Paginator(filtered_items.qs, 5)
+    paginated_filtered_items = Paginator(filtered_items, 5)
     page_number = request.GET.get('page')
     resultobj = paginated_filtered_items.get_page(page_number)
     context ={'resultobj':resultobj}
