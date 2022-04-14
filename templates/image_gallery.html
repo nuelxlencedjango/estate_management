@@ -224,14 +224,19 @@
       <!--/.Indicators-->
       <!--Slides-->
       <div class="carousel-inner" role="listbox">
-        {% for p in images %}
+      
         <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-          <img class="d-block w-100" src="{{p.images_of_property.url}}"
+          <img class="d-block w-100" src="{{ items.img.url }}"
             alt="First slide">
         </div>
-        {% endfor %}
+      
         <!--/First slide-->
       <!--/.Slides-->
+      {% for photo in images %}
+      <div class="column">
+        <img class="demo cursor" src="{{ photo.images_of_property.url }}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+      </div>
+      {% endfor %}
       <!--Controls-->
       <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
