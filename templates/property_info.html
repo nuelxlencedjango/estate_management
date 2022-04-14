@@ -191,23 +191,23 @@
 
 
 
-{% if resultobj.has_other_pages %}
+{% if resultobj.qs.has_other_pages %}
   <ul class="pagination">
-    {% if resultobj.has_previous %}
+    {% if resultobj.qs.has_previous %}
       <li><a href="{% my_url 1 'page' request.GET.urlencode %}">&laquo;</a></li>
       <!--<li><a href="{% my_url resultobj.previous_page_number 'page' request.GET.urlencode %}">&laquo;</a></li>-->
     {% else %}
       <li class="disabled"><span>&laquo;</span></li>
     {% endif %}
-    {% for i in resultobj.paginator.page_range %}
+    {% for i in resultobj.qs.paginator.page_range %}
       {% if resultobj.number == i %}
         <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
       {% else %}
-        <li><a href="{% my_url resultobj.i 'page' request.GET.urlencode %}">{{ i }}</a></li>
+        <li><a href="{% my_url resultobj.qs.i 'page' request.GET.urlencode %}">{{ i }}</a></li>
       {% endif %}
     {% endfor %}
     {% if resultobj.has_next %}
-      <li><a href="{% my_url resultobj.next_page_number 'page' request.GET.urlencode %}">&raquo;</a></li>
+      <li><a href="{% my_url resultobj.qs.next_page_number 'page' request.GET.urlencode %}">&raquo;</a></li>
       <!--<li><a href="{% my_url resultobj.paginator.page_number 'page' request.GET.urlencode %}">&raquo;</a></li>-->
     {% else %}
       <li class="disabled"><span>&raquo;</span></li>
