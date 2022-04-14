@@ -35,8 +35,8 @@ SECRET_KEY = 'django-insecure-pc*yv^34wfclo7c1ze5(%@!0vw+^q4c8-m(f)k^ynhyg=cf$^=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wilmot-real-estate.herokuapp.com','127.0.0.1']
-
+ALLOWED_HOSTS = ['wilmot-real-estate.herokuapp.com']
+#ALLOWED_HOSTS = ['wilmot-real-estate.herokuapp.com','127.0.0.1']
 
 # Application definition
 
@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 DATABASES = {
       'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  'd2m496qkvav2df',
-        'HOST' :'ec2-18-214-134-226.compute-1.amazonaws.com',
+        'NAME':  'dbp86lfk3m4b4m',
+        'HOST' :'ec2-3-224-125-117.compute-1.amazonaws.com',
         'PORT':5432,
-        'USER' :'nhjjvulxxaouoc',
-        'PASSWORD' :'b2a107f18a67a13f1a569384d05893ef8f5e991d6809bb505d575c53d921b833',
+        'USER' :'iacespmxpufkkn',
+        'PASSWORD' :'584370d71fe05e3c8249640647e432f2ef74295f1e9f4926fe472c76ebaedd13',
 
     }
 }

@@ -90,8 +90,6 @@ def availableProperty(request):
         name =request.POST.get('property')
         minpay =request.POST.get('min-price')
         maxpay =request.POST.get('max-price')
-      
-
         if name == 'all':
             resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
         
@@ -99,15 +97,22 @@ def availableProperty(request):
         else:
             resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
-    
-  
-
         context ={
                 'resultobj':resultobj
             }
-        return render(request, 'property_info.html',context)     
+        return render(request, 'property_info.html',context)  
 
-      
+
+
+  
+
+           
+def imageGallery(request,id):
+    items = get_object_or_404(Property,id=id)
+    images = PropertyImages.objects.filter(property_details=items)
+    context={'images':images, 'items':items}
+
+    return render(request,'image_gallery.html',context)      
 
 
    
@@ -321,7 +326,7 @@ def show_available_properties(request):
     filtered_items = PropertyFilters(request.GET, queryset=Property.objects.all())
 
     context['filtered_items']=filtered_items
-    
+
     paginated_filtered_items = Paginator(filtered_items.qs, 5)
     page_number = request.GET.get('page')
     resultobj = paginated_filtered_items.get_page(page_number)

@@ -4,7 +4,8 @@ from numpy import product
 # Register your models here.
 
 from .models import *
-# Register your models here.
+
+
 
 
 # Register your models here.
@@ -27,11 +28,28 @@ class ContactUsAdmin(admin.ModelAdmin):
 
 
 
+
+class PropertyImageAdmin(admin.StackedInline):
+    model = PropertyImages
+
+@admin.register(Property)
+class PropertyAdmin(admin.ModelAdmin):
+    inlines = [PropertyImageAdmin]
+
+    class Meta:
+       model = Property
+
+@admin.register(PropertyImages)
+class PropertyImageAdmin(admin.ModelAdmin):
+    pass
+
+
+
 admin.site.register(Product)
 admin.site.register(ProductAttribute)
 admin.site.register(Category)
 admin.site.register(Size)
 admin.site.register(ContactUs,ContactUsAdmin)
 admin.site.register(PropertyItems)
-admin.site.register(Property)
+#admin.site.register(Property)
 

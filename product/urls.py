@@ -26,7 +26,7 @@ urlpatterns =[
 
     #path('property_search/' ,views.show_available_properties ,name="property_search"),
 
-
+   path('image_gallery/<int:id>/', views.imageGallery, name='image_gallery'),
 
     path('services/',views.services,name='services'),
 

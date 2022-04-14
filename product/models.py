@@ -23,8 +23,8 @@ class Property(models.Model):
     acre =models.CharField(max_length=10,blank=True,null=True) 
     Location = models.CharField(max_length=200,blank=True,null=True) 
     describe =models.CharField(max_length=200,blank=True,null=True)
-    #listing_id =models.CharField(max_length=200,blank=True,null=True)
-    #release_date = models.DateField()
+    listing_id =models.CharField(max_length=200,blank=True,null=True)
+    release_date = models.DateField(blank=True,null=True)
     img = CloudinaryField(blank=True,null=True)
 
     def __str__(self):
@@ -35,6 +35,19 @@ class Property(models.Model):
 
         verbose_name_plural='Property'
 
+
+
+class PropertyImages(models.Model):
+    property_details=models.ForeignKey(Property,on_delete=models.CASCADE)
+    images_of_property = CloudinaryField('images',blank=True,null=True)
+
+    def __str__(self):
+        return self.property_details
+
+    class Meta:
+        #db_table='accommodation' 
+
+        verbose_name_plural='PropertyImages'    
 
 
 
