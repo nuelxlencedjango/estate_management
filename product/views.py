@@ -326,7 +326,7 @@ def show_available_properties(request):
     resultobj = paginated_filtered_items.get_page(page_number)
     context ={'resultobj':resultobj}
 
-    return render(request,'property.html',context)
+    return render(request,'property_info.html',context)
 
 
 
