@@ -114,7 +114,7 @@
 
     <div class="property-flex">
         
-        <a href="">
+        <a href="{% url 'product:image_gallery' result.id %}">
         <div class="card-image ">
             <img src="{{ result.img.url }}" alt="">
         </div>
@@ -123,7 +123,7 @@
   </div>
   <div>
       <div class="property-information">
-         <a href="">
+         <a href="{% url 'product:image_gallery' result.id %}">
             <div class="property-address">
                 <h2>{{result.Location }}</h2>
             </div>
@@ -140,14 +140,18 @@
       </div>
   </div>
   <div class="property-information">
-      <h3 class="right">Listing ID50044316
-        PBMLS-RETS</h3>
+      <h3 class="right">{{ result.listing_id }}</h3>
+      <!--<h3 class="right">Listing ID50044316PBMLS-RETS</h3>-->
   </div>  
+  <div class="property-information">
+    <h3 class="right">{{ result.release_date }}</h3>
+    
+</div>  
 </div>
 <h3 class="description"> {{result.describe }}</h3>
 <div class="contar">
 <div class="btn-groupy " role="group" aria-label="Basic mixed styles example">
-    <a href="" type="button" class="btn btnb btn-danger">View pictures</a>
+    <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures</a>
     <a href="" type="button" class="btn btnb btn-warning">Visual Tour</a>
     <a href="" type="button" class="btn btnb btn-success">Add To Favourite</a>
     <a href="" type="button" class="btn btnb btn-dark">View Details</a>

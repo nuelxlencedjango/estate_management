@@ -108,11 +108,11 @@ def availableProperty(request):
 
            
 def imageGallery(request,id):
-    items = get_object_or_404(Property,id=id)
-    images = PropertyImages.objects.filter(property_details=items)
-    context={'images':images, 'items':items}
+    #items = get_object_or_404(Property,id=id)
+    #images = PropertyImages.objects.filter(property_details=items)
+    #context={'images':images, 'items':items}
 
-    return render(request,'image_gallery.html',context)      
+    return render(request,'image_gallery.html')#,context)      
 
 
    
