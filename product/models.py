@@ -42,7 +42,7 @@ class PropertyImages(models.Model):
     images_of_property = CloudinaryField('images',blank=True,null=True)
 
     def __str__(self):
-        return self.property_details
+        return self.property_details.name
 
     class Meta:
         #db_table='accommodation' 
