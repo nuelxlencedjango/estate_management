@@ -114,10 +114,12 @@
 <div class="container">
 
     <!-- Full-width images with number text -->
+    {% for p in items %}
     <div class="mySlides">
       <div class="numbertext">1 / 6</div>
-        <img src="/static/images/background/house1.jpg" style="width:100%">
+        <img src="{{ p.img.url }}" style="width:100%">
     </div>
+    {% endfor %}
   
     <!--<div class="mySlides">
       <div class="numbertext">2 / 6</div>
@@ -155,9 +157,11 @@
   
     <!-- Thumbnail images -->
     <div class="row">
+      
       <div class="column">
-        <img class="demo cursor" src="/static/images/pic/woman1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+        <img class="demo cursor" src="{{ items.img }}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
       </div>
+     
       <!--<div class="column">
         <img class="demo cursor" src="/static/images/background/estate_bg.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
       </div>
