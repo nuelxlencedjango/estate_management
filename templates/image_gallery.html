@@ -1,34 +1,17 @@
-
-
-
-{% block content %}
-
-
-
+<!-- Container for the image gallery -->
 <style>
- 
-    .want_to_buy{
-        display: none;
-    }
-    .display{
-        display: none;
-    }
-    .property-search{
-        display: none;
-    }
-    .featured{
-        display: none;
-    }
+    * {
+  box-sizing: border-box;
+}
 
-
-/*image gallery */
-
-
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
 
 /* Hide the images by default */
 .mySlides {
   display: none;
- 
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -103,57 +86,41 @@
 .demo:hover {
   opacity: 1;
 }
-    </style>
 
+</style>
 
-
-
-
-    <div class="container py-4">
- 
-     
-   
-
-
-
-
-
-
-<!-- Container for the image gallery -->
 <div class="container">
 
     <!-- Full-width images with number text -->
-   
     <div class="mySlides">
       <div class="numbertext">1 / 6</div>
-        <img src="{{ items.img.url }}">
+        <img src="/static/images/background/house1.jpg" style="width:100%">
     </div>
-  
   
     <div class="mySlides">
       <div class="numbertext">2 / 6</div>
-        <img src="/static/images/background/house13.jpg" style="width:100%">
+        <img src="/static/images/background/house10.jpg" style="width:100%">
     </div>
   
     <div class="mySlides">
       <div class="numbertext">3 / 6</div>
-        <img src="/static/images/background/house14.jpg" style="width:100%">
+        <img src="/static/images/background/house8.jpg" style="width:100%">
     </div>
   
     <div class="mySlides">
       <div class="numbertext">4 / 6</div>
-        <img src="/static/images/background/house19.jpg" style="width:100%">
+        <img src="/static/images/background/house14.jpg" style="width:100%">
     </div>
   
     <div class="mySlides">
       <div class="numbertext">5 / 6</div>
-        <img src="/static/images/background/house5.jpg" style="width:100%">
+        <img src="/static/images/background/house18.jpg" style="width:100%">
     </div>
   
     <div class="mySlides">
       <div class="numbertext">6 / 6</div>
-        <img src="/static/images/background/house8.jpg" style="width:100%">
-    </div>-->
+        <img src="/static/images/background/house13.jpg" style="width:100%">
+    </div>
   
     <!-- Next and previous buttons -->
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -166,69 +133,32 @@
   
     <!-- Thumbnail images -->
     <div class="row">
-      
       <div class="column">
-        <img class="demo cursor" src="{{ items.img.url }}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-      </div>
-     
-      <!--{% for photo in images %}
-      <div class="column">
-        <img class="demo cursor" src="{{ photo.images_of_property.url }}" style="width:100%" onclick="currentSlide(photo.id)" alt="Cinque Terre">
-      </div>
-      {% endfor %}-->
-      <div class="column">
-        <img class="demo cursor" src="/static/images/pic/woman4.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+        <img class="demo cursor" src="/static/images/background/house1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
       </div>
       <div class="column">
-        <img class="demo cursor" src="/static/images/background/house10.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+        <img class="demo cursor" src="/static/images/background/house10.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
       </div>
       <div class="column">
-        <img class="demo cursor" src="/static/images/pic/woman2.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+        <img class="demo cursor" src="/static/images/background/house8.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
       </div>
       <div class="column">
-        <img class="demo cursor" src="/static/images/background/house1.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+        <img class="demo cursor" src="/static/images/background/house14.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="/static/images/background/house18.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="/static/images/background/house13.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
       </div>
     </div>
   </div>
-  
 
 
 
 
-
-
-
-  <!--<div class="row row-cols-1 row-cols-md-2">
-      {% for post in resultobj %}
-      <div class="col mb-4">
-        <div class="card">
-          <div class="view overlay">
-            <img class="card-img-top" src="{{post.img.url}}" alt="">
-            <a href="#!">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">{{post.title}}</h4>
-            <p class="card-text">{{post.description}}</p>
-            <a href="" class="btn btn-primary btn-md">Read more</a>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>-->
-
-
-
-
-  
-
-
-    
-
-
-    <script>
-        let slideIndex = 1;
+  <script>
+      let slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
@@ -258,45 +188,4 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
-    </script>
-
-
-
-
-<!--Carousel Wrapper-->
-<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 100px;">
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-    {% for p in images %}
-      <li data-target="#carousel-example-1z" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %} active {% endif %}"></li>
-    {% endfor %}
-    </ol>
-    <!--/.Indicators-->
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-      {% for p in images %}
-      <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-        <img class="d-block w-100" src="{{p.images_of_property.url}}"
-          alt="First slide">
-      </div>
-      {% endfor %}
-      <!--/First slide-->
-    <!--/.Slides-->
-    <!--Controls-->
-    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    <!--/.Controls-->
-  </div>
-
-  {% endblock %}
-
-
-
-
- 
+  </script>
