@@ -209,6 +209,8 @@
     <div class="caption-container">
       <p id="caption">Please click on the images below</p>
     </div>
+
+   
   
     <!-- Thumbnail images -->
    <div class="thumbnailImage">
@@ -276,7 +278,7 @@
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[i].style.display = "visible";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
