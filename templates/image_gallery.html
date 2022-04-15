@@ -1,5 +1,7 @@
 
-
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
 
 
 
@@ -9,7 +11,18 @@
     * {
   box-sizing: border-box;
   }
-  
+  .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
   /* Position the image container (needed to position the left and right arrows) */
   .container {
   position: relative;
@@ -279,3 +292,4 @@
   
   </script>
   
+  {% endblock %}
