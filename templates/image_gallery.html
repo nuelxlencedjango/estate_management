@@ -96,21 +96,21 @@
 
   position: relative;
     float: left;
-    width: 100px;
+    width: 80px;
     height: 70px;
-    background-color: #fff;
-    border: 1px solid #f0f0f0;
+    /*background-color: #fff;
+    border: 1px solid #f0f0f0;*/
     line-height: 65px;
     vertical-align: middle;
     text-align: center;
-    margin-left: 40p;
+    margin: 20p 40px;
     display: flex;
     align-items: center;
 
   }
   .column img{
       align-items: center;
-      margin-left: 20px;
+      margin-left: 5px;
       border: 1px solid #27051e;
   }
   
@@ -132,9 +132,9 @@
     {% for p in images %}
     <div class="mySlides">
         <div class="container">
-      <div class="numbertext">1 / 6</div>
+     <!---<div class="numbertext">1 / 6</div>-->
         <img src="{{p.images_of_property.url}}" style="width:100%">
-        <h1>{{p.property_details.listing_id}}</h1>
+        <!--<h1>{{p.property_details.listing_id}}</h1>-->
         </div>
     </div>
     {% endfor %}
