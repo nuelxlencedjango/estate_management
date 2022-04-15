@@ -51,7 +51,7 @@
     <!--/.Indicators-->
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
-      {% for p in images %}
+      {% for p in photo %}
       <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
         <img class="d-block w-100" src="{{p.images_of_property.url}}"
           alt="First slide">
