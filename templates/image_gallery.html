@@ -351,16 +351,16 @@
     
     <table id="customers">
       <tr>
-        <th>Company</th>
-        <th>Contact</th>
+        <th>Address :</th>
+        <th>Price:</th>
        
       </tr>
       <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
+        <td>{{items.Location }}</td>
+        <td><span>${{items.price }}</span></td>
         <!--<td>Germany</td>-->
       </tr>
-      <!--<tr>
+      <tr>
         <td>Berglunds snabbköp</td>
         <td>Christina Berglund</td>
         <td>Sweden</td>
@@ -404,7 +404,7 @@
         <td>Paris spécialités</td>
         <td>Marie Bertrand</td>
         <td>France</td>
-      </tr>-->
+      </tr>
     </table>
 
 
@@ -416,16 +416,16 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
+            <th scope="col">Address:</th>
+            <th scope="col">Price</th>
             <!--<th scope="col">Handle</th>-->
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
+            <td>{{items.Location }}</td>
+            <td><span>${{items.price }}</span></td>
             <!--<td>@mdo</td>-->
           </tr>
           <!--<tr>
