@@ -142,7 +142,7 @@
   .demo:hover {
   opacity: 1;
   }
- .caption-container p{
+ .caption-text p{
       color: #999;
       font-size: 26px;
       font-weight: 800;
@@ -212,8 +212,11 @@
   
     <!-- Image text -->
     <div class="caption-container">
-      <p id="caption">Please click on the images below</p>
+      <p id="caption"></p>
     </div>
+    <div class="caption-text">
+        <p id="capt">Please click on the images below</p>
+      </div>
 
    
   
@@ -283,7 +286,7 @@
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "visible";
+    slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
