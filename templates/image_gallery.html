@@ -104,7 +104,7 @@
   }
   
   /* Six columns side by side */
-  .column {
+  .columy {
   /*float: left;
   width: 150px;
   display: flex;*/
@@ -123,7 +123,7 @@
     align-items: center;
 
   }
-  .column img{
+  .columy img{
       align-items: center;
       margin-left: 8px;
       text-align: center;
@@ -213,7 +213,7 @@
    <div class="thumbnailImage">
     {% for p in images %}
     <div class="row">
-      <div class="column" id="remove-heli-{{ forloop.counter }}">
+      <div class="columy" id="remove-heli-{{ forloop.counter }}">
         <img class="demo cursor" src="{{p.images_of_property.url}}" id="{{p.id}}" style="width:100%" onclick="currentSlide('{{forloop.counter}}')" alt="">
       </div>
       {% endfor %}
