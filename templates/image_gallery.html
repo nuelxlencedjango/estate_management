@@ -180,7 +180,7 @@
   
     <!-- Image text -->
     <div class="caption-container">
-      <p id="caption"></p>
+      <p id="caption">Please click on the images below</p>
     </div>
   
     <!-- Thumbnail images -->
@@ -188,7 +188,7 @@
     {% for p in images %}
     <div class="row">
       <div class="column" id="remove-heli-{{ forloop.counter }}">
-        <img class="demo cursor" src="{{p.images_of_property.url}}" id="{{p.id}}" style="width:100%" onclick="currentSlide('{{forloop.counter}}')" alt="The Woods">
+        <img class="demo cursor" src="{{p.images_of_property.url}}" id="{{p.id}}" style="width:100%" onclick="currentSlide('{{forloop.counter}}')" alt="">
       </div>
       {% endfor %}
    </div>
