@@ -285,11 +285,11 @@
   
     <div>
         <div class="property-information">
-           <a href="{% url 'product:image_gallery' result.id %}">
+          
               <div class="property-address">
                   <h2>{{result.Location }}</h2>
               </div>
-           </a>
+           
             <div class="property-information">
                 <h3>Price:<span>${{result.price }}</span></h3>
                 <h3>bedroom:{{result.bedroom }}</h3>
@@ -312,12 +312,7 @@
   </div>
   <h3 class="description"> {{result.describe }}</h3>
   <div class="contar">
-  <div class="btn-groupy " role="group" aria-label="Basic mixed styles example">
-      <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures</a>
-      <a href="" type="button" class="btn btnb btn-warning">Visual Tour</a>
-      <a href="" type="button" class="btn btnb btn-success">Add To Favourite</a>
-      <a href="" type="button" class="btn btnb btn-dark">View Details</a>
-    </div>
+ 
   </div>
   {% endfor %}
   </div>
@@ -325,68 +320,8 @@
   
   
   
-  <!--{% if resultobj.has_other_pages %}
-    <ul class="pagination">
-      {% if resultobj.has_previous %}
-        <li><a href="?page={{ resultobj.previous_page_number }}">&laquo;</a></li>
-      {% else %}
-        <li class="disabled"><span>&laquo;</span></li>
-      {% endif %}
-      {% for i in resultobj.paginator.page_range %}
-        {% if resultobj.number == i %}
-          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-        {% else %}
-          <li><a href="?page={{ i }}">{{ i }}</a></li>
-        {% endif %}
-      {% endfor %}
-      {% if resultobj.has_next %}
-        <li><a href="?page={{ resultobj.next_page_number }}">&raquo;</a></li>
-      {% else %}
-        <li class="disabled"><span>&raquo;</span></li>
-      {% endif %}
-    </ul>
-  {% endif %}-->
   
   
-  
-  
-    
-  
-  
-  
-  
-  
-  
-  <!--{% if resultobj.has_other_pages %}
-    <ul class="pagination">
-      {% if resultobj.has_previous %}
-        <li><a href="{% my_url 1 'page' request.GET.urlencode %}">&laquo;</a></li>-->
-        <!--<li><a href="{% my_url resultobj.previous_page_number 'page' request.GET.urlencode %}">&laquo;</a></li>-->
-      <!--{% else %}
-        <li class="disabled"><span>&laquo;</span></li>
-      {% endif %}
-      {% for i in resultobj.paginator.page_range %}
-        {% if resultobj.number == i %}
-          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-        {% else %}
-          <li><a href="{% my_url resultobj.i 'page' request.GET.urlencode %}">{{ i }}</a></li>
-        {% endif %}
-      {% endfor %}
-      {% if resultobj.has_next %}
-        <li><a href="{% my_url resultobj.next_page_number 'page' request.GET.urlencode %}">&raquo;</a></li>
-        <!--<li><a href="{% my_url resultobj.paginator.page_number 'page' request.GET.urlencode %}">&raquo;</a></li>-->
-      {% else %}
-        <li class="disabled"><span>&raquo;</span></li>
-      {% endif %}
-    </ul>
-  {% endif %}-->
-  
-  {% endblock %}
-  
-  
-
-
-
 
   
   
