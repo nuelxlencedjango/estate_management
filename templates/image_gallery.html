@@ -99,7 +99,7 @@
   font-size: 22px;
   }
   
-  .rowy{
+  .small-images{
       margin-left: 50px;
   }
   .rowy:after {
@@ -225,12 +225,14 @@
   
     <!-- Thumbnail images -->
  
+   <div class="small-images">
     {% for p in images %}
     <div class="rowy">
       <div class="columy" id="remove-heli-{{ forloop.counter }}">
         <img class="demo cursor" src="{{p.images_of_property.url}}" id="{{p.id}}" style="width:100%" onclick="currentSlide('{{forloop.counter}}')" alt="">
       </div>
       {% endfor %}
+   </div>
    </div>
       <!--<div class="column">
         <img class="demo cursor" src="/static/images/background/house10.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
