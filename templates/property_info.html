@@ -221,3 +221,209 @@
 
 {% endblock %}
 
+
+{% extends 'index.html' %}
+  {% load static %}
+  {% block content %}
+
+<style>
+     .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+    /*carousel*/
+  
+    .slide-container .prev,
+  .slide-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  .slide-container .prev:hover,
+  .slide-container .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+  }
+  
+  .slide-container .prev {
+    left: 2px;
+  }
+  
+  .slide-container .next {
+    right: 2px;
+  }
+  
+  /*very important */
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .dots-container .dot {
+    cursor: pointer;
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    color: #333;
+    border-radius: 50%;
+    background-color: #dfd6ce;
+  }
+  
+  .dots-container .dot.active {
+    border: 2px solid #000;
+  }
+  
+  * {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    /*height: 100%;
+     background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
+  }
+  
+  body h1 {
+    text-align: center;
+  }
+  
+  .slide-containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    height: 350px;
+  }
+  
+  .slide-containers .slider {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide-containers .slider.fade {
+    animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+   /* transition-timing-function: ease;*/
+    
+  }
+  
+  .slide-containers .slider img {
+    width: 100%;
+    height: 100%;
+  }
+    
+    </style>
+    <body>
+      <h1>Take a tour of the property</h1>
+      <div class="slide-containers">
+        {% for pic in slide %}
+        <div class="mySlidy fade {% if forloop.counter0 == 0 %}active{% endif %}">
+          <img src="{{ pic.images_of_property.url }}"   alt='not found'>
+        </div>
+        {% endfor %}
+         <!--<div class="slide fade">
+          <img src="/static/images/background/house14.jpg" alt='not found'>
+        </div>
+        <div class="slide fade">
+          <img src="/static/images/background/house13.jpg" alt='not found'>
+        </div>
+        <div class="slide fade">
+          <img src="/static/images/background/house18.jpg" alt='not found'>
+        </div>-->
+  
+        <a href="#" class="prev" title="Previous">&#10094</a>
+        <a href="#" class="next" title="Next">&#10095</a>
+      </div>
+      <div class="dots-container">
+          {% for pic in slide %}
+        <span class="dot"></span>
+        {% endfor %}
+       <!---<span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>-->
+      </div>
+    </body>
+  </html>
+    
+    
+  
+  
+  
+  <script>
+      let currentSlide = 0;
+  const slides = document.querySelectorAll(".slider")
+  const dots = document.querySelectorAll('.dot')
+  
+  const init = (n) => {
+    slides.forEach((slide, index) => {
+      slide.style.display = "none"
+      dots.forEach((dot, index) => {
+        dot.classList.remove("active")
+      })
+    })
+    slides[n].style.display = "block"
+    dots[n].classList.add("active")
+  }
+  document.addEventListener("DOMContentLoaded", init(currentSlide))
+  const next = () => {
+    currentSlide >= slides.length - 1 ? currentSlide = 0 : currentSlide++
+    init(currentSlide)
+  }
+  
+  const prev = () => {
+    currentSlide <= 0 ? currentSlide = slides.length - 1 : currentSlide--
+    init(currentSlide)
+  }
+  
+  document.querySelector(".next").addEventListener('click', next)
+  
+  document.querySelector(".prev").addEventListener('click', prev)
+  
+  
+  setInterval(() => {
+    next()
+  }, 5000);
+  
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      console.log(currentSlide)
+      init(i)
+      currentSlide = i
+    })
+  })
+  
+  </script>
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}

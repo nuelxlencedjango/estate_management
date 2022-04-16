@@ -1,7 +1,4 @@
 
-{% extends 'index.html' %}
-  {% load static %}
-  {% block content %}
 
 <style>
      .want_to_buy{
@@ -200,34 +197,4 @@
 
 
 
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
 
-        <div class="slide-containers">
-            {% for pic in slide %}
-            <div class="mySlide  {% if forloop.counter0 == 0 %}active{% endif %}">
-              <img src="{{ pic.images_of_property.url }}"   alt='not found'>
-            </div>
-            {% endfor %}
-      <!--<div class="carousel-item active">
-        <img src="/static/images/background/house10.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="/static/images/background/house1.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="/static/images/background/house8.jpg" class="d-block w-100" alt="...">
-      </div>-->
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-
-    {% endblock %}
