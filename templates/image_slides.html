@@ -112,7 +112,7 @@
         <h1>Take a tour of the property</h1>
         <div class="slide-container">
           {% for pic in slide %}
-          <div class="slide mod active{% if forloop.counter0 == 0 %}active{% endif %}">
+          <div class="slide mod {% if forloop.counter0 == 0 %}active{% endif %}">
             <img src="{{ pic.images_of_property.url }}"   alt='not found'>
           </div>
           {% endfor %}
