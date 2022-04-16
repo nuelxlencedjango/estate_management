@@ -146,11 +146,11 @@
     slides.forEach((slide, index) => {
       slide.style.display = "none"
       dots.forEach((dot, index) => {
-        dot.classList.remove(".slides")
+        dot.classList.remove("slides")
       })
     })
     slides[n].style.display = "block"
-    dots[n].classList.add(".slides")
+    dots[n].classList.add("slides")
   }
   document.addEventListener("DOMContentLoaded", init(currentSlide))
   const next = () => {
@@ -183,11 +183,6 @@
 
 
 
-  var myCarousel = document.querySelector('#myCarousel')
-var carousel = new bootstrap.Carousel(myCarousel, {
-  interval: 2000,
-  wrap: false
-})
   
   </script>
 
