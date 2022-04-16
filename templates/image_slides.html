@@ -1,8 +1,6 @@
 
 
-{% extends 'index.html' %}
-{% load static %}
-{% block content %}
+
 <style>
      .want_to_buy{
         display: none;
@@ -119,15 +117,7 @@
           <img src="{{ pic.images_of_property.url }}"   alt='not found'>
         </div>
         {% endfor %}
-         <!--<div class="slide fade">
-          <img src="/static/images/background/house14.jpg" alt='not found'>
-        </div>
-        <div class="slide fade">
-          <img src="/static/images/background/house13.jpg" alt='not found'>
-        </div>
-        <div class="slide fade">
-          <img src="/static/images/background/house18.jpg" alt='not found'>
-        </div>-->
+        
   
         <a href="#" class="prev" title="Previous">&#10094</a>
         <a href="#" class="next" title="Next">&#10095</a>
@@ -136,9 +126,7 @@
           {% for pic in slide %}
         <span class="dot"></span>
         {% endfor %}
-       <!---<span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>-->
+    
       </div>
     </body>
   </html>
@@ -238,5 +226,3 @@ var carousel = new bootstrap.Carousel(myCarousel, {
 
 
 
-  
-{% endblock %}
