@@ -235,7 +235,14 @@
       font-size: 700;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
-  
+  .descript{
+      margin-top: 30px;
+      background-color: #333;
+      font-size: 20px;
+      font-weight: 400;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+  }
   
   
   </style>
@@ -327,7 +334,7 @@
       
   </div>  
   </div>
-  <h3 class="descript"> {{items.describe }}</h3>
+  <h3 class="descript animate__animated animate__backInRight"> {{items.describe }}</h3>
   
 
   </div>
@@ -445,19 +452,19 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"></th>
+          
             <td>Address</td>
             <td>{{items.Location }}</td>
            
           </tr>
           <tr>
-            <th scope="row">2</th>
+       
             <td>Price:</td>
             <td><span>${{items.price }}</span></td>
            
           </tr>
           <tr>
-            <th scope="row"></th>
+       
             <td>Bedroom</td>
         <td>{{items.bedroom }}</td>
            
