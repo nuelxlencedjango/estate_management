@@ -88,7 +88,7 @@
     max-width: 600px;
     margin: auto;
     position: relative;
-    min-height: 350px;
+    max-height: 350px;
   }
   
   .slide-container .slide {
@@ -97,7 +97,7 @@
     height: 100%;
   }
   
-  .slide-container .slide.modal {
+  .slide-container .slide.mod {
     animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
   
@@ -112,7 +112,7 @@
         <h1>Take a tour of the property</h1>
         <div class="slide-container">
           {% for pic in slide %}
-          <div class="slide modal active{% if forloop.counter0 == 0 %}active{% endif %}">
+          <div class="slide mod active{% if forloop.counter0 == 0 %}active{% endif %}">
             <img src="{{ pic.images_of_property.url }}"   alt='not found'>
           </div>
           {% endfor %}
