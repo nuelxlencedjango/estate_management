@@ -115,7 +115,7 @@
       <h1>Take a tour of the property</h1>
       <div class="slide-container">
         {% for pic in slide %}
-        <div class="slide fade {% if forloop.counter0 == 0 %}active{% endif %}">
+        <div class="slide fade {% if forloop.counter0 == 0 %}active{% endif %}" id="slide{{ forloop.counter }}">
           <img src="{{ pic.images_of_property.url }}"   alt='not found'>
         </div>
         {% endfor %}
@@ -146,11 +146,11 @@
     slides.forEach((slide, index) => {
       slide.style.display = "none"
       dots.forEach((dot, index) => {
-        dot.classList.remove("slides")
+        dot.classList.remove("active")
       })
     })
     slides[n].style.display = "block"
-    dots[n].classList.add("slides")
+    dots[n].classList.add("active")
   }
   document.addEventListener("DOMContentLoaded", init(currentSlide))
   const next = () => {
