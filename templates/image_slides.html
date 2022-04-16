@@ -189,6 +189,15 @@
       currentSlide = i
     })
   })
+
+
+
+
+  var myCarousel = document.querySelector('#myCarousel')
+var carousel = new bootstrap.Carousel(myCarousel, {
+  interval: 2000,
+  wrap: false
+})
   
   </script>
 
@@ -222,4 +231,8 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+
+
+  
 {% endblock %}
