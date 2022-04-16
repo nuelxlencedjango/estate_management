@@ -115,6 +115,14 @@ def imageGallery(request,id):
     return render(request,'image_gallery.html',context)      
 
 
+           
+def imageSlides(request,id):
+    items = get_object_or_404(Property,id=id)
+    images = PropertyImages.objects.filter(property_details=items)
+    context={'images':images, 'items':items}
+
+    return render(request,'image_slides.html',context)  
+
    
 def availablePropertypp(request):
     if request.method =="GET":

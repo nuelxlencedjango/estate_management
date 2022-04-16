@@ -29,6 +29,7 @@ urlpatterns =[
    path('image_gallery/<int:id>/', views.imageGallery, name='image_gallery'),
 
     path('services/',views.services,name='services'),
+   path('image_slides/<int:id>/', views.imageSlides, name='image_slides'),
 
     
 ]

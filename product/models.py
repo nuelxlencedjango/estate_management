@@ -40,6 +40,7 @@ class Property(models.Model):
 class PropertyImages(models.Model):
     property_details=models.ForeignKey(Property,on_delete=models.CASCADE)
     images_of_property = CloudinaryField('images',blank=True,null=True)
+    #description =models.CharField(max_length=200,blank=True,null=True)
 
     def __str__(self):
         return self.property_details.name
