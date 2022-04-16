@@ -1,6 +1,8 @@
 
 
-
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
 <style>
      .want_to_buy{
         display: none;
@@ -113,7 +115,7 @@
       <h1>Take a tour of the property</h1>
       <div class="slide-containers">
         {% for pic in slide %}
-        <div class="slide fade {% if forloop.counter0 == 0 %}active{% endif %}">
+        <div class="slide active fade {% if forloop.counter0 == 0 %}active{% endif %}">
           <img src="{{ pic.images_of_property.url }}"   alt='not found'>
         </div>
         {% endfor %}
@@ -189,3 +191,4 @@
   })
   
   </script>
+{% endblock %}
