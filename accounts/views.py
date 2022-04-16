@@ -75,8 +75,8 @@ def loginPage(request):
 
 
 def dashboard(request):
-    
-    return redirect('products:dashboard')    
+    context = {}
+    return render(request,'account/dashboard.html.html', context)    
 
 
 

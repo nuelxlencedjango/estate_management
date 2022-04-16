@@ -376,7 +376,7 @@ def add_to_cart(request, pk):
 
                 order_item.save()
                 messages.info(request ,"Added additional property successfully")
-                return redirect("products:dashboard")
+                return redirect("accounts:dashboard")
 
             else:
                 order.items.add(order_item)
