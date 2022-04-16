@@ -389,7 +389,7 @@ def add_to_cart(request, pk):
             order.items.add(order_item)
             messages.info(request," Successfully booked")
 
-            return redirect('products:home')          
+            return redirect('product:home')          
     
     else:
         messages.info(request,"Request unsuccessful! Please login before you can make a request")
