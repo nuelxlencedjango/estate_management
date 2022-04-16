@@ -113,7 +113,7 @@
         <div class="slide-container">
           {% for pic in slide %}
           <div class="slide modal active{% if forloop.counter0 == 0 %}active{% endif %}">
-            <img src="{{ pic.images_of_property.ur }}"   alt='not found'>
+            <img src="{{ pic.images_of_property.url }}"   alt='not found'>
           </div>
           {% endfor %}
           
