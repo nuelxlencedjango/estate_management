@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import views as auth_views
 
 from django.contrib.auth.models import Group
-
+from product.models import *
 
 from .models import *
 from .forms import *
@@ -75,7 +75,13 @@ def loginPage(request):
 
 
 def dashboard(request):
-    context = {}
+
+    if Order.objects.filter(user=request.user, ordered =False).exists():
+        order = Order.objects.get(user=request.user, ordered=False)
+        context={
+            'order':order
+        }
+        return render(request, 'account/dashboard.html.html',context)
     return render(request,'account/dashboard.html.html', context)    
 
 
