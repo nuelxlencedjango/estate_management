@@ -1,16 +1,9 @@
 
-
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
       
-    <html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="author" content="Joseph Odunsi" />
-      <meta name="description" content="Create an image slider with HTML, CSS and JavaScript" />
-      <meta name="keywords" content="image slider, carousel, codepen, css, js" />
-      <title>Image Slider</title>
-    </head>
+  
 
 
 
@@ -18,7 +11,18 @@
 
 
 <style>
-
+     .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
     /*carousel*/
   
     .slide-container .prev,
@@ -115,7 +119,7 @@
     
     </style>
     <body>
-      <h1>Image Slider</h1>
+      <h1>Take a tour of the property</h1>
       <div class="slide-container">
         <div class="slide fade">
           <img src="/static/images/background/house10.jpg" alt='not found'>
@@ -191,3 +195,4 @@
   
   </script>
 
+{% endblock %}
