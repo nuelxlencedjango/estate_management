@@ -18,8 +18,8 @@
     }
     /*carousel*/
   
-    .slide-container .prev,
-  .slide-container .next {
+    .carousel-item .prev,
+  .carousel-item .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -34,17 +34,17 @@
     user-select: none;
   }
   
-  .slide-container .prev:hover,
-  .slide-container .next:hover {
+  .carousel-item .prev:hover,
+  .carousel-item .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
   }
   
-  .slide-container .prev {
+  .carousel-item .prev {
     left: 2px;
   }
   
-  .slide-container .next {
+  .carousel-item .next {
     right: 2px;
   }
   
@@ -85,7 +85,7 @@
     text-align: center;
   }
   
-  .slide-container {
+  .carousel-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,11 +101,11 @@
     height: 100%;
   }
   
-  .slide-container .slide.fade {
+  .carousel-item .slide.fade {
     animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
   
-  .slide-container .slide img {
+  .carousel-item .slide img {
     width: 100%;
     height: 100%;
   }
@@ -113,7 +113,7 @@
     </style>
     <body>
       <h1>Take a tour of the property</h1>
-      <div class="slide-container">
+      <div class="carousel-item">
         {% for pic in slide %}
         <div class="slide fade {% if forloop.counter == 0 %}active{% endif %}" id="slide{{ forloop.counter }}">
           <img src="{{ pic.images_of_property.url }}"   alt='not found'>
