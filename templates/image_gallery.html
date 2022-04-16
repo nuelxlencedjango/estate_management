@@ -215,6 +215,9 @@
   .contar{
       margin-left: 30px;
   }
+  span{
+      color: green;
+  }
   
   
   
@@ -265,10 +268,6 @@
   
   
   
-  
-  
-  
-     
     
   
   
@@ -386,25 +385,26 @@
        
       </tr>
       <tr>
-        <td>Laughing Bacchus Winecellars</td>
-        <td>Yoshi Tannamuri</td>
-        <td>Canada</td>
+        <td>Status</td>
+        <td>{{items.status}}</td>
+       
       </tr>
       <tr>
-        <td>Magazzini Alimentari Riuniti</td>
-        <td>Giovanni Rovelli</td>
-        <td>Italy</td>
+        <td>Release Date</td>
+        <td>{{ items.release_date }}</td>
+       
       </tr>
       <tr>
-        <td>North/South</td>
-        <td>Simon Crowther</td>
-        <td>UK</td>
+        <td>Property Id</td>
+        <td>{{ items.release_id }}</td>
+        
       </tr>
       <tr>
-        <td>Paris spécialités</td>
-        <td>Marie Bertrand</td>
-        <td>France</td>
+        <td>Description</td>
+        <td>{{ items.describe }}</td>
+       
       </tr>
+    
     </table>
 
 
