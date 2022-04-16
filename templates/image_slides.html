@@ -95,17 +95,17 @@
     height: 350px;
   }
   
-  .carousel-inner .slide {
+  .carousel-inner .carousel-item {
     display: none;
     width: 100%;
     height: 100%;
   }
   
-  .carousel-inner .slide.fade {
+  .carousel-inner .carousel-item.fade {
     animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
   
-  .carousel-inner .slide img {
+  .carousel-inner .carousel-item img {
     width: 100%;
     height: 100%;
   }
@@ -115,7 +115,7 @@
       <h1>Take a tour of the property</h1>
       <div class="carousel-inner">
         {% for pic in slide %}
-        <div class="slide fade {% if forloop.counter0 == 0 %}active{% endif %}">
+        <div class="carousel-item fade {% if forloop.counter0 == 0 %}active{% endif %}">
           <img src="{{ pic.images_of_property.url }}"   alt='not found'>
         </div>
         {% endfor %}
@@ -139,7 +139,7 @@
   
   <script>
       let currentSlide = 0;
-  const slides = document.querySelectorAll(".slide")
+  const slides = document.querySelectorAll(".carousel-item")
   const dots = document.querySelectorAll('.dot')
   
   const init = (n) => {
