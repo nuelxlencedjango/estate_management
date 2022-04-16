@@ -30,7 +30,7 @@ urlpatterns =[
 
     path('services/',views.services,name='services'),
    path('image_slides/<int:id>/', views.imageSlides, name='image_slides'),
-
+    path('add_item/<int:pk>', views.add_to_cart, name='add_item'),
     
 ]
 

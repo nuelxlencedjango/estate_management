@@ -3,12 +3,13 @@ from django.db import models
 
 from django.utils.html import mark_safe
 from django.contrib.auth.models import User
-
+from django.shortcuts import reverse
 
 from cloudinary.models import CloudinaryField
 #from matplotlib.backend_bases import LocationEvent
 #from matplotlib.pyplot import title
 # Create your models here.
+
 
 
 
@@ -30,10 +31,106 @@ class Property(models.Model):
     def __str__(self):
         return self.name 
 
+        
+
     class Meta:
         #db_table='accommodation' 
 
         verbose_name_plural='Property'
+
+    def get_add_to_cart(self):
+
+        return reverse('product:add-to-cart' ,kwargs={
+            "pk":self.pk
+        })    
+
+
+
+
+
+class OrderItem(models.Model):
+
+   user = models.ForeignKey(User, on_delete=models.CASCADE)
+   ordered = models.BooleanField(default=False)
+   product = models.ForeignKey(Property, on_delete=models.CASCADE)
+   quantity = models.IntegerField(default =1)
+   img = CloudinaryField(blank=True,null=True)
+   status = models.CharField(max_length=200, null=True, blank=True, default='Pending')
+   description=models.TextField(max_length=100,null=True,blank=True)
+   #location = models.ForeignKey('artsans.Area' ,on_delete =models.CASCADE ,null=True,blank=True)
+   address = models.CharField(max_length=300, null=True,blank=True)
+   date_created = models.DateField(auto_now_add = True, null=True, blank=True)
+   #payment_id
+   
+   class Meta:
+      verbose_name_plural='Orderitem'
+
+   def __str__(self):
+      return f"{self.quantity} of {self.product.name}"
+
+   def get_total_item_price(self):
+      return self.quantity * self.product.price
+
+   def get_final_price(self):
+      return self.get_total_item_price() 
+
+   def vat(self):
+      return self.get_vat()   
+     
+
+
+
+class Order(models.Model):
+
+    #date=models.DateField(auto_now=False,auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    items = models.ManyToManyField(OrderItem)
+    img = CloudinaryField(blank=True,null=True)
+    #start_date = models.DateTimeField(auto_now_add=True)
+    ordered_date = models.DateTimeField()
+    ordered = models.BooleanField(default=False)
+    order_id = models.CharField(max_length=50,unique=True, default =None,blank=True,null=True)
+   
+   
+    def __str__(self):
+
+        return self.user.username
+
+   
+    class Meta:
+
+        verbose_name_plural='Order'
+ 
+
+    def get_total_price(self):
+
+        total =0
+        for order_item in self.items.all():
+
+            total +=order_item.get_final_price()
+               
+
+        return total
+
+
+    def get_total_count(self):
+
+        order =Order.objects.get(pk=self.pk)
+        return order.items.count()  
+
+   
+    def get_vat(self):
+
+        return (self.get_total_price() * 5)/100
+
+   
+    def get_final_amount(self):
+        return (self.get_total_price() + self.get_vat()) 
+
+
+
+
+
 
 
 
@@ -97,6 +194,8 @@ class Department(models.Model):
 
 
 
+
+#to be removed
 class EmpModel(models.Model):
     empid =models.IntegerField(primary_key=True)
     empname =models.CharField(max_length=100)
@@ -201,128 +300,6 @@ class Size(models.Model):
         return self.sqft
 
 
-# Product Model
-class Product(models.Model):
-    title=models.ForeignKey(Category,on_delete=models.CASCADE)
-    slug=models.CharField(max_length=400)
-    detail=models.TextField()
-    #specs=models.TextField()
-    
-    product_size=models.ForeignKey(Size,on_delete=models.CASCADE,default=1)
-    status=models.BooleanField(default='Active')
-    is_featured=models.BooleanField(default=False)
-
-    class Meta:
-        verbose_name_plural='Products'
-
-    def __str__(self):
-        return self.title
-
-# Product Attribute
-class ProductAttribute(models.Model):
-    product=models.ForeignKey(Product,on_delete=models.CASCADE)
-    price=models.PositiveIntegerField(default=0)
-    #status =models.CharField(max_length=400)
-    bedrooms =models.PositiveIntegerField(default=1)
-    bathrooms =models.PositiveIntegerField(default=1)
-  
-   
-    subdivision =models.CharField(max_length=400,default='Abuja')
-
-    #color=models.ForeignKey(Color,on_delete=models.CASCADE)
-    #size=models.ForeignKey(Size,on_delete=models.CASCADE)
-   
-    image=models.ImageField(upload_to="product_imgs/",null=True)
-
-
-    class Meta:
-        verbose_name_plural='ProductAttributes'
-
-    def __str__(self):
-        return self.product.title
-
-    def image_tag(self):
-        return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
-
-# Order
-status_choice=(
-        ('process','In Process'),
-        ('shipped','Shipped'),
-        ('delivered','Delivered'),
-    )
-
-
-
-class CartOrder(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
-    total_amt=models.FloatField()
-    paid_status=models.BooleanField(default=False)
-    order_dt=models.DateTimeField(auto_now_add=True)
-    order_status=models.CharField(choices=status_choice,default='process',max_length=150)
-
-    class Meta:
-        verbose_name_plural='Orders'
-
-
-
-# OrderItems
-class CartOrderItems(models.Model):
-    order=models.ForeignKey(CartOrder,on_delete=models.CASCADE)
-    invoice_no=models.CharField(max_length=150)
-    item=models.CharField(max_length=150)
-    image=models.CharField(max_length=200)
-    qty=models.IntegerField()
-    price=models.FloatField()
-    total=models.FloatField()
-
-    class Meta:
-        verbose_name_plural='OrderItems'
-
-    def image_tag(self):
-        return mark_safe('<img src="/media/%s" width="50" height="50" />' % (self.image))
-
-# Product Review
-RATING=(
-    (1,'1'),
-    (2,'2'),
-    (3,'3'),
-    (4,'4'),
-    (5,'5'),
-)
-class ProductReview(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
-    product=models.ForeignKey(Product,on_delete=models.CASCADE)
-    review_text=models.TextField()
-    review_rating=models.CharField(choices=RATING,max_length=150)
-
-    class Meta:
-        verbose_name_plural='Reviews'
-
-    def get_review_rating(self):
-        return self.review_rating
-
-# WishList
-class Wishlist(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
-    product=models.ForeignKey(Product,on_delete=models.CASCADE)
-
-    class Meta:
-        verbose_name_plural='Wishlist'
-
-# AddressBook
-class UserAddressBook(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
-    mobile=models.CharField(max_length=50,null=True)
-    address=models.TextField()
-    status=models.BooleanField(default=False)
-
-    class Meta:
-        verbose_name_plural='AddressBook'
-
-
-
-
-
 
 
 class ContactUs(models.Model):
@@ -342,6 +319,3 @@ class ContactUs(models.Model):
       return self.name  
     
 
-
-
-	

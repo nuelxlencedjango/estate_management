@@ -27,6 +27,14 @@ class ContactUsAdmin(admin.ModelAdmin):
 
 
 
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ['user','items','img','ordered_date', 'ordered','order_id']
+
+
+
+class OrderItemAdmin(admin.ModelAdmin):
+    list_display = ['user','product','quantity','status', 'description','address','date_created']
+
 
 
 class PropertyImageAdmin(admin.StackedInline):
@@ -45,8 +53,8 @@ class PropertyImageAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(Product)
-admin.site.register(ProductAttribute)
+admin.site.register(OrderItem)
+admin.site.register(Order)
 admin.site.register(Category)
 admin.site.register(Size)
 admin.site.register(ContactUs,ContactUsAdmin)

@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 from django_filters.views import FilterView
-
+from django.utils import timezone
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from .models import *
 from .filters import *
@@ -343,5 +343,56 @@ def show_available_properties(request):
 
     return render(request,'property_info.html',context)
 
+
+
+
+
+
+
+
+
+def add_to_cart(request, pk):
+    if request.user.is_authenticated:
+        product = Property.objects.get(pk=pk)  
+    
+        order_item,created = OrderItem.objects.get_or_create(
+            product =product,
+            user = request.user,
+            ordered = False,
+            img = product.img,
+            
+            #description = request.POST['description'],
+        #desc = request.POST.get('desc', False),
+            #address = request.POST['address'],
+        #address = request.POST.get('address', False),
+            #quantity = int(request.POST['quantity']),
+
+            )
+        order_qs = Order.objects.filter(user=request.user,ordered=False)
+        if order_qs.exists():
+            order =order_qs[0]
+            if order.items.filter(product__pk=pk).exists():
+                order_item.quantity +=1
+
+                order_item.save()
+                messages.info(request ,"Added additional property successfully")
+                return redirect("products:dashboard")
+
+            else:
+                order.items.add(order_item)
+                messages.info(request ," successfully booked")
+                return redirect("product:home")  
+
+        else:
+            ordered_date =timezone.now()
+            order =Order.objects.create(user=request.user, ordered_date=ordered_date)
+            order.items.add(order_item)
+            messages.info(request," Successfully booked")
+
+            return redirect('products:home')          
+    
+    else:
+        messages.info(request,"Request unsuccessful! Please login before you can make a request")
+        return render(request ,'account/login.html') 
 
 
