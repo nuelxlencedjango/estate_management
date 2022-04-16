@@ -113,7 +113,7 @@
       <h1>Take a tour of the property</h1>
       <div class="slide-container">
         {% for pic in slide %}
-        <div class="slide fade active{% if forloop.counter0 == 0 %}active{% endif %}">
+        <div class="slide fade {% if forloop.counter0 == 0 %}active{% endif %}">
           <img src="{{ pic.images_of_property.url }}"   alt='not found'>
         </div>
         {% endfor %}
@@ -202,7 +202,7 @@ var carousel = new bootstrap.Carousel(myCarousel, {
    <div class="sliding">
     <div class="carousel-inner">
         {% for pic in slide %}
-        <div class="carousel-item active {% if forloop.counter0 == 0 %}active{% endif %}">
+        <div class="carousel-item  {% if forloop.counter0 == 0 %}active{% endif %}">
           <img src="{{ pic.images_of_property.url }}" class="d-block w-100" alt="...">
         </div>
         {% endfor %}
