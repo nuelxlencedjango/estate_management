@@ -118,8 +118,8 @@ def imageGallery(request,id):
            
 def imageSlides(request,id):
     items = get_object_or_404(Property,id=id)
-    images = PropertyImages.objects.filter(property_details=items)
-    context={'images':images, 'items':items}
+    slide = PropertyImages.objects.filter(property_details=items)
+    context={'slide':slide, 'items':items}
 
     return render(request,'image_slides.html',context)  
 

@@ -176,12 +176,12 @@ body h1 {
   <div class="containers">
   
     <!-- Full-width images with number text -->
-    {% for p in images %}
+    {% for p in slide %}
     <div class="mySlides animate__animated animate__rotateInDownLeftt animation-delay-0s">
         <div class="container">
     
         <img src="{{p.images_of_property.url}}" style="width:100%">
-        <!--<h1>{{p.property_details.listing_id}}</h1>-->
+        <h1>{{p.property_details.listing_id}}</h1>
         </div>
     </div>
     {% endfor %}
