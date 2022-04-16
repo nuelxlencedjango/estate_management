@@ -163,61 +163,33 @@
 
 
 
-<!--{% if resultobj.has_other_pages %}
-  <ul class="pagination">
-    {% if resultobj.has_previous %}
-      <li><a href="?page={{ resultobj.previous_page_number }}">&laquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&laquo;</span></li>
-    {% endif %}
-    {% for i in resultobj.paginator.page_range %}
-      {% if resultobj.number == i %}
-        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-      {% else %}
-        <li><a href="?page={{ i }}">{{ i }}</a></li>
-      {% endif %}
-    {% endfor %}
-    {% if resultobj.has_next %}
-      <li><a href="?page={{ resultobj.next_page_number }}">&raquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&raquo;</span></li>
-    {% endif %}
-  </ul>
-{% endif %}-->
 
 
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
 
-  
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-
-
-
-
-<!--{% if resultobj.has_other_pages %}
-  <ul class="pagination">
-    {% if resultobj.has_previous %}
-      <li><a href="{% my_url 1 'page' request.GET.urlencode %}">&laquo;</a></li>-->
-      <!--<li><a href="{% my_url resultobj.previous_page_number 'page' request.GET.urlencode %}">&laquo;</a></li>-->
-    <!--{% else %}
-      <li class="disabled"><span>&laquo;</span></li>
-    {% endif %}
-    {% for i in resultobj.paginator.page_range %}
-      {% if resultobj.number == i %}
-        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-      {% else %}
-        <li><a href="{% my_url resultobj.i 'page' request.GET.urlencode %}">{{ i }}</a></li>
-      {% endif %}
-    {% endfor %}
-    {% if resultobj.has_next %}
-      <li><a href="{% my_url resultobj.next_page_number 'page' request.GET.urlencode %}">&raquo;</a></li>
-      <!--<li><a href="{% my_url resultobj.paginator.page_number 'page' request.GET.urlencode %}">&raquo;</a></li>-->
-    {% else %}
-      <li class="disabled"><span>&raquo;</span></li>
-    {% endif %}
-  </ul>
-{% endif %}-->
 
 {% endblock %}
 
