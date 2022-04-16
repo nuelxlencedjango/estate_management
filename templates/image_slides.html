@@ -77,13 +77,13 @@
   }
   
  
-  body h1 {
+  .tour h1 {
     text-align: center;
     color: #999;
     margin-top: 30px;
     margin-bottom: 10px;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 800;
     font-family: Arial, Helvetica, sans-serif;
   }
   
@@ -118,26 +118,28 @@
 
 
 
-     <div class="container">
-        <h1>Take a tour of the property</h1>
-        <div class="slide-container">
-          {% for pic in slide %}
-          <div class="slide mod {% if forloop.counter0 == 0 %}active{% endif %}" id="slide{{ forloop.counter }}">
-            <img src="{{ pic.images_of_property.url }}"   alt='not found'>
-          </div>
-          {% endfor %}
+    <section class="tour">
+        <div class="container">
+            <h1>Take a tour of the property</h1>
+            <div class="slide-container">
+              {% for pic in slide %}
+              <div class="slide mod {% if forloop.counter0 == 0 %}active{% endif %}" id="slide{{ forloop.counter }}">
+                <img src="{{ pic.images_of_property.url }}"   alt='not found'>
+              </div>
+              {% endfor %}
+              
+        
+              <a href="#" class="prev" title="Previous">&#10094</a>
+              <a href="#" class="next" title="Next">&#10095</a>
+            </div>
+            <div class="dots-container">
+                {% for pic in slide %}
+              <span class="dot"></span>
+              {% endfor %}
           
-    
-          <a href="#" class="prev" title="Previous">&#10094</a>
-          <a href="#" class="next" title="Next">&#10095</a>
-        </div>
-        <div class="dots-container">
-            {% for pic in slide %}
-          <span class="dot"></span>
-          {% endfor %}
-      
-        </div>
-     </div>
+            </div>
+         </div>
+    </section>
  
     
     
