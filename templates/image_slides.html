@@ -111,11 +111,11 @@
   }
     
     </style>
-    <body>
+
       <h1>Take a tour of the property</h1>
       <div class="carousel-inner">
         {% for pic in slide %}
-        <div class="carousel-item fade {% if forloop.counter0 == 0 %}active{% endif %}">
+        <div class="carousel-item fade {% if forloop.counter0 == 0 %}active{% endif %}" id="carousel-item{{ forloop.counter }}">
           <img src="{{ pic.images_of_property.url }}"   alt='not found'>
         </div>
         {% endfor %}
@@ -130,8 +130,7 @@
         {% endfor %}
     
       </div>
-    </body>
-  </html>
+ 
     
     
   
@@ -187,7 +186,24 @@
   </script>
 
 
+<h1>Take a tour </h1>
+<div class="carousel-content">
+  {% for pic in slide %}
+  <div class="sliding-item fade {% if forloop.counter0 == 0 %}active{% endif %}" id="sliding-item{{ forloop.counter }}">
+    <img src="{{ pic.images_of_property.url }}"   alt='not found'>
+  </div>
+  {% endfor %}
+  
 
+  <a href="#" class="prev" title="Previous">&#10094</a>
+  <a href="#" class="next" title="Next">&#10095</a>
+</div>
+<div class="dots-container">
+    {% for pic in slide %}
+  <span class="dot"></span>
+  {% endfor %}
+
+</div>
 
 {% endblock %}
 
