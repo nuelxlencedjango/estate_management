@@ -1,7 +1,5 @@
 
-     {% extends 'index.html' %}
-     {% load static %}
-     {% block content %} 
+  
 
 <style>
      .want_to_buy{
@@ -114,10 +112,12 @@
     <body>
       <h1>Take a tour of the property</h1>
       <div class="slide-containers">
+          {% for pic in slide %}
         <div class="slide fade">
           <img src="/static/images/background/house10.jpg" alt='not found'>
         </div>
-        <div class="slide fade">
+        {% endfor %}
+       <!---<div class="slide fade">
           <img src="/static/images/background/house14.jpg" alt='not found'>
         </div>
         <div class="slide fade">
@@ -125,16 +125,18 @@
         </div>
         <div class="slide fade">
           <img src="/static/images/background/house18.jpg" alt='not found'>
-        </div>
+        </div>-->
   
         <a href="#" class="prev" title="Previous">&#10094</a>
         <a href="#" class="next" title="Next">&#10095</a>
       </div>
       <div class="dots-container">
+          {% for pic in slide %}
         <span class="dot"></span>
+        {% endfor %}
+       <!---<span class="dot"></span>
         <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+        <span class="dot"></span>-->
       </div>
     </body>
   </html>
@@ -190,101 +192,3 @@
 
 
 
-<div class="imageGallery">
-    <div class="containers">
-    
-      <!-- Full-width images with number text -->
-      {% for p in slide %}
-      <div class="mySlides animate__animated animate__rotateInDownLeftt animation-delay-0s">
-          <div class="container">
-      
-          <img src="{{p.images_of_property.url}}" style="width:100%">
-          <!--<h1>{{p.property_details.listing_id}}</h1>-->
-          </div>
-      </div>
-      {% endfor %}
-    
-    
-      <!-- Next and previous buttons -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    </div>
-    
-<!-- Container for the image gallery -->
-<style>
-    * {
-  box-sizing: border-box;
-  }
-  .want_to_buy{
-        display: none;
-    }
-    .display{
-        display: none;
-    }
-    .property-search{
-        display: none;
-    }
-    .featured{
-        display: none;
-    }
-  /* Position the image container (needed to position the left and right arrows) */
-  .imageGallery.containers {
-  position: relative;
-  }
-  
-  /* Hide the images by default */
-  .mySlides {
-  display: block;
-  width: 900px;
-  margin-top: 30px;
-  
-  }
-  .mySlides img{
-      margin-top: 20px;
-      height: 350px;
-      width: 700px;
-   
-      align-items: center;
-      margin-left: 100px;
-  
-  }
-  
-  
-  /* Next & previous buttons */
-  .prev,
-  .next {
-  cursor: pointer;
-  position: absolute;
-  top: 80%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: #000;
-  font-weight: bold;
-  font-size: 24px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
-      color: #fff;
-  background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  </style>    
-
-
-
-
-
-{% endblock %}
