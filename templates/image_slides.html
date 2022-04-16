@@ -115,7 +115,7 @@
       <h1>Take a tour of the property</h1>
       <div class="slide-containers">
         {% for pic in slide %}
-        <div class="slider fade {% if forloop.counter0 == 0 %}active{% endif %}">
+        <div class="mySlidy fade {% if forloop.counter0 == 0 %}active{% endif %}">
           <img src="{{ pic.images_of_property.url }}"   alt='not found'>
         </div>
         {% endfor %}
@@ -214,9 +214,7 @@
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     
     
-      <div class="caption-text">
-          <p id="capt">Please click on the images below</p>
-        </div>
+    
   
      
     
