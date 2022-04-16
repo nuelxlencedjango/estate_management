@@ -352,6 +352,7 @@ def show_available_properties(request):
 
 
 def add_to_cart(request, pk):
+    
     if request.user.is_authenticated:
         product = Property.objects.get(pk=pk)  
     

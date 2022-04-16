@@ -1,0 +1,91 @@
+
+
+{% extends 'main.html' %}
+{% load static %}  
+{% block content %} 
+<body>
+
+    <div class="container h-100 " style="margin-top: 100px;">
+       
+
+    </div>
+
+</body>
+
+
+
+
+
+{% for message in messages %}
+<h4 id="messages">{{ message }}</h4>
+{% endfor %}
+
+
+<div class="container" style="align-items: center; text-align: center;" >
+    <h2>Please click the login button </h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+</div>
+
+<div class="container" id="ido-main">
+
+<div id="id01" class="modal" style="align-items: center; text-align: center; padding: 40px;">
+  
+    <form class="modal-content animate" action="{% url 'account:login' %}" method="POST">
+        {% csrf_token %}
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="{% static 'images/avatar2.png' %}" alt="Avatar" class="avatar">
+      </div>
+  
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+  
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+          
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+  
+      <div class="container" style="background-color:#f1f1f1">
+        <!--<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>-->
+       
+        <span class="psw"> <a href="{% url 'account:registration' %}">Sing Up?</a></span>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+
+      
+    </form>
+
+ 
+
+ 
+  </div>
+</div>
+
+<span class="hello-msg">Hello ,{{ request.user }}</span>
+<span><a class="hello-msg" href="">Logout</a></span>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+{% endblock %}
