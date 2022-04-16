@@ -1,5 +1,7 @@
 
-      
+     {% extends 'index.html' %}
+     {% load static %}
+     {% block content %} 
 
 <style>
      .want_to_buy{
@@ -316,3 +318,7 @@ slides[slideIndex-1].style.display = "block";
 dots[slideIndex-1].className += " active";
 captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+</script>
+
+{% endblock %}
