@@ -225,4 +225,26 @@
 
 
 
+
+
+
+
+    <div class="sliders-containers">
+        {% for pic in slide %}
+        <div class="mySlidies fade {% if forloop.counter0 == 0 %}active{% endif %}">
+          <img src="{{ pic.images_of_property.url }}"   alt='not found'>
+        </div>
+        {% endfor %}
+        
+  
+        <a href="#" class="prev" title="Previous">&#10094</a>
+        <a href="#" class="next" title="Next">&#10095</a>
+      </div>
+      <div class="dots-container">
+          {% for pic in slide %}
+        <span class="dot"></span>
+        {% endfor %}
+   
+      </div>
+
     {% endblock %}
