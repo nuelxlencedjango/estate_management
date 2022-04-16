@@ -153,7 +153,7 @@
 <div class="btn-groupy " role="group" aria-label="Basic mixed styles example">
     <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures {{number}}</a>
     <a href="{% url 'product:image_slides' result.id %}" type="button" class="btn btnb btn-warning">Visual Tour</a>
-    <button type="button" class="btn btnb btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Favourite</button>
+    <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Favourite</a>
     <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-dark">View Details</a>
   </div>
 </div>
@@ -184,7 +184,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a type="button" class="btn btn-primary" href= "" >Save changes</a>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
