@@ -178,18 +178,18 @@
       currentSlide = i
     })
   })
-
-
-
-
-  
   </script>
+
+
+
+
+
 
 
 <h1>Take a tour </h1>
 <div class="carousel-content">
   {% for pic in slide %}
-  <div class="sliding-item fade {% if forloop.counter0 == 0 %}active{% endif %}" id="sliding-item{{ forloop.counter }}">
+  <div class="sliding-item  {% if forloop.counter0 == 0 %}active{% endif %}" id="sliding-item{{ forloop.counter }}">
     <img src="{{ pic.images_of_property.url }}"   alt='not found'>
   </div>
   {% endfor %}
