@@ -1,7 +1,5 @@
 
-  {% extends 'index.html' %}
-  {% load static %}
-  {% block content %}
+
 
 <style>
      .want_to_buy{
@@ -95,17 +93,17 @@
     height: 350px;
   }
   
-  .slide-containers .slider {
+  .slide-containers .slide {
     display: none;
     width: 100%;
     height: 100%;
   }
   
-  .slide-containers .slider.fade {
+  .slide-containers .slide.fade {
     animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
   
-  .slide-containers .slider img {
+  .slide-containers .slide img {
     width: 100%;
     height: 100%;
   }
@@ -115,7 +113,7 @@
       <h1>Take a tour of the property</h1>
       <div class="slide-containers">
         {% for pic in slide %}
-        <div class="slider fade {% if forloop.counter0 == 0 %}active{% endif %}">
+        <div class="slide fade {% if forloop.counter0 == 0 %}active{% endif %}">
           <img src="{{ pic.images_of_property.url }}"   alt='not found'>
         </div>
         {% endfor %}
@@ -149,7 +147,7 @@
   
   <script>
       let currentSlide = 0;
-  const slides = document.querySelectorAll(".slider")
+  const slides = document.querySelectorAll(".slide")
   const dots = document.querySelectorAll('.dot')
   
   const init = (n) => {
@@ -191,6 +189,3 @@
   })
   
   </script>
-
-
-{% endblock %}
