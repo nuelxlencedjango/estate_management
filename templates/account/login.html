@@ -135,7 +135,7 @@
 
 <div id="id01" class="modal" style="align-items: center; text-align: center; padding: 40px;">
   
-    <form class="modal-content animate" action="{% url 'account:login' %}" method="POST">
+    <form class="modal-content animate" action="{% url 'accounts:login' %}" method="POST">
         {% csrf_token %}
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -158,7 +158,7 @@
       <div class="container" style="background-color:#f1f1f1">
         <!--<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>-->
        
-        <span class="psw"> <a href="{% url 'account:registration' %}">Sing Up?</a></span>
+        <span class="psw"> <a href="{% url 'accounts:register' %}">Sing Up?</a></span>
         <span class="psw">Forgot <a href="#">password?</a></span>
       </div>
 
