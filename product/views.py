@@ -397,5 +397,3 @@ def add_to_cart(request, pk):
         return redirect('accounts:login') 
         #messages.info(request,"Request unsuccessful! Please login before you can make a request")
         #return render(request ,'account/login.html') 
-
-
