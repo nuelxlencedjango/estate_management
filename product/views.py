@@ -350,7 +350,7 @@ def show_available_properties(request):
 
 
 
-@login_required
+
 def add_to_cart(request, pk):
 
     if request.user.is_authenticated:
