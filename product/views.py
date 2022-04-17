@@ -352,7 +352,7 @@ def show_available_properties(request):
 
 
 def add_to_cart(request, pk):
-    
+
     if request.user.is_authenticated:
         product = Property.objects.get(pk=pk)  
     
@@ -391,6 +391,7 @@ def add_to_cart(request, pk):
             messages.info(request," Successfully booked")
 
             return redirect('product:dashboard')          
+    
     
     else:
         messages.info(request,"Request unsuccessful! Please login before you can make a request")
