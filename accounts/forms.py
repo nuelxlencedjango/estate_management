@@ -44,12 +44,12 @@ class CreateUserForm(UserCreationForm):
 
 class CustomerForm(forms.ModelForm):
 
-    phone = forms.CharField(max_length=15, required=True,label='phone',widget=forms.TextInput(attrs={'placeholder': 'phone'}))
-  
-    class Meta:
+  phone = forms.CharField(max_length=15, required=True,label='phone',widget=forms.TextInput(attrs={'placeholder': 'phone'}))
 
-        model =Customer
-        fields = '__all__'
+  class Meta:
+
+    model =Customer
+    fields = '__all__'
 
     #def __init__(self ,*args ,**kwargs):
     #    super(CustomerForm ,self).__init__(*args ,**kwargs)
@@ -80,10 +80,11 @@ class UserUpdateForm(forms.ModelForm):
 
 class CustomerUpdateForm(forms.ModelForm):
 
-    phone = forms.CharField(max_length=15, required=True,label='phone',widget=forms.TextInput(attrs={'placeholder': 'phone'}))
-    class Meta:
-        model =Customer
-        fields =('phone')
+  phone = forms.CharField(max_length=15, required=True,label='phone',widget=forms.TextInput(attrs={'placeholder': 'phone'}))
+  class Meta:
+    
+    model =Customer
+    fields =('phone')
 
 
  
