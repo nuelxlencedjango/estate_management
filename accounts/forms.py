@@ -82,9 +82,9 @@ class CustomerUpdateForm(forms.ModelForm):
 
   phone = forms.CharField(max_length=15, required=True,label='phone',widget=forms.TextInput(attrs={'placeholder': 'phone'}))
   class Meta:
-    
+
     model =Customer
-    fields =('phone')
+    fields =('phone',)
 
 
  
