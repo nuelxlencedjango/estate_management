@@ -1,5 +1,4 @@
 
-
 {% extends 'index.html' %}
 {% load static %}  
 {% block content %} 
@@ -7,8 +6,7 @@
 
 
 <style>
-
-    .want_to_buy{
+     .want_to_buy{
         display: none;
     }
     .display{
@@ -20,19 +18,6 @@
     .featured{
         display: none;
     }
-</style>
-
-
-
-
-
-
-
-
-
-
-
-<style>
  
     * {box-sizing: border-box}
 
@@ -86,21 +71,24 @@ a {
 .signin {
   background-color: #f1f1f1;
   text-align: center;
-}*/
+}
 
 </style>
+
+
+
 
 <div class="container" style="width: 20rem; margin-top: 70px; height: 20rem; background-color:#e9ecef;" >
   <div class="col-md-10 offset-md-1 mt-5" >
       <!--<div class="jumbotron"> 
            <h3 id="form-title" style="text-align: center;">Please login to enable you request the service you want</h3>-->
-          <h3 class="display-44" style="text-align: center; font-size: 22px; margin-top: 50px; color: #343a40;">request service</h3>
+          <h3 class="display-44" style="text-align: center; font-size: 22px; margin-top: 50px; color: #343a40;">SingIn OR</h3>
           <p id="form-title" >Please login to enable you request the service you want</p>
          
               <a href=""
-               style="font-size: 24px; text-align: center; text-decoration: none;"role="button" class="btn btn-danger"  >Artisans</a>
+               style="font-size: 24px; text-align: center; text-decoration: none;"role="button" class="btn btn-danger"  >Register</a>
                <a href=""
-               style="font-size: 24px; text-align: center; text-decoration: none;" role="button" class="btn btn-success" >Client</a>
+               style="font-size: 24px; text-align: center; text-decoration: none;" role="button" class="btn btn-success" >Login</a>
         
          <!-- <a action="" role="button" class="btn btn-primary btn-lg">Submit</a>-->
       </div>
@@ -108,6 +96,43 @@ a {
 
 
 
+
+
+
+
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="inputPassword6" class="col-form-label">Password</label>
+    </div>
+    <div class="col-auto">
+      <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+    </div>
+    <div class="col-auto">
+      <span id="passwordHelpInline" class="form-text">
+        Must be 8-20 characters long.
+      </span>
+    </div>
+  </div>
 
   {% endblock %}
 
