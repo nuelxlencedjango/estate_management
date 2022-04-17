@@ -87,9 +87,6 @@
 .contar{
     margin-left: 30px;
 }
-#exampleModal{
-  display: none;
-}
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
@@ -157,7 +154,7 @@
     <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures {{number}}</a>
     <a href="{% url 'product:image_slides' result.id %}" type="button" class="btn btnb btn-warning">Visual Tour</a>
   
-    <button type="button" class="btn btnb btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" id="demo" onclick="myFunction()" >Add To Favourite</button>
+    <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Favourite</a>
     
     <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -172,7 +169,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btn-primary">Save changes</a>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -215,14 +212,6 @@
   </div>
 </div>
 
-
-
-
-<script>
-  function myFunction() {
-    document.getElementById("demo");
-  }
-  </script>
 
 {% endblock %}
 
