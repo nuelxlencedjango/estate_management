@@ -13,8 +13,8 @@ class CreateUserForm(UserCreationForm):
   last_name = forms.CharField(max_length=30, required=True,widget=forms.TextInput(attrs={'placeholder': 'last name'}))
   
   email = forms.EmailField(max_length=100,required=True, widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
-  #password1 = forms.CharField(max_length=50,required=True ,widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
-  #password2 = forms.CharField(max_length=50, required=True ,widget=forms.TextInput(attrs={'placeholder': 'Re-enter password'}))
+  password1 = forms.CharField(max_length=50,required=True ,widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+  password2 = forms.CharField(max_length=50, required=True ,widget=forms.TextInput(attrs={'placeholder': 'Re-enter password'}))
   
 
 
@@ -66,6 +66,10 @@ class UserUpdateForm(forms.ModelForm):
   first_name = forms.CharField(max_length=30, required=True,label='first_name',widget=forms.TextInput(attrs={'placeholder': 'first name'}))
   last_name = forms.CharField(max_length=30, required=True,label='last_name',widget=forms.TextInput(attrs={'placeholder': 'last name'}))
   email = forms.EmailField(max_length=100,required=True,label='email', widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
+
+  password1 = forms.CharField(max_length=50,required=True ,widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+  password2 = forms.CharField(max_length=50, required=True ,widget=forms.TextInput(attrs={'placeholder': 'Re-enter password'}))
+  
 
   class Meta:
 
