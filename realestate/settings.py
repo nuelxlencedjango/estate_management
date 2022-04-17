@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'product.apps.ProductConfig',
     'django_filters',
     'accounts',
-     'crispy_forms',
+    'crispy_forms',
 
     
 ]
