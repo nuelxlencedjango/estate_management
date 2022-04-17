@@ -22,117 +22,18 @@
     * {box-sizing: border-box}
 
 
-.container {
-  padding: 16px;
-}
 
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-.registerbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity:1;
-}
-
-
-a {
-  color: dodgerblue;
-}
-
-
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
 
 </style>
 
 
 
 
-<div class="container" style="width: 20rem; margin-top: 70px; height: 20rem; background-color:#e9ecef;" >
-  <div class="col-md-10 offset-md-1 mt-5" >
-      <!--<div class="jumbotron"> 
-           <h3 id="form-title" style="text-align: center;">Please login to enable you request the service you want</h3>-->
-          <h3 class="display-44" style="text-align: center; font-size: 22px; margin-top: 50px; color: #343a40;">SingIn OR</h3>
-          <p id="form-title" >Please login to enable you request the service you want</p>
-         
-              <a href=""
-               style="font-size: 24px; text-align: center; text-decoration: none;"role="button" class="btn btn-danger"  >Register</a>
-               <a href=""
-               style="font-size: 24px; text-align: center; text-decoration: none;" role="button" class="btn btn-success" >Login</a>
-        
-         <!-- <a action="" role="button" class="btn btn-primary btn-lg">Submit</a>-->
-      </div>
-  </div>
 
 
 
 
 
-
-
-  <form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-
-
-
-
-  <div class="row g-3 align-items-center">
-    <div class="col-auto">
-      <label for="inputPassword6" class="col-form-label">Password</label>
-    </div>
-    <div class="col-auto">
-      <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-    </div>
-    <div class="col-auto">
-      <span id="passwordHelpInline" class="form-text">
-        Must be 8-20 characters long.
-      </span>
-    </div>
-  </div>
 
 
 
@@ -152,7 +53,7 @@ a {
 <div id="form2" class="container form2" style="width: 500px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
   <form action="{% url 'accounts:register' %}" method="POST" class="row g-3">
       {% csrf_token %}
-      <div class="col-md-8">
+      <div class="col-md-6">
           <label for="inputEmail4" class="form-label" >Username</label>
           <input type="text" class="form-control" id="inputusername" name="username" placeholder="username">
  
@@ -165,25 +66,17 @@ a {
           <label for="inputPassword4" class="form-label">Last name</label>
           <input type="text" class="form-control" id="inputlast_name" name="last_name" placeholder="Last name" >
         </div>
-      
-
-     
-      
-
-     
-      <div class="col-6">
-        <label for="inputAddress2" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress2" name="address" placeholder="Address">
-      </div>
-      <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Phone</label>
-          <input type="text" class="form-control" id="inputNumber" name="phone" placeholder="Phone Number">
-        </div>
+    
       <div class="col-md-6">
           <label for="inputEmail4" class="form-label">Email</label>
           <input type="email" class="form-control" id="inputlast_name" name="email" placeholder="Email" >
    
         </div>
+
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="inputNumber" name="phone" placeholder="Phone Number">
+      </div>
       
       <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Password</label>
@@ -195,8 +88,7 @@ a {
         </div>
 
       <div class="col-12">
-      <!--<button role="button" class="btn btn-danger btn-lg" style="align-items: center; margin-top: 40px;">Submit</button>-->
-      
+       
       <button type="submit" class="btn btn-danger">Submit</button>
 
        
@@ -225,87 +117,277 @@ a {
 
    
 
-    
 
+{% extends 'main.html' %}
+{% load static %}  
+{% block content %} 
+<body>
 
-</style>
+    <div class="container h-100 " style="margin-top: 100px;">
+        <!--<div class="d-flex justify-content-center h-100">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
 
-<div id="form2" class="container form2" style="width: 500px;  background-color: #2b3032a1; align-items: center; text-align: center; margin-top: 50px;">
-    <form action="" method="POST" class="row g-3" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="col-md-8">
-            <label for="inputEmail4" class="form-label" >Username</label>
-            <input type="text" class="form-control" id="inputusername" name="username" placeholder="username">
-   
-          </div>
-          <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">First name</label>
-            <input type="text" class="form-control" id="inputfirst_name" name="first_name" placeholder="First name" >
-          </div>
-          <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Last name</label>
-            <input type="text" class="form-control" id="inputlast_name" name="last_name" placeholder="Last name" >
-          </div>
-        
-          <div class="col-6">
-           
-            <label for="inputAddress2" class="form-label">Job Type</label>
-            <input type="text" class="form-control" id="inputAddress2" name="profession_name" placeholder="Job Type">
-          </div>
-       
-        
-        <div class="col-6">
-          <label for="inputAddress2" class="form-label">Address</label>
-          <input type="text" class="form-control" id="inputAddress2" name="address" placeholder="Address">
-        </div>
-        <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Phone</label>
-            <input type="text" class="form-control" id="inputNumber" name="phone" placeholder="Phone Number">
-          </div>
-        <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputlast_name" name="email" placeholder="Email" >
-     
-          </div>
-          <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">NIN</label>
-            <input type="text" class="form-control" id="inputlast_name" name="nin" placeholder="NIN" >
-          </div>
-  
-        <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" name="password1" placeholder="Password">
-          </div>
-          <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="text" class="form-control" id="inputPassword4" name="password2" placeholder="Repeat Password">
-          </div>
-  
-        
-    
-        
-         
-        <div class="col-12">
-     <input type="submit" class="btn btn-danger btn-lg" value="submit" >   
-        </div>
-      </form>
+                    <h3 id="form-title">Login</h3>
+                </div>
+                <div class="d-flex justify-content-center form_container">
 
+                    <form action="{% url 'account:login' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i>
+                                </span>
+                            </div>
+                            <input type="text" name="username" placeholder=" username"><br>
+                        </div>
+                 
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fas fa-key"></i>
+                                </span>
+                            </div>
+                            <input type="text" name="password" placeholder="password"><br>
+                           
+                        </div>
+                       
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <input class="btn login_btn" type="submit" value="Login">
 
+                        </div>
+                    </form>
+                </div>-->
 
-{{ form1.errors }}
-{{ form4.errors }}
+               <!-- {% for message in messages %}
+                <p id="messages">{{ message }}</p>
+                {% endfor %}
 
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
+                        Don't Have An Account? <a href="{% url 'account:register' %}"
+                        class="ml-2">Sign Up</a>
+                    </div>
+                    <div class="d-flex justify-content-center links">
+                        Forgot password ? <a href=""
+                        class="ml-2">Reset Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>-->
 
-<div class="mt-4">  
-  
-    <div class="d-flex justify-content-center links">
-        Already Have An Account? <a href="{% url 'accounts:login' %}"
-        class=" mm-2" >Login</a>
     </div>
-</div>
-</div>
+
+     <!-- <span class="hello-msg">Hello ,{{ request.user }}</span>
+      <span><a class="hello-msg" href="">Logout</a></span>-->
+</body>
 
 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/*body {font-family: Arial, Helvetica, sans-serif;}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #45ccb8;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+  
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 300px;
+  top: 0;
+  width: 500px; 
+  height: 500px; 
+  overflow: auto; 
+  padding-top: 60px;
+  padding-left: 150px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}*/
+</style>
+</head>
+<body>
+
+
+<!--<div  class="container toggle " style="align-items: center; text-align: center;">
+    <h2>Please click the login button </h2>
+
+<button onclick="toggleLogin().style.display='block'" style="width:auto;">Login</button>
+
+</div>-->
+{% for message in messages %}
+<h4 id="messages">{{ message }}</h4>
+{% endfor %}
+
+
+<div class="container" style="align-items: center; text-align: center;" >
+    <h2>Please click the login button </h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+</div>
+
+<div class="container" id="ido-main">
+
+<div id="id01" class="modal" style="align-items: center; text-align: center; padding: 40px;">
+  
+    <form class="modal-content animate" action="{% url 'account:login' %}" method="POST">
+        {% csrf_token %}
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="{% static 'images/avatar2.png' %}" alt="Avatar" class="avatar">
+      </div>
+  
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+  
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+          
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+  
+      <div class="container" style="background-color:#f1f1f1">
+        <!--<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>-->
+       
+        <span class="psw"> <a href="{% url 'account:registration' %}">Sing Up?</a></span>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+
+      
+    </form>
+
+ 
+
+ 
+  </div>
+</div>
+
+<span class="hello-msg">Hello ,{{ request.user }}</span>
+<span><a class="hello-msg" href="">Logout</a></span>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+{% endblock %}
+
+  
 
 {% endblock %}
 

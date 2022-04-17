@@ -3,42 +3,65 @@
 {% load static %}  
 {% block content %} 
 
-{% load crispy_forms_tags %} 
-
-
 
 
 <style>
-   .caro{
-    display: none;
-}
-    .features{
+     .want_to_buy{
         display: none;
     }
-    .banner{
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+ 
+    * {box-sizing: border-box}
+
+
+
+
+</style>
+
+
+<style>
+  .want_to_buy{
      display: none;
-   }
-    .about{
-        display: none;
-    }
-    .realmind{
-      display: none;
-  }
-   .form2{
-       margin-top: 100px;
-       margin-bottom: 150px;
-   }
-   
-   
-   
- </style>
+ }
+ .display{
+     display: none;
+ }
+ .property-search{
+     display: none;
+ }
+ .featured{
+     display: none;
+ }
+
+ * {box-sizing: border-box}
+
+
+
+
+</style>
 
 
 
 
 
-   
-   
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -50,86 +73,67 @@
 
 
 <div id="form2" class="container form2" style="width: 500px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
-  <form action="{% url 'accounts:register' %}" method="POST" class="row g-3">
-      {% csrf_token %}
-      <div class="col-md-8">
-          <label for="inputEmail4" class="form-label" >Username</label>
-          <input type="text" class="form-control" id="inputusername" name="username" placeholder="username">
+<form action="{% url 'accounts:register' %}" method="POST" class="row g-3">
+   {% csrf_token %}
+   <div class="col-md-6">
+       <label for="inputEmail4" class="form-label" >Username</label>
+       <input type="text" class="form-control" id="inputusername" name="username" placeholder="username">
+
+     </div>
+     <div class="col-md-6">
+       <label for="inputPassword4" class="form-label">First name</label>
+       <input type="text" class="form-control" id="inputfirst_name" name="first_name" placeholder="First name" >
+     </div>
+     <div class="col-md-6">
+       <label for="inputPassword4" class="form-label">Last name</label>
+       <input type="text" class="form-control" id="inputlast_name" name="last_name" placeholder="Last name" >
+     </div>
  
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Full name</label>
-          <input type="text" class="form-control" id="inputfirst_name" name="fullname" placeholder="full name" >
-        </div>
-      
-      <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Phone</label>
-          <input type="text" class="form-control" id="inputNumber" name="phone" placeholder="Phone Number">
-        </div>
-      <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputlast_name" name="email" placeholder="Email" >
+   <div class="col-md-6">
+       <label for="inputEmail4" class="form-label">Email</label>
+       <input type="email" class="form-control" id="inputlast_name" name="email" placeholder="Email" >
+
+     </div>
+
+   <div class="col-md-6">
+     <label for="inputPassword4" class="form-label">Phone</label>
+     <input type="text" class="form-control" id="inputNumber" name="phone" placeholder="Phone Number">
+   </div>
    
-        </div>
-     
+   <div class="col-md-6">
+       <label for="inputPassword4" class="form-label">Password</label>
+       <input type="password" class="form-control" id="inputPassword4" name="password1" placeholder="Password">
+     </div>
+     <div class="col-md-6">
+       <label for="inputPassword4" class="form-label">Password</label>
+       <input type="text" class="form-control" id="inputPassword4" name="password2" placeholder="Repeat Password">
+     </div>
 
-      <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password">
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Repeat Password</label>
-          <input type="text" class="form-control" id="inputPassword4" name="password2" placeholder="Repeat Password">
-        </div>
-
-      <div class="col-12">
-      <!--<button role="button" class="btn btn-danger btn-lg" style="align-items: center; margin-top: 40px;">Submit</button>-->
-      
-      <button type="submit" class="btn btn-danger">Submit</button>
+   <div class="col-12">
+    
+   <button type="submit" class="btn btn-danger">Submit</button>
 
     
-      </div>
-    </form>
+   </div>
+ </form>
 
 
 
-{{ form.errors }}
+{{ form1.errors }}
+{{ form2.errors }}
 
-
+<!--{{ form2.errors }}-->
 
 <div class="mt-4">
-  <div class="d-flex justify-content-center links" style="color:black">
-      Already Have An Account? <a href="{% url 'accounts:login' %}"
-      class="mm-3"">Login</a>
-  </div>
+<div class="d-flex justify-content-center links" style="color:black">
+   Already Have An Account? <a href="{% url 'accounts:login' %}"
+   class="mm-3"">Login</a>
+</div>
 </div>
 
 </div>
 
-
-
-
-<form>
- 
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-
-
-
-{% endblock content %}
+{% endblock %}
 
 
 
