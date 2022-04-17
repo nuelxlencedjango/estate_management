@@ -155,7 +155,7 @@
     <a href="{% url 'product:image_slides' result.id %}" type="button" class="btn btnb btn-warning">Visual Tour</a>
   
     <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Favourite</a>
-    {% if user not authenticated %}
+    {% if not user  %}
     <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">

@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
-
+from django.contrib.auth.decorators import login_required
 from django_filters.views import FilterView
 from django.utils import timezone
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
@@ -350,7 +350,7 @@ def show_available_properties(request):
 
 
 
-
+@login_required
 def add_to_cart(request, pk):
 
     if request.user.is_authenticated:
@@ -392,7 +392,7 @@ def add_to_cart(request, pk):
 
             return redirect('product:dashboard')          
     
-    
+
     else:
         messages.info(request,"Request unsuccessful! Please login before you can make a request")
         return render(request ,'account/login.html') 
