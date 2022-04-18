@@ -87,7 +87,7 @@ def dashboard(request):
         }
         return render(request, 'account/dashboard.html',context)
 
-    messages.info(request, 'You have no order in your wishlist')   
+    #messages.info(request, 'You have no order in your wishlist')   
     return render(request,'account/dashboard.html')    
 
 
