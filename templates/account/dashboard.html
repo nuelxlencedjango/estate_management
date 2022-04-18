@@ -101,9 +101,9 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark "  style="margin-top: 50px; background-color: #0076AD; ">
+<nav class="navbar navbar-expand-lg navbar-dark "  style="margin-top: 50px; background-color: #0076AD; padding: 40px; ">
 	<div class="container-fluid">
-	  <a class="navbar-brand" href="#" style="text-align: right;">Navbar</a>
+	  <a class="navbar-brand" href="#" style="text-align: right;">Dashboard</a>
 	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	  </button>
@@ -111,10 +111,10 @@
 		<div class="btn-group">
 			<button type="button" class="btn btn-success">My Account</button>
 			<button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-			  <span class="visually-hidden">Toggle Dropdown</span>
+			  <!--<span class="visually-hidden">Toggle Dropdown</span>-->
 			</button>
-			<ul class="dropdown-menu">
-			  <li><a class="dropdown-item" href="#">Reset Password</a></li>
+			<ul class="dropdown-menu" style="background: #999;">
+			  <li><button class="dropdown-item" id="exampleModal1" aria-labelledby="exampleModalLabel" aria-hidden="true">Reset Password</button></li>
 			  <li><a class="dropdown-item" href="#">Account Setting</a></li>
 			  <li><a class="dropdown-item" href="#">Logout</a></li>
 			  <li><hr class="dropdown-divider"></li>
@@ -380,11 +380,11 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background: red;">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Reset Your Passsword</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
