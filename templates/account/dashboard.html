@@ -335,15 +335,7 @@
 </div>  
 </div>
 <h3 class="description"> {{result.describe }}</h3>
-<!--<div class="contar">
-<div class="btn-groupy " role="group" aria-label="Basic mixed styles example">
-    <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures {{number}}</a>
-    <a href="{% url 'product:image_slides' result.id %}" type="button" class="btn btnb btn-warning">Visual Tour</a>
-  
-    <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" >Add To Your Wishlist</a>
-    <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-dark">View Details</a>
-  </div>
-</div>-->
+
 {% endfor %}
 </div>
 
@@ -383,7 +375,7 @@
 
 
 <!-- Example single danger button -->
-<div class="btn-group" style="align-items:right">
+<div class="btn-group" style="align-items:center">
 	<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 	  Action
 	</button>
@@ -398,7 +390,7 @@
 
 
 
-  <div class="dropdown">
+  <div class="dropdown" style="align-items: center;">
 	<button class="btn btn-secondary dropdown-toggle" style="align-items:right" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 	  Dropdown button
 	</button>
@@ -412,20 +404,6 @@
 
 
 
-  <!-- Example split danger button -->
-<div class="btn-group">
-	<button type="button" class="btn btn-danger">Action</button>
-	<button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-	  <span class="visually-hidden">Toggle Dropdown</span>
-	</button>
-	<ul class="dropdown-menu">
-	  <li><a class="dropdown-item" href="#">Action</a></li>
-	  <li><a class="dropdown-item" href="#">Another action</a></li>
-	  <li><a class="dropdown-item" href="#">Something else here</a></li>
-	  <li><hr class="dropdown-divider"></li>
-	  <li><a class="dropdown-item" href="#">Separated link</a></li>
-	</ul>
-  </div>
 
 
 
@@ -433,19 +411,7 @@
 
 
 
-
-  <nav class="navbar navbar-dark bg-dark">
-	<!-- Navbar content -->
-  </nav>
-  
-  <nav class="navbar navbar-dark bg-primary">
-	<!-- Navbar content -->
-  </nav>
-  
-  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-	<!-- Navbar content -->
-  </nav>
-
+ 
 
 
 {% endblock %}
