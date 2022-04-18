@@ -35,7 +35,7 @@ def registerPage(request):
 
             #id = form1.cleaned_data.get('id')
 
-            messages.success(request, 'Account successfully created ')
+            messages.success(request, 'Account successfully created!Please login with your detail ')
 
             return redirect('accounts:login')
 
