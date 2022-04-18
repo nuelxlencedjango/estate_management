@@ -108,7 +108,7 @@ def update_info(request):
             form1.save()
             form2.save()
 
-            messages.success(request,"Successfully updated")
+            messages.success(request,"Account Successfully Updated")
             return redirect('product:dashboard')
             
            
@@ -128,4 +128,4 @@ def update_info(request):
 
 def logoutPage(request):
     logout(request)
-    return redirect('products:home')
+    return redirect('product:home')
