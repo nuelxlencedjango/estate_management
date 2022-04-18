@@ -25,6 +25,7 @@ def registerPage(request):
     if request.method == 'POST':
         form1 = CreateUserForm(request.POST)
         form2 = CustomerForm(request.POST)
+        #item = request.POST.get('result.id')
 
         if form1.is_valid() and form2.is_valid():
             user = form1.save()
