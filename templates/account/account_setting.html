@@ -90,32 +90,32 @@
       <div class="row">
           <div class="col-md-6">
             <div class="col-md-12">
-                {{ form1.username}}
-                </div>
-            <div class="col-md-12">
-
                 <label for="inputEmail4" class="form-label" >Username</label>
-                <input type="text" class="form-control" id="inputusername" name="{{user.username}}"  style="text-align: center;">
+                <div class="col-md-6">{{ form1.username}}</div>
        
               </div>
               <div class="col-md-12">
                 <label for="inputPassword4" class="form-label">First name</label>
-                <input type="text" class="form-control" id="inputfirst_name" name="{{user.first_name}}"  >
+                <!--<input type="text" class="form-control" id="inputfirst_name" name="{{user.first_name}}"  >-->
+             
+                    {{ form1.first_name}}
+          
               </div>
               <div class="col-md-12">
                 <label for="inputPassword4" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="inputlast_name" name="{{user.last_name}}"  >
+                {{ form1.last_name}}
+                <!--<input type="text" class="form-control" id="inputlast_name" name="{{user.last_name}}"  >-->
               </div>
           
             <div class="col-md-12">
                 <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputlast_name" name="{{user.email}}"  >
+                {{ form1.email}}
          
               </div>
       
             <div class="col-md-12">
               <label for="inputPassword4" class="form-label">Phone</label>
-              <input type="text" class="form-control" id="inputNumber" name="{{user.customer.phone}}" >
+              {{ form2.phone}}
             </div>
             
           
