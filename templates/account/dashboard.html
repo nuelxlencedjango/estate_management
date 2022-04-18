@@ -113,9 +113,10 @@
 			  <!--<span class="visually-hidden">Toggle Dropdown</span>-->
 			</button>
 			<ul class="dropdown-menu" style="background: #fff; color: #000; width: 250px; color: #fff;">
+
+			  <li><a class="dropdown-item" href="{% url 'accounts:update' %}">Account Setting</a></li>
 			  <li><a  class="dropdown-item" type="button" >Reset Password</a></li>
-			  <li><a class="dropdown-item" href="{% url 'account:update' %}">Account Setting</a></li>
-			  <li><a class="dropdown-item" href="{% url 'account:update' %}">Logout</a></li>
+			  <li><a class="dropdown-item" href="{% url 'accounts:update' %}">Logout</a></li>
 			  
 			</ul>
 		  </div>
