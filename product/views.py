@@ -381,19 +381,20 @@ def add_to_cart(request, pk):
 
             else:
                 order.items.add(order_item)
-                messages.info(request ," successfully booked")
-                return redirect("product:home")  
+                messages.info(request ," successfully added to your wishlist")
+                return redirect("product:dashboard")  
 
         else:
             ordered_date =timezone.now()
             order =Order.objects.create(user=request.user, ordered_date=ordered_date)
             order.items.add(order_item)
-            messages.info(request," Successfully booked")
+            messages.info(request,"successfully added to your wishlist")
 
             return redirect('product:dashboard')          
     
 
     else:
+        messages.info(request,"You need to register to be able to perform this operation")
         return redirect('accounts:register') 
         #messages.info(request,"Request unsuccessful! Please login before you can make a request")
         #return render(request ,'account/login.html') 
