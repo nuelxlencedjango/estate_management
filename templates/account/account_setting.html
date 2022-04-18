@@ -39,7 +39,7 @@
 
 <div id="form2" class="container form2" style="width: 700px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
 
-    <h3 style="margin-top: 20px 20px; color: #0076AD;">Sing Up Form</h3>
+    <h3 style="margin-top: 20px 20px; color: #0076AD;">Account Setting Form</h3>
     <p>Please make sure your contact information is accurate. This will ensure that you get important notifications regarding your account and email updates on your saved searches, saved properties, and market reports.</p>
   <form action="" method="POST" class="row g-3">
       {% csrf_token %}
@@ -83,28 +83,21 @@
           </div>
           <div class="col-md-6">
             <div class="col-md-12">
-                <label for="inputEmail4" class="form-label" >Username</label>
-                <input type="text" class="form-control" id="inputusername" name="username" placeholder="username" style="text-align: center;">
+                <label for="inputEmail4" class="form-label" >Address</label>
+                <input type="text" class="form-control" id="inputusername" name="address" placeholder="123 main st" style="text-align: center;">
        
               </div>
               <div class="col-md-12">
-                <label for="inputPassword4" class="form-label">First name</label>
-                <input type="text" class="form-control" id="inputfirst_name" name="first_name" placeholder="First name" >
+                <label for="inputPassword4" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputfirst_name" name="city" placeholder="city" >
               </div>
               <div class="col-md-12">
-                <label for="inputPassword4" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="inputlast_name" name="last_name" placeholder="Last name" >
+                <label for="inputPassword4" class="form-label">State</label>
+                <input type="text" class="form-control" id="inputlast_name" name="state" placeholder="state" >
               </div>
           
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputlast_name" name="email" placeholder="Email" >
          
-              </div>
-              <div class="col-md-12">
-                <label for="inputPassword4" class="form-label">Phone</label>
-                <input type="text" class="form-control" id="inputNumber" name="phone" placeholder="Phone Number" >
-              </div>
+           
           </div>
       </div>
 
