@@ -78,6 +78,25 @@
 
 
 
+{% if user %}
+<div class="row personal_detail">
+	<div class="col-md" style="margin-top: 50px;">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Username: {{user.username}}</p>
+			<p>First name: {{user.first_name}}</p>
+			<p>Last name: {{user.last_name}}</p>
+			<p>Phone Number: {{user.customer.phone}}</p>
+		
+			<p>Email: {{user.email}}</p>
+		</div>
+	</div>
+{% endif %}
+
+{% if user %}
+
+
 <div id="form2" class="container form2" style="width: 700px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
     <h3 style="margin-top: 20px 20px; color: #0076AD;">Account Setting Form</h3>
          
@@ -87,27 +106,27 @@
           <div class="col-md-6">
             <div class="col-md-12">
                 <label for="inputEmail4" class="form-label" >Username</label>
-                <input type="text" class="form-control" id="inputusername" name="username" placeholder="username" style="text-align: center;">
+                <input type="text" class="form-control" id="inputusername" name="{{user.username}}" placeholder="username" style="text-align: center;">
        
               </div>
               <div class="col-md-12">
                 <label for="inputPassword4" class="form-label">First name</label>
-                <input type="text" class="form-control" id="inputfirst_name" name="first_name" placeholder="First name" >
+                <input type="text" class="form-control" id="inputfirst_name" name="{{user.first_name}}" placeholder="First name" >
               </div>
               <div class="col-md-12">
                 <label for="inputPassword4" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="inputlast_name" name="last_name" placeholder="Last name" >
+                <input type="text" class="form-control" id="inputlast_name" name="{{user.last_name}}" placeholder="Last name" >
               </div>
           
             <div class="col-md-12">
                 <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputlast_name" name="email" placeholder="Email" >
+                <input type="email" class="form-control" id="inputlast_name" name="{{user.email}}" placeholder="Email" >
          
               </div>
       
             <div class="col-md-12">
               <label for="inputPassword4" class="form-label">Phone</label>
-              <input type="text" class="form-control" id="inputNumber" name="phone" placeholder="Phone Number" >
+              <input type="text" class="form-control" id="inputNumber" name="{{user.customer.phone}}" placeholder="Phone Number" >
             </div>
             
           
@@ -149,6 +168,7 @@
     </form>
 
 </div>
+{% endif %}
 
 
 
