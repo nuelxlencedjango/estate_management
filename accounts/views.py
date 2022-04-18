@@ -109,7 +109,7 @@ def update_info(request):
             form2.save()
 
             messages.success(request,"Successfully updated")
-            return redirect('products:dashboard')
+            return redirect('product:dashboard')
             
            
         else:
@@ -121,7 +121,7 @@ def update_info(request):
 
     context = {'form1':form1, 'form2':form2}
 
-    return render(request,'account/update_info.html',context)  
+    return render(request,'account/account_setting.html',context)  
 
 
 
