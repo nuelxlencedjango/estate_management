@@ -136,8 +136,8 @@
 			<button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
 			  <!--<span class="visually-hidden">Toggle Dropdown</span>-->
 			</button>
-			<ul class="dropdown-menu" style="background: #333; width: 250px; color: #fff;">
-			  <li><button class="" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">Reset Password</button></li>
+			<ul class="dropdown-menu" style="background: red; width: 250px; color: #fff;">
+			  <li><button class="" type="button" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">Reset Password</button></li>
 			  <li><a class="dropdown-item" href="#">Account Setting</a></li>
 			  <li><a class="dropdown-item" href="#">Logout</a></li>
 			  <li><hr class="dropdown-divider"></li>
@@ -161,7 +161,7 @@
 			<hr>
 			<p>username: {{user.username}}</p>
 			<p>first name: {{user.first_name}}</p>
-			<p>Phone: {{user.details.phone}}</p>
+			<p>Phone: {{user.customer.phone}}</p>
 		
 			<p>Email: {{user.email}}</p>
 		</div>
