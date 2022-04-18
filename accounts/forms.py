@@ -49,7 +49,7 @@ class CustomerForm(forms.ModelForm):
   class Meta:
 
     model =Customer
-    fields = '__all__'
+    fields =('phone',)
 
     #def __init__(self ,*args ,**kwargs):
     #    super(CustomerForm ,self).__init__(*args ,**kwargs)
@@ -79,12 +79,15 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class CustomerUpdateForm(forms.ModelForm):
-
+  address = forms.CharField(max_length=50, required=True, label='address',widget=forms.TextInput(attrs={'placeholder': '123 main '}))
+  city = forms.CharField(max_length=50, required=True,label='city',widget=forms.TextInput(attrs={'placeholder': 'city'}))
+  state = forms.CharField(max_length=50, required=True,label='state',widget=forms.TextInput(attrs={'placeholder': 'state'}))
+ 
   phone = forms.CharField(max_length=15, required=True,label='phone',widget=forms.TextInput(attrs={'placeholder': 'phone'}))
   class Meta:
 
     model =Customer
-    fields =('phone',)
+    fields ='__all__'
 
 
  
