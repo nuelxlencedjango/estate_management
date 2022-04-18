@@ -27,9 +27,12 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <h3 style="margin-top: 20px 20px; color: #999;">Account Setting</h3>
+          <p>Please make sure your contact information is accurate. This will ensure that you get important notifications regarding your account and email updates on your saved searches, saved properties, and market reports.</p>
+ 
+        </div>
 
-        <div class="col-md-6"></div>
     </div>
 </div>
 
@@ -38,10 +41,9 @@
 
 
 <div id="form2" class="container form2" style="width: 700px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
-
     <h3 style="margin-top: 20px 20px; color: #0076AD;">Account Setting Form</h3>
-    <p>Please make sure your contact information is accurate. This will ensure that you get important notifications regarding your account and email updates on your saved searches, saved properties, and market reports.</p>
-  <form action="" method="POST" class="row g-3">
+         
+     <form action="" method="POST" class="row g-3">
       {% csrf_token %}
       <div class="row">
           <div class="col-md-6">
