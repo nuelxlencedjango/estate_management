@@ -10,7 +10,7 @@
 
 {% if user %}
 <div class="row">
-	<div class="col-md">
+	<!--<div class="col-md">
 		<div class="card card-body">
 			<h5>Customer:</h5>
 			<hr>
@@ -18,7 +18,7 @@
 			<a class="btn btn-outline-info  btn-sm btn-block" href="">Place Order</a>
 
 		</div>
-	</div>
+	</div>-->
 
 
 	<div class="col-md">
@@ -75,9 +75,7 @@
 	<br>
 	<br>
 		<div class="card card-body">
-			<!--<td colspan="4"><a href="{% url 'products:handle_confirmation' %}" class="btn btn-danger" style="color: whitesmoke; float: right; font-size: 25px;">View paid services</a>-->
-			<a class="btn btn-primary  btn-sm btn-block" style="color: whitesmoke; float: right; font-size: 20px;" href="{% url 'products:handle_confirmation' %}">Your previous  Paid Services</a>
-			<table class="table table-sm">
+				<table class="table table-sm">
 				<tr>
 					<th></th>
 					
@@ -103,7 +101,7 @@
 		<h5>YOUR LASTEST  ORDERS</h5>
 		<hr>
 		<div class="card card-body">
-			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'products:jobs' %}">Create Order</a>
+			<a class="btn btn-primary  btn-sm btn-block" href="">Create Order</a>
 			
 			<table class="table table-sm" style="margin-top: 30px;">
 				<tr>
@@ -148,9 +146,9 @@
 					<td style="color: blue;">{{order_item.pk}}</td>-->
 		
 					
-					<td><a class="btn btn-sm btn-info" style="padding: 4px;" href="{% url 'products:update_order' order_item.id %}">Update</a></td>
+					<td><a class="btn btn-sm btn-info" style="padding: 4px;" href="">Update</a></td>
 
-					<td><a class="btn btn-sm btn-danger" style="padding: 4px;" href="{% url 'products:remove_item' order_item.id %}">Delete</a></td>
+					<td><a class="btn btn-sm btn-danger" style="padding: 4px;" href="">Delete</a></td>
 				</tr>
 		{% endfor %}
 
@@ -164,8 +162,7 @@
 	   
 			   <td colspan="3" ><b style="color: whitesmoke;"> Amount Before Tax /Amount payable</b></td>
 			   <td style="color: whitesmoke;"><b>{{ order.get_total_price }}</b></td>
-			   <td colspan="4"><a href="{% url 'products:payment' %}" class="btn btn-danger" style="color: whitesmoke; float: right;"> Pay Now</a>
-		   
+			     
 			   
 		   
 		   </tr>
@@ -185,4 +182,196 @@
 
 
 
+
+
+
+
+<style>
+
+    .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.flex-item-left {
+  flex: 50%;
+}
+
+.flex-item-right {
+  flex: 50%;
+}
+.card-image{
+    width: 300px;
+    height: 280px;
+    margin-left: 20px;
+}
+.card-image img{
+    width: 100%;
+    height: 100%;
+}
+.property-information{
+    margin-left: 20px;
+}
+.property-address h2{
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+  
+    color: #0076AD;
+    margin-left: 10px;
+}
+.property-information h3{
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+
+}
+.property-information span{
+    color: green;
+}
+.right{
+    margin-left: 50px;
+}
+.search-result{
+    margin-left: 30px;
+}
+.search-section .description{
+    font-size: 15px;
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.btn-groupy{
+    margin-top: 5px;
+    margin-bottom: 70px;
+    margin-left: auto; 
+    margin-right: 20;
+    right: -50px;
+   
+    
+}
+.contar{
+    margin-left: 30px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+    </style>
+   
+  
+
+
+<div class="search-section">
+    
+    <h1 class="search-result">Wish Item List</h1>
+
+   {% for result in order %} 
+<div class="flex-container">
+    
+   
+  <div>
+  
+
+    <div class="property-flex">
+        
+        <a href="{% url 'product:image_gallery' result.id %}">
+        <div class="card-image ">
+            <img src="{{ result.img.url }}" alt="">
+        </div>
+        </a>
+    </div>
+  </div>
+  <div>
+      <div class="property-information">
+         <a href="{% url 'product:image_gallery' result.id %}">
+            <div class="property-address">
+                <h2>{{result.Location }}</h2>
+            </div>
+         </a>
+          <div class="property-information">
+              <h3>Price:<span>${{result.price }}</span></h3>
+              <h3>bedroom:{{result.bedroom }}</h3>
+              <h3>bathroom:{{result.bathroom }}</h3>
+              <h3>Sqft:{{result.sqft }}</h3>
+              <h3>Acres:{{result.acre}}</h3>
+              <h3>SubdivisionSee Legal Description Below.</h3>
+             
+          </div>
+      </div>
+  </div>
+  <div class="property-information">
+      <h3 class="right">{{ result.listing_id }}</h3>
+      <!--<h3 class="right">Listing ID50044316PBMLS-RETS</h3>-->
+  </div>  
+  <div class="property-information">
+    <h3 class="center">{{ result.release_date }}</h3>
+    
+</div>  
+</div>
+<h3 class="description"> {{result.describe }}</h3>
+<!--<div class="contar">
+<div class="btn-groupy " role="group" aria-label="Basic mixed styles example">
+    <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures {{number}}</a>
+    <a href="{% url 'product:image_slides' result.id %}" type="button" class="btn btnb btn-warning">Visual Tour</a>
+  
+    <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" >Add To Your Wishlist</a>
+    <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-dark">View Details</a>
+  </div>
+</div>-->
+{% endfor %}
+</div>
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 {% endblock %}
+
+
