@@ -21,7 +21,7 @@ class CreateUserForm(UserCreationForm):
   class Meta:
 
     model = User
-    fields =('username','first_name','last_name' ,'email')
+    fields =('username','first_name','last_name' ,'email','password1','password2')
 
 
   def save(self, commit=True):
