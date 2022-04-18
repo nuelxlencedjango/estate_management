@@ -322,7 +322,7 @@
 
     <div class="property-flex">
         
-        <a href="{% url 'product:image_gallery' result.id %}">
+        <a href="">
         <div class="card-image ">
             <img src="{{ result.img.url }}" alt="">
         </div>
@@ -331,7 +331,7 @@
   </div>
   <div>
       <div class="property-information">
-         <a href="{% url 'product:image_gallery' result.id %}">
+         <a href="">
             <div class="property-address">
                 <h2>{{result.Location }}</h2>
             </div>
@@ -385,59 +385,7 @@
 
 
 
-{% if user %}
-<div class="row">
-	<div class="col-md">
-		<div class="card card-body">
-			<h5>Customer:</h5>
-			<hr>
-			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update Your information</a>
-			<a class="btn btn-outline-info  btn-sm btn-block" href="">Place Order</a>
 
-		</div>
-	</div>
-
-
-	<div class="col-md">
-		<div class="card card-body">
-			<h5>Contact Information</h5>
-			<hr>
-			<p>username: {{user.username}}</p>
-			<p>first name: {{user.first_name}}</p>
-			<p>Phone: {{user.details.phone}}</p>
-		
-			<p>Email: {{user.email}}</p>
-		</div>
-	</div>
-
-	<div class="col-md">
-		<div class="card card-body">
-			<h5>Total Orders</h5>
-			<hr>
-			<h1 style="text-align: center;padding: 10px">{{ order.get_total_count }}</h1>
-		</div>
-	</div>
-
-
-{% endif %}
-
-
-
-
-<br><br>
-{%  include 'status.html' %}
-<link rel="stylesheet" href="{% static 'css/cs.css' %}" >
-
-<br>
-
-
-
-
-
-
-
-
-<br>
 
 
    
@@ -452,7 +400,6 @@
 	<br>
 	<br>
 		<div class="card card-body">
-			<!--<td colspan="4"><a href="{% url 'products:handle_confirmation' %}" class="btn btn-danger" style="color: whitesmoke; float: right; font-size: 25px;">View paid services</a>-->
 			<a class="btn btn-primary  btn-sm btn-block" style="color: whitesmoke; float: right; font-size: 20px;" href="">Your previous  Paid Services</a>
 			<table class="table table-sm">
 				<tr>
@@ -501,14 +448,6 @@
 					<td>{{ order_item.product.name }}</td>
                     <td>{{ order_item.product.price }}</td>
 					<td style="text-align: center;">
-						<!--<p><strong><i class="fas fa-arrow-up"></i></strong></p>
-								<img data-product="{{ item.product.id }}" data-action="add" class="chg-quantity update-cart" src="{% static 'images/arrow-up.png' %}" alt="" style="background-color: green; font-size: x-large;">-->
-								
-							<!--<img data-product="{{ item.product.id }}" data-action="remove" class="chg-quantity update-cart" class="chg-quantity" src="{% static 'images/arrow-down.png' %}" alt="" style="background-color: green;">
-							<i class="fas fa-sort"></i>-->
-		
-
-						<!--<strong><a href="{% url 'products:add_item' order_item.pk %}"><i class="fas fa-sort-up"></i></a></strong>-->
 						{{ order_item.quantity }}
 
 					
@@ -549,8 +488,7 @@
 	   
 			   <td colspan="3" ><b style="color: whitesmoke;"> Amount Before Tax /Amount payable</b></td>
 			   <td style="color: whitesmoke;"><b>{{ order.get_total_price }}</b></td>
-			   <td colspan="4"><a href="{% url 'products:payment' %}" class="btn btn-danger" style="color: whitesmoke; float: right;"> Pay Now</a>
-		   
+			  
 			   
 		   
 		   </tr>
