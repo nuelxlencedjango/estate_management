@@ -394,7 +394,7 @@ def add_to_cart(request, pk):
     
 
     else:
-        messages.info(request,"You need to register to be able to perform this operation")
+        messages.info(request,"You need to login to be able to perform this operation")
         return redirect('accounts:login') 
         #messages.info(request,"Request unsuccessful! Please login before you can make a request")
         #return render(request ,'account/login.html') 
