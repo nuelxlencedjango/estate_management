@@ -69,7 +69,7 @@ def loginPage(request):
                 return redirect('accounts:dashboard')
            
             else:
-                messages.info(request, 'Username OR password is incorrect')
+                messages.info(request, 'Information not found! Either Username OR password is incorrect')
     
 
     
