@@ -33,7 +33,7 @@
 <div id="form2" class="container form2" style="width: 500px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
 
     <h3 style="margin-top: 20px 20px; color: #0076AD;">Sing Up Form</h3>
-  <form action="{% url 'accounts:register' %}" method="POST" class="row g-3">
+  <form action="" method="POST" class="row g-3">
       {% csrf_token %}
       <div class="col-md-12">
           <label for="inputEmail4" class="form-label" >Username</label>
@@ -101,10 +101,6 @@
    
 
 
-
-{% for message in messages %}
-<h4 id="messages">{{ message }}</h4>
-{% endfor %}
 
 
 
