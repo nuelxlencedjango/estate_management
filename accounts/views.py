@@ -65,7 +65,7 @@ def loginPage(request):
            
             if Customer.objects.filter(user = user).exists():
                 login(request,user)
-                return redirect('product:dashboard')
+                return redirect('accounts:dashboard')
            
             else:
                 messages.info(request, 'Username OR password is incorrect')
