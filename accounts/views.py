@@ -38,14 +38,20 @@ def registerPage(request):
 
             return redirect('account:login')
 
-    else:
-        form1 =CreateUserForm()
-        form2 = CustomerForm()
+        else:
+            form1 =CreateUserForm()
+            form2 = CustomerForm()
         
-    messages.success(request, 'Account was Not created for')    
+            messages.success(request, 'Account was Not created for')    
+            context = {'form1':form1, 'form2': form2}   
+            return render(request, 'account/register.html', context)
+
+    
+    form1 =CreateUserForm()
+    form2 = CustomerForm()
+      
     context = {'form1':form1, 'form2': form2}   
     return render(request, 'account/register.html', context)
-
 
 
 
@@ -68,7 +74,7 @@ def loginPage(request):
             else:
                 messages.info(request, 'Username OR password is incorrect')
     
-    
+
     context = {}
     return render(request, 'account/login.html', context)
 
