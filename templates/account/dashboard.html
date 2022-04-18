@@ -153,7 +153,7 @@
     <h1 class="search-result">Wish Item List</h1>
 
 
-  
+	{% for result in order.items.all %} 
 <div class="flex-container">
     
    
@@ -195,9 +195,10 @@
     <h3 class="center">{{ result.product.release_date }}</h3>
     
 </div>  
-</div>
 <h3 class="description"> {{result.product.describe }}</h3>
+</div>
 
+{% endfor %}
 
 </div>
 
