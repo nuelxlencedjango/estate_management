@@ -115,7 +115,7 @@
 			  <!--<span class="visually-hidden">Toggle Dropdown</span>-->
 			</button>
 			<ul class="dropdown-menu" style="background: #fff; color: #000; width: 250px; color: #fff;">
-			  <li><button class="" type="button" id="exampleModal"  aria-hidden="true">Reset Password</button></li>
+			  <li><button class="" type="button" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">Reset Password</button></li>
 			  <li><a class="dropdown-item" href="#">Account Setting</a></li>
 			  <li><a class="dropdown-item" href="#">Logout</a></li>
 			  <li><hr class="dropdown-divider"></li>
@@ -356,6 +356,19 @@
 	  </div>
 	</div>
   </div>
+
+
+
+
+
+  <script>
+	  $('.dropdown-menu').click(function(e) {
+    e.stopPropagation();
+    if ($(e.target).is('[data-toggle=modal]')) {
+        $($(e.target).data('target')).modal()
+    }
+});
+  </script>
 
 {% endblock %}
 
