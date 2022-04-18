@@ -55,6 +55,7 @@ def registerPage(request):
 
 #@unauthenticated_user
 def loginPage(request):
+    
     if request.method == 'POST':
         username = request.POST.get('username')
         password =request.POST.get('password')
@@ -71,8 +72,8 @@ def loginPage(request):
                 messages.info(request, 'Username OR password is incorrect')
     
 
-    context = {}
-    return render(request, 'account/login.html', context)
+    
+    return render(request, 'account/login.html')
 
 
 
