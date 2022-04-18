@@ -382,7 +382,7 @@ def add_to_cart(request, pk):
             else:
                 order.items.add(order_item)
                 messages.info(request ," successfully added to your wishlist")
-                return redirect("product:dashboard")  
+                return redirect("accounts:dashboard")  
 
         else:
             ordered_date =timezone.now()
