@@ -7,6 +7,282 @@
 
 
 
+<style>
+
+    .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+
+
+    </style>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark "  style="margin-top: 50px; background-color: #0076AD; padding: 40px; ">
+	<div class="container-fluid">
+	  <button class="navbar-brand btn btn-dark" style="font-size: 22px;" >Dashboard</button>
+
+	 
+	  <!-- Example single danger button -->
+
+	  <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" style="align-items: center;">
+		<div class="btn-group">
+			<button type="button" class="btn btn-dark">My Account</button>
+			<button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+			  <!--<span class="visually-hidden">Toggle Dropdown</span>-->
+			</button>
+			<ul class="dropdown-menu" style="background: red; width: 250px; color: #fff;">
+			  <li><button class="" type="button" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">Reset Password</button></li>
+			  <li><a class="dropdown-item" href="#">Account Setting</a></li>
+			  <li><a class="dropdown-item" href="#">Logout</a></li>
+			  <li><hr class="dropdown-divider"></li>
+			  <li><a class="dropdown-item" href="#">Separated link</a></li>
+			</ul>
+		  </div>
+	  </div>
+	</div>
+  </nav>
+
+
+
+{% if user %}
+<div class="row">
+
+
+
+	<div class="col-md" style="margin-top: 50px;">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>username: {{user.username}}</p>
+			<p>first name: {{user.first_name}}</p>
+			<p>Phone: {{user.customer.phone}}</p>
+		
+			<p>Email: {{user.email}}</p>
+		</div>
+	</div>
+
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+   
+
+
+
+
+
+<div class="row">
+	
+	<div class="col-md-7">
+		
+	
+		<hr>
+		<div class="card card-body">
+			
+			
+			<table class="table table-sm" style="margin-top: 30px;">
+				<tr>
+					<th>No</th>
+					<th>Product</th>
+					<th>Price</th>
+					
+                    <th>No of workers </th>
+					<th>Total Amount </th>
+					<th>Paid</th>
+                    <th>Date Orderd</th>
+					<!--<th>Final Amount </th>-->
+				</tr>
+
+                {% for order_item in order.items.all %}
+                <tr>
+					<td>{{ forloop.counter }}</td>
+					<td>{{ order_item.product.name }}</td>
+                    <td>{{ order_item.product.price }}</td>
+					<td style="text-align: center;">
+						<!--<p><strong><i class="fas fa-arrow-up"></i></strong></p>
+								<img data-product="{{ item.product.id }}" data-action="add" class="chg-quantity update-cart" src="{% static 'images/arrow-up.png' %}" alt="" style="background-color: green; font-size: x-large;">-->
+								
+							<!--<img data-product="{{ item.product.id }}" data-action="remove" class="chg-quantity update-cart" class="chg-quantity" src="{% static 'images/arrow-down.png' %}" alt="" style="background-color: green;">
+							<i class="fas fa-sort"></i>-->
+		
+
+						<!--<strong><a href="{% url 'products:add_item' order_item.pk %}"><i class="fas fa-sort-up"></i></a></strong>-->
+						{{ order_item.quantity }}
+
+					
+					</td>		
+					
+					<td>{{order_item.get_total_item_price}}</td>
+					<td>{{order_item.ordered}}</td>
+
+					<td>{{order_item.date_created}}</td>
+				
+
+					<!--<td>{{order_item.get_final_price}}</td>
+					<td style="color: tomato;">{{order_item.id}}</td>
+					<td style="color: blue;">{{order_item.pk}}</td>-->
+		
+					
+					<td><a class="btn btn-sm btn-info" style="padding: 4px;" href="">Update</a></td>
+
+					<td><a class="btn btn-sm btn-danger" style="padding: 4px;" href="">Delete</a></td>
+				</tr>
+		{% endfor %}
+
+		
+		
+		
+	
+		   {% if order.get_total_price  %}
+		   <tr  style="background-color: black; padding: 30px;">
+			<td></td>
+	   
+			   <td colspan="3" ><b style="color: whitesmoke;"> Amount Before Tax /Amount payable</b></td>
+			   <td style="color: whitesmoke;"><b>{{ order.get_total_price }}</b></td>
+			     
+			   
+		   
+		   </tr>
+		   {% endif %}
+	
+	
+			</table>
+			
+		
+		</div>
+			
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+   
+  
+
+
+<div class="search-section">
+    
+    <h1 class="search-result">Wish Item List</h1>
+
+   {% for result in order %} 
+<div class="flex-container">
+    
+   
+  <div>
+  
+
+    <div class="property-flex">
+        
+        <a href="{% url 'product:image_gallery' result.id %}">
+        <div class="card-image ">
+            <img src="{{ result.img.url }}" alt="">
+        </div>
+        </a>
+    </div>
+  </div>
+  <div>
+      <div class="property-information">
+         <a href="{% url 'product:image_gallery' result.id %}">
+            <div class="property-address">
+                <h2>{{result.Location }}</h2>
+            </div>
+         </a>
+          <div class="property-information">
+              <h3>Price:<span>${{result.price }}</span></h3>
+              <h3>bedroom:{{result.bedroom }}</h3>
+              <h3>bathroom:{{result.bathroom }}</h3>
+              <h3>Sqft:{{result.sqft }}</h3>
+              <h3>Acres:{{result.acre}}</h3>
+              <h3>SubdivisionSee Legal Description Below.</h3>
+             
+          </div>
+      </div>
+  </div>
+  <div class="property-information">
+      <h3 class="right">{{ result.listing_id }}</h3>
+      <!--<h3 class="right">Listing ID50044316PBMLS-RETS</h3>-->
+  </div>  
+  <div class="property-information">
+    <h3 class="center">{{ result.release_date }}</h3>
+    
+</div>  
+</div>
+<h3 class="description"> {{result.describe }}</h3>
+
+{% endfor %}
+</div>
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background: red;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reset Your Passsword</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
