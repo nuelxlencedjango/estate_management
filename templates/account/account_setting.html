@@ -79,23 +79,6 @@
 
 
 
-{% if user %}
-<div class="row personal_detail">
-	<div class="col-md" style="margin-top: 50px;">
-		<div class="card card-body">
-			<h5>Contact Information</h5>
-			<hr>
-			<p>Username: {{user.username}}</p>
-			<p>First name: {{user.first_name}}</p>
-			<p>Last name: {{user.last_name}}</p>
-			<p>Phone Number: {{user.customer.phone}}</p>
-		
-			<p>Email: {{user.email}}</p>
-		</div>
-	</div>
-{% endif %}
-
-{% if user %}
 
 
 <div id="form2" class="container form2" style="width: 700px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
@@ -169,7 +152,7 @@
     </form>
 
 </div>
-{% endif %}
+
 
 
 
