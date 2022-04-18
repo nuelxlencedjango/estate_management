@@ -36,7 +36,7 @@ def registerPage(request):
 
             messages.success(request, 'Account successfully created ')
 
-            return redirect('account:login')
+            return redirect('accounts:login')
 
         else:
             form1 =CreateUserForm()
@@ -49,7 +49,7 @@ def registerPage(request):
     
     form1 =CreateUserForm()
     form2 = CustomerForm()
-      
+
     context = {'form1':form1, 'form2': form2}   
     return render(request, 'account/register.html', context)
 
