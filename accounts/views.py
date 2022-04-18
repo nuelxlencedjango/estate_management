@@ -40,13 +40,8 @@ def registerPage(request):
             return redirect('accounts:login')
 
         else:
-            #form1 =CreateUserForm()
-            #form2 = CustomerForm()
-        
             messages.success(request, 'Account was Not created for')    
-            #context = {'form1':form1, 'form2': form2}   
-            #return render(request, 'account/register.html', context)
-
+       
     
     form1 =CreateUserForm()
     form2 = CustomerForm()
