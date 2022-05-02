@@ -41,7 +41,7 @@
    <form id="make_checkbox_select" method="POST" action="{% url 'product:property_search' %}">
        {% csrf_token %}
        <h4>property type</h4>
-       <div class="col-lg-6">
+       <div class="col-md-6">
         <select name="property" style="width: 600px; height: 50px; border: white;">
           <option  data-count="2" value="all" >All</option>
           <option data-count="23" value="Residential">Residential</option>
@@ -52,7 +52,7 @@
         
       </select>
        </div>
-       <div class="col-lg-6">
+       <div class="col-md-6">
         <div class="flex">
           <div class="form-content" style=" align-items: center; text-align: center;">
              <div class="row g-3 align-items-center" style="text-align: left; align-items: right;">
@@ -97,4 +97,59 @@
              
        </div>
 
+
+       <div class="row">
+        <div class="col-xs-9 col-md-7">.col-xs-9 .col-md-7</div>
+        <div class="col-xs-3 col-md-5">.col-xs-3 .col-md-5</div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-6 col-md-10">.col-xs-6 .col-md-10</div>
+        <div class="col-xs-6 col-md-2">.col-xs-6 .col-md-2</div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-xs-7 col-sm-6 col-lg-8">.col-xs-7 .col-sm-6 .col-lg-8</div>
+        <div class="col-xs-5 col-sm-6 col-lg-4">.col-xs-5 .col-sm-6 .col-lg-4</div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-6 col-sm-8 col-lg-10">.col-xs-6 .col-sm-8 .col-lg-10</div>
+        <div class="col-xs-6 col-sm-4 col-lg-2">.col-xs-6 .col-sm-4 .col-lg-2</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-3">
+          Column 1
+          <br>
+          Resize the browser window to see the effect.
+        </div>
+        <div class="col-xs-6 col-sm-3">Column 2</div>
+        <!-- Add clearfix for only the required viewport -->
+        <div class="clearfix visible-xs"></div>
+        <div class="col-xs-6 col-sm-3">Column 3</div>
+        <div class="col-xs-6 col-sm-3">Column 4</div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 col-sm-push-8">.col-sm-4 .col-sm-push-8</div>
+        <div class="col-sm-8 col-sm-pull-4">.col-sm-8 .col-sm-pull-4</div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">.col-sm-3</div>
+        <div class="col-sm-6">.col-sm-6</div>
+        <div class="col-sm-3">.col-sm-3</div>
+      </div>
 {% endblock %}
