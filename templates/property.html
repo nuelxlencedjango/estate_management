@@ -31,12 +31,64 @@
   
   </style>
 
-<option value="">---------</option>
-{% for city in cities %}
-<option value="{{ city.pk }}">{{ city.name }}</option>
-{% endfor %}
 
 
+
+<div class=" property-search" style="align-items: center; text-align: center;">
+  <div class="form-container" >
+      <h2>Search for any property below:</h2>
+   <form id="make_checkbox_select" method="POST" action="{% url 'product:property_search' %}">
+       {% csrf_token %}
+       <h4>property type</h4>
+       <select name="property" style="width: 600px; height: 50px; border: white;">
+           <option  data-count="2" value="all" >All</option>
+           <option data-count="23" value="Residential">Residential</option>
+           <option data-count="433" value="Commercial">Commercial</option>
+           <option data-count="45" value="Land">Land</option>
+           <option data-count="476" value="Multi_family">Multi-Family</option>
+           <option data-count="78" value="Rental">Rental</option>
+         
+       </select>
+       
+       <div class="flex">
+       <div class="form-content" style=" align-items: center; text-align: center;">
+          <div class="row g-3 align-items-center" style="text-align: left; align-items: right;">
+               <div class="col-auto">
+                 <label for="text" class="col-form-label">Min Price</label>
+                 <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline" name="min-price">
+               
+               </div>
+               <div class="col-auto">
+                   <label for="text" class="col-form-label">Max Price</label>
+                   <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline" name="max-price">
+                 
+                 </div>
+             </div>
+
+
+             <div class="row g-4 align-items-center" style="text-align: left; align-items: right;">
+               <div class="col-auto">
+                 <label for="text" class="col-form-label">Min Bedrooms</label>
+                 <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline" name="bedroom">
+               
+               </div>
+               <div class="col-auto">
+                   <label for="text" class="col-form-label">Min Baths</label>
+                   <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline" name="bathroom">
+                 
+                 </div>
+             </div>
+           
+          </div>
+          
+          
+      </div>
+      <button class="btn btn-outline-success" id="btn" type="submit" style="width: 600px; height: 50px; border: white;  background-color: #7fbebb; color: #fff; margin-top: 30px; ">Search</button>
+     </form>
+   
+  </div>
+             
+       </div>
 
 
 
