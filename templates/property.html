@@ -37,12 +37,35 @@
 <div class=" property-searches" style="align-items: center; text-align: center;">
   <div class="form-container" >
       <h2>Search for any property below:</h2>
+      <h4>property type</h4>
    <form id="make_checkbox_select" method="POST" action="{% url 'product:property_search' %}">
        {% csrf_token %}
-       <h4>property type</h4>
+     
        <div class="col-md-6">
         <select name="property" style="width: 400px; height: 50px; border: white;">
           <option  data-count="2" value="all" >All</option>
+          <option data-count="23" value="Residential">Residential</option>
+          <option data-count="433" value="Commercial">Commercial</option>
+          <option data-count="45" value="Land">Land</option>
+          <option data-count="476" value="Multi_family">Multi-Family</option>
+          <option data-count="78" value="Rental">Rental</option>
+        
+      </select>
+       </div>
+       <div class="col-md-6">
+        <select name="property" style="width: 400px; height: 50px; border: white;">
+          <option  data-count="2" value="all" >Max price</option>
+          <option data-count="23" value="Residential">Residential</option>
+          <option data-count="433" value="Commercial">Commercial</option>
+          <option data-count="45" value="Land">Land</option>
+          <option data-count="476" value="Multi_family">Multi-Family</option>
+          <option data-count="78" value="Rental">Rental</option>
+        
+      </select>
+       </div>
+       <div class="col-md-6">
+        <select name="property" style="width: 400px; height: 50px; border: white;">
+          <option  data-count="2" value="all" >Mini price</option>
           <option data-count="23" value="Residential">Residential</option>
           <option data-count="433" value="Commercial">Commercial</option>
           <option data-count="45" value="Land">Land</option>
