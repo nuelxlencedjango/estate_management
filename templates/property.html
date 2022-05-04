@@ -36,11 +36,7 @@
   
   
 }
-.maxprice:hover{
-      background-color: #5897fb;
-      color: #000;
-      line-height: 20px;
-    }
+
 .popup{
       
       margin-top: 20px;
@@ -59,7 +55,7 @@
 <div class=" property-searches" style="align-items: center; text-align: center;">
   <div class="form-container" >
       <h2>Search for any property below:</h2>
-      <h4>property type</h4>
+     
    <form id="make_checkbox_select" method="POST" action="{% url 'product:property_search' %}">
        {% csrf_token %}
      
