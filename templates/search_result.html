@@ -229,9 +229,9 @@
     <div class="container">
         <div class="row my-5">
             {% for result in resultobj %}
-            <a href="{% url 'product:image_gallery' result.id %}">
+            
             <div class="col-md-4 my-4">
-                <img  src="{{ result.img.url }}" alt="" class="w-100"></a>
+                <img  src="{{ result.img.url }}" alt="" class="w-100">
                 <h5 class="card-title">Price:<span>${{result.price }}</span></h5>
                 <h4 class="my-">{{result.Locati }}</h4>
                 <h5>bedroom:{{result.bedroom }} &nbsp;bedroom:{{result.bathroom}}</h5>
@@ -240,7 +240,8 @@
                 <p>{{ result.release_date }}</p>
           
                        
-                
+                    
+                   
               
                 <a href=" " class="btn btn-dark btn-md">View detail</a>
             </div>
