@@ -231,8 +231,17 @@
             {% for result in resultobj %}
             <div class="col-md-4 my-4">
                 <img  src="{{ result.img.url }}" alt="" class="w-100">
-                <h4 class="my-">{{result.Location }}</h4>
-                <p>{bedroom:{{result.bedroom }}</p>
+                <h5 class="card-title">Price:<span>${{result.price }}</span></h5>
+                <h4 class="my-">{{result.Locati }}</h4>
+                <p>bedroom:{{result.bedroom }} &nbsp;bedroom:{{result.bathroom}}</p>
+ 
+                <h3>Sqft:{{result.sqft }} &nbsp;Acres:{{result.acre}}</h3>
+                <p>{{ result.release_date }}</p>
+          
+                       
+                    
+                   
+              
                 <a href=" " class="btn btn-dark btn-md">View detail</a>
             </div>
             {% endfor %}

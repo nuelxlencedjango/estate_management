@@ -100,8 +100,8 @@ def availableProperty(request):
         context ={
                 'resultobj':resultobj
             }
-        #return render(request, 'property_info.html',context)  
-        return render(request, 'search_result.html',context)  
+        return render(request, 'property_info.html',context)  
+        #return render(request, 'search_result.html',context)  
 
 
 
