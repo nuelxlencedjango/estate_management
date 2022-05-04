@@ -28,13 +28,16 @@
   display: flex;
 }
 .price-maximum{
-  border: sienna;
+
   font-size: 22px;
   font-weight: 400;
   
 }
 .price-maximum:hover{
  
+}
+.maxprice{
+  
 }
 
   </style>
@@ -69,8 +72,8 @@
           <input class="form-control"  id="exampleDataList" placeholder="Type to search...">
 
 
-    <div class="price-maximum form-control" >
-      <label for="" id="maxprice" class="maxprice" onclick="openInputField()">max price</label>
+    <div class="price-maximum" >
+      <label for="" id="maxprice" class="maxprice form-control" onclick="openInputField()">max price</label>
       <input type="text" id="price-max" name="price-max" placeholder="maximum price">
     </div>
          </div>
