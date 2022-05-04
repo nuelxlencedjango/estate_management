@@ -109,28 +109,58 @@
        <div class="col-md-6">
         <div class="price-maximum" style="width: 500px; height: 50px;margin-left: 10px;" >
           <label for="" id="maxprice" class="maxprice form-control">mini price</label>
-           <input class="form-control" type="number"  id="popup" placeholder="Minimum price" name="min-price" style="width: 500px; height: 40px; margin-top:5px; text-align: center; font-size: 18px;">
+           <input class="form-control" type=""  id="popup" placeholder="Minimum price" name="min-price" style="width: 500px; height: 40px; margin-top:5px; text-align: center;">
         </div>
        </div>
 
        <div class="col-md-6">
         <div class="price-maximum" style="width: 500px; height: 50px;margin-left: 10px;" >
           <label for="" id="maxprice" class="maxprice form-control">Max price</label>
-           <input type="number" class="form-control"  id="popup" placeholder="Maximum price" name="max-price" style="width: 500px; height: 40px; margin-top:5px; text-align: center; font-size: 18px;">
+           <input type="number" class="form-control"  id="popup" placeholder="Maximum price" name="max-price" style="width: 500px; height: 40px; margin-top:5px; text-align: center;">
         </div>
        </div>
         </div>
         
-        <button class="btn btn-outline-success" id="btn" type="submit" style="width: 600px; height: 50px; border: white;  background-color: #7fbebb; color: #fff; margin-top: 30px; ">Search</button>
- 
        </form>
    
   </div>
-  
+  <button class="btn btn-outline-success" id="btn" type="submit" style="width: 600px; height: 50px; border: white;  background-color: #7fbebb; color: #fff; margin-top: 30px; ">Search</button>
+ 
              
        </div>
 
+<script>
+  let openup = false;
+  let maxprice =document.getElementById('maxprice');
+  let maxinput = document.getElementById('popup')
 
+  function openInputField(){
+    maxinput.style.display ="block";
+    openup =true;
+    
+  }
+</script>
+
+
+<script>
+  let openups = false;
+    let popup = document.getElementById('popup');
+    //let accept = document.getElementById('confirm');
+   
+    function openPopup(){
+      popup.classList.add("open-popup");
+      openup = true;
+
+   
+    }
+    //function closePopup(){
+      //popup.classList.remove("open-popup");
+      //accept.style.display ="block";
+   // }
+   
+    
+   
+   </script>
 
 
 {% endblock %}
