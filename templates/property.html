@@ -36,7 +36,20 @@
   
   
 }
-
+.maxprice:hover{
+      background: #7fbebb;
+      color: #000;
+    }
+#popup{
+      
+      margin-top: 15px;
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      padding-left: 0px;
+   
+    }
     
   </style>
 
@@ -76,10 +89,20 @@
       <input class="form-control"  id="popup" placeholder="Type to search...">
     </div>
          </div>
-
-    
+       </div>
+      <div class="another-select">
+        <div class="col-md-6">
+          <select name="property" style="width: 400px; height: 50px; border: white; background: red; margin-top: 100px;">
+            <option  data-count="2" value="all" >Mini price</option>
+            <option data-count="23" value="Residential">Residential</option>
+            <option data-count="433" value="Commercial">Commercial</option>
+            <option data-count="45" value="Land">Land</option>
+            <option data-count="476" value="Multi_family">Multi-Family</option>
+            <option data-count="78" value="Rental">Rental</option>
+          
+        </select>
+         </div>
          <div class="col-md-6">
-           
           <select name="property" style="width: 400px; height: 50px; border: white; background: green; margin-top: 100px;">
             <option  data-count="2" value="all" >features</option>
             <option data-count="23" value="Residential">Residential</option>
