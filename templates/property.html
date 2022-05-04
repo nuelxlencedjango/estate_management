@@ -43,8 +43,8 @@
     }
 #popup{
       
-      margin-top: 10px;
-     
+      margin-top: 20px;
+     display: none;
       width: 80%;
       margin-left: auto;
       margin-right: auto;
@@ -85,7 +85,7 @@
 
 
     <div class="price-maximum" >
-      <label for="" id="maxprice" class="maxprice form-control" onclick="openPopup()">max price</label>
+      <label for="" id="maxprice" class="maxprice form-control" onclick="openInputField()">max price</label>
       <!--<input type="text" id="price-max" name="price-max" placeholder="maximum price">-->
       <input class="form-control"  id="exampleDataListed popup" placeholder="Type to search...">
     </div>
@@ -124,17 +124,20 @@
        </div>
 
 <script>
-  //let maxprice =document.getElementById('maxprice');
-  //let maxinput = document.getElementById('price-max')
+  let openup = false;
+  let maxprice =document.getElementById('maxprice');
+  let maxinput = document.getElementById('popup')
 
-  //function openInputField(){
-    //maxinput.style.visibility ="hidden";
- // }
+  function openInputField(){
+    maxinput.style.visibility ="visible";
+    openup =true;
+    
+  }
 </script>
 
 
 <script>
-  let openup = false;
+  let openups = false;
     let popup = document.getElementById('popup');
     //let accept = document.getElementById('confirm');
    
