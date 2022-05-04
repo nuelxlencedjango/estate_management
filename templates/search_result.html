@@ -179,7 +179,7 @@
     <div class="row">
         {% for result in resultobj %} 
         <a href="{% url 'product:image_gallery' result.id %}">
-        <div class="col-md-3">
+        <div class="col-md-3" style="height: 450px;display: flex;">
             <div class="card" style="width: 18rem;">
                 <img src="{{ result.img.url }}" class="card-img-top" alt="..."></a>
 
