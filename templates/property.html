@@ -64,71 +64,36 @@
      
        <div class="first-select">
         <div class="col-md-6">
-          
-       <label for="exampleDataList" class="form-label" style="width: 500px; height: 50px;">Datalist example</label>
-       <!--<label for="" id="maxprice" class="maxprice form-control">Select The Properties You Want Below</label>-->
-       <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-       <datalist id="datalistOptions">
-         <option value="fried rice">
-         <option value="beans">
-         <option value="yam">
-         <option value="akara">
-         <option value="tuwo">
-       </datalist>
-         </div>
-         <div class="col-md-6">
-          
-          <label for="exampleDataList" class="form-label" style="width: 500px; height: 50px;">Datalist example</label>
-          <!--<label for="" id="maxprice" class="maxprice form-control">Select The Properties You Want Below</label>-->
-          <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-          <datalist id="datalistOptions">
-            <option value="fried rice">
-            <option value="beans">
-            <option value="yam">
-            <option value="akara">
-            <option value="tuwo">
-          </datalist>
-            </div>
+         
+          <div class="property-select">
+            <select name="property" style="width: 400px; height: 50px; border: white; background: red; margin-top: 100px;">
+              <option  data-count="2" value="all" >features</option>
+              <option data-count="23" value="Residential">Residential</option>
+              <option data-count="433" value="Commercial">Commercial</option>
+              <option data-count="45" value="Land">Land</option>
+              <option data-count="476" value="Multi_family">Multi-Family</option>
+              <option data-count="78" value="Rental">Rental</option>
+            
+          </select>
+          </div>
+        </div>
 
-
+          <div class="col-md-6">
+          <div class="property-select">
+            <select name="property" style="width: 400px; height: 50px; border: white; background: red; margin-top: 100px;">
+              <option  data-count="2" value="all" >features</option>
+              <option data-count="23" value="Residential">Residential</option>
+              <option data-count="433" value="Commercial">Commercial</option>
+              <option data-count="45" value="Land">Land</option>
+              <option data-count="476" value="Multi_family">Multi-Family</option>
+              <option data-count="78" value="Rental">Rental</option>
+            
+          </select>
+          </div>
+          </div>
        </div>
 
-
-    
-       
-         <div class="col-md-6">
-          <div class="another-select">
-          <div class="price-maximum" style="width: 500px; height: 50px;margin-left: 10px;" >
-      
-            <label for="" id="maxprice" class="maxprice form-control">mini price</label>
-             <input class="form-control"  id="popup" placeholder="Mini price" style="width: 500px; height: 40px; margin-top:5px;">
-          </div>
-          <div class="price-maximum" style="width: 500px; height: 50px;margin-left: 10px;" >
-      
-            <label for="" id="maxprice" class="maxprice form-control">mini price</label>
-             <input class="form-control"  id="popup" placeholder="Mini price" style="width: 500px; height: 40px; margin-top:5px;">
-          </div>
-
-               </div>
-
-       
-               </div>
-       
-        
-         <div class="col-md-6">
-  
-          <select name="property" style="width: 400px; height: 50px; border: white; background: red; margin-top: 100px;">
-            <option  data-count="2" value="all" >features</option>
-            <option data-count="23" value="Residential">Residential</option>
-            <option data-count="433" value="Commercial">Commercial</option>
-            <option data-count="45" value="Land">Land</option>
-            <option data-count="476" value="Multi_family">Multi-Family</option>
-            <option data-count="78" value="Rental">Rental</option>
-          
-        </select>
-         </div>
-      </div>
-
+         
       
       <button class="btn btn-outline-success" id="btn" type="submit" style="width: 600px; height: 50px; border: white;  background-color: #7fbebb; color: #fff; margin-top: 30px; ">Search</button>
      </form>
