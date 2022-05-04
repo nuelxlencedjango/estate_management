@@ -228,8 +228,9 @@
 <div class="prod">
     <div class="container">
         <div class="row my-5">
-            {% for product in resultobj %}
+            {% for result in resultobj %}
             <div class="col-md-4 my-4">
+                <a href="{% url 'product:image_gallery' result.id %}"></a>
                 <img  src="{{ result.img.url }}" alt="" class="w-100">
                 <h4 class="my-">{{result.Location }}</h4>
                 <p>{bedroom:{{result.bedroom }}</p>
