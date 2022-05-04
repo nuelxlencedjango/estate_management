@@ -244,12 +244,21 @@ body {
          </div>
 
          <div class="col-md-6">
-         <a href="">
+          <label for="exampleDataList" class="form-label">Datalist example</label>
+          <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+          <!--<datalist id="datalistOptions">
+            <option value="San Francisco">
+            <option value="New York">
+            <option value="Seattle">
+            <option value="Los Angeles">
+            <option value="Chicago">
+          </datalist>-->
+      
           <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
           <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
           <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
           <label for="" id="maxprice" class="maxprice" onclick="openInputField()">max price</label>
-         </a>
+      
           <select name="property" style="width: 400px; height: 50px; border: white;">
             <!--<label for="" class="">max price afta</label>-->
             <input type="text" id="price-max" name="price-max" placeholder="maximum price">
