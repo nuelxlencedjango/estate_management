@@ -229,11 +229,18 @@
     <div class="container">
         <div class="row my-5">
             {% for result in resultobj %}
+
+            <h4 class="my-">Location:{{result.Location }}</h4>
             <div class="col-md-4 my-4">
-                <a href="{% url 'product:image_gallery' result.id %}"></a>
+                <h4 class="my-">Location:{{result.Location }}</h4>
+                <a href="{% url 'product:image_gallery' result.id %}">
                 <img  src="{{ result.img.url }}" alt="" class="w-100">
-                <h4 class="my-">{{result.Location }}</h4>
-                <p>bedroom:{{result.bedroom }}</p>
+                </a>
+                 <h3>Price:<span>${{result.price }}</span></h3>
+              <h3>bedroom:{{result.bedroom }}</h3>
+              <h3>bathroom:{{result.bathroom }}</h3>
+              <h3>Sqft:{{result.sqft }}</h3>
+              <h3>Acres:{{result.acre}}</h3>
                 <a href=" " class="btn btn-dark btn-md">View detail</a>
             </div>
             {% endfor %}
