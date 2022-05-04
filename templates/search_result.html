@@ -1,0 +1,178 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<style>
+
+    .want_to_buy{
+        display: none;
+    }
+    .display{
+        display: none;
+    }
+    .property-search{
+        display: none;
+    }
+    .featured{
+        display: none;
+    }
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.flex-item-left {
+  flex: 50%;
+}
+
+.flex-item-right {
+  flex: 50%;
+}
+.card-image{
+    width: 300px;
+    height: 280px;
+    margin-left: 20px;
+}
+.card-image img{
+    width: 100%;
+    height: 100%;
+}
+.property-information{
+    margin-left: 20px;
+}
+.property-address h2{
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+  
+    color: #0076AD;
+    margin-left: 10px;
+}
+.property-information h3{
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+
+}
+.property-information span{
+    color: green;
+}
+.right{
+    margin-left: 50px;
+}
+.search-result{
+    margin-left: 30px;
+}
+.search-section .description{
+    font-size: 15px;
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.btn-groupy{
+    margin-top: 5px;
+    margin-bottom: 70px;
+    margin-left: auto; 
+    margin-right: 20;
+    right: -50px;
+   
+    
+}
+.contar{
+    margin-left: 30px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+    </style>
+   
+  
+
+
+   {% load pagination_tags %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+
+<div class="search-section">
+    
+    <h1 class="search-result">Search result</h1>
+
+   {% for result in resultobj %} 
+<div class="flex-container">
+    
+   
+  <div>
+  
+
+    <div class="property-flex">
+        
+        <a href="{% url 'product:image_gallery' result.id %}">
+        <div class="card-image ">
+            <img src="{{ result.img.url }}" alt="">
+        </div>
+        </a>
+    </div>
+  </div>
+  <div>
+      <div class="property-information">
+         <a href="{% url 'product:image_gallery' result.id %}">
+            <div class="property-address">
+                <h2>{{result.Location }}</h2>
+            </div>
+         </a>
+          <div class="property-information">
+              <h3>Price:<span>${{result.price }}</span></h3>
+              <h3>bedroom:{{result.bedroom }}</h3>
+              <h3>bathroom:{{result.bathroom }}</h3>
+              <h3>Sqft:{{result.sqft }}</h3>
+              <h3>Acres:{{result.acre}}</h3>
+              <h3>SubdivisionSee Legal Description Below.</h3>
+             
+          </div>
+      </div>
+  </div>
+  <div class="property-information">
+      <h3 class="right">{{ result.listing_id }}</h3>
+      <!--<h3 class="right">Listing ID50044316PBMLS-RETS</h3>-->
+  </div>  
+  <div class="property-information">
+    <h3 class="center">{{ result.release_date }}</h3>
+    
+</div>  
+</div>
+<h3 class="description"> {{result.describe }}</h3>
+<div class="contar">
+<div class="btn-groupy " role="group" aria-label="Basic mixed styles example">
+    <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures {{number}}</a>
+    <a href="{% url 'product:image_slides' result.id %}" type="button" class="btn btnb btn-warning">Visual Tour</a>
+  
+    <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" >Add To Your Wishlist</a>
+    <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-dark">View Details</a>
+  </div>
+</div>
+{% endfor %}
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
