@@ -76,26 +76,42 @@
          <option value="tuwo">
        </datalist>
          </div>
-
-
-
          <div class="col-md-6">
-    <div class="price-maximum" style="width: 500px; height: 50px;margin-left: 10px;" >
+          
+          <label for="exampleDataList" class="form-label" style="width: 500px; height: 50px;">Datalist example</label>
+          <!--<label for="" id="maxprice" class="maxprice form-control">Select The Properties You Want Below</label>-->
+          <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+          <datalist id="datalistOptions">
+            <option value="fried rice">
+            <option value="beans">
+            <option value="yam">
+            <option value="akara">
+            <option value="tuwo">
+          </datalist>
+            </div>
 
-      <label for="" id="maxprice" class="maxprice form-control">mini price</label>
-       <input class="form-control"  id="popup" placeholder="Maximum Price you want to search" style="width: 500px; height: 40px; margin-top:5px;">
-    </div>
-         </div>
+
        </div>
 
 
-      <div class="another-select">
-        <div class="col-md-6">
-          <div class="" style="width: 500px; height: 50px;margin-left: 10px;" >
-
-            <label for="" id="maxprice" class="maxprice form-control">Max price</label>
-             <input class="form-control"  id="popup" placeholder="Type to search..." style="width: 500px; height: 25px;margin-top:15px;">
+    
+       
+         <div class="col-md-6">
+          <div class="another-select">
+          <div class="price-maximum" style="width: 500px; height: 50px;margin-left: 10px;" >
+      
+            <label for="" id="maxprice" class="maxprice form-control">mini price</label>
+             <input class="form-control"  id="popup" placeholder="Mini price" style="width: 500px; height: 40px; margin-top:5px;">
           </div>
+          <div class="price-maximum" style="width: 500px; height: 50px;margin-left: 10px;" >
+      
+            <label for="" id="maxprice" class="maxprice form-control">mini price</label>
+             <input class="form-control"  id="popup" placeholder="Mini price" style="width: 500px; height: 40px; margin-top:5px;">
+          </div>
+
+               </div>
+
+       
                </div>
        
         
@@ -112,7 +128,7 @@
         </select>
          </div>
       </div>
-      
+
       
       <button class="btn btn-outline-success" id="btn" type="submit" style="width: 600px; height: 50px; border: white;  background-color: #7fbebb; color: #fff; margin-top: 30px; ">Search</button>
      </form>
