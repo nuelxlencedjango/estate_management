@@ -200,12 +200,23 @@
                       
                        </ul>
                       <ul>
-                        <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" >Add To Your Wishlist</a>
+                        <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" >Add To Wishlist</a>
                         <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-dark">View Details</a>
                     
                       </ul>
                
-              
+                      <div class="contar">
+                        <div class="btn-groupy " role="group" aria-label="Basic mixed styles example">
+                            <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures </a>
+                            <a href="{% url 'product:image_slides' result.id %}" type="button" class="btn btnb btn-warning">Visual Tour</a>
+                          
+                            <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" >Add To Wishlist</a>
+                            <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-dark">View Details</a>
+                          </div>
+                        </div>
+                        <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" >Add To Wishlist</a>
+                        <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-dark">View Details</a>
+                
               
             </div>
             {% endfor %}
