@@ -27,7 +27,16 @@
 .another-select,.first-select{
   display: flex;
 }
-
+.price-maximum{
+  border: sienna;
+  font-size: 22px;
+  font-weight: 400;
+  
+}
+.price-maximum:hover{
+  background: #7fbebb;
+  color: black;
+}
 
   </style>
 
@@ -61,10 +70,10 @@
           <input class="form-control"  id="exampleDataList" placeholder="Type to search...">
 
 
-       <label for="" id="maxprice" class="maxprice" onclick="openInputField()">max price</label>
-            <input type="text" id="price-max" name="price-max" placeholder="maximum price">
-          
-     
+    <div class="price-maximum">
+      <label for="" id="maxprice" class="maxprice" onclick="openInputField()">max price</label>
+      <input type="text" id="price-max" name="price-max" placeholder="maximum price">
+    </div>
          </div>
        </div>
       <div class="another-select">
