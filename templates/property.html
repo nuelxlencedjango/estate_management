@@ -39,7 +39,11 @@
 .maxprice{
 
 }
-
+.open-popup{
+      visibility: hidden;
+      /*top: 50%;*/
+      /*transform: translate(-50%,-50%) scale(1);*/
+    }
   </style>
 
 
@@ -68,14 +72,14 @@
 
 
          <div class="col-md-6">
-          <label for="exampleDataList" class="form-control" onclick="openInputField()">Max Price</label>
-          <input class="form-control"  id="exampleDataList" placeholder="Type to search...">
+          <!--<label for="exampleDataList" class="form-control" onclick="openInputField()">Max Price</label>
+          <input class="form-control"  id="exampleDataList" placeholder="Type to search...">-->
 
 
     <div class="price-maximum" >
       <label for="" id="maxprice" class="maxprice form-control" onclick="openInputField()">max price</label>
       <input type="text" id="price-max" name="price-max" placeholder="maximum price">
-      <input class="form-control"  id="exampleDataListed" placeholder="Type to search...">
+      <input class="form-control"  id="exampleDataListed popup" placeholder="Type to search...">
     </div>
          </div>
        </div>
@@ -112,29 +116,30 @@
        </div>
 
 <script>
-  let maxprice =document.getElementById('maxprice');
-  let maxinput = document.getElementById('price-max')
+  //let maxprice =document.getElementById('maxprice');
+  //let maxinput = document.getElementById('price-max')
 
-  function openInputField(){
-    maxinput.style.visibility ="hidden";
-  }
+  //function openInputField(){
+    //maxinput.style.visibility ="hidden";
+ // }
 </script>
 
 
 <script>
+  let openup = false;
     let popup = document.getElementById('popup');
-    let accept = document.getElementById('confirm');
+    //let accept = document.getElementById('confirm');
    
     function openPopup(){
       popup.classList.add("open-popup");
-      accept.style.display ="none";
+      openup = true;
 
    
     }
-    function closePopup(){
-      popup.classList.remove("open-popup");
-      accept.style.display ="block";
-    }
+    //function closePopup(){
+      //popup.classList.remove("open-popup");
+      //accept.style.display ="block";
+   // }
    
     
    
