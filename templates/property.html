@@ -206,15 +206,16 @@ body {
      
        <div class="first-select">
         <div class="col-md-6">
-          <select name="property" style="width: 400px; height: 50px; border: white;">
-            <option  data-count="2" value="all" >Property</option>
-            <option data-count="23" value="Residential">Residential</option>
-            <option data-count="433" value="Commercial">Commercial</option>
-            <option data-count="45" value="Land">Land</option>
-            <option data-count="476" value="Multi_family">Multi-Family</option>
-            <option data-count="78" value="Rental">Rental</option>
           
-        </select>
+       <label for="exampleDataList" class="form-label">Datalist example</label>
+       <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+       <datalist id="datalistOptions">
+         <option value="fried rice">
+         <option value="beans">
+         <option value="yam">
+         <option value="akara">
+         <option value="tuwo">
+       </datalist>
          </div>
          <div class="col-md-6">
           <select name="property" style="width: 400px; height: 50px; border: white;">
