@@ -101,8 +101,8 @@
             {% for result in resultobj %}
             
             <div class="col-md-4 my-4  animate__animated animate__backInLeft animation-delay-s" style="animation-delay: 1s;">
-                <a href="{% url 'product:image_gallery' result.id %}">
-                <h4 class="my-" style="font-size: 18px;">Location:{{result.Location }}</h4></a>
+                <a href="{% url 'product:image_gallery' result.id %}"><span style="color: #000; text-decoration: none;">Location:</span>
+                <h4 class="my-" style="font-size: 18px;">{{result.Location }}</h4></a>
                 <img  src="{{ result.img.url }}" alt="" class="w-100" style="width: 250px; height: 180px;">
                 <h5 class="card-title">Price:<span style="color: green;">${{result.price }}</span></h5>
                 
