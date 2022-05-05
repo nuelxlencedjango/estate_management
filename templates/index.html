@@ -87,8 +87,7 @@ body{
      padding: 10px 20px;
      color: #999;
      display: inline-block;
-
-
+     word-wrap: break-word;
 
      float: left;
       
@@ -580,6 +579,19 @@ p{
 
 
 
+    <nav class="navbar">
+        <!--logo-->
+        <div class="logo">
+            <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+        </div>
+        <!--navigation menu-->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+       <input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        </ul>
+
+    </nav>
 
     <body>
         <div id="main_menu">
