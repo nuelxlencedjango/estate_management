@@ -192,7 +192,7 @@
                 <h5>bedroom:{{result.bedroom }} &nbsp;bedroom:{{result.bathroom}}</h5>
  
                 <h5>Sqft:{{result.sqft }} &nbsp;Acres:{{result.acre}}</h5>
-                <p>Released Dated:{{ result.release_date }}</p>
+                <p>{{ result.release_date }}</p>
           
                        <ul>
                         <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures</a>
@@ -205,18 +205,8 @@
                     
                       </ul>
                
-                      <div class="contar">
-                        <div class="btn-groupy " role="group" aria-label="Basic mixed styles example">
-                            <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-danger">View pictures </a>
-                            <a href="{% url 'product:image_slides' result.id %}" type="button" class="btn btnb btn-warning">Visual Tour</a>
-                          
-                            <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" >Add To Wishlist</a>
-                            <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-dark">View Details</a>
-                          </div>
-                        </div>
-                        <a href="{% url 'product:add_item' result.id %}" type="button" class="btn btnb btn-success" >Add To Wishlist</a>
-                        <a href="{% url 'product:image_gallery' result.id %}" type="button" class="btn btnb btn-dark">View Details</a>
-                
+                   
+                       
               
             </div>
             {% endfor %}
