@@ -87,9 +87,9 @@ li {
  padding: 5px 14px;
 }
 /* DROPDOWN MENU */
-.services {
+/*.services {
  position: relative; 
-}
+}*/
 .dropdown {
  background-color: rgb(1, 139, 139);
  padding: 1em 0;
@@ -111,6 +111,52 @@ li {
 }
 .services:hover .dropdown {
  display: block;
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox]{
+ display: none;
+} 
+/*HAMBURGER MENU*/
+.hamburger {
+ display: none;
+ font-size: 24px;
+ user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+.menu { 
+ display:none;
+ position: absolute;
+ background-color:teal;
+ right: 0;
+ left: 0;
+ text-align: center;
+ padding: 16px 0;
+}
+.menu li:hover {
+ display: inline-block;
+ background-color:#4c9e9e;
+ transition: 0.3s ease;
+}
+.menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+ display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+ left: 50%;
+ top: 30px;
+ transform: translateX(35%);
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
 }
 /* end here navbar*/
   #main_menu{
@@ -154,7 +200,7 @@ li {
      display: inline-block;
      word-wrap: break-word;
 
-     float: left;
+     float:left;
       
     
     
@@ -656,6 +702,7 @@ p{
             <!-- USING CHECKBOX HACK -->
        <input type="checkbox" id="checkbox_toggle" />
        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
        <div class="menu">
         <li><a href="/">Home</a></li>
         <li><a href="/">About</a></li>
@@ -667,6 +714,8 @@ p{
         </ul>
     </nav>
 
+
+    
     <body>
         <div id="main_menu">
             <div class="logo_area">
