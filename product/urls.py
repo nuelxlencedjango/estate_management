@@ -24,13 +24,14 @@ urlpatterns =[
     
     path('property_search/' ,views.availableProperty,name='property_search'),
 
-    #path('property_search/' ,views.show_available_properties ,name="property_search"),
-
+    
    path('image_gallery/<int:id>/', views.imageGallery, name='image_gallery'),
 
     path('services/',views.services,name='services'),
    path('image_slides/<int:id>/', views.imageSlides, name='image_slides'),
     path('add_item/<int:pk>', views.add_to_cart, name='add_item'),
+    path('search_p/' ,views.propertySearches,name="search_p"),
+
     
 ]
 

@@ -100,7 +100,29 @@ def availableProperty(request):
         context ={
                 'resultobj':resultobj
             }
-        #return render(request, 'property_info.html',context)  
+        return render(request, 'property_info.html',context)  
+
+
+
+
+
+def propertySearches(request):
+
+    if request.method =="POST":
+        name =request.POST.get('property')
+        minpay =request.POST.get('min-price')
+        maxpay =request.POST.get('max-price')
+        if name == 'all':
+            resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
+        
+
+        else:
+            resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
+
+        context ={
+                'resultobj':resultobj
+            }
+        
         return render(request, 'search_result.html',context)  
 
 
