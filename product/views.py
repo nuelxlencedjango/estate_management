@@ -16,9 +16,6 @@ from django.views.generic import (
 
 
 
-# Create your views here.
-
-# views.py
 
 def home(request):
     return render(request, 'index.html')
@@ -26,7 +23,7 @@ def home(request):
 
 
 def searchStudentInfo(request):
-   # student = StudentInfo.objects.all()
+ 
     filters = FilterStudentInfo(request.GET, queryset=StudentInfo.objects.all())
     
     context = {"filters":filters}
@@ -276,6 +273,9 @@ def management(request):
 
 def marketing(request):
     return render(request, 'marketing.html')
+
+
+
 
 
 
