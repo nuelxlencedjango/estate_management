@@ -208,7 +208,6 @@ def availablePropertylp(request):
                 #resultobj = paginator.get_page(page_number)
 
             
-
             context ={ 'resultobj':resultobj}
             return render(request,'property_info.html',context)
         
