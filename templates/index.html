@@ -26,48 +26,14 @@
     <!--animation link-->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>-->
 
+<link rel="stylesheet" href="{% static 'styles/styling.css' %}">
 
  <style>
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Noto Sans Display', sans-serif;
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Poppins', sans-serif;
-
-  
 
 
-/*text-transform: capitalize;*/
-  transition: all .2s linear;
-}     
-body{
-      
-     font-family: 'Oswald', sans-serif;
-      font-size: 15px;
-      font-weight: 400; 
-     line-height: 1.5em;
-     background: whitesmoke;
-  }
-  a {
- text-decoration: none;
-}
-li {
- list-style: none;
-}
-/* NAVBAR STYLING STARTS */
-.navbar {
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 20px;
- background-color: teal;
- color: #fff;
-}
-.nav-links a {
- color: #fff;
-}
+
+
+
 /* LOGO */
 .logo {
  font-size: 32px;
@@ -76,25 +42,11 @@ li {
     width: 100%;
    
    
-    width: 130px;
-    height: 90px; 
+    width: 100px;
+    height: 70px; 
    
    
 
-}
-/* NAVBAR MENU */
-.menu {
- display: flex;
- gap: 1em;
- font-size: 18px;
-}
-.menu li:hover {
- background-color: #4c9e9e;
- border-radius: 5px;
- transition: 0.3s ease;
-}
-.menu li {
- padding: 5px 14px;
 }
 /* DROPDOWN MENU */
 /*.services {
@@ -123,51 +75,7 @@ li {
  display: block;
 }
 
-/*RESPONSIVE NAVBAR MENU STARTS*/
-/* CHECKBOX HACK */
-input[type=checkbox]{
- display: none;
-} 
-/*HAMBURGER MENU*/
-.hamburger {
- display: none;
- font-size: 24px;
- user-select: none;
-}
-/* APPLYING MEDIA QUERIES */
-@media (max-width: 768px) {
-.menu { 
- display:none;
- position: absolute;
- background-color:teal;
- right: 0;
- left: 0;
- text-align: center;
- padding: 16px 0;
-}
-.menu li:hover {
- display: inline-block;
- background-color:#4c9e9e;
- transition: 0.3s ease;
-}
-.menu li + li {
- margin-top: 12px;
-}
-input[type=checkbox]:checked ~ .menu{
- display: block;
-}
-.hamburger {
- display: block;
-}
-.dropdown {
- left: 50%;
- top: 30px;
- transform: translateX(35%);
-}
-.dropdown li:hover {
- background-color: #4c9e9e;
-}
-}
+
 /* end here navbar*/
   #main_menu{
     width: 100%; 
@@ -177,20 +85,25 @@ input[type=checkbox]:checked ~ .menu{
 }
  .inner_main_menu {
     margin: 0 auto;
-     width: 1170px;
+     width: 100%;
      
          }    
 .inner_main_menu ul{
      margin: 0;
-       padding: 70px 0 0; 
+       padding: 50px 0 0; 
        list-style: none;
        text-align: right;
+       
+       
     }    
 .inner_main_menu ul li{
     float: none;
      display: inline-block;
-     position: relative}    
-.inner_main_menu ul li:nth-child(1){
+     position: relative;
+     /*justify-content: space-between;*/
+    
+    }    
+/*.inner_main_menu ul li:nth-child(1){
     float: left;
 }    
 .inner_main_menu ul li:nth-child(2){
@@ -198,10 +111,10 @@ input[type=checkbox]:checked ~ .menu{
 }    
 .inner_main_menu ul li:nth-child(3){
     float: left;
-}    
+}*/    
 .inner_main_menu ul li a{
     /*color: #262626; */
-    font-size: 20px;
+    font-size: 18px;
      text-transform: capitalize;
      text-decoration: none; 
      display: block;
@@ -209,6 +122,9 @@ input[type=checkbox]:checked ~ .menu{
      color: #999;
      display: inline-block;
      word-wrap: break-word;
+     
+     
+     
 
      float:left;
       
@@ -229,6 +145,24 @@ input[type=checkbox]:checked ~ .menu{
    
    
 }  
+.logo_area{
+  width: 100px;
+  position: absolute; 
+  left: 42.5%;
+  top: 0; 
+  content: "";
+  margin-left:-80px;
+ 
+  text-align: center;
+
+  width: 100px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+.logo_area img{
+  width: 100%;
+  height: 100%;
+} 
 
 /*.inner_main_menu ul li:hover a{
     color: #6FDA44}*/
@@ -318,23 +252,6 @@ ul.slicknav_nav {
                         top: 35px;
                     }
 
-.logo_area{
-                        width: 130px;
-                        height: 140px; 
-                        position: absolute; 
-                        left: 40%;
-                        top: 0; 
-                        content: "";
-                        margin-left:-110px;
-                            text-align: center;
-}
-.logo_area img{
-    width: 100%;
-    height: 75%;
-   
-   
-
-}
 .want_to_buy{
     margin-top: 30px;
   
@@ -559,6 +476,7 @@ p{
 }
 
 
+
 /*footer section */
 .footer-section{
     position: relative;
@@ -688,13 +606,17 @@ nav a:hover {
   position: fixed;
   top: 0;
 }
+#menu.sticky {
+  position: fixed;
+  top: 0;
+}
 
 .navbarOffsetMargin {
   padding-top: 45px;
 }
 
 section {
-  min-height: 100vh;
+  /*min-height: 100vh;*/
 }
 
 section#header {
@@ -783,7 +705,7 @@ p {
             margin-left: 0;
             position: relative;
             top: 0;
-            width: 130px;
+            width: 100px;
         }
         .logo_area img{
             height: auto;
@@ -793,19 +715,27 @@ p {
         </style>
     </head>
 
- 
     <section id="header">
-        <article>
+        <!--<article>
           <h2>Let's read some jokes!</h2> 
-        </article>
+        </article>-->
         <nav id="main-nav">
-          <a href="#header">Home</a>
-          <a href="#tim-vine">Tim Vine</a>
-          <a href="#bill-hicks">Bill Hicks</a>
-          <a href="#stewart-francis">Stewart Francis</a>
+     
+            <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.pn' %}" class="logo-image" alt=""></a>
+       
+    <a href="/">Home two</a>
+        <a href="/">Our  Team</a>
+         <a href="{% url 'product:property' %}">property search</a> 
+           
+              <a href="/">Our Services</a>
+        <a href="/">property  management</a>
+            <a href="/">marketing</a>
+            <a href="{% url 'product:testimonial' %}">testimonials</a>
+            <a href="{% url 'product:contactus' %}">contact  us</a>
+            
         </nav>
       </section>
-      <section id="tim-vine">
+      <!--<section id="tim-vine">
         <article>
           <h2>Tim Vine</h2>
           <p>I said to the gym instructor: ‘Can you teach me to do the splits?’ He said: ‘How flexible are you?’ I said: ‘I can’t make Tuesdays.'</p>
@@ -830,15 +760,18 @@ p {
           <p>Have you ever imagined a world with no hypothetical situations?</p>
           <p>I was going to join the debating team, but somebody talked me out of it.</p>
         </article>
-      </section>
+      </section>-->
 
 
 
 
 
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <!--logo-->
-        <div class="logo">
+       <!--<div class="logo">
+            <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+        </div>-->
+        <div class="logo_areas">
             <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
         </div>
         <!--navigation menu-->
@@ -848,12 +781,18 @@ p {
        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
 
        <div class="menu">
+           
         <li><a href="/">Home</a></li>
-        <li><a href="/">About</a></li>
+        <li><a href="/">Our Team</a></li>
+        <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
         <li class="services">
-          <a href="/">Services</a></li>
-          <li><a href="/">Pricing</a></li>
-          <li><a href="/">Contact</a></li>
+          <a href="/">Our Services</a></li>
+          <li><a href="/">Property  Management</a></li>
+          <li><a href="/">Marketing</a></li>
+          <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
+          <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
+        
+          
        </div>
         </ul>
     </nav>
@@ -869,7 +808,7 @@ p {
                 <ul id="menu">
                     <li><a href="{% url 'product:home' %}">Home</a></li>
                     <li><a href="{% url 'product:our_team' %}">our  team</a></li>
-                    <li> <a href="{% url 'product:property' %}">property s</a> </li>
+                    <li> <a href="{% url 'product:property' %}">property search</a> </li>
                     <li><a href="{% url 'product:services' %}">our services</a></li>
                        
                     <li><a href="{% url 'product:management' %}">property  management</a></li>
@@ -877,6 +816,7 @@ p {
 
                     <li><a href="{% url 'product:testimonial' %}">testimonials</a></li>
                     <li><a href="{% url 'product:contactus' %}">contact  us</a></li>
+                </ul>
                     
             </div>
         </div>
@@ -1113,11 +1053,43 @@ window.addEventListener("scroll", e => {
     header.classList.remove('navbarOffsetMargin');
   }
 });
+
 </script>
 
 
+<script>
+    let timV = document.getElementById("tim-vine");
+let navbar_new = document.getElementById("menu");
+
+let navPoss = navbar.getBoundingClientRect().top;
+
+window.addEventListener("scroll", e => {
+  let scrollPoss = window.scrollY;
+  if (scrollPoss > navPoss) {
+    navbar_new.classList.add('sticky');
+    main_menu.classList.add('navbarOffsetMargin');
+  } else {
+    navbar_new.classList.remove('sticky');
+    main_menu.classList.remove('navbarOffsetMargin');
+  }
+});
+
+</script>
 
 
+<script> 
+    let navbar_menu = document.getElementById("nav_menu");
+    let menu_list = document.getElementById("nav_menu_list");
+
+    window.onscroll =function(){
+        if(window.pageYOffset >= menu_list.offsetTop){
+            navbar_menu.classList.add("sticky");
+        }
+        else{
+            navbar_menu.classList.remove("sticky");
+        }
+    }
+</script>
 
 
   {% include 'footer.html' %}
@@ -1146,5 +1118,9 @@ window.addEventListener("scroll", e => {
     <script src="{% static 'js/script.js' %}"></script>
   
  
+
+
+   
+
     </body>
 </html>

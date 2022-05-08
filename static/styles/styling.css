@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
+  /*text-transform: capitalize;*/
+    transition: all .2s linear;
+  }     
+body{
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 400; 
+    line-height: 1.5em;
+    background: whitesmoke;
+    }
+a{
+   text-decoration: none;
+}
+li {
+   list-style: none;
+  }
+
+  /*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox]{
+  display: none;
+ } 
+ /*HAMBURGER MENU*/
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+   }
+
+  /* NAVBAR STYLING STARTS */
+.navbar {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+/*background-color: teal;*/
+ min-height: 0px;
+}
+.nav-links a {
+ color: #999;
+ }
+ /* NAVBAR MENU */
+.menu {
+ display: flex;
+gap: .1em;
+ font-size: 18px;
+}
+.menu li:hover {
+
+border-radius: 5px;
+transition: 0.3s ease;
+background: #000;
+ /*background: linear-gradient(164deg, rgba(123,134,232,1) 0%, rgba(246,140,255,1) 52%, rgba(255,222,50,1) 100%);
+ color: #270942;*/
+   
+}
+.menu li a:hover{
+    color: #fff;
+    text-decoration: none;
+     
+    
+}
+.menu li {
+padding: 5px 14px;
+}
+
+/* logo*/
+.logo_areas{
+
+  position: absolute; 
+  left: 41%;
+  top: 20; 
+
+  content: "";
+  margin-left:-80px;
+ 
+  text-align: center;
+
+  width: 100px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+.logo_areas img{
+  width: 100%;
+  height: 100%;
+}  
+
+#navbar.sticky {
+  position: fixed;
+  top: 20;
+}
+/* responsive from here up*/
+
+/* property purchasing*/
+
+.want_to_buy{
+  margin-top: 30px;
+
+
+    /*background-color: crimson;*/
+font-family: "Roboto", sans-serif;
+background-image: url('/static/images/background/background_paid.jpeg');
+background-repeat: no-repeat;
+
+/*background-image: linear-gradient(white, blue);*/
+background-color: #cccccc;
+background-position: center; 
+background-repeat: no-repeat;
+background-size: cover;
+height: 500px;
+}
+
+
+.buy h3{
+  margin-top: 10px;
+  color: #000000;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  
+}
+.buy h1{
+  font-weight: 700;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bolder;
+  color: #000000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.want_to_buy .container .row .text .local{
+  margin-top: 10px;
+  height: 360px;
+}
+
+
+
+
+
+ 
+ /* APPLYING MEDIA QUERIES */
+ @media (max-width: 768px) {
+ .menu { 
+  display:none;
+  position: absolute;
+  background-color:#7fbebb;
+  right: 0;
+  left: 0;
+  text-align: center;
+  padding: 16px 0;
+  color: #fff;
+ }
+ .menu li a{
+   color: #fff;
+ }
+ .menu li:hover {
+  display: inline-block;
+  background-color:#7fbebb;
+  transition: 0.3s ease;
+  color: #000;
+ }
+ .menu li + li {
+  margin-top: 12px;
+ }
+ input[type=checkbox]:checked ~ .menu{
+  display: block;
+ }
+ .hamburger {
+  display: block;
+ }
+ /*.dropdown {
+  left: 50%;
+  top: 30px;
+  transform: translateX(35%);
+ }
+ .dropdown li:hover {
+  background-color: #4c9e9e;
+ }*/
+ }
+

@@ -7,3 +7,33 @@
 
 
 
+let navbar_menu = document.getElementById("nav_menu");
+let menu_list = document.getElementById("nav_menu_list");
+
+window.onscroll =function(){
+    if(window.pageYOffset >= menu_list.offsetTop){
+        navbar_menu.classList.add("sticky");
+    }
+    else{
+        navbar_menu.classList.remove("sticky");
+    }
+}
+
+
+//sticky navbar
+
+let timV = document.getElementById("tim-vine");
+let navbar_new = document.getElementById("navbar");
+
+let navPoss = navbar.getBoundingClientRect().top;
+
+window.addEventListener("scroll", e => {
+  let scrollPoss = window.scrollY;
+  if (scrollPoss > navPoss) {
+    navbar_new.classList.add('sticky');
+    main_menu.classList.add('navbarOffsetMargin');
+  } else {
+    navbar_new.classList.remove('sticky');
+    main_menu.classList.remove('navbarOffsetMargin');
+  }
+});
