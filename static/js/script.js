@@ -7,7 +7,7 @@
 
 
 
-let navbar_menu = document.getElementById("nav_menu");
+/*let navbar_menu = document.getElementById("nav_menu");
 let menu_list = document.getElementById("nav_menu_list");
 
 window.onscroll =function(){
@@ -17,12 +17,12 @@ window.onscroll =function(){
     else{
         navbar_menu.classList.remove("sticky");
     }
-}
+}*/
 
 
 //sticky navbar
 
-let timV = document.getElementById("tim-vine");
+/*let timV = document.getElementById("tim-vine");
 let navbar_new = document.getElementById("navbar");
 
 let navPoss = navbar.getBoundingClientRect().top;
@@ -36,4 +36,26 @@ window.addEventListener("scroll", e => {
     navbar_new.classList.remove('sticky');
     main_menu.classList.remove('navbarOffsetMargin');
   }
-});
+});*/
+
+
+
+
+let menuInfo = false;
+let checkMenu = document.getElementById("want_buy");
+
+function checkToggle(){
+if(menuInfo===false){
+
+    checkMenu.style.marginTop ="360px";
+    menuInfo =true;
+}
+else{
+    checkMenu.style.marginTop ="30px";
+    menuInfo =false;
+
+}
+}
+
+
+

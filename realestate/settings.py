@@ -35,11 +35,11 @@ SECRET_KEY = 'django-insecure-pc*yv^34wfclo7c1ze5(%@!0vw+^q4c8-m(f)k^ynhyg=cf$^=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wilmot-real.herokuapp.com']
-#ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['wilmot-real.herokuapp.com']
+ALLOWED_HOSTS = []
 #ALLOWED_HOSTS = ['wilmot-real-estate.herokuapp.com','127.0.0.1']
 
-# Application definition
+#Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',

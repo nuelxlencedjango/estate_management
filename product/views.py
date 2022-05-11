@@ -18,7 +18,7 @@ from django.views.generic import (
 
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'home.html')
 
 
 
