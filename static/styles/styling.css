@@ -328,6 +328,7 @@ p{
   /*color: #676767;*/
   /*color: #ccc;*/
   color: #676767;
+  word-wrap: break-word;
 }
 .footer-section .container .sec.aboutus{
   width: 40%;
@@ -359,6 +360,10 @@ p{
 }
 .footer-section p{
   color: #676767;
+  font-size: 18px;
+
+  font-weight: 200;
+  font-family: sans-serif;
 }
 .sci{
   margin: 20px;
@@ -390,6 +395,15 @@ p{
   font-size: 20px;
   color: #676767;
 }
+
+.footer-section .container .quicklinks h2,h3{
+  position: relative;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family:'Noto Sans Display' ;
+}
+
 .quicklinks{
   position: relative;
   width: 25%;
@@ -847,13 +861,7 @@ p{
 .video__thumbn video{
   width: 100%;
   height: 100%;
-}
-
-
-
- 
-
- 
+} 
  }
 
  
@@ -1014,61 +1022,153 @@ p{
     height: auto;
     margin-bottom: 50px;
   }
+
   .featured{
-  
-    margin-top: 50px;
    
-    } 
-    .featured .row {
-      display: flex;
-    }
-    .featured .row .col-md-3{
-      width: 300px;
-     margin-top: 20px;
-     align-items: center;
-    }
-    .featured .container h2{
-      font-size: 25px;
-    }
-    .footer-section {
-      width: 280px;
-    }
-   .footer-section .sec h2{
+    display: block;
     
+    width: auto;
+   }
+   .featured .container{
+   margin-left: 10px;
+   padding-right: 10px;
+
+   }
+   .featured .row,.col-md-3{
+     max-width: 300px;
+    
+   }
+  
+   .col-md-3{
+     width: 100% !important;
+ 
+   }
+   .featured .col-md-3 .card{
+     width: auto;
+   }
+   .card-img{
+     max-width: 300px;
+   }
+   .form-container h2{
+    font-size: 30px;
    
-     font-weight: 200;
-     margin-bottom: 15px;
-     font-size: 24px;
-     text-transform: capitalize;
-     text-align: left;
-   
-   }
-   .time{
-     width: fit-content;
-     display: block;
-     align-items: flex-end;
-     text-align: left;
-   }
-   .sci{
-     width: fit-content;
-     display: inline;
-   }
-   .sci li{
-     margin: 10px;
-   }
-   .quicklinks h2,p{
-     font-size: 16px;
-     font-weight: 300;
-     margin-left: -30px;
-     
-   
-   }
-   .quicklinks h2{
-    font-size: 22px;
-  }
-  .quicklinks p{
-    font-size: 18px;
-  }
+    font-weight: 700;
+    line-height: 35.1px;
+ } 
+
+ .footer-section{
+  width: 100%;
+  display: block;
+  position: absolute;
+  padding: 5px;
+
+}
+.footer-section .container{
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+ 
+  word-wrap: break-word;
+}
+
+.footer-section .container .sec{
+  margin-right: 10px;
+  margin-left: 10px;
+  display: block;
+}
+
+
+.footer-section .sec h2{
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-transform: capitalize;
+  color: #000!important;
+}
+.footer-section .sec p{
+  font-weight: 300;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #fff!important;
+  
+}
+#office{
+  width: auto !important;
+}
+
+.time{
+
+  display: block;
+  align-items: flex-end;
+  text-align: center;
+  margin-left: 5px;
+}
+#mon-sat{
+  display: flex;
+  width: 415px;
+  text-align: center;
+}
+.sec h3{
+  position: absolute;
+ 
+
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family:'Noto Sans Display';
+  color: #000;
+}
+.sci{
+  margin-top: 50px;
+  width: fit-content;
+  display: flex;
+  margin-left: -30px !important;
+
+}
+.sci li{
+  margin: 0px;
+
+  
+}
+
+.sec li{
+  list-style: none;
+  display: flex;
+ 
+  justify-content: left;
+  
+}
+.sci li a{
+  height: 40px;
+  background-color: white;
+  justify-content: center;
+  border-radius: 50%;
+  text-transform: capitalize;
+}
+
+
+
+.quicklinks h2{
+  position: absolute;
+  max-width: 415px;
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 0px;
+ 
+}
+
+
+.quicklinks li a{
+  font-size:20px;
+  font-weight: 300;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #fff;
+
+}
+
+
 
 }
 
@@ -1157,8 +1257,30 @@ p{
      width: 180px;
    }
    .featured{
-    background-image: none;
+   
     display: block;
+    
+    width: auto;
+   }
+   .featured .container{
+   margin-left: 10px;
+   padding-right: 10px;
+
+   }
+   .featured .row,.col-md-3{
+     max-width: 300px;
+    
+   }
+  
+   .col-md-3{
+     width: 100% !important;
+ 
+   }
+   .featured .col-md-3 .card{
+     width: auto;
+   }
+   .card-img{
+     max-width: 300px;
    }
    .form-container h2{
     font-size: 30px;
@@ -1166,41 +1288,119 @@ p{
     font-weight: 700;
     line-height: 35.1px;
  } 
- .footer-section {
-   width: 280px;
- }
-.footer-section .sec h2{
- 
 
-  font-weight: 200;
+ .footer-section{
+  width: 100%;
+  display: block;
+  position: absolute;
+  padding: 5px;
+
+}
+.footer-section .container{
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+ 
+  word-wrap: break-word;
+}
+
+.footer-section .container .sec{
+  margin-right: 10px;
+  margin-left: 10px;
+  display: block;
+}
+
+
+.footer-section .sec h2{
+  font-weight: 600;
   margin-bottom: 15px;
   font-size: 24px;
   text-transform: capitalize;
-  text-align: left;
-
+  color: #000!important;
 }
+.footer-section .sec p{
+  font-weight: 300;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #fff!important;
+  
+}
+#office{
+  width: auto !important;
+}
+
 .time{
-  width: fit-content;
+
   display: block;
   align-items: flex-end;
-  text-align: left;
+  text-align: center;
+  margin-left: 5px;
+}
+#mon-sat{
+  display: flex;
+  width: 300px;
+  text-align: center;
+}
+.sec h3{
+  position: absolute;
+ 
+
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family:'Noto Sans Display';
+  color: #000;
 }
 .sci{
+  margin-top: 50px;
   width: fit-content;
-  display: inline;
+  display: flex;
+  margin-left: -30px !important;
+
 }
 .sci li{
-  margin: 10px;
+  margin: 0px;
+
+  
 }
-.quicklinks h2,p{
+
+.sec li{
+  list-style: none;
+  display: flex;
+ 
+  justify-content: left;
+  
+}
+.sci li a{
+  height: 40px;
+  background-color: white;
+  justify-content: center;
+  border-radius: 50%;
+  text-transform: capitalize;
+}
+
+
+
+.quicklinks h2{
+  position: absolute;
+  width: 300px;
   font-size: 16px;
   font-weight: 300;
-  margin-left: -30px;
-  
+  margin-left: 0px;
+ 
+}
+
+
+.quicklinks li a{
+  font-size:20px;
+  font-weight: 300;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #fff;
 
 }
 
- /* footer */
 
 }
 
