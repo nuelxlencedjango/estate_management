@@ -1,44 +1,3 @@
-/*!
- * SlickNav Responsive Mobile Menu v1.0.10
- * (c) 2016 Josh Cope
- * licensed under MIT
- */
-
-
-
-/*let navbar_menu = document.getElementById("nav_menu");
-let menu_list = document.getElementById("nav_menu_list");
-
-window.onscroll =function(){
-    if(window.pageYOffset >= menu_list.offsetTop){
-        navbar_menu.classList.add("sticky");
-    }
-    else{
-        navbar_menu.classList.remove("sticky");
-    }
-}*/
-
-
-//sticky navbar
-
-/*let timV = document.getElementById("tim-vine");
-let navbar_new = document.getElementById("navbar");
-
-let navPoss = navbar.getBoundingClientRect().top;
-
-window.addEventListener("scroll", e => {
-  let scrollPoss = window.scrollY;
-  if (scrollPoss > navPoss) {
-    navbar_new.classList.add('sticky');
-    main_menu.classList.add('navbarOffsetMargin');
-  } else {
-    navbar_new.classList.remove('sticky');
-    main_menu.classList.remove('navbarOffsetMargin');
-  }
-});*/
-
-
-
 
 let menuInfo = false;
 let main_menu = document.getElementById("menu")
@@ -61,4 +20,22 @@ else{
 }
 
 
+
+
+window.onscroll = function() {myFunction()};
+            
+var header = document.getElementById("navbar");
+var sticky = header.offsetTop;
+
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+    $(".header").css({"background-color":"whitesmoke"});
+   
+  } else {
+    header.classList.remove("sticky");
+    $(".header").css({"background-color":"whitesmoke"});
+  }
+}
 
