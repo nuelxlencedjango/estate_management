@@ -33,6 +33,7 @@ input[type=checkbox]{
     display: none;
     font-size: 24px;
     user-select: none;
+    color: black;
    }
 
   /* NAVBAR STYLING STARTS */
@@ -314,7 +315,6 @@ p{
 
 
 
-
 /* LOGO */
 .logo {
   font-size: 32px;
@@ -324,32 +324,7 @@ p{
      width: 100px;
      height: 70px; 
  }
- /* DROPDOWN MENU */
- /*.services {
-  position: relative; 
- }*/
- .dropdown {
-  background-color: rgb(1, 139, 139);
-  padding: 1em 0;
-  position: absolute; /*WITH RESPECT TO PARENT*/
-  display: none;
-  border-radius: 8px;
-  top: 35px;
- }
- .dropdown li + li {
-  margin-top: 10px;
- }
- .dropdown li {
-  padding: 0.5em 1em;
-  width: 8em;
-  text-align: center;
- }
- .dropdown li:hover {
-  background-color: #4c9e9e;
- }
- .services:hover .dropdown {
-  display: block;
- }
+
  
  /*RESPONSIVE NAVBAR MENU STARTS*/
  /* CHECKBOX HACK */
@@ -361,40 +336,6 @@ p{
   display: none;
   font-size: 24px;
   user-select: none;
- }
- /* APPLYING MEDIA QUERIES */
- @media (max-width: 768px) {
- .menu { 
-  display:none;
-  position: absolute;
-  background-color:teal;
-  right: 0;
-  left: 0;
-  text-align: center;
-  padding: 16px 0;
- }
- .menu li:hover {
-  display: inline-block;
-  background-color:#4c9e9e;
-  transition: 0.3s ease;
- }
- .menu li + li {
-  margin-top: 12px;
- }
- input[type=checkbox]:checked ~ .menu{
-  display: block;
- }
- .hamburger {
-  display: block;
- }
- .dropdown {
-  left: 50%;
-  top: 30px;
-  transform: translateX(35%);
- }
- .dropdown li:hover {
-  background-color: #4c9e9e;
- }
  }
  /* end here navbar*/
    #main_menu{
@@ -688,6 +629,7 @@ p{
     justify-content: space-evenly;
     align-items: center;
     word-spacing: 0%;
+
    }
 
    .want_to_buy{
@@ -741,69 +683,66 @@ p{
 
  
 
- 
+
  /* APPLYING MEDIA QUERIES */
  @media (max-width: 768px) {
- .menu { 
-  display:none;
-  position: absolute;
-  background-color:#7fbebb;
-  right: 0;
-  left: 0;
-  text-align: center;
-  padding: 16px 0;
-  color: #fff;
- }
- .menu li a{
+  .menu { 
+   display:none;
+   position: absolute;
+   background-color:#7fbebb;
    color: #fff;
- }
- .menu li:hover {
-  display: inline-block;
-  background-color:#7fbebb;
-  transition: 0.3s ease;
-  color: #000;
- }
- .menu li + li {
-  margin-top: 12px;
- }
- input[type=checkbox]:checked ~ .menu{
-  display: block;
-  margin-bottom: 100%;
- }
- .hamburger {
-  display: block;
-  
- }
- .logo_areas{
-
-  position: absolute; 
-  left: 41%;
-  content: "";
-  margin-left:-80px;
+   right: 0;
+   left: 0;
+   text-align: center;
+   padding: 16px 0;
+  }
+  .menu li a{
+    color: #fff;
+  }
+  .menu li:hover {
  
-}
-.display{
-  margin-top: 100px;
-}
-.text-head h1 span{
-  font-size: 25px;
-  font-weight: bolder;
+   background-color:#4c9e9e;
+   transition: 0.3s ease;
+  }
+  .menu li + li {
+   margin-top: 12px;
+  }
+  input[type=checkbox]:checked ~ .menu{
+   display: block;
+  }
+  .hamburger {
+   display: block;
+  }
+ 
+  .logo_areas{
 
-}
-.wilmot-basin{
-  font-size: 25px;
-  font-weight: bolder;
-}
-.featured{
-  display: block;
-}
-.quicklinks h2{
-  font-size: 22px;
-}
-.quicklinks p{
-  font-size: 18px;
-}
- }
+    position: absolute; 
+    left: 41%;
+    content: "";
+    margin-left:-80px;
+    width: 65;
+    height: 80%;
+   
+  }
+  .display{
+    margin-top: 100px;
+  }
+  .text-head h1 span{
+    font-size: 25px;
+    font-weight: bolder;
+  
+  }
+  .wilmot-basin{
+    font-size: 25px;
+    font-weight: bolder;
+  }
+  .featured{
+    display: block;
+  }
+  
+  }
+
+ 
 
 /* time to change */
 @media only screen and (max-width: 600px)
@@ -875,6 +814,7 @@ p{
   .featured .container h2{
     font-size: 25px;
   }
+ 
 
 }
 @media (max-width: 416px)
@@ -916,6 +856,9 @@ p{
     font-weight: 700;
     line-height: 35.1px;
  } 
+
+
+
 
 
 }
@@ -1038,7 +981,14 @@ p{
  } 
 
 
+
 }
+
+
+
+
+
+
 
 
 

@@ -26,17 +26,19 @@
 </head>
 
 
+
+
+
+
 <body>
    
-
+     
     <style>
- 
-      
-        
-        .header {
+        .menu {
+            margin-top: 30px;
           padding: 10px 16px;
           /*background: #555;*/
-          color: #f1f1f1;
+          /*color: #f1f1f1;*/
         }
         
         .content {
@@ -56,102 +58,78 @@
         }
        
         </style>
-        </head>
-        <body>
-        
-      
-        <div class="header" id="myHeader">
-    
-        <nav class="navbar" id="navbar">
-            <!--logo-->
-           <!--<div class="logo">
-                <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
-            </div>-->
-            <div class="logo_areas">
-                <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
-            </div>
-            <!--navigation menu-->
-            <ul class="nav-links">
-                <!-- USING CHECKBOX HACK -->
-           <input type="checkbox" id="checkbox_toggle" />
-           <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>
-    
-           <div class="menu">
-               
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Our Team</a></li>
-            <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
-            <li class="services">
-              <a href="/">Our Services</a></li>
-              <li><a href="/">Property  Management</a></li>
-              <li><a href="/">Marketing</a></li>
-              <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
-              <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
-            
-              
-           </div>
-            </ul>
-        </nav>
-     
+
+
+
+
+
+<!--<div class="header" id="myHeader">-->
+
+    <nav class="navbar" id="navbar">
+         <div class="logo_areas">
+            <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
         </div>
-        
+        <!--navigation menu-->
+              <!-- USING CHECKBOX HACK -->
+       <input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>
 
-
-       
    
-        <div class="content">
-            {% block content %}
-            {% endblock %} 
-            <!--<h3>On Scroll Sticky Header</h3>
-            <p>The header will stick to the top when you reach its scroll position.</p>
-            <p>Scroll back up to remove the sticky effect.</p>
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-         
-         
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-         <img src="/static/images/background/background_paid.jpeg" width="500" alt="">-->
-          </div>  
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+       <!--<input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>-->
 
+       <div class="menu" id="menu">
+           
+        <li><a href="{% url 'product:home' %}">Home</a></li>
+        <li><a href="{% url 'product:our_team' %}">Our Team</a></li>
+        <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
+        <li class="services">
+          <a href="{% url 'product:services' %}">Our Services</a></li>
+          <li><a href="{% url 'product:management' %}">Property  Management</a></li>
+          <li><a href="{% url 'product:marketing' %}">Marketing</a></li>
+          <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
+          <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
         
-
-
+          
+       </div>
+        </ul>
+    </nav>
+ 
+    
 
 
 
     
     
-  
+    <body>
+     
 
-    <script>
-    window.onscroll = function() {myFunction()};
-    
-    var header = document.getElementById("myHeader");
-    var sticky = header.offsetTop;
 
-    
-    function myFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-        $(".header").css({"background-color":"whitesmoke"});
-       
-      
-       
+        {% block content %}
+        {% endblock %} 
+
+
+
+        <script>
+            window.onscroll = function() {myFunction()};
+            
+            var header = document.getElementById("navbar");
+            var sticky = header.offsetTop;
         
-
-      } else {
-        header.classList.remove("sticky");
-        $(".header").css({"background-color":"whitesmoke"});
-      }
-    }
-    </script>
-
-
+            
+            function myFunction() {
+              if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+                $(".header").css({"background-color":"whitesmoke"});
+               
+              } else {
+                header.classList.remove("sticky");
+                $(".header").css({"background-color":"whitesmoke"});
+              }
+            }
+            </script>
   
 
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -166,3 +144,13 @@
    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+

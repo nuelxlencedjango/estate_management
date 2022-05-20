@@ -1,30 +1,15 @@
-{% extends 'index.html' %}
+{% extends 'first.html' %}
  {% load static %}
 {% block content %}
  <!--animation link-->
 
 
 <style>
-    .want_to_buy{
-        display: none;
-    }
-    .display{
-        display: none;
-    }
-    .property-search{
-        display: none;
-    }
-    .featured{
-        display: none;
-    }
-    .footer-section{
-        margin-top: 100px;
-    }
+    
+   
 
     .expert{
     margin-top: 30px;
-  
-
 font-family: "Roboto", sans-serif;
 background-image: url('/static/images/background/background_paid.jpeg');
 background-repeat: no-repeat;
@@ -65,14 +50,14 @@ height: 200px;
 }
 
 .card{
-    align-items: center;
-    width: 300px;
+    
+    width: 270px;
     margin-right: 20px;
     border: none;
     
 }
 .card img{
-    width: 300px;
+    width: 100%;
     align-items: center;
     transform: scale(1);
     transition:  0.5s ease-in-out;
@@ -90,22 +75,22 @@ height: 200px;
     color: #0a0a0a;
 
 }
+
 .card-body h2{
     font-family: Montserrat;
     font-size: 22px;
-    line-height: 26px;
-    font-weight: 600;
-    color: #0a0a0a;
+    line-height: 20px;
+    font-weight: 300;
+    color: green;
 }
 a{
     text-decoration: none;
 }
 .card-body p{
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 200;
     color: #0a0a0a;
 }
 .text{
@@ -216,7 +201,7 @@ a{
             <div class="video-wrap">
                 <div class="video">
                     <div class="video__thumbn">
-                        <video width="700" height="400" controls>
+                        <video width="500" height="400" controls>
                             <source src="{% static 'video/video3.mp4' %}" type=video/mp4></video>
                     
                     </div>
@@ -234,4 +219,7 @@ a{
     </div>
 </div>
 
+
+
+{% include 'footer.html' %}
 {% endblock %}
