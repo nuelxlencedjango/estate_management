@@ -715,13 +715,13 @@ p{
   }
  
   .logo_areas{
-
+    /*display: none;*/
     position: absolute; 
-    left: 41%;
+    /*left: 41%;*/
     content: "";
-    margin-left:-80px;
+    margin-left:80px;
     width: 65;
-    height: 80%;
+    height: 100%;
    
   }
   .display{

@@ -1,0 +1,1104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <title>Real estate</title>
+   
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+
+
+
+<!--bootsrap link-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+ 
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
+    <!--animation link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<link rel="stylesheet" href="{% static 'styles/styling.css' %}">
+
+ <style>
+
+
+
+
+
+/* LOGO */
+.logo {
+ font-size: 32px;
+}
+.logo img{
+    width: 100%;
+   
+   
+    width: 100px;
+    height: 70px; 
+   
+   
+
+}
+/* DROPDOWN MENU */
+/*.services {
+ position: relative; 
+}*/
+.dropdown {
+ background-color: rgb(1, 139, 139);
+ padding: 1em 0;
+ position: absolute; /*WITH RESPECT TO PARENT*/
+ display: none;
+ border-radius: 8px;
+ top: 35px;
+}
+.dropdown li + li {
+ margin-top: 10px;
+}
+.dropdown li {
+ padding: 0.5em 1em;
+ width: 8em;
+ text-align: center;
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+.services:hover .dropdown {
+ display: block;
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox]{
+ display: none;
+} 
+/*HAMBURGER MENU*/
+.hamburger {
+ display: none;
+ font-size: 24px;
+ user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+.menu { 
+ display:none;
+ position: absolute;
+ background-color:teal;
+ right: 0;
+ left: 0;
+ text-align: center;
+ padding: 16px 0;
+}
+.menu li:hover {
+ display: inline-block;
+ background-color:#4c9e9e;
+ transition: 0.3s ease;
+}
+.menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+ display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+ left: 50%;
+ top: 30px;
+ transform: translateX(35%);
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+}
+/* end here navbar*/
+  #main_menu{
+    width: 100%; 
+    position: relative;
+    /*position: fixed;*/             
+                    
+}
+ .inner_main_menu {
+    margin: 0 auto;
+     width: 100%;
+     
+         }    
+.inner_main_menu ul{
+     margin: 0;
+       padding: 50px 0 0; 
+       list-style: none;
+       text-align: right;
+       
+       
+    }    
+.inner_main_menu ul li{
+    float: none;
+     display: inline-block;
+     position: relative;
+     /*justify-content: space-between;*/
+    
+    }    
+/*.inner_main_menu ul li:nth-child(1){
+    float: left;
+}    
+.inner_main_menu ul li:nth-child(2){
+    float: left;
+}    
+.inner_main_menu ul li:nth-child(3){
+    float: left;
+}*/    
+.inner_main_menu ul li a{
+    /*color: #262626; */
+    font-size: 18px;
+     text-transform: capitalize;
+     text-decoration: none; 
+     display: block;
+     padding: 10px 20px;
+     color: #999;
+     display: inline-block;
+     word-wrap: break-word;
+     
+     float:left;
+
+    }    
+.inner_main_menu ul li a:hover{
+    color: #262626;
+   
+
+    /*border-radius: 1rem red;
+    border-left: 1px solid #7755A2;*/
+    
+    border-bottom: 2px solid #5B9D4F;
+
+}  
+.logo_area{
+  width: 100px;
+  position: absolute; 
+  left: 42.5%;
+  top: 0; 
+  content: "";
+  margin-left:-80px;
+ 
+  text-align: center;
+
+  width: 100px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+.logo_area img{
+  width: 100%;
+  height: 100%;
+} 
+
+/*.inner_main_menu ul li:hover a{
+    color: #6FDA44}*/
+
+/*.inner_main_menu ul li ul{
+    position: absolute; 
+    top: 40px;
+     left: -9999999px; 
+     width: 200px;
+     background: #262626;
+      padding: 0;
+    }  
+.inner_main_menu ul li:hover ul{
+    left: 0px;
+}   
+
+
+.inner_main_menu ul li ul li{
+    float: left;
+    width: 100%;
+    text-align: left;
+}  
+.inner_main_menu ul li ul li a{
+    color: #fff;
+    text-transform: capitalize;
+     font-size: 15px;}  
+.inner_main_menu ul li ul li a:hover{
+    background: #ddd; 
+    color: #262626;}  
+.inner_main_menu ul li ul li ul{
+    top: 0; 
+    left: -999999px;
+} 
+
+.inner_main_menu ul li:hover ul li ul{
+    top: 0;
+     left: -999999px;}  
+
+
+.inner_main_menu ul li ul li:hover ul{
+    top: 0;
+     left: 200px;} 
+.inner_main_menu ul li:hover ul li a{
+    color: #ffffff}  
+    
+.inner_main_menu ul li ul li a:hover{
+    color: #262626}  
+.inner_main_menu ul li ul li:hover a{
+    background: #ddd;
+     color: #262626;}  
+.inner_main_menu ul li ul li:hover ul li a{
+    background: #262626; 
+    color: #fff;}  
+.inner_main_menu ul li ul li ul li a:hover{
+    background: #ddd; 
+    color: #262626;}  */
+
+
+.slicknav_menu {
+                    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                    font-size: 16px;
+                    padding: 5px;
+                    display: none;    
+                    position: fixed;
+                    right: 0;
+                    width: 100%;
+                    z-index: 99999;
+                    }
+ul.slicknav_nav {
+                    background: #262626 none repeat scroll 0 0;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 80%;
+                    }
+.slicknav_btn {
+                        top: 35px;
+                    }
+
+.want_to_buy{
+    margin-top: 30px;
+  
+
+      /*background-color: crimson;*/
+  font-family: "Roboto", sans-serif;
+  background-image: url('/static/images/background/background_paid.jpeg');
+  background-repeat: no-repeat;
+
+  /*background-image: linear-gradient(white, blue);*/
+  background-color: #cccccc; /* Used if the image is unavailable */
+  /*height: 500px; You must set a specified height */
+  background-position: center; 
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+ 
+
+  height: 500px;
+}
+
+
+.buy h3{
+    margin-top: 10px;
+    color: #000000;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 500;
+    
+}
+.buy h1{
+    font-weight: 700;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bolder;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.want_to_buy .container .row .text .local{
+  
+    margin-top: 10px;
+    
+    height: 360px;
+}
+
+.local img{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+   
+}
+.text-head h1 span{
+    font-size: 45px;
+    font-weight: bolder;
+
+}
+.col-md-6 p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 18px;
+    text-align: left;
+    
+    font-family: sans-serif;
+}
+p{
+    padding-bottom: 1.5em;
+    text-align: left;
+
+}
+.wrap-inner img{
+    border-radius: 50%;
+    padding: 30px;
+    align-items: center;
+}
+
+
+.display{
+    margin-top: 150px;
+}
+
+
+.property-search{
+    margin-top: 30px;
+   
+  font-family: "Roboto", sans-serif;
+  background-image: url('/static/images/background/background_paid.jpeg');
+  background-repeat: no-repeat;
+
+
+  background-color: #cccccc;
+ 
+  background-position: center; 
+ 
+  background-size: cover;
+ 
+  height: 500px;
+}
+.flex{
+        display:flex;
+        justify-content: center;
+    }
+
+ .form-container{
+     justify-content: center;
+      padding: 30px;
+ } 
+ .form-container h2{
+     font-size: 50px;
+    
+     font-weight: 900;
+     line-height: 35.1px;
+     font-family: 'Noto Sans Display';
+     color: #0a0a0a;
+     
+ }  
+ input[type=text],
+ input[type=number],
+ input[type=email],
+ input[type=password],
+ input[type=tel],
+ input[type=url], 
+ input[type=search],
+ input[type=date],
+ textarea {
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 24px;
+    color: #555;
+   
+    border: none;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    background-color: rgba(0,0,0,0.04);
+    /*background-color: #f1f1f1;*/
+}
+
+ #make_checkbox_select{
+     margin-top: 30px;
+ }
+.form-container form .flex .orm-content .btn {
+    width: 100%;
+    background-color: saddlebrown;
+}
+.form-container button :hover{
+    background-color: #fcb900 !important;
+}
+
+
+.featured{
+    background-image: url('/static/images/background/black_background.jpeg');
+     background-position: left top;
+      background-repeat: no-repeat;
+       background-color: #ffffff; 
+
+
+       font-family: "Roboto", sans-serif;
+  
+      background-repeat: no-repeat;
+    background-position: center; 
+ 
+    background-size: cover;
+ 
+   height: 500px;   
+}
+
+
+.featured .row {
+    display: flex;
+  
+    height: 500px;
+
+}
+.featured .row .col-md-3{
+    width: 270px;
+    height: 100%;
+}
+.featured .row .col-md-3 .card{
+    height: 60%;
+    width: 100%;
+    background-color: #0a0a0a;
+    border: 1px solid rgba(0, 0, 0, .7);
+
+}
+.featured .row .col-md-3 .card .card-img{
+    width: 100%;
+    height: 100%;;
+}
+.featured .row .col-md-3 .card .card-img img{
+    width: 100%;
+    height: 180px;
+}
+.featured .container h2{
+    padding-top: 30px;
+    color: #7fbebb;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+.featured .container .row .card-body{
+    text-align: center;
+}
+.featured .container .row .card-body p{
+    font-size: 12px;
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+
+}
+.featured .container .row .card-body span{
+    font-size: 16px;
+    color: #fff;
+    font-family: sans-serif;
+    padding-bottom: 40px;
+
+}
+
+
+
+/*footer section */
+.footer-section{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background-color: #cccccc;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.footer-section .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.footer-section .container .sec{
+    margin-right: 30px;
+    /*color: #676767;*/
+    /*color: #ccc;*/
+    color: #676767;
+}
+.footer-section .container .sec.aboutus{
+    width: 40%;
+    
+}  
+.footer-section .container .sec.aboutus h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-family:'Noto Sans Display' ;
+}
+
+.footer-section .container .quicklinks h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-family:'Noto Sans Display' ;
+}
+.footer-section .container .sec.aboutus::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+
+}
+.footer-section p{
+    color: #676767;
+}
+.sci{
+    margin: 20px;
+    display: flex;
+}
+.sec li{
+    list-style: none;
+}
+.sci li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+.sci li a:hover{
+    background-color: #fff;
+
+}
+.sci li a .fa{
+    color: #fff;
+    font-size: 20px;
+    color: #676767;
+}
+.quicklinks{
+    position: relative;
+    width: 25%;
+    left: -5px;
+}
+.quicklinks  li{
+    list-style: none;
+}
+.quicklinks  li a{
+    color: #676767;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 18px;
+}
+.quicklinks  li a:hover{
+    color: #fff;
+}
+
+
+
+
+#main-nav {
+  background-color: #1e1e1e;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  height: 45px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0px 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+#main-nav.sticky {
+  position: fixed;
+  top: 0;
+}
+#menu.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.navbarOffsetMargin {
+  padding-top: 45px;
+}
+
+section {
+  /*min-height: 100vh;*/
+}
+
+section#header {
+  background: rgb(123,134,232);
+  background: linear-gradient(164deg, rgba(123,134,232,1) 0%, rgba(246,140,255,1) 52%, rgba(255,222,50,1) 100%);
+  color: #270942;
+  min-height: 0px;
+}
+
+section#tim-vine {
+  background: rgb(123,211,232);
+  background: linear-gradient(135deg, rgba(123,211,232,1) 0%, rgba(123,211,232,1) 0%, rgba(50,171,255,1) 100%);
+  color: #0f2852;
+}
+
+section#bill-hicks {
+  background: rgb(123,211,232);
+  background: linear-gradient(135deg, rgba(123,211,232,1) 0%, rgba(232,123,165,1) 0%, rgba(255,50,50,1) 100%);
+  color: #40081a;
+}
+
+section#stewart-francis {
+  background-color: #85FFBD;
+  background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 50%, #ffffff 100%);
+  color: #084012;
+}
+
+article {
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  margin: 0px auto;
+}
+
+h2 {
+  text-align: center;
+  padding: 40px 0px 0px 0px;
+  font-size: 3em;
+}
+
+p {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 11px;
+  }
+}
+
+
+
+
+/*#main_menu.sticky{
+    padding: 5px 100px;
+    background-color: #5B9D4F;
+}
+*/
+
+
+
+
+ @media only screen and (min-width: 200px) and (max-width: 767px) { 
+          .slicknav_menu{
+              display: block;
+                }
+        .inner_main_menu{
+            display: none;
+        }
+        .logo_area {
+            height: auto;
+            left: 0;
+            margin-left: 0;
+            position: relative;
+            top: 0;
+            width: 100px;
+        }
+        .logo_area img{
+            height: auto;
+            width: 100%;
+        }
+            }
+        </style>
+    </head>
+
+    
+
+
+
+
+    
+
+    <section id="header">
+        <!--<article>
+          <h2>Let's read some jokes!</h2> 
+        </article>-->
+        <nav id="main-nav">
+     
+            <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.pn' %}" class="logo-image" alt=""></a>
+       
+    <a href="/">Home two</a>
+        <a href="/">Our  Team</a>
+         <a href="{% url 'product:property' %}">property search</a> 
+           
+              <a href="/">Our Services</a>
+        <a href="/">property  management</a>
+            <a href="/">marketing</a>
+            <a href="{% url 'product:testimonial' %}">testimonials</a>
+            <a href="{% url 'product:contactus' %}">contact  us</a>
+            
+        </nav>
+      </section>
+      <!--<section id="tim-vine">
+        <article>
+          <h2>Tim Vine</h2>
+          <p>I said to the gym instructor: ‘Can you teach me to do the splits?’ He said: ‘How flexible are you?’ I said: ‘I can’t make Tuesdays.'</p>
+          <p>I’ve decided to sell my Hoover – it was just collecting dust.</p>
+          <p>I saw Arnold Schwarzenegger eating a chocolate egg. I said: ‘I bet I know what your favourite Christian festival is.’ He said: ‘You have to love Easter, baby.'</p>
+          <p>I was reading a book – ‘The History of Glue’ – I couldn’t put it down.</p>
+        </article>
+      </section>
+      <section id="bill-hicks">
+        <article>
+          <h2>Bill Hicks</h2> 
+          <p>I need my sleep. I need about eight hours a day, and about ten at night.</p>
+          <p>I don't mean to sound bitter, cold, or cruel, but I am, so that's how it comes out.</p>
+          <p>I never got along with my dad. Kids used to come up to me and say, "My dad can beat up your dad." I'd say "Yeah? When?"</p>
+        </article>
+      </section>
+      <section id="stewart-francis">
+        <article>
+          <h2>Stewart Francis</h2> 
+          <p>There’s a fine line between hyphenated words.</p>
+          <p>I used to be in a band called ‘Missing Cat’… you probably saw our posters.</p>
+          <p>Have you ever imagined a world with no hypothetical situations?</p>
+          <p>I was going to join the debating team, but somebody talked me out of it.</p>
+        </article>
+      </section>-->
+
+
+
+
+
+    <nav class="navbar" id="navbar">
+        <!--logo-->
+       <!--<div class="logo">
+            <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+        </div>-->
+        <div class="logo_areas">
+            <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+        </div>
+        <!--navigation menu-->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+       <input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+       <div class="menu">
+           
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Our Team</a></li>
+        <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
+        <li class="services">
+          <a href="/">Our Services</a></li>
+          <li><a href="/">Property  Management</a></li>
+          <li><a href="/">Marketing</a></li>
+          <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
+          <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
+        
+          
+       </div>
+        </ul>
+    </nav>
+
+
+    
+    <body>
+        <div id="main_menu">
+            <div class="logo_area">
+                <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+            </div>
+            <div class="inner_main_menu">
+                <ul id="menu">
+                    <li><a href="{% url 'product:home' %}">Home</a></li>
+                    <li><a href="{% url 'product:our_team' %}">our  team</a></li>
+                    <li> <a href="{% url 'product:property' %}">property search</a> </li>
+                    <li><a href="{% url 'product:services' %}">our services</a></li>
+                       
+                    <li><a href="{% url 'product:management' %}">property  management</a></li>
+                    <li><a href="{% url 'product:marketing' %}">marketing</a></li>
+
+                    <li><a href="{% url 'product:testimonial' %}">testimonials</a></li>
+                    <li><a href="{% url 'product:contactus' %}">contact  us</a></li>
+                </ul>
+                    
+            </div>
+        </div>
+        
+      
+    {% block content %}
+    {% endblock %} 
+
+       <section class="want_to_buy">
+           <div class="container">
+            <div class="row justify-content-center">
+             
+                    <div class="col">
+                        <div class="text">
+                   
+                            <div class="buy animate__animated animate__backInLeft animation-delay-2s" style="animation-delay: 2s;">
+                                <h3>looking to buy or sell a home?</h3>
+
+                                <h1><strong>Let our local experts work for you.</strong></h1>
+                                <h3>the permain basin is our office</h3>
+    
+                            </div>
+                            <div class="local animate__animated animate__backInLeft animation-delay-s" style="animation-delay: 1s;">
+                                <img src="{% static 'images/background/estate_bg.jpeg' %}" alt="">
+                            </div>
+    
+                        </div>
+                    </div>
+                
+            </div>
+
+           </div>
+       </section>
+
+
+      
+
+
+   
+   
+   
+<section class="display">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-head">
+
+                <h1 style="text-align: center;"><span style="color: #000000;">WELCOME TO</span></h1>
+                <h1 style="text-align: center;"><span style="color: #000000;">Wilmot I</span></h1>
+                <h1 style="text-align: center;"><span style="color: #000000;">REAL ESTATE</span></h1>
+                </div>
+      
+<!--<p>&nbsp;</p>-->
+<p style="text-align: center;">Our elite real estate professionals work throughout Howard, Midland, Martin, Scurry &amp; Mitchell counties.</p>
+<p style="text-align: center;">When you’re ready to buy or sell your home, farm, ranch, land or commercial property, let our team help. We are a locally owned and operated company, and we’re ready to help make the buying and selling process much easier. We are the best in the area due to our extensive knowledge, experience and dedication to our clients.</p>
+<h2 style="text-align: center;"><span style="color: #000000;">The Wilmot Innovation  real estate professionals of the Permian Basin</span></h2>
+<p style="text-align: center;">Our real estate professionals handle the transactions of many property types such as residential homes, ranches and farms, land and commercial real estate. We do it all. Choosing an expert real estate team, like C. Larson Real Estate, is the obvious choice to make your buying or selling process seamless. Securing Christie and her team of negotiators will protect you from mistakes and pay dividends in peace of mind and cash.</p>
+<p style="text-align: center;">Our realty team will bring you listings that best fit your needs and requirements. We will never waste your time with properties for sale that are below your expectations. We specialize in residential and commercial properties in Big Spring, Midland, Odessa, Stanton, Snyder, Colorado City and many surrounding communities.</p>
+<p style="text-align: center;">We are in the business of making our clients’ dreams a reality, and our dedication to that is relentless. Having the right agent at your side makes a huge difference, but choosing one of our extremely knowledgeable agents makes ALL the difference. &nbsp;Call us today and let us get started!</p>
+
+            </div>
+
+    <div class="col-md-6">
+
+        <div class="video-wrap">
+            <div class="video">
+                <div class="video__thumbn">
+                    <video width="500" height="300" controls>
+                        <source src="{% static 'video/video1.mp4' %}" type=video/mp4></video>
+                
+                </div>
+            </div>
+
+        </div>
+
+        <div class="wrap-inner">
+            <img class="img-with-animation skip-lazy animated-in" data-delay="0" height="450" width="450" data-animation="fade-in" src="{% static 'images/pic/woman5.jpg' %}" alt="">
+          </div>
+	<!--<div class="wpb_wrapper"><div class="wpb_video_wrapper"><video width="1280" height="720" preload="auto" loop="" controls="" controlslist="nodownload" poster="https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/07/Screen-Shot-2021-07-22-at-4.21.15-PM.png?fit=1535%2C862&amp;ssl=1" style="visibility: visible;"><source src="https://clarsonrealestate.com/wp-content/uploads/2021/08/30secAdwerx2.mov" type="video/mp4"></video></div></div></div><div class="img-with-aniamtion-wrap center" data-max-width="75%" data-max-width-mobile="default" data-border-radius="none" data-shadow="none" data-animation="fade-in">
+      <div class="inner">
+        <div class="hover-wrap" data-hover-animation="none" style="opacity: 1;"> 
+          <div class="hover-wrap-inner">
+            <img class="img-with-animation skip-lazy animated-in" data-delay="0" height="500" width="500" data-animation="fade-in" src="https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?fit=500%2C500&amp;ssl=1" alt="" srcset="https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?w=500&amp;ssl=1 500w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=140%2C140&amp;ssl=1 140w, https://i0.wp.com/clarsonrealestate.com/wp-content/uploads/2021/05/Christie-Round-Home-Page.png?resize=350%2C350&amp;ssl=1 350w" sizes="(min-width: 1450px) 75vw, (min-width: 1000px) 85vw, 100vw">
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="wpb_text_column wpb_content_element ">
+	<div class="wpb_wrapper">
+		<h3 style="text-align: center;"><i>Backed by an extremely knowledgable, local broker with over 22 years experience in the industry, Christie Larson.</i></h3>
+	</div>
+</div>-->
+
+			</div> 
+		</div>
+	</div> 
+</section>
+   
+   
+
+
+
+<div class=" property-search" style="align-items: center; text-align: center;">
+    <div class="form-container" >
+        <h2>Search for any property below:</h2>
+     <form id="make_checkbox_select" method="POST" action="{% url 'product:property_search' %}">
+         {% csrf_token %}
+         <h4>property type</h4>
+         <select name="property" style="width: 600px; height: 50px; border: white;">
+             <option  data-count="2" value="all" >All</option>
+             <option data-count="23" value="Residential">Residential</option>
+             <option data-count="433" value="Commercial">Commercial</option>
+             <option data-count="45" value="Land">Land</option>
+             <option data-count="476" value="Multi_family">Multi-Family</option>
+             <option data-count="78" value="Rental">Rental</option>
+           
+         </select>
+         
+         <div class="flex">
+         <div class="form-content" style=" align-items: center; text-align: center;">
+            <div class="row g-3 align-items-center" style="text-align: left; align-items: right;">
+                 <div class="col-auto">
+                   <label for="text" class="col-form-label">Min Price</label>
+                   <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline" name="min-price">
+                 
+                 </div>
+                 <div class="col-auto">
+                     <label for="text" class="col-form-label">Max Price</label>
+                     <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline" name="max-price">
+                   
+                   </div>
+               </div>
+ 
+ 
+               <div class="row g-4 align-items-center" style="text-align: left; align-items: right;">
+                 <div class="col-auto">
+                   <label for="text" class="col-form-label">Min Bedrooms</label>
+                   <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline" name="bedroom">
+                 
+                 </div>
+                 <div class="col-auto">
+                     <label for="text" class="col-form-label">Min Baths</label>
+                     <input type="number" id="inputPassword6" class="form-control inputinfo" aria-describedby="passwordHelpInline" name="bathroom">
+                   
+                   </div>
+               </div>
+             
+            </div>
+            
+            
+        </div>
+        <button class="btn btn-outline-success" id="btn" type="submit" style="width: 600px; height: 50px; border: white;  background-color: #7fbebb; color: #fff; margin-top: 30px; ">Search</button>
+       </form>
+     
+    </div>
+               
+         </div>
+
+
+
+
+<section class="featured">
+    <div class="container">
+        <h2 class="listing">FEATURED LISTINGS</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{% static 'images/background/house1.jpg' %}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <p>5701 E Midway Rd <br> Big Spring, Texas 79720</p>
+                        <span>$399,000</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{% static 'images/background/house5.jpg' %}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <p> 2806 Lawrence <br> Big Spring, Texas 79720 </p>
+                        <span> $224,000</span>
+                      
+                   
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{% static 'images/background/house10.jpg' %}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <p> 1203 Pennsylvania Ave <br>  Big Spring, Texas 79720</p>
+                        <span>  $120,000</span>
+                     
+                    </div>
+                </div>
+            </div>
+            <!--<div class="col-md-3">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{% static 'images/background/house12.jpg' %}" alt="">
+                    </div>
+                    <div class="card-body">
+                    
+                        <p>1507 Eubanks Rd<br> Big Spring, Texas 79720</p>
+                        <span>$154,000</span>
+                     
+
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>   
+</section>
+ 
+
+  {% include 'footer.html' %}
+        
+
+    
+   <!--<section>
+    <h2>video tag</h2>
+    <video width="500" height="300" controls>
+        <source src="https://clarsonrealestate.com/wp-content/uploads/2021/08/30secAdwerx2.mov" type=video/mp4></video>
+</section>-->
+
+   
+   <!---<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+   
+   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+   
+    <script src="https://use.fontawesome.com/e503c766fc.js"></script>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  
+ 
+
+
+   
+
+    </body>
+</html>
