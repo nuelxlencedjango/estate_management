@@ -77,6 +77,8 @@ def product_list_view(request):
 
 
 
+
+
 def availableProperty(request):
 
     if request.method =="POST":
