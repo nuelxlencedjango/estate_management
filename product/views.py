@@ -14,9 +14,6 @@ from django.shortcuts import render ,redirect ,get_object_or_404
 from django.views.generic import (
     ListView ,DetailView, CreateView, UpdateView ,DeleteView,TemplateView )
 
-
-
-
 def home(request):
     return render(request, 'home.html')
 
