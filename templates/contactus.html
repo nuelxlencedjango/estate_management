@@ -130,13 +130,22 @@
     height: 250px;
     margin-left: 0px;
 }
+.logo_areas{
+   position: absolute;
+}
+.checkbox_toggle{
+    margin-left: 100px;
+}
+.contactMe{
+    margin-top: 320px;
+}
 
 /*overflow-wrap: break-word;*/
 </style>
 
 
 
-<div class="container">
+<div class="container contactMe" >
     <div class="row">
         <div class="col-md-6">
           
@@ -315,9 +324,14 @@
                 items:1,
                 
             },
+         
             600:{
                 items:2,
                
+            },
+            900:{
+                items:3,
+
             },
             1000:{
                 items:6,
@@ -331,4 +345,6 @@
 
 </script>
 
+
+{% include "footer.html" %}
 {% endblock %}

@@ -21,19 +21,17 @@
     .cont{
         background-color: rgb(238,238,238);
     }
-    .col-md-8{
-        
-  
-        display: flex;
-    }
-    .col-sm-4{
-        margin-left: 20px;
+    
+    .col-sm-3{
+        margin-left: 0px;
         border: none;
         border-style: none;
        
     }
 
-
+.cont{
+    margin-top: 100px;
+}
     
 .real-estate{
     min-height: 350px;
@@ -184,7 +182,7 @@
     align-items: center;
 }
 .meet-direector .card{ 
-    height: 500px;
+    height: auto;
   background-image: url('/static/images/background/background_paid.jpeg');
   background-repeat: no-repeat;
   background-position: center; 
@@ -197,17 +195,17 @@
     
 }
 .meet-direector  .card{
-    margin-left: 60px;
-    margin-right: 10px;
+    margin-left: 10px;
+    margin-right: auto;
     cursor: pointer;
     border: none;
 }
 .meet-direector .imgBody{
     margin-top: 30px;
-    width: 300px;
-  margin-top: 50px;
+    width: fit-content;
+  
   align-items: center;
-  margin-left: 10px;
+  margin-left: 2px;
   
   margin-bottom: 30px;
 
@@ -215,7 +213,7 @@
 }
 .meet-direector .imgBody img{
     width: 100%;  
-    height: 280px; 
+    height: auto;
 }
 .imgText{
     margin-top: 20px;
@@ -253,21 +251,40 @@
 .video-example .example .col-lg-6{
     
     align-items: center;
+  
+}
+.video-example .example .col-lg-6 .video-wrap{
+    padding: 20px;
+}
+.video-example .example .col-lg-6 .video-wrap .video .video__thumbn video{
+    width:450px;
+    height:300px;
+}
+.icon-default-style{
+font-size: 40px!important; 
+line-height: 40px!important; 
+color: #7bdcb5; 
+margin-bottom: 30px;
+}
+.lowerpart{
+    margin-top: 100px;
 }
     </style>
 
 
-<section>
+
+
+<section id="market">
     <div class="cont">
         <div class="row all" >
 
-            <div class="col-md-8">
-                <div class="col-sm-4">
+            
+                <div class="col-sm-3">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                           <div class="flip-card-front real-estate">
                            <div class="info">
-                            <i class="icon-default-style iconsmind-Home-Window" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                            <i class="icon-default-style iconsmind-Home-Window" data-color="extra-color-1" ></i>
  
                             <h3>Real Estate<br>
                                
@@ -283,7 +300,7 @@
                       </div>
 
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                           <div class="flip-card-front extensive">
@@ -302,7 +319,7 @@
                         </div>
                       </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                           <div class="flip-card-front creative">
@@ -321,12 +338,26 @@
                         </div>
                       </div>
                 </div>
+                <div class="col-sm-3">
+                    <div class="col-md-4 meet-direector">
+                        <div class="card">
+                            <div class="imgBody">
+                                <img src="/static/images/pic/woman5.jpg" alt="">
+                                <div class="imgText">
+                                    <h3>Marissa Loftin</h3>
+                                    <h2>Meet Our Marketing Director</h2>
+                                    <p>She works behind the scenes as she conducts the marketing of properties, real estate listing photography/videography, graphic design, advertising, our social media accounts and everything in between.</p>
+                                </div>
+        
+                            </div>
+                        </div>
+                </div>
 
             </div>
           
          
           
-            <div class="col-md-4 meet-direector">
+            <!--<div class="col-md-4 meet-direector">
                 <div class="card">
                     <div class="imgBody">
                         <img src="/static/images/pic/woman5.jpg" alt="">
@@ -339,10 +370,16 @@
                     </div>
                 </div>
               
-          </div>
+          </div>-->
+        </div>
+    </div>
+</section>
 
 
-          <div class="col-md-8" style="margin-top: 50px;">
+
+<section  class="lowerpart">
+    <div class="container">
+    <div class="row">
             <div class="col-sm-4">
                 <div class="flip-card">
                     <div class="flip-card-inner">
@@ -418,7 +455,7 @@
                 <div class="video-wrap">
                     <div class="video">
                         <div class="video__thumbn">
-                            <video width="500" height="300" controls>
+                            <video  controls>
                                 <source src="{% static 'video/video5.mp4' %}" type=video/mp4 style="align-items: center;"></video>
                         
                         </div>
@@ -430,7 +467,7 @@
                 <div class="video-wrap">
                     <div class="video">
                         <div class="video__thumbn">
-                            <video width="500" height="300" controls>
+                            <video  controls>
                                 <source src="{% static 'video/video6.mp4' %}" type=video/mp4 style="align-items: center;"></video>
                         
                         </div>
@@ -442,4 +479,7 @@
         </div>
     </div>
 </div>
+
+
+{% include 'footer.html' %}
 {% endblock %}

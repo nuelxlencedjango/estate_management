@@ -34,7 +34,7 @@
   
     
 .col-md-4{
-        min-height: 800px;
+       height: auto !important;
   font-family: "Roboto", sans-serif;
   background-image: url('/static/images/background/black_background.jpeg');
   background-repeat: no-repeat;
@@ -51,6 +51,7 @@
     margin-bottom: 20px;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 .imgBody img{
     width: 100%;
@@ -123,7 +124,7 @@ background-color: rgb(112, 112, 112);
 
 .flip-card {
   background-color: transparent;
-  width: 350px;
+  width: 300px;
   height: 500px;
   perspective: 1000px;
   border: none;
@@ -131,7 +132,7 @@ background-color: rgb(112, 112, 112);
 
 .flip-card-inner {
   position: relative;
-  width: 330;
+  width: 300;
   height: 100%;
   text-align: center;
   transition: transform 0.6s;
@@ -147,7 +148,7 @@ background-color: rgb(112, 112, 112);
 
 .flip-card-front, .flip-card-back {
   position: absolute;
-  width: 330px;
+  width: 300px;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -168,8 +169,8 @@ background-color: rgb(112, 112, 112);
 .flip-card-back p{
     margin-top: 30px;
     text-align: center;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .info{
@@ -210,6 +211,9 @@ background-color: rgb(112, 112, 112);
   background-size: cover;
 
 }
+.row{
+    margin: 20px;
+}
 .month{
     min-height: 500px;
   
@@ -232,7 +236,7 @@ background-color: rgb(112, 112, 112);
 }
 section .quick{
     background-color: #abb8c3;
-    margin-top: 40px;
+    margin-top: 70px;
     margin-bottom: 40px;
     text-align: center;
     font-size: 22px;
@@ -262,6 +266,22 @@ section .quick{
     font-size: 30px;
     font-weight: 600;
 }
+.icon-default-style {
+    font-size: 40px!important;
+    line-height: 40px!important;
+    color: #7bdcb5; 
+    margin-bottom: 30px;
+
+    
+}
+.col-md-8 .row .col-lg-6{
+    padding: 20px;
+}
+.video__thumbn video{
+    width: 500px;
+    height: 300px;
+   
+}
 
 /*overflow-wrap: break-word;*/
 </style>
@@ -275,7 +295,7 @@ section .quick{
 </section>
 
 
-<div class="container">
+<div class="containr">
     <div class="row">
         <div class="col-md-4">
             <div class="imgBody">
@@ -283,7 +303,8 @@ section .quick{
               <a href="">
                 <h3>Jerwyn Massey</h3>
 
-                <h2> Meet our Property <br> Management Specialist</h2>
+                <h2> Meet our Property </h2>
+                <h2>Management Specialist</h2>
                 <p>
                     Meet our Property Management Specialist
                     When you let Jerwyn manage your property, you can depend on her experience, expertise, professionalism and high level of customer service. She is very detail-oriented and fully prepared to handle all of the day-to-day operations that managing a property entails, which gives you additional time and freedom.</p>
@@ -301,7 +322,7 @@ section .quick{
                         <div class="flip-card-inner">
                           <div class="flip-card-front tenant-application">
                            <div class="info">
-                            <i class="icon-default-style fa fa-users" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                            <i class="icon-default-style fa fa-users" data-color="extra-color-1"></i>
                             <h3>Tenant<br>
                                 Application<br>
                                 <i>Process</i></h3>
@@ -309,7 +330,7 @@ section .quick{
                                     </div>
 
                           <div class="flip-card-back">
-                            <p>We use the Texas Association of Realtors lease and other related forms when available. During the lease term, your property management specialist will do annual inspections of your property, keep track of lease violations, renewals, and handle maintenance issues as they arise. We collect all rent and fees and manage those funds for you.</p>
+                            <p class="flip-text">We use the Texas Association of Realtors lease and other related forms when available. During the lease term, your property management specialist will do annual inspections of your property, keep track of lease violations, renewals, and handle maintenance issues as they arise. We collect all rent and fees and manage those funds for you.</p>
           
                           </div>
                         </div>
@@ -325,7 +346,7 @@ section .quick{
                       <div class="flip-card-inner">
                         <div class="flip-card-front leasing">
                             <div class="info">
-                                <i class="icon-default-style fa fa-folder-open" data-color="extra-color-1" style="font-size: 40px!important; line-height: 40px!important; color: #7bdcb5; margin-bottom: 30px;"></i>
+                                <i class="icon-default-style fa fa-folder-open" data-color="extra-color-1" ></i>
                                 <h3>leasing<br>
                                     
                                     <i>information</i></h3>
@@ -404,7 +425,7 @@ section .quick{
             <div class="video-wrap">
                 <div class="video">
                     <div class="video__thumbn">
-                        <video width="500" height="300" controls>
+                        <video  controls>
                             <source src="{% static 'video/video2.mp4' %}" type=video/mp4 style="align-items: center;"></video>
                     
                     </div>

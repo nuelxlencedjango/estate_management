@@ -17,6 +17,10 @@
     .featured{
         display: none;
     }
+    .conta{
+        margin-top: 80px;
+        margin-bottom: 50px;
+    }
     .services{
         background-color: black;
     }
@@ -24,10 +28,10 @@
         color: #fff;
         text-align: center;
         font-size: 40px;
-        font-weight: 700;
-        height: 70px;
-        margin-top: 20px;
-        /*padding-top: 40px;*/
+        font-weight: 500;
+        height: 110px;
+        margin-top: 0px;
+        padding-top: 40px;
         
     }
     .prop{
@@ -55,10 +59,19 @@
         
 
     }
-    .card p{
-        margin: 20px 20px;
-        font-size: 22px;
+   .our-service .card p{
+        margin: 5px 10px;
+        font-size: 20px;
         margin-top: 30px;
+
+       line-height: 25px;
+       text-align: left;
+    }
+    .cont-service h2{
+      
+        margin-top: 80px;
+        margin-bottom: 70px;
+      
     }
     .state-transaction{
         margin-top: 30px;
@@ -89,7 +102,7 @@
 
 
 
-<div class="cont">
+<div class="conta">
     <div class="services">
         <h2>Our Services To You</h2>
     </div>
@@ -104,7 +117,7 @@
 
 
 
-  <div class="container">
+  <div class="container our-service">
       <div class="row">
           <div class="col-md-4">
               <div class="card">
@@ -154,7 +167,7 @@
 
 
 
-  <div class="cont">
+  <div class="cont-service">
     <div class="services">
         <h2>Why Hire Us?</h2>
     </div>
@@ -173,7 +186,7 @@
 
 
 
-<div class="container">
+<div class="container hire">
     <div class="row">
         <div class="col-md-4">
             <div class="card">
@@ -230,7 +243,7 @@
 
 
 
-<div class="cont">
+<div class="conto">
     <div class="services">
         <h2>Proudly Serving The Permian Basin</h2>
          </div>
@@ -243,5 +256,9 @@
   
     </div>
 </div>
-<script src="/static/js/script.js"></script>
+
+
+
+
+{% include 'footer.html' %}
 {% endblock %}  

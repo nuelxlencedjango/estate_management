@@ -91,7 +91,7 @@ input[type=checkbox]{
 .menu { 
  display:none;
  position: absolute;
- background-color:teal;
+ background-color:#7fbebb;
  right: 0;
  left: 0;
  text-align: center;
@@ -101,6 +101,7 @@ input[type=checkbox]{
  display: inline-block;
  background-color:#4c9e9e;
  transition: 0.3s ease;
+ color: #fff;
 }
 .menu li + li {
  margin-top: 12px;
@@ -755,13 +756,13 @@ p {
      
             <a href="{% url 'product:home' %}"><img src="{% static 'images/logo/logo.pn' %}" class="logo-image" alt=""></a>
        
-    <a href="/">Home two</a>
-        <a href="/">Our  Team</a>
+    <a href="{% url 'product:home' %}">Home two</a>
+        <a href="{% url 'product:our_team' %}">Our  Team</a>
          <a href="{% url 'product:property' %}">property search</a> 
            
-              <a href="/">Our Services</a>
-        <a href="/">property  management</a>
-            <a href="/">marketing</a>
+              <a href="{% url 'product:services' %}">Our Services</a>
+        <a href="{% url 'product:management' %}">property  management</a>
+            <a href="{% url 'product:marketing' %}">marketing</a>
             <a href="{% url 'product:testimonial' %}">testimonials</a>
             <a href="{% url 'product:contactus' %}">contact  us</a>
             
@@ -814,13 +815,12 @@ p {
 
        <div class="menu">
            
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Our Team</a></li>
+        <li><a href="{% url 'product:home' %}">Home</a></li>
+        <li><a href="{% url 'product:our_team' %}">Our Team</a></li>
         <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
-        <li class="services">
-          <a href="/">Our Services</a></li>
-          <li><a href="/">Property  Management</a></li>
-          <li><a href="/">Marketing</a></li>
+        <li class="services"><a href="{% url 'product:services' %}">Our Services</a></li>
+          <li><a href="{% url 'product:management' %}">Property  Management</a></li>
+          <li><a href="{% url 'product:marketing' %}">Marketing</a></li>
           <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
           <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
         
@@ -1091,9 +1091,9 @@ p {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
    
-    <script src="https://use.fontawesome.com/e503c766fc.js"></script>
+    <!--<script src="https://use.fontawesome.com/e503c766fc.js"></script>-->
 
-    <script src="{% static 'js/script.js' %}"></script>
+    <!--<script src="{% static 'js/script.js' %}"></script>-->
   
  
 

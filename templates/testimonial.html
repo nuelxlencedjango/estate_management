@@ -27,7 +27,7 @@
     .featured{
         display: none;
     }
-    .text{
+    .textimony{
         margin-top: 30px;
         height: 150px;
   background-image: url('/static/images/background/background_paid.jpeg');
@@ -37,7 +37,7 @@
   color: transparent;
   background-size: cover;
     }
-    .text h3{
+    .textimony h3{
         text-align: center;
         color: black;
         font-size: 30px;
@@ -97,6 +97,30 @@
         height: 100%;
         
     }
+    .footer-dark{
+        width: 100% !important;
+    }
+    @media (max-width: 768px){
+       
+        .menu { 
+       width: 100%;
+       position: absolute;
+  }
+  .logo_areas{
+   
+    position: relative; 
+  
+  }
+  .textimony{
+      margin-top: 350px !important;
+  }
+  .sticky + .testy{
+          padding-top: 102px;
+          z-index: 1 !important;
+         
+        }
+
+    }
     /*.carousel-inner{
         display: flex;
         overflow: hidden;
@@ -107,8 +131,10 @@
     }*/
 </style>
 
+<div class="testy">
 
-<div class="container text">
+
+<div class="container textimony">
     <div class="row">
         <h3>Here’s what our awesome clients have to say:</h3>
     </div>
@@ -318,7 +344,7 @@
         </div>
     </div>
  </div>
-
+</div>
 
 
 
@@ -326,6 +352,48 @@
 
 
 
+ <script>
+     $(document).ready(function(){
+    if ($('.owl-carousel').length){
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        //margin:10,
+        nav:true,
 
-<script src="{% static 'js/owlcarousel.js' %}"></script>
+       // autoplayTimeout: 2000,
+        autoplay:true,
+    //autoplayTimeout:10000,
+    //autoPlayHoverPause:false,
+        //animateOut: 'slideOutDown',
+        //animateIn: 'flipInX',
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                
+            },
+            600:{
+                items:2,
+               
+            },
+            1000:{
+                items:3,
+               
+                loop:true,
+            }
+        }
+    })
+}
+})
+
+
+
+
+
+ </script>
+
+
+
+{% include 'footer.html' %}
+
 {% endblock %}

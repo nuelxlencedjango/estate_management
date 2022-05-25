@@ -6,7 +6,9 @@
 
 
 <style>
-
+#header{
+  display: none;
+}
   .want_to_buy{
       display: none;
   }
@@ -58,8 +60,49 @@
     .property-select{
       margin-bottom: 40px;
     }
-    
+    #prop-select{
+     width: 400px;
+      height: 50px;
+      border: white;
+      margin-top: 100px;
+      background: #7fbebb;
+      font-size: 18px; 
+      font-weight: 400; 
+      cursor: pointer;
+       text-align: center;
+    }
+   #pro-se{
+    width: 400px;
+    height: 50px;
+    border: white;
+    margin-top: 100px;
+    background: #7fbebb;
+    font-size: 18px;
+    font-weight: 400;  
+    cursor: pointer; 
+    text-align: center;
+   }
+   .price-maximum{
+    width: 500px; 
+    height: 50px;
+    margin-left: 10px;
+   }
+   #btn{
+    width: 600px; 
+    height: 50px; 
+    border: white;  
+    background-color: #7fbebb; 
+    color: #fff; 
+    margin-top: 30px;
+   }
    
+   #popup{
+    width: 500px;
+     height: 40px;
+      margin-top:5px;
+      text-align: center;
+   }
+  
   </style>
 
 
@@ -75,7 +118,7 @@
         <div class="col-md-6">
          
           <div class="property-select">
-            <select name="property"  style="width: 400px; height: 50px; border: white; margin-top: 100px; background: #7fbebb; font-size: 18px;  font-weight: 400;  cursor: pointer; text-align: center;">
+            <select name="property" id="prop-select" >
               <option  data-count="2" value="all" class="property-select-one"  >All Properties</option>
               <option data-count="23" value="Residential">Residential</option>
               <option data-count="433" value="Commercial">Commercial</option>
@@ -89,7 +132,7 @@
 
           <div class="col-md-6">
           <div class="property-select">
-            <select name="property" style="width: 400px; height: 50px; border: white; margin-top: 100px;  background: #7fbebb; font-size: 18px;  font-weight: 400;  cursor: pointer; text-align: center;">
+            <select name="property" id="pro-se">
               <option  data-count="2" value="all" class="property-select-one" >All Features</option>
               <option data-count="23" value="Residential">Bedroom:3 +2 Toilet</option>
               <option data-count="433" value="Commercial">Bedroom:3 +1 Toilet</option>
@@ -107,20 +150,20 @@
 
         <div class="another-select">
        <div class="col-md-6">
-        <div class="price-maximum" style="width: 500px; height: 50px;margin-left: 10px;" >
+        <div class="price-maximum" >
           <label for="" id="maxprice" class="maxprice form-control">mini price</label>
-           <input class="form-control" type=""  id="popup" placeholder="Minimum price" name="min-price" style="width: 500px; height: 40px; margin-top:5px; text-align: center;">
+           <input class="form-control" type=""  id="popup" placeholder="Minimum price" name="min-price" >
         </div>
        </div>
 
        <div class="col-md-6">
-        <div class="price-maximum" style="width: 500px; height: 50px;margin-left: 10px;" >
+        <div class="price-maximum" >
           <label for="" id="maxprice" class="maxprice form-control">Max price</label>
-           <input type="number" class="form-control"  id="popup" placeholder="Maximum price" name="max-price" style="width: 500px; height: 40px; margin-top:5px; text-align: center;">
+           <input type="" class="form-control"  id="popup" placeholder="Maximum price" name="max-price">
         </div>
        </div>
         </div>
-        <button class="btn btn-outline-success" id="btn" type="submit" style="width: 600px; height: 50px; border: white;  background-color: #7fbebb; color: #fff; margin-top: 30px; ">Search</button>
+        <button class="btn btn-outline-success" id="btn" type="submit">Search</button>
  
        </form>
    
