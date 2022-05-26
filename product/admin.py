@@ -13,8 +13,6 @@ from django.contrib.auth.admin import UserAdmin
 from .models import User
 
 
-
-
 class ContactUsAdmin(admin.ModelAdmin):
     list_display = ['name','email','phone','selected_properties', 'message']
 
@@ -52,5 +50,5 @@ admin.site.register(Category)
 admin.site.register(Size)
 admin.site.register(ContactUs,ContactUsAdmin)
 admin.site.register(PropertyItems)
-#admin.site.register(Property)
+admin.site.register(FeaturedListing)
 

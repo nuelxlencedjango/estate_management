@@ -17,65 +17,6 @@ def home(request):
     return render(request, 'home.html')
 
 
-def searchStudentInfo(request):
- 
-    filters = FilterStudentInfo(request.GET, queryset=StudentInfo.objects.all())
-    
-    context = {"filters":filters}
-
-    return render(request, 'search.html',context)
-
-
-def employeeSalary(request):
-    if request.method =="POST":
-        minpay =request.POST.get('minsalary')
-        maxpay =request.POST.get('maxsalary')
-        resultobj =EmpModel.objects.raw('select empid,empname,email,salary from employee where salary between "'+minpay+'" and "'+maxpay+'"')
-        
-        context ={
-            'resultobj':resultobj
-        }
-        return render(request,'employee_pay.html',context)
-    
-    else:
-        resultobj =EmpModel.objects.all()
-        context ={
-            'resultobj':resultobj
-        }
-        return render(request, 'employee_pay.html',context)
-
-
-    #minpay =request.POST.get('minsalary')
-    #minpay =request.POST.get('minsalary')
-    #empobj =EmpModel.objects.all()
-#class availableProperty(ListView):
-  #  model = Property
-   # template_name = 'property_info.html'  # Default: <app_label>/<model_name>_list.html
-  #  context_object_name = 'resultobj'  # Default: object_list
-  #  paginate_by = 10
-   # queryset = User.objects.all()  # Default: Model.objects.all()
-
-
-def product_list_view(request):
-    qs = product.objects.all()
-    location_search = request.GET.get('location')
-    categories = request.GET.get('categories')
-    price = request.GET.get('price')
-
-    if location_search:
-        qs = qs.filter(location__contains=location_search)
-    qs = qs.order_by('-pub_date')
-    paginator = Paginator(qs, 5
-    )
-    page = p.page(request.GET.get('page'))
-    context = {
-       'posts': page
-      }
-
-    return render(request, "products/product_list.html", context)
-
-
-
 
 
 
