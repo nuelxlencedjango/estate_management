@@ -149,8 +149,6 @@ class PropertyImages(models.Model):
 
 
 
-
-
 class FeaturedListing(models.Model):
     name =models.CharField(max_length=200)
     price = models.IntegerField(default=1000)
