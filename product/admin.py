@@ -15,13 +15,6 @@ from .models import User
 
 
 
-admin.site.register(StudentInfo)
-admin.site.register(Department)
-
-admin.site.register(EmpModel)
-
-
-
 class ContactUsAdmin(admin.ModelAdmin):
     list_display = ['name','email','phone','selected_properties', 'message']
 

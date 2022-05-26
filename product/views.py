@@ -9,7 +9,6 @@ from django_filters.views import FilterView
 from django.utils import timezone
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from .models import *
-from .filters import *
 from django.shortcuts import render ,redirect ,get_object_or_404
 from django.views.generic import (
     ListView ,DetailView, CreateView, UpdateView ,DeleteView,TemplateView )

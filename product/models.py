@@ -183,66 +183,6 @@ class PropertyItems(models.Model):
 
 
 
-class Department(models.Model):
-    department_name = models.CharField(max_length=200) 
-
-    class Meta:
-      verbose_name_plural = "Department"
-
-    def __str__(self):
-      return self.department_name
-
-
-
-
-#to be removed
-class EmpModel(models.Model):
-    empid =models.IntegerField(primary_key=True)
-    empname =models.CharField(max_length=100)
-    email =models.EmailField()
-    salary =models.IntegerField()
-   
-    def __str__(self):
-        return self.empname
-
-    class Meta:
-        db_table='employees'    
-
-
-
-
-class StudentInfo(models.Model):
-    student_name =  models.CharField(max_length=200) 
-    id_no = models.BigIntegerField()
-    department =models.ForeignKey(Department,on_delete=models.CASCADE)   
-    age =models.IntegerField()
-    cgpa =models.DecimalField(max_digits=10,decimal_places=2, default=0.00)  
-
-    def __str__(self):
-        return self.student_name
-
-
-
-
-
-
-
-
-
-
-# Banner
-class Banner(models.Model):
-    img=models.ImageField(upload_to="banner_imgs/")
-    alt_text=models.CharField(max_length=300)
-
-    class Meta:
-        verbose_name_plural='Banners'
-
-    def image_tag(self):
-        return mark_safe('<img src="%s" width="100" />' % (self.img.url))
-
-    def __str__(self):
-        return self.alt_text
 
 
 
@@ -263,30 +203,8 @@ class Category(models.Model):
 
 
 
-# Brand
-class Brand(models.Model):
-    title=models.CharField(max_length=100)
-    image=models.ImageField(upload_to="brand_imgs/")
 
-    class Meta:
-        verbose_name_plural='Brands'
 
-    def __str__(self):
-        return self.title
-
-# Color
-class Color(models.Model):
-    title=models.CharField(max_length=100)
-    color_code=models.CharField(max_length=100)
-
-    class Meta:
-        verbose_name_plural='Colors'
-
-    def color_bg(self):
-        return mark_safe('<div style="width:30px; height:30px; background-color:%s"></div>' % (self.color_code))
-
-    def __str__(self):
-        return self.title
 
 # Size
 class Size(models.Model):
