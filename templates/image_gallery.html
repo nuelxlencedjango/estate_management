@@ -25,7 +25,7 @@
     }
   /* Position the image container (needed to position the left and right arrows) */
   .imageGallery.containers {
-  position: relative;
+     position: relative;
   }
   
   /* Hide the images by default */
@@ -35,10 +35,13 @@
   margin-top: 30px;
  
   }
-  .mySlides img{
+  .mySlides .container{
+    width: 700px;
+  }
+  .container img{
       margin-top: 20px;
       height: 350px;
-      width: 700px;
+      width: 100%;
    
       align-items: center;
       margin-left: 100px;
@@ -297,7 +300,7 @@
     
   
   
-   
+
   
   <div class="found">
       
@@ -343,185 +346,6 @@
   
   
   
-
-  <!--tables-->
-  <style>
-    /*#customers {
-      font-family: Arial, Helvetica, sans-serif;
-      border-collapse: collapse;
-      width: 80%;
-    }
-    
-    #customers td, #customers th {
-      border: 1px solid #ddd;
-      padding:10px;
-    }
-    
-    #customers tr:nth-child(even){background-color: #f2f2f2;}
-    
-    #customers tr:hover {background-color: #ddd;}
-    
-    #customers th {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      text-align: left;
-      background-color: #999;
-      color: white;
-    }*/
-    </style>
-   <!--</head>
-    <body>
-    
-   <section class="property-table">
-    <div class="container">
-        <h1>A Fancy Table</h1>
-    
-    <table id="customers">
-      <tr>
-        <th>Property Component</th>
-        <th>Values</th>
-       
-      </tr>
-      <tr>
-        <td>Address</td>
-        <td>{{items.Location }}</td>
-       
-      </tr>
-      <tr>
-        <td>Price:</td>
-        <td><span>${{items.price }}</span></td>
-        
-      </tr>
-      <tr>
-        <td>Bedroom</td>
-        <td>{{items.bedroom }}</td>
-       
-      </tr>
-      <tr>
-        <td>Bathroom</td>
-        <td>{{items.bathroom }}</td>
-       
-      </tr>
-      <tr>
-        <td>Sqft</td>
-        <td>{{items.sqft }}</td>
-       
-      </tr>
-      <tr>
-        <td>Acres</td>
-        <td>{{items.acre}}</td>
-       
-      </tr>
-      <tr>
-        <td>Status</td>
-        <td>{{items.status}}</td>
-       
-      </tr>
-      <tr>
-        <td>Release Date</td>
-        <td>{{ items.release_date }}</td>
-       
-      </tr>
-      <tr>
-        <td>Property Id</td>
-        <td>{{ items.release_id }}</td>
-        
-      </tr>
-      <tr>
-        <td>Description</td>
-        <td>{{ items.describe }}</td>
-       
-      </tr>
-    
-    </table>
-    </div>
-
-   </section>
-
-
-
-
-
-
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Address:</th>
-            <th scope="col">Last</th>
-            <<th scope="col">Handle</th>-->
-          <!--</tr>
-        </thead>
-        <tbody>
-          <tr>
-          
-            <td>Address</td>
-            <td>{{items.Location }}</td>
-           
-          </tr>
-          <tr>
-       
-            <td>Price:</td>
-            <td><span>${{items.price }}</span></td>
-           
-          </tr>
-          <tr>
-       
-            <td>Bedroom</td>
-        <td>{{items.bedroom }}</td>
-           
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td>Bathroom</td>
-        <td>{{items.bathroom }}</td>
-           
-          </tr>
-          <tr>
-            <th scope="row"></th>
-           
-        <td>Sqft</td>
-        <td>{{items.sqft }}</td>
-           
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td>Acres</td>
-            <td>{{items.acre}}</td>
-           
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td>Acres</td>
-            <td>{{items.acre}}</td>
-           
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td>Acres</td>
-            <td>{{items.acre}}</td>
-           
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td>Acres</td>
-            <td>{{items.acre}}</td>
-           
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td>Acres</td>
-            <td>{{items.acre}}</td>
-           
-          </tr>
-
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>-->
   
   
   
@@ -562,10 +386,9 @@
   }
   
   
-  
-  
-  
-  
   </script>
   
+
+
+  {% include 'footer.html' %}
   {% endblock %}

@@ -860,7 +860,6 @@ height: auto;
   width: 100%;
 }
 
-
 /*.cont .row{
   width: 100;
 }
@@ -1011,24 +1010,34 @@ height: auto;
   
 }
 
-/*.cont .all{
-  align-items: center;
-  padding-left: 40px;
-  display: flex;
-  width: 100%;
-  }
-.cont .all .col-sm-3 {
-  -ms-flex: 0 0 35%;
-  flex: 0 0 35%;
-  max-width: 35%;
-}
-.cont .all .col-sm-3 .flip-card{
-  width: 250px;
-}
 
-.cont .all .col-sm-3 .flip-card-inner{
-width: 100%;
-}*/
+  .imageGallery.containers {
+  position: relative;
+  }
+  
+  /* Hide the images by default */
+  .imageGallery .containers .mySlides {
+  display: none;
+  width: 900px;
+  margin-top: 30px;
+  height: 350px;
+ 
+  }
+  .imageGallery .containers .mySlides  .container{
+    width: 100%;
+    height: 100%;
+  }
+  .mySlides .container img{
+      margin-top: 20px;
+      height: 100%;
+      width: 100%;
+   
+      align-items: center;
+      margin-left: 30px;
+
+  }
+
+
 
  }
 
@@ -1311,12 +1320,8 @@ video{
 .textimony .row h3{
    font-size: 24px;
 }
-/*.property-searches{
-  margin-top: 200px;
-}
-.textimony{
-  margin-top: 20px !important;
-}*/
+
+
 .owl-carousel .item{
   height: 350px;
  
@@ -1333,20 +1338,35 @@ video{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  
 }
-/* here working*/
 
-/*.cont .all .col-sm-3 {
-  -ms-flex: 0 0 25%;
-  flex: 0 0 25%;
-  max-width: 35%;
-}
-.cont .all{
-align-items: center;
-padding-left: 40px;
-}
-.cont .all .col-sm-3 .flip-card-inner{
-width: 240px;
-}*/
+
+
+
+.imageGallery.containers {
+  position: relative;
+  }
+  
+  /* Hide the images by default */
+  .imageGallery .containers .mySlides {
+  display: none;
+  width: 700px;
+  margin-top: 20px;
+ 
+  }
+  .imageGallery .containers .mySlides  .container{
+    width: 100%
+  }
+  .mySlides .container img{
+      margin-top: 20px;
+      height: 350px;
+      width: 100%;
+   
+      align-items: center;
+      margin-left: 10px;
+
+  }
+
+
 
   }
 
@@ -1540,6 +1560,35 @@ section .text h3 {
   overflow: hidden;
   padding: 0px;
 }
+
+
+
+
+
+.imageGallery.containers {
+  position: relative;
+  }
+  
+  /* Hide the images by default */
+  .imageGallery .containers .mySlides {
+  display: none;
+  width: 600px;
+  margin-top: 20px;
+ 
+  }
+  .imageGallery .containers .mySlides  .container{
+    width: 100%
+  }
+  .mySlides .container img{
+      margin-top: 20px;
+      height: 350px;
+      width: 100%;
+   
+      align-items: center;
+      margin-left: 30px;
+
+  }
+
 
 }
 
@@ -1825,6 +1874,31 @@ width: 100%;
   text-align: left;
 }
 
+
+
+.imageGallery.containers {
+  position: relative;
+  }
+  
+  /* Hide the images by default */
+  .imageGallery .containers .mySlides {
+  display: none;
+  width: 415px;
+  margin-top: 20px;
+ 
+  }
+  .imageGallery .containers .mySlides  .container{
+    width: 100%
+  }
+  .mySlides .container img{
+      margin-top: 20px;
+      height: 250px;
+      width: 100%;
+   
+      align-items: center;
+      margin-left: 20px;
+
+  }
 }
 
 
@@ -2070,6 +2144,79 @@ width: 100%;
 .another-select .col-md-6 .price-maximum {
   width: 100%;
   padding: 0px
+}
+
+
+
+
+
+.imageGallery.containers {
+  position: relative;
+  }
+  
+  /* Hide the images by default */
+  .imageGallery .containers .mySlides {
+  display: none;
+  width: 300px;
+  margin-top: 30px;
+ 
+  }
+  .imageGallery .containers .mySlides  .container{
+    width: 100%
+  }
+  .mySlides .container img{
+      margin-top: 20px;
+      height: 250px;
+      width: 100%;
+   
+      align-items: center;
+      margin-left: 0px;
+
+  }
+
+
+
+
+  .property-information{
+    margin-left: 5px;
+}
+.property-address h2{
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+  
+    color: #0076AD;
+    margin-left: 5px;
+}
+.property-information h3{
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+
+}
+.property-information h4{
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    font-weight: 400;
+    text-align: center;
+
+}
+.property-information span{
+    color: green;
+}
+.right{
+    margin-left: 10px;
+}
+.search-result{
+    margin-left: 10px;
+}
+.search-section .description{
+    font-size: 15px;
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+    margin-left: 10px;
 }
 
 }
