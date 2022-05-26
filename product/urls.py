@@ -17,8 +17,8 @@ urlpatterns =[
     path('contactus/',views.contact_us, name='contactus'),
 
 
-    path('search/',views.searchStudentInfo,name='search'),
-    path('employee/', views.employeeSalary, name='employee'),
+    #path('search/',views.searchStudentInfo,name='search'),
+    #path('employee/', views.employeeSalary, name='employee'),
 
 
     
