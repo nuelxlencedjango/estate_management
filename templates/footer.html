@@ -158,17 +158,22 @@
                     <div class="col-sm-6 col-md-3 item" style="margin-top: 30px;">
                         <h3>About Us</h3>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Our Team</a></li>
-                            <li><a href="#">Property Management</a></li>
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Property Search</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="{% url 'product:home' %}">Home</a></li>
+                            <li><a href="% url 'product:our_team' %}">Our Team</a></li>
+                            <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
+                            <li class="services"><a href="{% url 'product:services' %}">Our Services</a></li>
+                            <li><a href="{% url 'product:management' %}">Property  Management</a></li>
+                            <li><a href="{% url 'product:marketing' %}">Marketing</a></li>
+                            <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
+                            
+                            <li><a href="{% url 'product:contactus' %}">Contact Us</a></li>
                         </ul>
                     </div>
                    
                     
+
+
+
                     <div class="col item social">
                         <a href="https://m.facebook.com/wilmotinnovationlimited/"><i class="icon ion-social-facebook"></i></a>
                         <a href="#"><i class="icon ion-social-twitter"></i></a>
