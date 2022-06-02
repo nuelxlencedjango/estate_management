@@ -298,6 +298,7 @@ p{
 .text-head h1 span{
   font-size: 45px;
   font-weight: bolder;
+  text-transform: uppercase;
 
 }
 .wrap-inner img{
