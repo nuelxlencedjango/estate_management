@@ -296,7 +296,7 @@ p{
   text-align: left;
 }
 .text-head h1 span{
-  font-size: 45px;
+  font-size: 30px;
   font-weight: bolder;
   text-transform: uppercase;
 
@@ -505,7 +505,7 @@ p{
  
        /*background-color: crimson;*/
    font-family: "Roboto", sans-serif;
-   background-image: url('/static/images/background/background_paid.jpeg');
+   background-image: url('/static/images/background/wilmot_bg.JPG');
    background-repeat: no-repeat;
  
    /*background-image: linear-gradient(white, blue);*/
@@ -514,18 +514,21 @@ p{
    background-position: center; 
    background-repeat: no-repeat; /* Do not repeat the image */
    background-size: cover;
-  
+   /*padding-left: 0px !important;
+   padding-right: 0px !important;*/
  
-   height: 500px;
+   height: 350px;
+   opacity: 1;
  }
  
  
  .buy h3{
-     margin-top: 10px;
-     color: #000000;
+     margin-top: 50px;
+     /*color: #000000;*/
      text-align: center;
      text-transform: capitalize;
      font-weight: 500;
+     color: #fff;
      
  }
  .buy h1{
@@ -533,7 +536,8 @@ p{
      text-align: center;
      font-size: 45px;
      font-weight: bolder;
-     color: #000000;
+     color: #fff;
+     /*color: #000000;*/
      font-family: Verdana, Geneva, Tahoma, sans-serif;
  }
  
