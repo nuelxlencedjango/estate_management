@@ -61,13 +61,16 @@ padding: 10px;
 
 border-radius: 1px;
 transition: 0.3s ease;
-background: #000;
+/*background: #000;*/
+color: #4c9e9e;;
+
  /*background: linear-gradient(164deg, rgba(123,134,232,1) 0%, rgba(246,140,255,1) 52%, rgba(255,222,50,1) 100%);
  color: #270942;*/
    
 }
 .menu li a:hover{
-    color: #fff;
+    /*color: #fff;*/
+    color: #4c9e9e;;
     text-decoration: none;
      
     
@@ -87,7 +90,7 @@ cursor: pointer;
   content: "";
   margin-left:-50px;
   text-align: center;
-  width: 135px;
+  width: 150px;
   margin: 20px 0;
   cursor: pointer;
   
@@ -97,7 +100,7 @@ cursor: pointer;
   height: 100%;
   padding-right: 0px;
   padding-left: 2px;
-  /*border-radius: 50%;*/
+  border-radius: 50%;
 } 
 
 
