@@ -11,7 +11,7 @@
 body{
 
     font-family: 'Oswald', sans-serif;
-    font-size: 15px;
+    /*font-size: 15px;*/
     font-weight: 400; 
     line-height: 1.5em;
     background: whitesmoke;
@@ -38,12 +38,14 @@ input[type=checkbox]{
 
   /* NAVBAR STYLING STARTS */
 .navbar {
+  width: 100%;
 display: flex;
 align-items: center;
-justify-content: space-between;
+/*justify-content: space-between;*/
 padding: 10px;
 /*background-color: teal;*/
  min-height: 0px;
+ justify-content: space-evenly;
 }
 .nav-links a {
  color: #999;
@@ -52,12 +54,12 @@ padding: 10px;
  /* NAVBAR MENU */
 .menu {
  display: flex;
-gap: .1em;
- font-size: 18px;
+/*gap: .1em;*/
+ font-size: 20px;
 }
 .menu li:hover {
 
-border-radius: 5px;
+border-radius: 1px;
 transition: 0.3s ease;
 background: #000;
  /*background: linear-gradient(164deg, rgba(123,134,232,1) 0%, rgba(246,140,255,1) 52%, rgba(255,222,50,1) 100%);
@@ -71,7 +73,7 @@ background: #000;
     
 }
 .menu li {
-padding: 5px 14px;
+padding: 5px 5px;
 cursor: pointer;
 }
 
@@ -79,13 +81,13 @@ cursor: pointer;
 .logo_areas{
 
   position: absolute; 
-  left: 42%;
-  top: 20; 
+  left: 38.5%;
+  top: 10; 
 
   content: "";
-  margin-left:-70px;
+  margin-left:-50px;
   text-align: center;
-  width: 80px;
+  width: 135px;
   margin: 20px 0;
   cursor: pointer;
 }
@@ -726,6 +728,59 @@ height: auto;
 
 
  @media screen and (max-width: 950px) {
+
+  .menu { 
+    display:none;
+    position: absolute;
+    background-color:#7fbebb;
+    color: #fff;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+   }
+   .menu li a{
+     color: #fff;
+   }
+   .menu li:hover {
+  
+    background-color:#4c9e9e;
+    transition: 0.3s ease;
+   }
+   .menu li + li {
+    margin-top: 12px;
+   }
+   input[type=checkbox]:checked ~ .menu{
+    display: block;
+   }
+   .hamburger {
+    display: block;
+   }
+   .hamburger {
+     display: block;
+    
+     user-select: none;
+     color: black;
+     margin-left: -50px;
+     cursor: pointer;
+     
+    }
+    /*#market{
+     margin-top: 360px;
+   }*/
+  
+   .logo_areas{
+     /*display: none;*/
+     position: absolute; 
+     /*left: 41%;*/
+     /*content: "";
+     margin-left:80px;
+     width: 65;
+     height: 100%;*/
+    
+   }
+
+  
   .featured{
 
   height: fit-content;

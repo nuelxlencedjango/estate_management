@@ -50,9 +50,12 @@
     <style>
         .menu {
             margin-top: 30px;
-          padding: 10px 16px;
+          /*padding: 10px 16px;*
           /*background: #555;*/
           /*color: #f1f1f1;*/
+        }
+        .menu #prop-mgn{
+          margin-left: 100px;
         }
         
         .content {
@@ -101,7 +104,7 @@
         <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
         <li class="services">
           <a href="{% url 'product:services' %}">Our Services</a></li>
-          <li><a href="{% url 'product:management' %}">Property  Management</a></li>
+          <li id="prop-mgn"><a href="{% url 'product:management' %}">Property  Management</a></li>
           <li><a href="{% url 'product:marketing' %}">Marketing</a></li>
           <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
           <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
