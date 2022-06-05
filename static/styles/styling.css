@@ -85,7 +85,7 @@ cursor: pointer;
 
   position: absolute; 
   left: 38.5%;
-  top: 10; 
+  /*top: 0px; */
 
   content: "";
   margin-left:-50px;
