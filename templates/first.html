@@ -240,7 +240,7 @@ border-radius:50px !important;
 </style>
 
 
-<div class="chat-poping" id="myForm">
+<div class="chat-poping" id="messengerPopup">
 <div class="nav-small">
   <ul>
     <li><img src="" alt=""></li>
@@ -294,7 +294,7 @@ border-radius:50px !important;
     bottom: 23px;
     right: 28px;
     width: 280px;
-    border-radius: 50%;
+   
   }
   
   /* The popup chat - hidden by default */
@@ -387,6 +387,10 @@ border-radius:50px !important;
   
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
+  }
+
+  function openchat(){
+    document.getElementById("messengerPopup")
   }
   </script>
   
