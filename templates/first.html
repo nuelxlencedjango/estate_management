@@ -73,60 +73,8 @@
           padding-top: 102px;
          
         }
-       
-       
-        </style>
-
-
-
-
-
-<div class="header" id="myHeader">
-
-    <nav class="navbar" id="navbar">
-         <div class="logo_areas" id="logo">
-            <a href="{% url 'product:home' %}"><img src="/static/images/logo/wil.png" alt=""></a>
-        </div>
-        <!--navigation menu-->
-              <!-- USING CHECKBOX HACK -->
-       <input type="checkbox" id="checkbox_toggle" />
-       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>
-
-   
-        <ul class="nav-links">
-            <!-- USING CHECKBOX HACK -->
-       <!--<input type="checkbox" id="checkbox_toggle" />
-       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>-->
-
-       <div class="menu" id="menu">
-           
-        <li><a href="{% url 'product:home' %}">Home</a></li>
-        <li><a href="{% url 'product:our_team' %}">Our Team</a></li>
-        <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
-        <li class="services">
-          <a href="{% url 'product:services' %}">Our Services</a></li>
-          <li id="prop-mgn"><a href="{% url 'product:management' %}">Property  Management</a></li>
-          <li><a href="{% url 'product:marketing' %}">Marketing</a></li>
-          <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
-          <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
-        
-          
-       </div>
-        </ul>
-    </nav>
-    </div>
- 
-  
-    <body>
-     
-
-      <div class="overall" id="overall">
-        {% block content %}
-        {% endblock %} 
-      </div>
-
-  <style>
-    .icon-bar {
+       /* sticky social icons sidebar */
+       .icon-bar {
   position: fixed;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -178,27 +126,7 @@
   background: linear-gradient( #bb0000,#fff);
 
 }
-
-  </style>
-  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-    
-<!-- The social media icon bar -->
-<div class="icon-bar">
- 
-  <a href="https://m.facebook.com/wilmotinnovationlimited/" class="facebook"><i class="fab fa-facebook"></i></a>
-  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-  <a href="#" class="google"><i class="fab fa-google-plus-square"></i></a>
-  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-  <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
-  <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
- 
-</div>  
-
-
-
-
-<style>
-  /* chat icon */
+/* chat icon messenger  sidebar -right */
   .chat-point {
 position: fixed;
 top: 60%;
@@ -224,6 +152,11 @@ justify-content: center;
 align-items: center; 
 border-radius:50px !important;
 }
+/* end chat icon messenger  sidebar -right */
+
+
+/* messenger popup card */
+
 
 
 
@@ -285,17 +218,91 @@ border-radius:50px !important;
     background-color: #fff;
     color: #44bec7;
   }
-  a {
+  /*a {
     text-decoration: none;
     font-size: 22px;
     color: #fff;
-  }
+  }*/
+/*messenger popup card */
+        </style>
 
 
 
 
 
-.chat-poping {
+<div class="header" id="myHeader">
+
+    <nav class="navbar" id="navbar">
+         <div class="logo_areas" id="logo">
+            <a href="{% url 'product:home' %}"><img src="/static/images/logo/wil.png" alt=""></a>
+        </div>
+        <!--navigation menu-->
+              <!-- USING CHECKBOX HACK -->
+       <input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>
+
+   
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+       <!--<input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>-->
+
+       <div class="menu" id="menu">
+           
+        <li><a href="{% url 'product:home' %}">Home</a></li>
+        <li><a href="{% url 'product:our_team' %}">Our Team</a></li>
+        <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
+        <li class="services">
+          <a href="{% url 'product:services' %}">Our Services</a></li>
+          <li id="prop-mgn"><a href="{% url 'product:management' %}">Property  Management</a></li>
+          <li><a href="{% url 'product:marketing' %}">Marketing</a></li>
+          <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
+          <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
+        
+          
+       </div>
+        </ul>
+    </nav>
+    </div>
+ 
+  
+    <body>
+     
+
+      <div class="overall" id="overall">
+        {% block content %}
+        {% endblock %} 
+      </div>
+
+  <style>
+   
+
+  </style>
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    
+<!-- The social media icon bar -->
+<div class="icon-bar">
+ 
+  <a href="https://m.facebook.com/wilmotinnovationlimited/" class="facebook"><i class="fab fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fab fa-google-plus-square"></i></a>
+  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+  <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+ 
+</div>  
+
+
+
+
+<style>
+ 
+
+
+
+
+
+/*.chat-poping {
     display: block;
     position: fixed;
     bottom: 0;
@@ -345,7 +352,7 @@ border-radius:50px !important;
     border-radius: 10px;
 
   
-  }
+  }*/
 </style>
 
 
@@ -400,7 +407,7 @@ border-radius:50px !important;
 
 
 <style>
-  .card {
+  /*.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
@@ -434,7 +441,7 @@ border-radius:50px !important;
   
   button:hover, a:hover {
     opacity: 0.7;
-  }
+  }*/
   </style>
   </head>
   <body>
@@ -444,7 +451,6 @@ border-radius:50px !important;
    <div class="chat-body">
       
   <div class="card">
-    <!--<img src="/w3images/team2.jpg" alt="John" style="width:100%">-->
     <h1>chat with a wilmot innovation real esate agent</h1>
     <p class="title">We have agents on call 24/7 ready to answer any questions you have. Ask away!</p>
    
@@ -455,13 +461,6 @@ border-radius:50px !important;
    </div>
     </div>
 
-    <!--<div style="margin: 24px 0;">
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a>  
-      <a href="#"><i class="fa fa-linkedin"></i></a>  
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-    </div>
-    <p><button>Contact</button></p>-->
   </div>
    </div>
  </div>
