@@ -76,126 +76,17 @@
 
         }
        /* sticky social icons sidebar */
-       .icon-bar {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
+    
 
-
-/* Style the icon bar links */
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 20px;
-}
-
-/* Style the social media icons with color, if you want */
-.icon-bar a:hover {
-  background-color: #000;
-}
-
-.facebook {
-  background: #3B5998;
-  color: white;
-}
-
-.twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.google {
-  background: #dd4b39;
-  color: white;
-}
-
-.linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.youtube {
-  background: #bb0000;
-  color: white;
-}
-.instagram{
-  background: linear-gradient( #bb0000,#fff);
-
-}
-
-.chat-point {
-position: fixed;
-top: 60%;
--webkit-transform: translateY(-50%);
--ms-transform: translateY(-50%);
-transform: translateY(-50%);
-right: 28px;
-
-}
-
-  .chat-point{
-        cursor: pointer;
-      }
-
-.chat-point-inner{
-display: flex; 
-align-items: center;
-}
-
-.chat-point-bg{
-width: 60px; 
-height: 60px; 
-background-color: #44bec7; 
-display: flex; 
-justify-content: center; 
-align-items: center; 
-border-radius:50px !important;
-}
-
-
-
-
-/* chat icon messenger  sidebar -right */
-  .chat-point {
-position: fixed;
-top: 60%;
--webkit-transform: translateY(-50%);
--ms-transform: translateY(-50%);
-transform: translateY(-50%);
-right: 28px;
-cursor: pointer;
-}
-  /*.chat-point{
-        cursor: pointer;
-      }*/
-.chat-point-inner{
-display: flex; 
-align-items: center;
-}
-.chat-point-bg{
-width: 60px; 
-height: 60px; 
-background-color: #44bec7; 
-display: flex; 
-justify-content: center; 
-align-items: center; 
-border-radius:50px !important;
-}
 /* end chat icon messenger  sidebar -right */
 
 
 /* messenger popup card */
 
 
+ /*z-index: 9;*/
 
-
-.chat-popping
+/*.chat-popping
 {
   display: block;
     position: fixed;
@@ -203,7 +94,7 @@ border-radius:50px !important;
     right: 15px;
     
   
-    /*z-index: 9;*/
+   
 }
 
 .chat-body{
@@ -247,12 +138,13 @@ border-radius:50px !important;
     font-size: 22px;
     border-radius: 15px;
     text-transform: capitalize;
+  
+  }*/
    /* background-color: rgb(68, 190, 199);*/
-  }
-  .container .button-body button:hover{
+  /*.container .button-body button:hover{
     background-color: #fff;
     color: #44bec7;
-  }
+  }*/
   a {
     text-decoration: none;
     font-size: 22px;
@@ -260,6 +152,73 @@ border-radius:50px !important;
   }
 /*messenger popup card */
 
+
+
+/* chat icon messenger  sidebar -right */
+
+/* end chat icon messenger  sidebar -right */
+
+
+
+
+
+/* messenger popup card */
+
+
+
+
+        </style>
+
+
+
+
+
+<div class="header" id="myHeader">
+
+    <nav class="navbar" id="navbar">
+         <div class="logo_areas" id="logo">
+            <a href="{% url 'product:home' %}"><img src="/static/images/logo/wil.png" alt=""></a>
+        </div>
+        <!--navigation menu-->
+              <!-- USING CHECKBOX HACK -->
+       <input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>
+
+   
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+       <!--<input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>-->
+
+       <div class="menu" id="menu">
+           
+        <li><a href="{% url 'product:home' %}">Home</a></li>
+        <li><a href="{% url 'product:our_team' %}">Our Team</a></li>
+        <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
+        <li class="services">
+          <a href="{% url 'product:services' %}">Our Services</a></li>
+          <li id="prop-mgn"><a href="{% url 'product:management' %}">Property  Management</a></li>
+          <li><a href="{% url 'product:marketing' %}">Marketing</a></li>
+          <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
+          <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
+        
+          
+       </div>
+        </ul>
+    </nav>
+    </div>
+ 
+  
+    <body>
+     
+
+      <div class="overall" id="overall">
+        {% block content %}
+        {% endblock %} 
+      </div>
+
+  <style>
+   
 
 
  /* sticky social icons sidebar */
@@ -315,137 +274,6 @@ border-radius:50px !important;
   background: linear-gradient( #bb0000,#fff);
 
 }
-
-
-/* chat icon messenger  sidebar -right */
-
-/* end chat icon messenger  sidebar -right */
-
-
-
-
-
-/* messenger popup card */
-
-
-
-
-.chat-popping
-{
-  display: block;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    
-  
-    /*z-index: 9;*/
-}
-
-.chat-body{
-  width: 300px !important;
-  height: 300px !important;
-}
-
-.chat-popping .chat-body .card{
-  width: 100% !important;
-  height:100% !important;
-  border-radius: 10%;
-  border: 3px solid #44bec7;
- 
-}
-
-.chat-popping h1{
-  font-size: 18px;
- 
-     font-weight: 200;
-     font-family: Arial, Helvetica, sans-serif;
-     text-transform: capitalize;
-     text-align: left;
-     padding: 10px;
-}
-.chat-popping p{
-  font-size: 15px;
-  text-align: left;
-  padding: 5px;
-  
-}
-.container .button-body button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background: #44bec7;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 22px;
-    border-radius: 15px;
-    text-transform: capitalize;
-   /* background-color: rgb(68, 190, 199);*/
-  }
-  .container .button-body button a:hover{
-    background-color: #fff;
-    color: #44bec7;
-    text-decoration: none;
-  }
-  a {
-    text-decoration: none;
-    font-size: 22px;
-    color: #fff;
-  }
-        </style>
-
-
-
-
-
-<div class="header" id="myHeader">
-
-    <nav class="navbar" id="navbar">
-         <div class="logo_areas" id="logo">
-            <a href="{% url 'product:home' %}"><img src="/static/images/logo/wil.png" alt=""></a>
-        </div>
-        <!--navigation menu-->
-              <!-- USING CHECKBOX HACK -->
-       <input type="checkbox" id="checkbox_toggle" />
-       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>
-
-   
-        <ul class="nav-links">
-            <!-- USING CHECKBOX HACK -->
-       <!--<input type="checkbox" id="checkbox_toggle" />
-       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>-->
-
-       <div class="menu" id="menu">
-           
-        <li><a href="{% url 'product:home' %}">Home</a></li>
-        <li><a href="{% url 'product:our_team' %}">Our Team</a></li>
-        <li> <a href="{% url 'product:property' %}">Property Search</a> </li>
-        <li class="services">
-          <a href="{% url 'product:services' %}">Our Services</a></li>
-          <li id="prop-mgn"><a href="{% url 'product:management' %}">Property  Management</a></li>
-          <li><a href="{% url 'product:marketing' %}">Marketing</a></li>
-          <li><a href="{% url 'product:testimonial' %}">Testimonials</a></li>
-          <li><a href="{% url 'product:contactus' %}">Contact  Us</a></li>
-        
-          
-       </div>
-        </ul>
-    </nav>
-    </div>
- 
-  
-    <body>
-     
-
-      <div class="overall" id="overall">
-        {% block content %}
-        {% endblock %} 
-      </div>
-
-  <style>
-   
 
   </style>
   <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
@@ -549,6 +377,67 @@ border-radius:50px !important;
 </div>
 </div>-->
 
+<style>
+
+.chat-point {
+position: fixed;
+top: 60%;
+-webkit-transform: translateY(-50%);
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+right: 28px;
+
+}
+
+  .chat-point{
+        cursor: pointer;
+      }
+
+.chat-point-inner{
+display: flex; 
+align-items: center;
+}
+
+.chat-point-bg{
+width: 60px; 
+height: 60px; 
+background-color: #44bec7; 
+display: flex; 
+justify-content: center; 
+align-items: center; 
+border-radius:50px !important;
+}
+
+
+
+
+/* chat icon messenger  sidebar -right */
+  .chat-point {
+position: fixed;
+top: 60%;
+-webkit-transform: translateY(-50%);
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+right: 28px;
+cursor: pointer;
+}
+  /*.chat-point{
+        cursor: pointer;
+      }*/
+.chat-point-inner{
+display: flex; 
+align-items: center;
+}
+.chat-point-bg{
+width: 60px; 
+height: 60px; 
+background-color: #44bec7; 
+display: flex; 
+justify-content: center; 
+align-items: center; 
+border-radius:50px !important;
+}
+</style>
 <a href="">
   <div class="chat-point">
     <div >
@@ -577,6 +466,73 @@ border-radius:50px !important;
 
 
 <style>
+
+.chat-popping
+{
+  display: block;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    
+  
+    /*z-index: 9;*/
+}
+
+.chat-body{
+  width: 300px !important;
+  height: 300px !important;
+}
+
+.chat-popping .chat-body .card{
+  width: 100% !important;
+  height:100% !important;
+  border-radius: 10%;
+  border: 3px solid #44bec7;
+ 
+}
+
+.chat-popping h1{
+  font-size: 18px;
+ 
+     font-weight: 200;
+     font-family: Arial, Helvetica, sans-serif;
+     text-transform: capitalize;
+     text-align: left;
+     padding: 10px;
+}
+.chat-popping p{
+  font-size: 15px;
+  text-align: left;
+  padding: 5px;
+  
+}
+.container .button-body button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background: #44bec7;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 22px;
+    border-radius: 15px;
+    text-transform: capitalize;
+   /* background-color: rgb(68, 190, 199);*/
+  }
+  .container .button-body button a:hover{
+    background-color: #fff;
+    color: #44bec7;
+    text-decoration: none;
+  }
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #fff;
+  }
+  
+
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
