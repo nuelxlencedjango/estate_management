@@ -51,7 +51,7 @@ function myFunction() {
 
 let popup = false;
 let messenger = document.getElementById("messenger");
-let chatPop  = document.getElementsByClassName("popupChat");
+let chatPop  = document.getElementById("popupChat");
 //let checkMenu = document.getElementById("want_buy");
 //let logo = document.getElementById("logo");
 
