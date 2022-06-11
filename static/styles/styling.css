@@ -2090,8 +2090,10 @@ width: 100%;
   
   }
   .wilmotBasin{
-    font-size: 26px;
-    font-weight: bolder;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: 18px;
+    margin-left: 2px;
   
   }
   .col-md-6{
