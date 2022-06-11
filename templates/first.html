@@ -172,18 +172,14 @@ border-radius:50px !important;
 
 .chat-popping
 {
-  display: block;
-    /*position: fixed;
-    bottom: 0;*/
-    right: 15px;
-    
-  
-
-    position: fixed;
+  display: none;
+  right: 15px;
+  position: fixed;
  top: 55%;
 -webkit-transform: translateY(-50%);
 -ms-transform: translateY(-50%);
 transform: translateY(-50%);
+
 
     /*z-index: 9;*/
 }
@@ -317,7 +313,7 @@ transform: translateY(-50%);
 
 
 
-  <div class="chat-point">
+  <div class="chat-point" id="messenger">
     <div >
       <div class="chat-point-inner">
     <div class="chat-point-bg">
@@ -344,7 +340,7 @@ transform: translateY(-50%);
  
   
   
- <div class="chat-popping">
+ <div class="chat-popping" id="popupChat" onclick="openMessenger()">
    <div class="chat-body">
       
   <div class="card">

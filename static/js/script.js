@@ -45,3 +45,25 @@ function myFunction() {
   }
 }
 
+
+
+
+
+let popup = false;
+let messenger = document.getElementById("messenger");
+let chatPop  = document.getElementsByClassName("popupChat");
+//let checkMenu = document.getElementById("want_buy");
+//let logo = document.getElementById("logo");
+
+function openMessenger(){
+if(popup===false){
+    chatPop.style.display = "block"; 
+    popup =true;
+}
+else{
+   
+    chatPop.style.display = "none";
+    popup =false;
+
+}
+}
