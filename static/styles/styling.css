@@ -1964,8 +1964,8 @@ width: 100%;
 }
 .another-select .col-md-6 .price-maximum .maxprice{
   font-size: 10px;
-  font-weight: 200;
-  padding: 1px;
+  
+  padding: 0px;
 }
 .property-searches.form-container h2{
   font-size: 24px;
