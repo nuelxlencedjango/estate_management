@@ -1839,7 +1839,10 @@ section .text h3 {
      width: 100% !important;
    }
    .card-img{
-     max-width: 300px;
+    
+     max-width: 100% !important;
+     padding: 5px;
+     border-radius: 10px
    }
    .form-container h2{
     font-size: 30px;
