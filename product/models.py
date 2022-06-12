@@ -1,4 +1,5 @@
 from pydoc import describe
+from turtle import position
 from django.db import models
 
 from django.utils.html import mark_safe
@@ -146,6 +147,23 @@ class PropertyImages(models.Model):
         #db_table='accommodation' 
 
         verbose_name_plural='PropertyImages'    
+
+
+
+class OurTeam(models.Model):
+    #user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name =models.CharField(max_length=200)
+    position = models.CharField(max_length=200)
+    bio =models.CharField(max_length=200,blank=True,null=True)  
+    img = CloudinaryField(blank=True,null=True)
+
+    def __str__(self):
+        return self.name 
+
+    class Meta:
+        #db_table='accommodation' 
+
+        verbose_name_plural='ourteam'
 
 
 
