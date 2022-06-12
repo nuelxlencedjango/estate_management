@@ -813,11 +813,11 @@ height: auto;
 
   
   
-  .featured .row {
-    display: flex;
+  .featured .container .row  {
+    width: 100%;
   }
   .featured .row .col-md-3{
-    width: 33.3%;
+    width: 33.3% !important;
    margin-top: 20px;
   }
   .rcols-1 .card{
