@@ -152,8 +152,8 @@ height: auto;
 }
 .featured .container{
   
-  padding-right: 15px !important;
-  padding-left: 15px !important;
+  padding-right: 5px !important;
+  padding-left: 5px !important;
   margin-right: auto;
   margin-left: auto;
 }
@@ -180,7 +180,7 @@ height: auto;
  width: 25%;
  height: 400px;
 
- margin-left: 5px;
+ margin-left: 20px;
  background: #f2f2f2;
 
 border-radius: 20px;
