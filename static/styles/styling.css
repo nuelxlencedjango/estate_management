@@ -150,6 +150,9 @@ height: auto;
   margin-left: auto;
 
 }
+.featured .containr{
+  margin-left: 100px;
+}
 .featured .container h2{
   padding-top: 30px;
   color: #7fbebb;
