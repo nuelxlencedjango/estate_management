@@ -75,7 +75,7 @@
     margin-left: 30px;
 }
 .prod .col-md-4{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;*/
     border: 2px solid #7bdcb5 !important;
 
 }
@@ -101,7 +101,7 @@
             
             <div class="col-md-4 my-4  animate__animated animate__backInLeft animation-delay-s" style="animation-delay: 1s;">
                 <a href="{% url 'product:image_gallery' result.id %}">
-                <h4 class="my-" style="font-size: 18px; color: #000;"><span style="color: navy; text-decoration: none; font-size: 20px;">Location:</span>{{result.Location }}</h4></a>
+                <h4 class="my-" style="font-size: 18px; color: #000;"><span style=" text-decoration: none; font-size: 20px;">Location:</span>{{result.Location }}</h4></a>
                 <img  src="{{ result.img.url }}" alt="" class="w-100" style="width: 250px; height: 180px;">
                 <h5 class="card-title">Price:<span style="color: green;">${{result.price }}</span></h5>
                 
