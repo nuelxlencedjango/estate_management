@@ -663,7 +663,7 @@ height: auto;
 }
 .team-body-side h1 b{
   padding-top: 100%;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 600;
   font-family: sans-serif;
   margin-left: 30px;
@@ -687,6 +687,7 @@ height: auto;
   width: 270px;
   margin-right: 20px;
   border: none;
+  height: 400px;
   
 }
 .rcols-1 .card img{
