@@ -168,7 +168,7 @@ height: auto;
 .featured .row {
  
   height: auto;
-  width: 100%;
+  width: fit-content;
 }
 .featured .col-md-3{
   margin-top: 170px !important;
