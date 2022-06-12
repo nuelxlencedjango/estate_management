@@ -1824,8 +1824,8 @@ section .text h3 {
    .featured .container .row{
      display: block;
    }
-   .featured .row.col{
-     max-width: 300px;
+   .featured .row .col{
+    width: 100%;
     
    }
   
