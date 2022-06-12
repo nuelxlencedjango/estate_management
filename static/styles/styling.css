@@ -152,6 +152,10 @@ height: auto;
 }
 .featured .containr{
   margin-left: 100px;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  margin-right: auto;
+  margin-left: auto;
 }
 .featured .container h2{
   padding-top: 30px;
