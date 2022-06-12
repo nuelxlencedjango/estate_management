@@ -164,6 +164,25 @@
           
           
  
+         <div class="container our-service">
+            <div class="row">
+                {% for property in rented %}
+                <div class="col-md-4">
+                    <div class="card-img">
+                        <img src="{{ property.img.url }}" alt="">
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <p> {{property.street_name}}<br> {{property.location }}</p>
+                            <span> #{{property.price}}</span>     </div>
+                </div>
+             
+                {% endfor %}
+       
+            
+      
+            </div>
+        </div>
   
 
 
