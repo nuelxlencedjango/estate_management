@@ -1825,7 +1825,8 @@ section .text h3 {
      display: block;
    }
    .featured .row .col{
-    width: 100%;
+    width: 100% !important;
+    padding: 20px;
     
    }
   
@@ -1834,7 +1835,7 @@ section .text h3 {
  
    }
    .featured .col .card{
-     width: 100%;
+     width: 100% !important;
    }
    .card-img{
      max-width: 300px;
