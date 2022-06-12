@@ -1,3 +1,4 @@
+from multiprocessing import context
 from pyexpat.errors import messages
 from unittest import result
 from django.shortcuts import render
@@ -14,7 +15,9 @@ from django.views.generic import (
     ListView ,DetailView, CreateView, UpdateView ,DeleteView,TemplateView )
 
 def home(request):
-    return render(request, 'home.html')
+    rented = FeaturedListing.objects.all()
+    context={"rented":rented}
+    return render(request, 'home.html',context)
 
 
 
@@ -185,7 +188,6 @@ def availablePropertylp(request):
             'resultobj':resultobj
         }
         return render(request, 'property_info.html',context)
-
 
 
 

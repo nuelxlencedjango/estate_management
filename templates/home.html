@@ -161,45 +161,7 @@
          </div>
 
 
-<style>
-   
-  
           
-     
-          
-        /*  .product-card .card button {
-            border: none;
-            outline: 0;
-            padding: 12px;
-            color: white;
-            background-color: #000;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-          }*/
-       
-          </style>
-          </head>
-          <body>
-          
-         
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="product-card">
-                       
-          <div class="card">
-            <img src="/static/images/background/property2.jpg" alt="Denim Jeans" style="width:100%">
-            <h1>Tailored Jeans</h1>
-            <p class="price">$19.99</p>
-            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-            <p><button>Add to Cart</button></p>
-          </div>
-                </div>
-            </div>
-        </div>
-    </div>
           
  
   
@@ -209,43 +171,20 @@
     <div class="container">
         <h2 class="listing">FEATURED LISTINGS</h2>
         <div class="row">
-            <!--<div class="col-md-3">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="{% static 'images/background/house13.jpg' %}" alt="">
-                    </div>
-                    <div class="card-body">
-                        <p>5701 E Midway Rd <br> Big Spring, Texas 79720</p>
-                        <span>#399,000</span>
-
-                    </div>
-                </div>
-            </div>-->
-            <!--<div class="col-md-3">
-                <div class="product-card">
-                       
-          <div class="card">
-            <img src="/static/images/background/property2.jpg" alt="Denim Jeans" style="width:100%">
-            <h1>name</h1>
-            <p class="price">#50000</p>
-            <p>Street name</p>
-            <p>locaton</p>
-          </div>
-                </div>
-            </div>-->
+            {% for property in rented %}
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-img">
-                        <img src="{% static 'images/background/property5.jpg' %}" alt="">
+                        <img src="{{ property.img.url }}" alt="">
                     </div>
                     <div class="card-body">
-                        <p> 2806 Lawrence <br> Big Spring, Texas 79720 </p>
-                        <span> #224,000</span>
+                        <p> {{property.street_name}}<br> {{property.location }}</p>
+                        <span> #{{property.price}}</span>
                    
                     </div>
                 </div>
             </div>
-           
+           {% endfor %}
            
         </div>
     </div>   
