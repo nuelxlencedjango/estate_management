@@ -711,10 +711,11 @@ height: auto;
 
 .rcols-1 .card-body h2{
   font-family: Montserrat;
-  font-size: 22px;
-  line-height: 20px;
+  font-size: 20px;
+  
   font-weight: 300;
   color: green;
+
 }
 .rcols-1 .card-body a{
   text-decoration: none;
@@ -750,6 +751,8 @@ height: auto;
 .purchasing p{
   color: #0a0a0a;
   font-family: sans-serif;
+  font-size: 18px;
+  text-align: left;
 }
 
 
