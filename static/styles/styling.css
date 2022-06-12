@@ -174,7 +174,7 @@ height: auto;
   margin-top: 170px !important;
   transform: translate(-50%, -50%);
  height: 100%;
- width: 300px;
+ width: 230px;
  
  margin-top: 180px;
  margin-left: 60px;
@@ -191,7 +191,7 @@ padding: 20px;
 }
 .featured .row .col-md-3 .card{
  
-  width: 90%;
+  width: 100%;
   background-color: #0a0a0a;
   border: 1px solid rgba(0, 0, 0, .7);
 
