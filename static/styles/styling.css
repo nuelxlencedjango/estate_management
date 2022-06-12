@@ -762,8 +762,7 @@ height: auto;
 
   padding-right: 0px;
   padding-left: 0px;
-  margin-right: auto;
-  margin-left: auto;
+
 
 }
 .featured .container{
@@ -771,14 +770,7 @@ height: auto;
   padding-right: 5px !important;
 
 }
-.featured .container h2{
-  padding-top: 30px;
-  color: #7fbebb;
-  text-align: center;
-  font-weight: bolder;
-  margin-bottom: 30px;
-  font-size: 40px;
-}
+
 .featured .row {
  
   height: auto;
@@ -786,9 +778,6 @@ height: auto;
 }
 .featured .col-md-3{
   margin-top: 10px !important;
- 
- height: 100%;
-
  margin-left: 10px;
  
 }
