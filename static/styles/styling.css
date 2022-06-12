@@ -1959,11 +1959,11 @@ width: 100%;
 }
 .another-select .col-md-6 .price-maximum #popup{
  width: 100%;
- font-size: 10px;
+ font-size: 8px;
  font-weight: 200;
 }
 .another-select .col-md-6 .price-maximum .maxprice{
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 200;
 }
 .property-searches.form-container h2{
