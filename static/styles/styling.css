@@ -1821,7 +1821,7 @@ section .text h3 {
    padding-right: 10px;
 
    }
-   .featured .row,.col-md-3{
+   .featured .row.col{
      max-width: 300px;
     
    }
@@ -1830,8 +1830,8 @@ section .text h3 {
      width: 100% !important;
  
    }
-   .featured .col-md-3 .card{
-     width: auto;
+   .featured .col .card{
+     width: 100%;
    }
    .card-img{
      max-width: 300px;
@@ -1964,7 +1964,7 @@ width: 100%;
 }
 .another-select .col-md-6 .price-maximum .maxprice{
   font-size: 10px;
-  
+ 
   padding: 0px;
 }
 .property-searches.form-container h2{
