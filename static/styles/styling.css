@@ -197,14 +197,14 @@ padding: 20px;
 
 }
 
-/*.container .row .col .card {
+.container .row .col .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
  
   margin: auto;
   text-align: center;
   font-family: arial;
   height: 100%
-}*/
+}
 
 .featured .row .col .card .card-img{
   width: 100%;
