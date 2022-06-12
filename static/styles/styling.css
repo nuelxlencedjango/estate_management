@@ -168,14 +168,14 @@ height: auto;
 .featured .row {
  
   height: auto;
-  width: fit-content;
+ display: flex;
 }
-.featured .col-md-3{
+.featured .col{
   margin-top: 10px !important;
- 
+ width: 25%;
  height: 100%;
- margin-top: 180px;
- margin-left: 60px;
+
+ margin-left: 20px;
  background: #f2f2f2;
 overflow: hidden;
 border-radius: 20px;
@@ -183,11 +183,8 @@ cursor: pointer;
 box-shadow: 0 0 20px 8px #d0d0d0;
 padding: 20px;
 }
-.product-card{
-  height: 100%;
-  width: 100%;
-}
-.featured .row .col-md-3 .card{
+
+.featured .row .col .card{
  
   width: 100%;
   background-color: #0a0a0a;
@@ -195,16 +192,16 @@ padding: 20px;
 
 }
 
-.container .row .col-md-3 .product-card .card {
+/*.container .row .col .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
  
   margin: auto;
   text-align: center;
   font-family: arial;
   height: 100%
-}
+}*/
 
-.featured .row .col-md-3 .card .card-img{
+.featured .row .col .card .card-img{
   width: 100%;
   height: 100%;;
 }
@@ -766,25 +763,29 @@ height: auto;
 
 }
 .featured .container{
+  width: 100%;
   margin-left: 10px;
   padding-right: 5px !important;
 
 }
 
 .featured .row {
- 
+  
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
   width: 100% !important;
 }
 .featured .col-md-3{
   margin-top: 10px !important;
  margin-left: 10px;
- width: 33.3%;
+ width: 33.3% !important;
  
 }
 
 .featured .row .col-md-3 .card{
  
-  width: 100%;
+  width: 100% !important;
   background-color: #0a0a0a;
   border: 1px solid rgba(0, 0, 0, .7);
 
@@ -2184,7 +2185,7 @@ width: 100%;
 
    }
    .featured .row,.col-md-3{
-     max-width: 300px;
+     width: 100%;
     
    }
   
