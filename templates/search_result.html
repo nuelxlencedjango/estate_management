@@ -98,7 +98,7 @@
             
             <div class="col-md-4 my-4  animate__animated animate__backInLeft animation-delay-s" style="animation-delay: 1s;">
                 <a href="{% url 'product:image_gallery' result.id %}">
-                <h4 class="my-1" style="font-size: 18px; color: #000;"><span style="color: #7bdcb5; text-decoration: none; font-size: 20px;">Location:</span>{{result.Location }}</h4></a>
+                <h4 class="my-1" style="font-size: 18px; color: #000;"><span style="color: navy; text-decoration: none; font-size: 20px;">Location:</span>{{result.Location }}</h4></a>
                 <img  src="{{ result.img.url }}" alt="" class="w-100" style="width: 250px; height: 180px;">
                 <h5 class="card-title">Price:<span style="color: green;">${{result.price }}</span></h5>
                 
