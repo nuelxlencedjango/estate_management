@@ -169,8 +169,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 EMAIL_HOST = 'smtp.gmail.com'
-#EMAIL_HOST_USER ='wilmotinnovationlimited@gmail.com'
-EMAIL_HOST_USER ='contact@wilmotinnovation.com'
+EMAIL_HOST_USER ='wilmotinnovationlimited@gmail.com'
 EMAIL_HOST_PASSWORD  = 'ejsczuwgnrpyawla'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
