@@ -54,13 +54,17 @@ def propertySearches(request):
         maxpay =request.POST.get('max-price')
         if name == 'all':
             resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
-        
-
+           
         else:
             resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
+
+        if not resultobj:
+            noResult ="No property of such amount"
+        
+
         context ={
-                'resultobj':resultobj
+                'resultobj':resultobj,"result":noResult
             }
         
         return render(request, 'search_result.html',context)  
