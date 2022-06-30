@@ -25,14 +25,11 @@ def home(request):
 
 
 def availableProperty(request):
-    
+
     if request.method =="POST":
         name =request.POST.get('property')
         minpay =request.POST.get('min-price')
         maxpay =request.POST.get('max-price')
-
-       
-
         if name == 'all':
             resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
         
@@ -40,12 +37,8 @@ def availableProperty(request):
         else:
             resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
-
-        if not resultobj: 
-            noProperty = "Out of range. No property of such amount"   
-
         context ={
-                'resultobj':resultobj,'noProperty':noProperty
+                'resultobj':resultobj
             }
         return render(request, 'property_info.html',context)  
 
@@ -61,16 +54,13 @@ def propertySearches(request):
         maxpay =request.POST.get('max-price')
         if name == 'all':
             resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
-          
+        
+
         else:
             resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
-        if not resultobj:
-            noResult ="No property of such amount"
-        
-
         context ={
-                'resultobj':resultobj,'result':noResult
+                'resultobj':resultobj
             }
         
         return render(request, 'search_result.html',context)  
@@ -138,12 +128,8 @@ def availablePropertylp(request):
         minpay =int(request.POST.get('min-price'))
         maxpay =int(request.POST.get('max-price'))
 
-        if not minpay and maxpay:
-            noResult = "No property of such amount.Please cheack again"
-            context ={ 'result':noResult}
-            return render(request,'property_info.html',context)
 
-        elif name == 'all':
+        if name == 'all':
             result= Property.objects.filter(price__range=(minpay, maxpay)).order_by('-price')
 
             #pagination
@@ -160,7 +146,7 @@ def availablePropertylp(request):
                 resultobj = paginator.get_page(paginator.num_pages)
             
                 #resultobj = paginator.get_page(page_number)
-   
+
             
             context ={ 'resultobj':resultobj}
             return render(request,'property_info.html',context)
@@ -180,6 +166,7 @@ def availablePropertylp(request):
                 resultobj = paginator.get_page(paginator.num_pages)
             
            
+            
 
             context ={ 'resultobj':resultobj}
             return render(request,'property_info.html',context)
