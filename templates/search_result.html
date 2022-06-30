@@ -95,9 +95,12 @@
 
 <div class="prod">
     <div class="container">
-        
+        {% if result %}
+        <h1 class="search-result">{{ result }}</h1>
+        {% else %}
         <h1 class="search-result">Search result</h1>
-        <h3>{{ result }}</h3>
+        {% endif %}
+       
         <div class="row my-5">
             {% for result in resultobj %}
             
