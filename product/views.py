@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django_filters.views import FilterView
 from django.utils import timezone
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
+
 from .models import *
 from django.shortcuts import render ,redirect ,get_object_or_404
 from django.views.generic import (
@@ -367,8 +368,42 @@ def add_to_cart(request, pk):
 
 
 def allItems(request):
-    items = Property.objects.all()   
+    items = Property.objects.all() 
 
-    context ={'properties':items}
+    page = request.GET.get('page', 1)
+    paginator = Paginator(items, 10)
+    
+    try:
+        propertyItems = paginator.page(page)
+    except PageNotAnInteger:
+        propertyItems = paginator.page(1)
+    except EmptyPage:
+        propertyItems = paginator.page(paginator.num_pages)
+
+    context ={'propertyItems':propertyItems}
 
     return render(request,'allProperties.html',context) 
+
+
+
+
+ 
+
+
+def index(request):
+    user_list = User.objects.all()
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(user_list, 10)
+    try:
+        users = paginator.page(page)
+    except PageNotAnInteger:
+        users = paginator.page(1)
+    except EmptyPage:
+        users = paginator.page(paginator.num_pages)
+
+    return render(request, 'core/user_list.html', { 'users': users })   
+
+
+
+    
