@@ -362,8 +362,7 @@ def add_to_cart(request, pk):
     else:
         messages.info(request,"You need to login to be able to perform this operation")
         return redirect('accounts:login') 
-        #messages.info(request,"Request unsuccessful! Please login before you can make a request")
-        #return render(request ,'account/login.html') 
+      
 
 
 
@@ -371,7 +370,7 @@ def allItems(request):
     items = Property.objects.all() 
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(items, 10)
+    paginator = Paginator(items, 5)
     
     try:
         propertyItems = paginator.page(page)
@@ -383,8 +382,6 @@ def allItems(request):
     context ={'propertyItems':propertyItems}
 
     return render(request,'allProperties.html',context) 
-
-
 
 
 
