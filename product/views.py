@@ -37,8 +37,13 @@ def availableProperty(request):
         else:
             resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
+
+        if  minpay =="" or maxpay =="":
+            noResult = "Either minimum or maximum amount is missing"
+             
+
         context ={
-                'resultobj':resultobj
+                'resultobj':resultobj,'result':noResult
             }
         return render(request, 'property_info.html',context)  
 
