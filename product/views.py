@@ -25,18 +25,15 @@ def home(request):
 
 
 def availableProperty(request):
-
+    
     if request.method =="POST":
         name =request.POST.get('property')
         minpay =request.POST.get('min-price')
         maxpay =request.POST.get('max-price')
 
-        if  minpay =="" or maxpay =="":
-            noResult = "Either minimum or maximum amount is missing"
-            context ={ 'result':noResult}
-            return render(request,'property_info.html',context)
+       
 
-        elif name == 'all':
+        if name == 'all':
             resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
         
 
@@ -45,7 +42,7 @@ def availableProperty(request):
 
 
         if not resultobj: 
-            noProperty = "No property of such amount"   
+            noProperty = "Out of range. No property of such amount"   
 
         context ={
                 'resultobj':resultobj,'noProperty':noProperty
