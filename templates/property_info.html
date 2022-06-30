@@ -107,7 +107,9 @@
 <div class="search-section">
     {% if result %}
     <h3 class="search-result">{{ result }}</h3>
-    {% else %}
+    {% elif noProperty %}
+    <h1 class="search-result">{{noProperty}}</h1>
+      {% else %}  
     <h1 class="search-result">Search result</h1>
     {% endif %}
     
