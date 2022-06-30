@@ -31,7 +31,7 @@ def availableProperty(request):
         minpay =request.POST.get('min-price')
         maxpay =request.POST.get('max-price')
 
-        if not minpay and maxpay:
+        if not minpay or maxpay:
             noResult = "Either minimum or maximum amount is missing"
             context ={ 'result':noResult}
             return render(request,'property_info.html',context)
