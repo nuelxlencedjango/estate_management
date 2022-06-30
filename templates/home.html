@@ -173,7 +173,7 @@
         <div class="row">
             {% for property in rented %}
             <div class="col">
-               <a href="">
+               <a href="{% url 'product:all_property' %}">
                 <div class="card">
                     <div class="card-img">
                         <img src="{{ property.img.url }}" alt="">

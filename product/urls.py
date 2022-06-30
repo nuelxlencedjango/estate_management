@@ -31,7 +31,8 @@ urlpatterns =[
    path('image_slides/<int:id>/', views.imageSlides, name='image_slides'),
     path('add_item/<int:pk>', views.add_to_cart, name='add_item'),
     path('search_p/' ,views.propertySearches,name="search_p"),
-
+    
+    path('all_property/' ,views.allItems,name="all_property"),
     
 ]
 
