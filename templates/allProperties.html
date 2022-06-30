@@ -75,19 +75,27 @@
    
     
 }
-.contar{
-    margin-left: 30px;
-}
-.pagination{
-    align-items: center;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 300;
-    background: #000;
-    color: #fff;
-    border: 2px rgba(0, 0, 0, 0.2);
+.pagination {
+  display: inline-block;
 }
 
+.pagination li a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination li a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination li a:hover:not(.active) {background-color: #ddd;}
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
   .flex-item-right, .flex-item-left {
@@ -169,7 +177,7 @@
 
   
   {% if propertyItems.has_other_pages %}
-    <ul class="pagination" >
+    <ul class="pagination center" >
       {% if propertyItems.has_previous %}
         <li><a href="?page={{ propertyItems.previous_page_number }}">&laquo;</a></li>
       {% else %}
