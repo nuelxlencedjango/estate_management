@@ -105,8 +105,12 @@
    {% load pagination_tags %}
 
 <div class="search-section">
-    
+    {% if result %}
+    <h3 class="search-result">{{ result }}</h3>
+    {% else %}
     <h1 class="search-result">Search result</h1>
+    {% endif %}
+    
 
    {% for result in resultobj %} 
 <div class="flex-container">
