@@ -36,8 +36,8 @@ SECRET_KEY = 'django-insecure-pc*yv^34wfclo7c1ze5(%@!0vw+^q4c8-m(f)k^ynhyg=cf$^=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['wilmot-real.herokuapp.com']
-
+#ALLOWED_HOSTS = ['wilmot-real.herokuapp.com']
+ALLOWED_HOSTS = ['www.wilmotinnovation.com','wilmotinnovation.com','wilmotestate.herokuapp.com']
 #ALLOWED_HOSTS = ['wilmot-real-estate.herokuapp.com','127.0.0.1']
 
 #Application definition
@@ -95,7 +95,15 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 
 
 DATABASES = {
-   
+      'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':  'd7seceffglck81',
+        'HOST' :'ec2-54-165-184-219.compute-1.amazonaws.com',
+        'PORT':5432,
+        'USER' :'thnrrhldtkmnql',
+        'PASSWORD' :'152664581b0454981780fdfa72c52ff0e12b318bd800da87f729582a6d7772e8',
+
+    }
 }
 
 
@@ -148,6 +156,24 @@ MEDIA_ROOT =os.path.join(BASE_DIR ,'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+
+cloudinary.config( 
+  cloud_name = "dihjcmvi3", 
+  api_key = 719413493487441, 
+  api_secret = "OdUEmhlZnR8xNsGrvTwh7RkPVL4" 
+)
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER ='wilmotinnovationlimited@gmail.com'
+EMAIL_HOST_PASSWORD  = 'ejsczuwgnrpyawla'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 
 
 
