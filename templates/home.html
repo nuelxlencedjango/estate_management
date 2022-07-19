@@ -172,10 +172,10 @@
         <h2 class="listing">FEATURED LISTINGS</h2>
         <div class="row">
             {% for property in rented %}
-            <div class="col">
+            <div class="col owl-carousel owl-theme">
                <a href="{% url 'product:all_property' %}">
-                <div class="card">
-                    <div class="card-img">
+                <div class="card item">
+                    <div class="card-img imgContact">
                         <img src="{{ property.img.url }}" alt="">
                     </div>
                     <div class="card-body">
@@ -192,6 +192,124 @@
     </div>   
 </section>
 
+
+
+
+
+
+
+
+
+<!--<div class="owl-carousel owl-theme">
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot1.jpg" alt="">
+        </div>
+    </div>
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot2.jpg" alt="">
+        </div>
+    </div>
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot3.jpg" alt="">
+        </div>
+    </div>
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot4.jpg" alt="">
+        </div>
+    </div>
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot5.jpg" alt="">
+        </div>
+    </div>
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot6.jpg" alt="">
+        </div>
+    </div>
+   
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot7.jpg" alt="">
+        </div>
+    </div>
+   
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot8.jpg" alt="">
+        </div>
+    </div>
+   
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot9.jpg" alt="">
+        </div>
+    </div>
+   
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot10.jpg" alt="">
+        </div>
+    </div>
+   
+
+     <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot11.jpg" alt="">
+        </div>
+    </div>
+    <div class="item">
+        <div class="imgContact">
+            <img src="/static/images/pic/wilmot12.jpg" alt="">
+        </div>
+    </div>
+   
+</div>-->
+
+<script>
+  $(document).ready(function(){
+    if ($('.owl-carousel').length){
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        //margin:10,
+        nav:true,
+
+       // autoplayTimeout: 2000,
+        autoplay:true,
+    //autoplayTimeout:10000,
+    //autoPlayHoverPause:false,
+        //animateOut: 'slideOutDown',
+        //animateIn: 'flipInX',
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                
+            },
+         
+            600:{
+                items:2,
+               
+            },
+            900:{
+                items:3,
+
+            },
+            1000:{
+                items:4,
+               
+                loop:true,
+            }
+        }
+    })
+}
+})
+
+</script>
 
 
 {% include 'footer.html' %}
