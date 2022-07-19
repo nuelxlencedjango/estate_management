@@ -21,8 +21,11 @@
     font-weight: 200;
     font-family: Arial, Helvetica, sans-serif;
   }
-  .card{
-   
+  .card-image{
+    width: 300px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
   }
    .card img{
      padding: 10px;
@@ -30,6 +33,11 @@
      /*object-fit: contain;*/
      object-fit: cover;
      height: auto;
+
+      position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
     
    }
 </style>
