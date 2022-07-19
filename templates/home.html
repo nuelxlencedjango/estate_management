@@ -170,7 +170,7 @@
 <section class="featured" id="featured">
     <div class="container">
         <h2 class="listing">FEATURED LISTINGS</h2>
-        <div class="row">
+        <div class="row owl-carousel owl-theme">
             {% for property in rented %}
             <div class="col">
                <a href="{% url 'product:all_property' %}">
@@ -191,8 +191,49 @@
         </div>
     </div>   
 </section>
-ß
 
+
+
+<script>
+  $(document).ready(function(){
+    if ($('.owl-carousel').length){
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        //margin:10,
+        nav:true,
+
+       // autoplayTimeout: 2000,
+        autoplay:true,
+    //autoplayTimeout:10000,
+    //autoPlayHoverPause:false,
+        //animateOut: 'slideOutDown',
+        //animateIn: 'flipInX',
+        responsiveClass:true,
+        responsive:{
+            0:{
+                card:1,
+                
+            },
+         
+            600:{
+                card:2,
+               
+            },
+            900:{
+                card:3,
+
+            },
+            1000:{
+                card:5,
+               
+                loop:true,
+            }
+        }
+    })
+}
+})
+
+</script>
 
 {% include 'footer.html' %}
 
