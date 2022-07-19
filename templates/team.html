@@ -21,23 +21,15 @@
     font-weight: 200;
     font-family: Arial, Helvetica, sans-serif;
   }
-  .card-image{
-    width: 300px;
-  height: 250px;
-  position: relative;
-  overflow: hidden;
+  .card{
+   
   }
    .card img{
      padding: 10px;
      border-radius: 10px;
      /*object-fit: contain;*/
      object-fit: cover;
-     height: auto;
-
-      position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
+     height: 100%;
     
    }
 </style>
@@ -62,9 +54,7 @@
         <!--<a href="">-->
         <div class="col">
           <div class="card">
-           <div class="card-image">
             <img src="{% static 'images/pic/yusuf.jpg' %}" class="card-img-top" alt="...">
-           </div>
             <div class="card-body">
               <h5 class="card-title">Broker/Owner</h5>
               <h2>Ismaila Yusuf</h2>
