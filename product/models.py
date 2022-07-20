@@ -30,9 +30,7 @@ class Property(models.Model):
     img = CloudinaryField(blank=True,null=True)
 
     def __str__(self):
-        return self.name 
-
-        
+        return self.name         
 
     class Meta:
         #db_table='accommodation' 
