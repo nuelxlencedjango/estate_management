@@ -50,7 +50,7 @@ admin.site.register(Category)
 admin.site.register(Size)
 admin.site.register(ContactUs,ContactUsAdmin)
 admin.site.register(PropertyItems)
-admin.site.register(FeaturedListing)
+#admin.site.register(FeaturedListing)
 admin.site.register(OurTeam)
 
 
@@ -59,7 +59,15 @@ admin.site.register(OurTeam)
 class FeaturedImageAdmin(admin.StackedInline):
     model = FeaturedImages
 
+@admin.register(FeaturedListing)
+class  FeaturedListingAdmin(admin.ModelAdmin):
+    inlines = [FeaturedImageAdmin]
 
+    class Meta:
+       model = FeaturedListing
 
-admin.site.register(FeaturedImages)
+@admin.register(FeaturedImages)
+class FeaturedImageAdmin(admin.ModelAdmin):
+    pass
+
 
