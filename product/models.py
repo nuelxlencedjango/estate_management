@@ -18,8 +18,8 @@ from cloudinary.models import CloudinaryField
 class Property(models.Model):
     name =models.CharField(max_length=200)
     price = models.IntegerField(default=1000)
-    bedroom = models.CharField(default=1)
-    bathroom =models.CharField(default=1)
+    bedroom = models.CharField(max_length=20,blank=True,null=True)
+    bathroom =models.CharField(max_length=20,blank=True,null=True)
     status =models.CharField(max_length=200,blank=True,null=True) 
     sqft =models.CharField(max_length=10,blank=True,null=True) 
     acre =models.CharField(max_length=10,blank=True,null=True) 
