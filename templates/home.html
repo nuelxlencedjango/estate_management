@@ -173,7 +173,7 @@
         <div class="row owl-carousel owl-theme">
             {% for property in rented %}
             <div class="col">
-               <a href="{% url 'product:all_property' %}">
+               <a href="{% url 'product:feature_gallery' property.id %}">
                 <div class="card">
                     <div class="card-img">
                         <img src="{{ property.img.url }}" alt="">

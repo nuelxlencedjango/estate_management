@@ -27,6 +27,8 @@ urlpatterns =[
     
    path('image_gallery/<int:id>/', views.imageGallery, name='image_gallery'),
 
+    path('feature_gallery/<int:id>/', views.featuredImageGallery, name='feature_gallery'),
+
     path('services/',views.services,name='services'),
    path('image_slides/<int:id>/', views.imageSlides, name='image_slides'),
     path('add_item/<int:pk>', views.add_to_cart, name='add_item'),

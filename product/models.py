@@ -148,6 +148,11 @@ class PropertyImages(models.Model):
 
 
 
+
+
+
+
+
 class OurTeam(models.Model):
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
     name =models.CharField(max_length=200)
@@ -180,6 +185,23 @@ class FeaturedListing(models.Model):
 
         verbose_name_plural='FeaturedListing'
 
+
+
+
+
+
+class FeaturedImages(models.Model):
+    property_details=models.ForeignKey(FeaturedListing,on_delete=models.CASCADE)
+    images_of_property = CloudinaryField('images',blank=True,null=True)
+    #description =models.CharField(max_length=200,blank=True,null=True)
+
+    def __str__(self):
+        return self.property_details.name
+
+    class Meta:
+        #db_table='accommodation' 
+
+        verbose_name_plural='FeaturedImages'
 
 
 

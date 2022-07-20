@@ -86,6 +86,17 @@ def imageGallery(request,id):
     return render(request,'image_gallery.html',context)      
 
 
+
+           
+def featuredImageGallery(request,id):
+    items = get_object_or_404(FeaturedListing,id=id)
+    images = FeaturedImages.objects.filter(property_details=items)
+    number = len(images)
+    context={'images':images, 'items':items,'number':number}
+
+    return render(request,'image_gallery.html',context)  
+
+
            
 def imageSlides(request,id):
     items = get_object_or_404(Property,id=id)
