@@ -52,5 +52,14 @@ admin.site.register(ContactUs,ContactUsAdmin)
 admin.site.register(PropertyItems)
 admin.site.register(FeaturedListing)
 admin.site.register(OurTeam)
+
+
+
+
+class FeaturedImageAdmin(admin.StackedInline):
+    model = FeaturedImages
+
+
+
 admin.site.register(FeaturedImages)
 
