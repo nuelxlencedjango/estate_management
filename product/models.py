@@ -1,5 +1,6 @@
 
 
+from pydoc import describe
 from django.db import models
 
 from django.utils.html import mark_safe
@@ -174,6 +175,7 @@ class FeaturedListing(models.Model):
     price = models.IntegerField(default=1000)
     street_name =models.CharField(max_length=200,blank=True,null=True) 
     location = models.CharField(max_length=200,blank=True,null=True) 
+    description =models.TextField(max_length=500,blank=True,null=True)
    
     img = CloudinaryField(blank=True,null=True)
 
