@@ -50,7 +50,7 @@ admin.site.register(Category)
 admin.site.register(Size)
 admin.site.register(ContactUs,ContactUsAdmin)
 admin.site.register(PropertyItems)
-#admin.site.register(FeaturedListing)
+admin.site.register(FeaturedListing)
 admin.site.register(OurTeam)
 
 
