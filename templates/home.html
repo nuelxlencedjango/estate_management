@@ -167,7 +167,30 @@
   
 
 
-
+<section class="featured" id="featured">
+    <div class="container">
+        <h2 class="listing">FEATURED LISTINGS</h2>
+        <div class="row owl-carousel owl-theme">
+            {% for property in rented %}
+            <div class="col">
+               <a href="{% url 'product:feature_gallery' property.id %}">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{{ property.img.url }}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <p> {{property.street_name}}<br> {{property.location }}</p>
+                        <span> ₦{{property.price}}</span>
+                   
+                    </div>
+                </div>
+               </a>
+            </div>
+           {% endfor %}
+           
+        </div>
+    </div>   
+</section>
 
 
 
