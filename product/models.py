@@ -172,7 +172,7 @@ class OurTeam(models.Model):
 
 class FeaturedListing(models.Model):
     name =models.CharField(max_length=200)
-    price = models.IntegerField(default=1000)
+    price = models.CharField(max_length=200,blank=True,null=True)
     street_name =models.CharField(max_length=200,blank=True,null=True) 
     location = models.CharField(max_length=200,blank=True,null=True) 
     #description =models.TextField(max_length=500,blank=True,null=True)
