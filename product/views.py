@@ -17,37 +17,7 @@ from django.views.generic import (
 
 def home(request):
     rented = FeaturedListing.objects.all()
-   
-
-   
-    def getIp(request):
-
-        address = request.META.get('HTTP_X_FORWARDED_FOR')
-      
-        if address:
-            ip =  address.split(',')[-1].strip()
-        else:
-            ip = request.META.get('REMOTE_ADDR') 
-        return ip
-
-    ip = getIp(request) 
-    u = User(user=ip)
-   
-    result = User.objects.filter(Q(user__icontains=ip))
-    if len(result) == 1:
-        print('user exists')
-
-    elif len(result) > 1:
-        print('user exists')   
-
-    else:
-        u.save()    
-        print('unique user')
-
-    count = User.objects.all().count() 
-   
-
-    context={"rented":rented,'count':count}
+    context={"rented":rented}
     return render(request, 'home.html',context)
 
 
