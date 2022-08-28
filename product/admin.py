@@ -71,3 +71,4 @@ class FeaturedImageAdmin(admin.ModelAdmin):
     pass
 
 
+admin.site.register(User)
