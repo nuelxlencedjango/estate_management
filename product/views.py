@@ -29,7 +29,7 @@ def home(request):
 
     ip = getIp(request)
     u = User(user=ip)
-    result = User.objects.filter(Q(user__incontains=ip))
+    result = User.objects.filter(Q(user__icontains=ip))
     if len(result) == 1:
         pass
     elif len(result) > 1:
