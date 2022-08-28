@@ -28,8 +28,8 @@ def home(request):
         return ip 
 
     ip = getIp(request)
-    u = User(user=ip)
-    result = User.objects.filter(Q(user__icontains=ip))
+    u = User(visitors=ip)
+    result = User.objects.filter(Q(visitors__icontains=ip))
     if len(result) == 1:
         pass
     elif len(result) > 1:
