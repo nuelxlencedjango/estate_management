@@ -49,7 +49,7 @@
     </div>
 </section>
 
-{% if superuser %}
+{% if user.is_superuser %}
 <p>visitors:{{count}}</p>
 {% endif  %}
 
