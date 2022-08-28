@@ -277,6 +277,7 @@ class contactImage(models.Model):
     img = CloudinaryField(blank=True,null=True)
 
 
+
 class User(models.Model):
     visitors =models.TextField(default=None)
 
