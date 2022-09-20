@@ -81,35 +81,25 @@ class OrderItem(models.Model):
 
 
 class Order(models.Model):
-
-    #date=models.DateField(auto_now=False,auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     items = models.ManyToManyField(OrderItem)
     img = CloudinaryField(blank=True,null=True)
-    #start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
     order_id = models.CharField(max_length=50,unique=True, default =None,blank=True,null=True)
    
-   
     def __str__(self):
-
         return self.user.username
 
-   
     class Meta:
-
         verbose_name_plural='Order'
  
 
     def get_total_price(self):
-
         total =0
         for order_item in self.items.all():
 
             total +=order_item.get_final_price()
-               
-
         return total
 
 
@@ -123,27 +113,20 @@ class Order(models.Model):
 
         return (self.get_total_price() * 5)/100
 
-   
     def get_final_amount(self):
         return (self.get_total_price() + self.get_vat()) 
-
-
-
-
-
 
 
 
 class PropertyImages(models.Model):
     property_details=models.ForeignKey(Property,on_delete=models.CASCADE)
     images_of_property = CloudinaryField('images',blank=True,null=True)
-    #description =models.CharField(max_length=200,blank=True,null=True)
+  
 
     def __str__(self):
         return self.property_details.name
 
     class Meta:
-        #db_table='accommodation' 
 
         verbose_name_plural='PropertyImages'    
 

@@ -31,14 +31,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-pc*yv^34wfclo7c1ze5(%@!0vw+^q4c8-m(f)k^ynhyg=cf$^='
+SECRET_KEY=os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG=os.environ.get('DEBUG')
 
-#ALLOWED_HOSTS = ['wilmot-real.herokuapp.com']
+
 ALLOWED_HOSTS = ['www.wilmotinnovation.com','wilmotinnovation.com','wilmotestate.herokuapp.com']
-#ALLOWED_HOSTS = ['wilmot-real-estate.herokuapp.com','127.0.0.1']
+
 
 #Application definition
 
@@ -97,11 +97,11 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 DATABASES = {
       'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  'd7seceffglck81',
-        'HOST' :'ec2-54-165-184-219.compute-1.amazonaws.com',
-        'PORT':5432,
-        'USER' :'thnrrhldtkmnql',
-        'PASSWORD' :'152664581b0454981780fdfa72c52ff0e12b318bd800da87f729582a6d7772e8',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'HOST' :os.environ.get('DATABASE_HOST'),
+        'PORT':os.environ.get('DATABASE_PORT'),
+        'USER' :os.environ.get('DATABASE_USER'),
+        'PASSWORD' :os.environ.get('DATABASE_PASSWORD'),
 
     }
 }
@@ -158,9 +158,9 @@ MEDIA_ROOT =os.path.join(BASE_DIR ,'media')
 
 
 cloudinary.config( 
-  cloud_name = "dihjcmvi3", 
-  api_key = 719413493487441, 
-  api_secret = "OdUEmhlZnR8xNsGrvTwh7RkPVL4" 
+   cloud_name=os.environ.get('CLOUD_NAME'),
+  api_key=os.environ.get('API_KEY'), 
+  api_secret=os.environ.get('API_SECRET'), 
 )
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -168,19 +168,19 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER ='wilmotinnovationlimited@gmail.com'
-EMAIL_HOST_PASSWORD  = 'ejsczuwgnrpyawla'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST=os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT=os.environ.get('EMAIL_PORT')
+EMAIL_USE_TLS=os.environ.get('EMAIL_USE_TLS')
+EMAIL_BACKEND=os.environ.get('EMAIL_BACKEND')
 
 
 
 django_heroku.settings(locals())
 
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD=os.environ.get('DEFAULT_AUTO_FIELD')
 
 
 if os.getcwd() == '/app':

@@ -51,9 +51,7 @@ class CustomerForm(forms.ModelForm):
     model =Customer
     fields =('phone',)
 
-    #def __init__(self ,*args ,**kwargs):
-    #    super(CustomerForm ,self).__init__(*args ,**kwargs)
-    #    self.fields['location'].empty_label ="Select your area"
+ 
 
 
 

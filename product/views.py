@@ -12,8 +12,10 @@ from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from .models import *
 from django.shortcuts import render ,redirect ,get_object_or_404
-from django.views.generic import (
-    ListView ,DetailView, CreateView, UpdateView ,DeleteView,TemplateView )
+#from django.views.generic import (ListView ,DetailView, CreateView, UpdateView ,DeleteView,TemplateView )
+
+
+
 
 def home(request):
     rented = FeaturedListing.objects.all()
@@ -45,9 +47,6 @@ def home(request):
 
 
 
-
-
-
 def availableProperty(request):
 
     if request.method =="POST":
@@ -57,15 +56,8 @@ def availableProperty(request):
         if name == 'all':
             resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
         
-
         else:
             resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
-
-
-        #if  minpay =="" or maxpay =="":
-         #   noResult = "Either minimum or maximum amount is missing"
-          
-             
 
         context ={
                 'resultobj':resultobj,#'result':noResult
@@ -77,7 +69,6 @@ def availableProperty(request):
 
 
 def propertySearches(request):
-
     if request.method =="POST":
         name =request.POST.get('property')
         minpay =request.POST.get('min-price')
@@ -162,9 +153,6 @@ def availablePropertylp(request):
 
     if request.method =="GET":
         name =request.POST.get('property')
-
-       # bed =request.POST.get('bedroom')
-        #bath=request.POST.get('bathroom')
 
         minpay =int(request.POST.get('min-price'))
         maxpay =int(request.POST.get('max-price'))
@@ -314,16 +302,6 @@ def contact_us(request):
 
 
 
-    #ns =['manago','banana','orange','apple','cashew','groundnut']
-    #if request.method =='POST':
-     #   fruits = request.POST.getlist('ns')
-      #  print(fruits)
-       # if fruits == 'manago':
-        #    print('you selected manago')
-
-    #return render(request, 'contactus.html')*/
-
-
 
 
 def services(request):
@@ -332,21 +310,6 @@ def services(request):
 
 
 
-#filter and pagination
-
-
-def show_available_properties(request):
-    context ={}
-    filtered_items = PropertyFilters(request.GET, queryset=Property.objects.all())
-
-    context['filtered_items']=filtered_items
-
-    paginated_filtered_items = Paginator(filtered_items.qs, 5)
-    page_number = request.GET.get('page')
-    resultobj = paginated_filtered_items.get_page(page_number)
-    context ={'resultobj':resultobj}
-
-    return render(request,'property_info.html',context)
 
 
 

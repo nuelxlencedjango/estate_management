@@ -1,12 +1,7 @@
 from django.contrib import admin
-from numpy import product
 
-# Register your models here.
 
 from .models import *
-
-
-
 
 # Register your models here.
 from django.contrib.auth.admin import UserAdmin
@@ -22,10 +17,8 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ['user','items','img','ordered_date', 'ordered','order_id']
 
 
-
 class OrderItemAdmin(admin.ModelAdmin):
     list_display = ['user','product','quantity','status', 'description','address','date_created']
-
 
 
 class PropertyImageAdmin(admin.StackedInline):
@@ -50,7 +43,6 @@ admin.site.register(Category)
 admin.site.register(Size)
 admin.site.register(ContactUs,ContactUsAdmin)
 admin.site.register(PropertyItems)
-#admin.site.register(FeaturedListing)
 admin.site.register(OurTeam)
 
 
