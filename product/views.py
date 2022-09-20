@@ -12,12 +12,15 @@ from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from .models import *
 from django.shortcuts import render ,redirect ,get_object_or_404
+
+from django.core.management.utils import get_random_secret_key
 #from django.views.generic import (ListView ,DetailView, CreateView, UpdateView ,DeleteView,TemplateView )
 
 
 
 
 def home(request):
+    print(get_random_secret_key())
     rented = FeaturedListing.objects.all()
 
     def getIp(request):
