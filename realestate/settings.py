@@ -177,8 +177,6 @@ EMAIL_USE_TLS=True                                          #os.environ.get('WIL
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'                                           #os.environ.get('WILMOT_EMAIL_BACKEND')
 
 
-
-
 django_heroku.settings(locals())
 
 
