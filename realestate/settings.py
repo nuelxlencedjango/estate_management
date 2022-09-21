@@ -37,7 +37,7 @@ SECRET_KEY='*d8ejn)%wq8l7ptet*ua6)+ak8p&4p&9&gz41yk-fafxj%a%_!'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG=os.environ.get('DEBUG')
+DEBUG=False #os.environ.get('DEBUG')
 
 
 ALLOWED_HOSTS = ['www.wilmotinnovation.com','wilmotinnovation.com','wilmotestate.herokuapp.com']
@@ -100,11 +100,17 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 DATABASES = {
       'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'HOST' :os.environ.get('DATABASE_HOST'),
-        'PORT':os.environ.get('DATABASE_PORT'),
-        'USER' :os.environ.get('DATABASE_USER'),
-        'PASSWORD' :os.environ.get('DATABASE_PASSWORD'),
+        'NAME': 'd7seceffglck81',
+        #os.environ.get('DATABASE_NAME'),
+        'HOST' :'ec2-54-165-184-219.compute-1.amazonaws.com',
+        
+        #os.environ.get('DATABASE_HOST'),
+        'PORT':5432,
+        #os.environ.get('DATABASE_PORT'),
+        'USER' :'thnrrhldtkmnql',
+        #os.environ.get('DATABASE_USER'),
+        'PASSWORD' :'152664581b0454981780fdfa72c52ff0e12b318bd800da87f729582a6d7772e8',
+        #os.environ.get('DATABASE_PASSWORD'),
 
     }
 }
@@ -161,9 +167,12 @@ MEDIA_ROOT =os.path.join(BASE_DIR ,'media')
 
 
 cloudinary.config( 
-   cloud_name=os.environ.get('CLOUD_NAME'),
-  api_key=os.environ.get('API_KEY'), 
-  api_secret=os.environ.get('API_SECRET'), 
+   cloud_name='dihjcmvi3',
+   #os.environ.get('CLOUD_NAME'),
+  api_key='719413493487441',
+  #os.environ.get('API_KEY'), 
+  api_secret='OdUEmhlZnR8xNsGrvTwh7RkPVL4'
+  #os.environ.get('API_SECRET'), 
 )
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
