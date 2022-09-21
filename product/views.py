@@ -17,26 +17,9 @@ from django.shortcuts import render ,redirect ,get_object_or_404
 #from django.views.generic import (ListView ,DetailView, CreateView, UpdateView ,DeleteView,TemplateView )
 
 
-def port(request):
-    try:
-      menu = 'disabled'
-      prs = Projects.objects.all()      
-    except:
-      import sys
-      print(sys.exc_info())
-    return render(request, 'port1.html', {"prs": prs, "menu0": menu})
-
 
 
 def home(request):
-
-    try:
-      menu = 'disabled'
-      #prs = Projects.objects.all()      
-    except:
-      import sys
-      print(sys.exc_info())
-      
     #print(get_random_secret_key())
     rented = FeaturedListing.objects.all()
 
@@ -164,7 +147,6 @@ def availablePropertypp(request):
     context ={ 'resultobj':resultobj}
     return render(request,'property_info.html',context)
     
-
 
 
 
