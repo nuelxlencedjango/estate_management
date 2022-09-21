@@ -171,8 +171,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 EMAIL_HOST=os.environ.get('WILMOT_EMAIL_HOST')
-EMAIL_HOST_USER=os.environ.get('WILMOT_EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD=os.environ.get('WILMOT_EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER='wilmotinnovationlimited@gmail.com'        #os.environ.get('WILMOT_EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD='ugeqeplkaxvamjhp'                                      #os.environ.get('WILMOT_EMAIL_HOST_PASSWORD')
 EMAIL_PORT=os.environ.get('WILMOT_EMAIL_PORT')
 EMAIL_USE_TLS=os.environ.get('WILMOT_EMAIL_USE_TLS')
 EMAIL_BACKEND=os.environ.get('WILMOT_EMAIL_BACKEND')
