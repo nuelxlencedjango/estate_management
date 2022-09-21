@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY=os.environ.get('SECRET_KEY')
-print(SECRET_KEY)
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -170,19 +170,20 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
-EMAIL_HOST=os.environ.get('EMAIL_HOST')
-EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_PORT=os.environ.get('EMAIL_PORT')
-EMAIL_USE_TLS=os.environ.get('EMAIL_USE_TLS')
-EMAIL_BACKEND=os.environ.get('EMAIL_BACKEND')
+EMAIL_HOST=os.environ.get('WILMOT_EMAIL_HOST')
+EMAIL_HOST_USER=os.environ.get('WILMOT_EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=os.environ.get('WILMOT_EMAIL_HOST_PASSWORD')
+EMAIL_PORT=os.environ.get('WILMOT_EMAIL_PORT')
+EMAIL_USE_TLS=os.environ.get('WILMOT_EMAIL_USE_TLS')
+EMAIL_BACKEND=os.environ.get('WILMOT_EMAIL_BACKEND')
+
 
 
 
 django_heroku.settings(locals())
 
 
-DEFAULT_AUTO_FIELD=os.environ.get('DEFAULT_AUTO_FIELD')
+DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
 
 
 if os.getcwd() == '/app':
