@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY='*d8ejn)%wq8l7ptet*ua6)+ak8p&4p&9&gz41yk-fafxj%a%_!'
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -97,12 +97,12 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 
 DATABASES = {
       'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd7seceffglck81',
-        'HOST' :'ec2-54-165-184-219.compute-1.amazonaws.com',
-        'PORT':5432,
-        'USER' :'thnrrhldtkmnql',
-        'PASSWORD' :'152664581b0454981780fdfa72c52ff0e12b318bd800da87f729582a6d7772e8',
+      
+      
+       
+      
+       
+    
        
 
     }
@@ -172,12 +172,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
-EMAIL_HOST='smtp.gmail.com'                           
-EMAIL_HOST_USER='wilmotinnovationlimited@gmail.com'       
-EMAIL_HOST_PASSWORD='ugeqeplkaxvamjhp'                                   
-EMAIL_PORT=587                                          
-EMAIL_USE_TLS=True                                      
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'                            
 
 
 django_heroku.settings(locals())
