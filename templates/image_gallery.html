@@ -118,16 +118,12 @@
   
   /* Six columns side by side */
   .columy {
-  /*float: left;
-  width: 150px;
-  display: flex;*/
+ 
 
   position: relative;
    
     width: 80px;
     height: 70px;
-    /*background-color: #fff;
-    border: 1px solid #f0f0f0;*/
     line-height: 65px;
     vertical-align: middle;
     text-align: center;
@@ -263,7 +259,7 @@
         <div class="container">
      <!---<div class="numbertext">1 / 6</div>-->
         <img src="{{p.images_of_property.url}}" style="width:100%">
-        <!--<h1>{{p.property_details.listing_id}}</h1>-->
+     
         </div>
     </div>
     {% endfor %}
@@ -274,10 +270,7 @@
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
   
-    <!-- Image text -->
-    <!--<div class="caption-container">
-      <p id="caption"></p>
-    </div>-->
+   
     <div class="caption-text">
         <p id="capt">Please click on the images below</p>
       </div>
@@ -301,10 +294,7 @@
   
   
     
-  
-  
-
-  
+  <!--property detail-->
   <div class="found">
       
       <h1 class="found-item">Property Details</h1>
@@ -334,7 +324,7 @@
     <div class="property-information">
         <h4>Property ID</h4>
         <h3 class="right">{{ items.listing_id }}</h3>
-        <!--<h3 class="right">Listing ID50044316PBMLS-RETS</h3>-->
+      
     </div>  
     <div class="property-information">
         <h4>Release Date</h4>
@@ -369,6 +359,7 @@
   showSlides(slideIndex = n);
   }
   
+  //sliders
   function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");

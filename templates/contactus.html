@@ -4,23 +4,11 @@
 {% load static %}
 {% block title %}ContactUs{% endblock %}
 {% block content %}
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
-
 
 
 
 <style>
-   /* html,body {
-        display: grid;
-        place-items: center;
-        text-align: center;
-        background-color: #f2f2f2;
-        margin: 0;
-        padding: 0;
-    }*/
+
     .want_to_buy{
         display: none;
     }
@@ -157,7 +145,7 @@
 </style>
 
 
-
+<!--contact information-->
 <div class="container contactMe" >
     <div class="row">
         <div class="col-md-6">
@@ -170,8 +158,7 @@
                 <div class="card-phone">
                     <h2>phone:</h2>
                     <p>+2347044110261</p>
-                    <!--<p>+234432.714.3456 (mobile)</p>
-                    <p>+234432.714 (fax)</p>-->
+                    
                 </div>
                 <div class="card-phone">
                  <h2>email:</h2>
@@ -198,7 +185,7 @@
             <div class="card-message">
 
               
-
+                <!--contact form-->
                 <form action="" method="post" class="team-body-side animate__animated animate__backInRight">
                     {% csrf_token %}
                     <div class="mb-4 mess" style="padding-top: 30px; color: rgb(254,45,45);">
@@ -283,7 +270,7 @@
 
 
 
-
+<!--carousel images-->
 
 <div class="owl-carousel owl-theme">
     <div class="item">
@@ -380,15 +367,18 @@
                 items:1,
                 
             },
+            // 2 images dispalyed at 600 screen size
          
             600:{
                 items:2,
                
             },
+            // 3 images displayed at 900 screen size
             900:{
                 items:3,
 
             },
+            //5 images @ 1000 size
             1000:{
                 items:5,
                

@@ -32,12 +32,12 @@
 </style>
 
 
-
+<!--error messages -->
 {% for message in messages %}
 <h4 id="messages">{{ message }}</h4>
 {% endfor %}
 
-
+<!--user registration details-->
 
 <div id="form2" class="container form2" style="width: 500px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
 
@@ -93,7 +93,7 @@
 {{ form2.errors }}
 
 
-
+<!--login link-->
 <div class="mt-4">
   <div class="d-flex justify-content-center links" style="color:black; margin-bottom: 30px;">
       Already Have An Account? &nbsp; <a href="{% url 'accounts:login' %}"

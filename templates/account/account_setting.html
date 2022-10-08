@@ -36,19 +36,19 @@
 
 
       
-
+<!--login details -->
 <nav class="navbar navbar-expand-lg navbar-dark "  style="margin-top: 50px; background-color: #7abecc; padding: 20px; ">
 	<div class="container-fluid">
 	  <a href="{% url 'accounts:dashboard' %}" class="navbar-brand btn btn-dark" style="font-size: 22px;" >Dashboard</a>
 
 	 
-	  <!-- Example single danger button -->
+	
 
 	  <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" style="align-items: center;">
 		<div class="btn-group">
 			<button type="button" class="btn btn-dark" style="font-size: 22px;">My Account</button>
 			<button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-			  <!--<span class="visually-hidden">Toggle Dropdown</span>-->
+			 
 			</button>
 			<ul class="dropdown-menu" style="background: #fff; color: #000; width: 250px; color: #fff;">
 
@@ -65,7 +65,7 @@
 
 
 
-
+<!--account update-->
   <div class="container">
     <div class="row">
         <div class="col-md-12" style="margin-top: 20px;">
@@ -81,7 +81,7 @@
 
 
 {% if user %}
-
+<!--basic detail and additional information-->
 <div id="form2" class="container form2" style="width: 700px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
     <h3 style="margin-top: 20px 20px; color: #0076AD;">Account Setting Form</h3>
          
@@ -96,15 +96,13 @@
               </div>
               <div class="col-md-12">
                 <label for="inputPassword4" class="form-label">First name</label>
-                <!--<input type="text" class="form-control" id="inputfirst_name" name="{{user.first_name}}"  >-->
-             
+               
                     {{ form1.first_name}}
           
               </div>
               <div class="col-md-12">
                 <label for="inputPassword4" class="form-label">Last name</label>
                 {{ form1.last_name}}
-                <!--<input type="text" class="form-control" id="inputlast_name" name="{{user.last_name}}"  >-->
               </div>
           
             <div class="col-md-12">
@@ -166,13 +164,12 @@
 
    
 
- <!-- Example single danger button -->
+
 
  <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" style="align-items: center;">
     <div class="btn-group">
         <button type="button" class="btn btn-dark">My Account</button>
         <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-          <!--<span class="visually-hidden">Toggle Dropdown</span>-->
         </button>
         <ul class="dropdown-menu" style="background: #fff; color: #000; width: 250px; color: #fff;">
 

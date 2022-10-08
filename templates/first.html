@@ -50,9 +50,6 @@
     <style>
         .menu {
             margin-top: 30px;
-          /*padding: 10px 16px;*
-          /*background: #555;*/
-          /*color: #f1f1f1;*/
         }
         .menu #prop-mgn{
           margin-left: 100px;
@@ -73,17 +70,6 @@
    padding-top: 102px;
         }
 
-
-
-
-
-
-
-
-
-
-
-
 /* chat icon messenger  sidebar -right */
 .chat-point {
 position: fixed;
@@ -94,9 +80,7 @@ transform: translateY(-50%);
 right: 28px;
 cursor: pointer;
 }
-  /*.chat-point{
-        cursor: pointer;
-      }*/
+
 .chat-point-inner{
 display: flex; 
 align-items: center;
@@ -111,11 +95,6 @@ align-items: center;
 border-radius:50px !important;
 }
 
-
-
-
-
-
 .chat-popping
 {
   display: none;
@@ -126,8 +105,6 @@ border-radius:50px !important;
 -ms-transform: translateY(-50%);
 transform: translateY(-50%);
 
-
-    /*z-index: 9;*/
 }
 
 .chat-body{
@@ -171,7 +148,7 @@ transform: translateY(-50%);
     font-size: 22px;
     border-radius: 15px;
     text-transform: capitalize;
-   /* background-color: rgb(68, 190, 199);*/
+   
   }
   .container .button-body button a:hover{
     background-color: #fff;
@@ -187,14 +164,11 @@ transform: translateY(-50%);
     color: #fff;
   }
 
-
-
-
         </style>
 
 
 
-
+<!--navbar-->
 
 <div class="header" id="myHeader">
 
@@ -209,10 +183,6 @@ transform: translateY(-50%);
 
    
         <ul class="nav-links">
-            <!-- USING CHECKBOX HACK -->
-       <!--<input type="checkbox" id="checkbox_toggle" />
-       <label for="checkbox_toggle" class="hamburger" onclick="checkToggle()">&#9776;</label>-->
-
        <div class="menu" id="menu">
            
         <li><a href="{% url 'product:home' %}">Home</a></li>
@@ -234,6 +204,7 @@ transform: translateY(-50%);
   
     <body>
      
+      <!--block content-->
 
       <div class="overall" id="overall">
         {% block content %}
@@ -241,14 +212,8 @@ transform: translateY(-50%);
       </div>
 
  
-  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-    
-<!-- The social media icon bar -->
- 
 
-
-
-
+<!--facebook link-->
 
   <div class="chat-point" id="messenger" onclick="openMessenger()">
     <div >
@@ -298,7 +263,7 @@ transform: translateY(-50%);
 
 
   
-
+<!--javascriot links-->
 
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

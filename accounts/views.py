@@ -1,13 +1,12 @@
 
 # Create your views here.
 from django.shortcuts import render,redirect
-#from django.http import HttpResponse
-#from django.forms import inlineformset_factory
+
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate ,login,logout
 from django.contrib.auth.decorators import login_required
-#from .decorators import unauthenticated_user, allowed_users, admin_only
+
 from django.contrib.auth import views as auth_views
 
 from django.contrib.auth.models import Group
@@ -20,20 +19,23 @@ from .forms import *
 
 
 
-
+#registraion function
 def registerPage(request):
+    #get forms 
     if request.method == 'POST':
         form1 = CreateUserForm(request.POST)
         form2 = CustomerForm(request.POST)
-        #item = request.POST.get('result.id')
-
+       
+        #if form1 and form 2 are without errors
         if form1.is_valid() and form2.is_valid():
+
+            #save form1
             user = form1.save()
+             #dont save yet
             profile = form2.save(commit=False)
+            #reference user before saving 
             profile.user =user
             profile.save()
-
-            #id = form1.cleaned_data.get('id')
 
             messages.success(request, 'Account successfully created!Please login with your detail ')
 
@@ -53,57 +55,55 @@ def registerPage(request):
 
 
 
-#@unauthenticated_user
+#login function
 def loginPage(request):
-    
     if request.method == 'POST':
+
+        #getting login details
         username = request.POST.get('username')
         password =request.POST.get('password')
-        
+        #authenticate the user
         user = authenticate(request, username=username, password=password)
-
+        
+        #user exists
         if user is not None:
-           
             if Customer.objects.filter(user = user).exists():
                 login(request,user)
                 return redirect('accounts:dashboard')
-           
+            
+            # if no such user
             else:
                 messages.info(request, 'Information not found! Either Username OR password is incorrect')
-    
-
     
     return render(request, 'account/login.html')
 
 
 
-
+#dashboard 
 def dashboard(request):
-
+    
+    # displaying all properties selected by the user in his dashboard
     if Order.objects.filter(user=request.user, ordered =False).exists():
         order = Order.objects.get(user=request.user, ordered=False)
+
         context={
             'order':order
         }
         return render(request, 'account/dashboard.html',context)
-
-    #messages.info(request, 'You have no order in your wishlist')   
+ 
     return render(request,'account/dashboard.html')    
 
 
 
-
-
-
-
-
-
+#update user information
 def update_info(request):
     if request.method =="POST":
-
+        
+        # form1 - basic user detail; and form 2- additional information
         form1 = UserUpdateForm(request.POST, instance = request.user)
         form2 = CustomerUpdateForm(request.POST, request.FILES,instance = request.user.customer)
-
+        
+        # save if both forms are valid
         if form1.is_valid() and form2.is_valid():
             form1.save()
             form2.save()
@@ -111,7 +111,7 @@ def update_info(request):
             messages.success(request,"Account Successfully Updated")
             return redirect('product:dashboard')
             
-           
+        #if not valid,show warning message   
         else:
             messages.warning(request,"Not updated")
     
@@ -125,7 +125,7 @@ def update_info(request):
 
 
 
-
+#log out
 def logoutPage(request):
     logout(request)
     return redirect('product:home')

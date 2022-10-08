@@ -32,15 +32,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY='*d8ejn)%wq8l7ptet*ua6)+ak8p&4p&9&gz41yk-fafxj%a%_!'
-#os.environ.get('SECRET_KEY')
-
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG=False #os.environ.get('DEBUG')
+DEBUG=False 
 
 
-ALLOWED_HOSTS = ['www.wilmotinnovation.com','wilmotinnovation.com','wilmotestate.herokuapp.com']
+ALLOWED_HOSTS = ['www.wilmotinnovation.com','wilmotinnovation.com','wilmotestate.herokuapp.com','127.0.0.1']
 
 
 #Application definition
@@ -101,16 +99,11 @@ DATABASES = {
       'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd7seceffglck81',
-        #os.environ.get('DATABASE_NAME'),
         'HOST' :'ec2-54-165-184-219.compute-1.amazonaws.com',
-        
-        #os.environ.get('DATABASE_HOST'),
         'PORT':5432,
-        #os.environ.get('DATABASE_PORT'),
         'USER' :'thnrrhldtkmnql',
-        #os.environ.get('DATABASE_USER'),
         'PASSWORD' :'152664581b0454981780fdfa72c52ff0e12b318bd800da87f729582a6d7772e8',
-        #os.environ.get('DATABASE_PASSWORD'),
+       
 
     }
 }
@@ -168,23 +161,23 @@ MEDIA_ROOT =os.path.join(BASE_DIR ,'media')
 
 cloudinary.config( 
    cloud_name='dihjcmvi3',
-   #os.environ.get('CLOUD_NAME'),
+ 
   api_key='719413493487441',
-  #os.environ.get('API_KEY'), 
+
   api_secret='OdUEmhlZnR8xNsGrvTwh7RkPVL4'
-  #os.environ.get('API_SECRET'), 
+ 
 )
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
 
-EMAIL_HOST='smtp.gmail.com'                            #os.environ.get('WILMOT_EMAIL_HOST')
-EMAIL_HOST_USER='wilmotinnovationlimited@gmail.com'        #os.environ.get('WILMOT_EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD='ugeqeplkaxvamjhp'                                      #os.environ.get('WILMOT_EMAIL_HOST_PASSWORD')
-EMAIL_PORT=587                                            #os.environ.get('WILMOT_EMAIL_PORT')
-EMAIL_USE_TLS=True                                          #os.environ.get('WILMOT_EMAIL_USE_TLS')
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'                                           #os.environ.get('WILMOT_EMAIL_BACKEND')
+EMAIL_HOST='smtp.gmail.com'                           
+EMAIL_HOST_USER='wilmotinnovationlimited@gmail.com'       
+EMAIL_HOST_PASSWORD='ugeqeplkaxvamjhp'                                   
+EMAIL_PORT=587                                          
+EMAIL_USE_TLS=True                                      
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'                            
 
 
 django_heroku.settings(locals())

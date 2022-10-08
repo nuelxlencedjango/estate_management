@@ -25,11 +25,14 @@
 </style>
 
 
-
+<!--error messages -->
 
 {% for message in messages %}
-{{ message}}
+<h4 id="messages">{{ message }}</h4>
 {% endfor %}
+
+
+<!--login details-->
 
 <div id="form2" class="container form2" style="width: 500px;  background-color: #e9ecef; align-items: center; text-align: center; margin-top: 50px;">
 
@@ -79,11 +82,6 @@
 
    
 
-
-
-{% for message in messages %}
-<h4 id="messages">{{ message }}</h4>
-{% endfor %}
 
 
 

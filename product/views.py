@@ -13,16 +13,14 @@ from django.db.models import Q
 from .models import *
 from django.shortcuts import render ,redirect ,get_object_or_404
 
-#from django.core.management.utils import get_random_secret_key
-#from django.views.generic import (ListView ,DetailView, CreateView, UpdateView ,DeleteView,TemplateView )
-
 
 
 
 def home(request):
-    #print(get_random_secret_key())
+    #listing featuredlisting objects
     rented = FeaturedListing.objects.all()
 
+   #get the ip address of visitors,split it where there's (;) comma
     def getIp(request):
         address = request.META.get('HTTP_X_FORWARDED_FOR')
         if address:
@@ -32,6 +30,8 @@ def home(request):
             ip = request.META.get('REMOTE_ADDR')
         return ip 
 
+
+    #each ip address should be counted once
     ip = getIp(request)
     u = User(visitors=ip)
     result = User.objects.filter(Q(visitors__icontains=ip))
@@ -43,43 +43,50 @@ def home(request):
     else:
         u.save()
 
-    count = User.objects.all().count()    
+    #count the number of visitor
+    count = User.objects.all().count()   
 
+    #display
     context={"rented":rented,"count":count}
     return render(request, 'home.html',context)
 
 
 
 def availableProperty(request):
-
+    
+    #search properties based on  min price and max price
     if request.method =="POST":
         name =request.POST.get('property')
         minpay =request.POST.get('min-price')
         maxpay =request.POST.get('max-price')
+        
+        # if property chosen is all
         if name == 'all':
             resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
-        
+         
+         #if property chosen is not all
         else:
             resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
-        context ={
-                'resultobj':resultobj,#'result':noResult
-            }
+        context ={'resultobj':resultobj,}
         return render(request, 'property_info.html',context)  
 
 
 
-
-
+#search properties in a different page
 def propertySearches(request):
+
+    #getting the parameters for search
     if request.method =="POST":
         name =request.POST.get('property')
         minpay =request.POST.get('min-price')
         maxpay =request.POST.get('max-price')
+
+        #if property selected is all
         if name == 'all':
             resultobj= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
         
-
+        # if property selected is not all
         else:
             resultobj= Property.objects.filter(price__range=(minpay, maxpay),name=name)#.order_by('-price')
 
@@ -91,20 +98,23 @@ def propertySearches(request):
 
 
 
-  
 
-           
+  #image gallery       
 def imageGallery(request,id):
+    # if property selected exist,store in items or display 404 if not available
     items = get_object_or_404(Property,id=id)
+
+    # admin.StackedInline at work - A model linked to another to posses the properties
     images = PropertyImages.objects.filter(property_details=items)
+
     number = len(images)
     context={'images':images, 'items':items,'number':number}
 
     return render(request,'image_gallery.html',context)      
 
 
-
-           
+ 
+ # getting multiple images of the properties          
 def featuredImageGallery(request,id):
     items = get_object_or_404(FeaturedListing,id=id)
     images = FeaturedImages.objects.filter(property_details=items)
@@ -123,117 +133,14 @@ def imageSlides(request,id):
     return render(request,'image_slides.html',context)  
 
    
-def availablePropertypp(request):
-    if request.method =="GET":
-
-        name =request.POST.get('property')
-        minpay =request.POST.get('min-price')
-        maxpay =request.POST.get('max-price')
-
-        if name == 'all':
-
-            result= Property.objects.filter(price__range=(minpay, maxpay))#.order_by('-price')
-
-
-            #items = Property.objects.all()
-            p = Paginator(result,5)
-            number = request.GET.get('page',1)
-            resultobj = p.get_page(number)
-
-            context ={ 'resultobj':resultobj}
-            return render(request,'property_info.html',context)
-
-
-    context ={ 'resultobj':resultobj}
-    return render(request,'property_info.html',context)
-    
-
-
-
-def availablePropertylp(request):
-
-    if request.method =="GET":
-        name =request.POST.get('property')
-
-        minpay =int(request.POST.get('min-price'))
-        maxpay =int(request.POST.get('max-price'))
-
-
-        if name == 'all':
-            result= Property.objects.filter(price__range=(minpay, maxpay)).order_by('-price')
-
-            #pagination
-            page_number = request.GET.get('page')
-            paginator = Paginator(result, 10)
-
-            try:
-               #users = paginator.page(page)
-               resultobj = paginator.get_page(page_number)
-            except PageNotAnInteger:
-                resultobj = paginator.get_page(1)
-            except EmptyPage:
-
-                resultobj = paginator.get_page(paginator.num_pages)
-            
-                #resultobj = paginator.get_page(page_number)
-
-            
-            context ={ 'resultobj':resultobj}
-            return render(request,'property_info.html',context)
-        
-        else:
-
-            result= Property.objects.filter(price__range=(minpay, maxpay),name=name).order_by('-price')
-            page_number = request.GET.get('page')
-            paginator = Paginator(result, 10)
-
-            try:
-                resultobj = paginator.get_page(page_number)
-            except PageNotAnInteger:
-                resultobj = paginator.get_page(1)
-
-            except EmptyPage:
-                resultobj = paginator.get_page(paginator.num_pages)
-            
-           
-            
-
-            context ={ 'resultobj':resultobj}
-            return render(request,'property_info.html',context)
-    
-
-    else:
-        resultobj =Property.objects.all().order_by('-price')
-        page_number = request.GET.get('page')
-        paginator = Paginator(result, 10)
-        try:
-            resultobj = paginator.get_page(page_number)
-        except PageNotAnInteger:
-
-            resultobj = paginator.get_page(1)
-        except EmptyPage:
-            resultobj = paginator.get_page(paginator.num_pages)  
-
-        context ={
-            'resultobj':resultobj
-        }
-        return render(request, 'property_info.html',context)
-
-
-
-
 
 
 def team(request):
     return render(request, 'team.html')
 
 
-
-
 def property(request):
     return render(request, 'property.html')
-
-
 
 
 def management(request):
@@ -241,16 +148,8 @@ def management(request):
 
 
 
-
-
 def marketing(request):
     return render(request, 'marketing.html')
-
-
-
-
-
-
 
 
 def testimonial(request):
@@ -258,23 +157,20 @@ def testimonial(request):
 
 
 
-
+#emai sending from the web
 def contact_us(request):
+    #select a property 
     items = PropertyItems.objects.all()
 
     if request.method =='POST':
+        #get message ,message tittle,phone number,email address and the property selected
         message_name = request.POST['message-name']
         message_phone = request.POST.get("message-phone" ,False)
         message_email = request.POST['message-email']
         message  = request.POST['message']
-       # products_name =request.POST['property']
         products = request.POST.getlist('property')
 
-
-
-
         # seend a mail
-        # the order in which  to  pass arugument in the parameters is important
         send_mail(
             message_name , # email subject
             #message_phone, #phone no
@@ -285,8 +181,6 @@ def contact_us(request):
             [settings.EMAIL_HOST_USER], # recipient, to email
         fail_silently=False)
         
-        
-        #contacts = ContactUs(name=message_name ,phone=message_phone ,email=message_email ,message=message)
         contacts = ContactUs()
         contacts.name =message_name
         contacts.phone = message_phone
@@ -303,37 +197,30 @@ def contact_us(request):
 
 
 
-
-
 def services(request):
     return render(request,'services.html')
 
 
 
-
-
-
-
-
+#adding to cart for future purchase
 def add_to_cart(request, pk):
 
+    #user has to be authenticated
     if request.user.is_authenticated:
+        # property id
         product = Property.objects.get(pk=pk)  
     
+        #get the property if already exist or create create the  new object
         order_item,created = OrderItem.objects.get_or_create(
             product =product,
             user = request.user,
             ordered = False,
             img = product.img,
-            
-            #description = request.POST['description'],
-        #desc = request.POST.get('desc', False),
-            #address = request.POST['address'],
-        #address = request.POST.get('address', False),
-            #quantity = int(request.POST['quantity']),
-
             )
+
+        # filter order if it's not ordered by the user    
         order_qs = Order.objects.filter(user=request.user,ordered=False)
+        # if available increase the item by 1 and save
         if order_qs.exists():
             order =order_qs[0]
             if order.items.filter(product__pk=pk).exists():
@@ -343,6 +230,7 @@ def add_to_cart(request, pk):
                 messages.info(request ,"Added additional property successfully")
                 return redirect("accounts:dashboard")
 
+            # if not available in the cart,add to order item
             else:
                 order.items.add(order_item)
                 messages.info(request ," successfully added to your wishlist")
@@ -363,10 +251,11 @@ def add_to_cart(request, pk):
       
 
 
-
+#display all products
 def allItems(request):
     items = Property.objects.all() 
-
+    
+    # pagination 
     page = request.GET.get('page', 1)
     paginator = Paginator(items, 5)
     
