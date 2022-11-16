@@ -35,7 +35,7 @@ SECRET_KEY='*d8ejn)%wq8l7ptet*ua6)+ak8p&4p&9&gz41yk-fafxj%a%_!'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG=False 
+DEBUG=True
 
 
 ALLOWED_HOSTS = ['www.wilmotinnovation.com','wilmotinnovation.com','wilmotestate.herokuapp.com','127.0.0.1','web-production-4c60.up.railway.app']
