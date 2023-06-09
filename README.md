@@ -14,6 +14,8 @@ User-friendly.
 # How to run this project
 Clone the project
 git clone https://github.com/nuelxlencedjango/estate_management.git
+# Install requirements
+pip install -r requirements.txt
 
 # Active virtual environment (env)
 
